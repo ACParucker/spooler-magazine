@@ -5,4 +5,5 @@ Repositório dos arquivos com os conteúdos vindos nos disquetes da extinta Spoo
 Nesta revista vinham vários artigos sobre programação e nos disquetes o código fonte dos artigos.
 
 ZIPPED - Todos os arquivos compactados
+
 UNZIPPED - Todos os arquivos descompactados sendo possivel olhar os fontes.
