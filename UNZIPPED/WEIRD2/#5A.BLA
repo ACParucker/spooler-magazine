@@ -1,0 +1,17 @@
+-----------> x_NumDrives
+
+  Ok, aqui vai uma rapidinha (nada de divaga‡”es t  !?)...
+
+  J  repararam que nos computadores s¢ com uma drive pode-se aceder a uma
+  drive B: ? Pois ‚, mas embora para o computador seja realmente uma 2¦
+  drive, n„o passa da drive A: com outro nome ! Geralmente, e falo por
+  mim, isto n„o serve para nada ! 
+
+  Mas o problema surge quando se tenta saber se a drive B: existe mesmo ou 
+  ‚ virtual, que hoje ‚ uma realidade... (JOKE #2)
+  Mesmo num computador s¢ com uma drive, algumas fun‡”es do DOS encontram
+  (onde, ‚ o que gostava de saver !) uma outra ... Para n„o andarem para a¡
+  …s cabe‡adas (como eu andei !), esta fun‡„o retorna um inteiro que ‚ o
+  n£mero de drives fisicas (e n„o virtuais), que realmente existem !
+
+  S¢ para confirmar, vamos l  ver onde ‚ que podem introduzir disquetes ...

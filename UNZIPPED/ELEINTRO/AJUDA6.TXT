@@ -1,0 +1,4 @@
+           Botões de Lição
+
+   Como será obvio (o próprio nome o indica), estes botões servem para se ter acesso á lição cujo nome neles está indicado.
+   Deve-se notar que só se pode ter acesso a uma lição mais avançada após terem sido visualizadas as anteriores. Não faria sentido visualizar a última lição (Circuitos Integrados) sem se ter uma noção do que está para trás (Não se perceberia nada). Claro que quem quiser pode passar as primeiras lições sem lhes ligar patavina mas eu não aconselho esta pratica (a não ser a quem já tem umas luzes sobre o assunto).

@@ -1,0 +1,337 @@
+LISTAGENS DO ARTIGO ®COMUNICA€™ES ASS‹NCRONAS¯
+
+**************Listagem 5.1**************
+
+#define  GetLineControl()	inportb(LCR)
+#define  SetLineControl(lcr)	outportb(LCR, lcr)
+#define  DATA_BITS_5	(0x0)
+#define  DATA_BITS_6	(0x1)
+#define  DATA_BITS_7	(0x2)
+#define  DATA_BITS_8	(0x3)
+
+void SetWordLengh(int bits)
+{
+    unsigned char lcr;
+
+    lcr = GetLineControl();
+    SetLineControl((lcr & 0xFC) | (bits));	/* 0xFC = 1111 1100 */
+}
+
+#define  STOP_BIT_1	(0x0)
+#define  STOP_BIT_2	(0x1)
+
+void SetStopBits(int stopbits)
+{
+    unsigned char lcr;
+
+    lcr = GetLineControl();
+    SetLineControl((lcr & 0xFB) | (stopbits << 2));
+}
+
+void EnableParity(void)
+{
+    unsigned char lcr;
+
+    lcr = GetLineControl();
+    SetLineControl((lcr & 0xF7) | (0x08));
+}
+
+void DisableParity(void)
+{
+    unsigned char lcr;
+
+    lcr = GetLineControl();
+    SetLineControl(lcr & 0xF7);
+}
+
+#define  EVEN		(0x0)
+#define  ODD		(0x1)
+
+void SetParity(int type)
+{
+    unsigned char lcr;
+
+    lcr = GetLineControl();
+    SetLineControl((lcr & 0xEF) | (type << 4));
+}
+
+
+*************Listagem 5.2**************
+
+#define  OVERRUN_ERROR	(0x01)
+#define  PARITY_ERROR	(0x02)
+#define  FRAMING_ERROR	(0x04)
+#define  BREAK_DETECT_ERROR	(0x08)
+#define  GetLineStatus()	inportb(LSR)
+#define  SetLineStatus(lsr)	outportb(LSR, lsr)
+#define  Error(lsr)		((lsr >> 1) & 0xF)
+
+void Errors(void)
+{
+    int lsr;
+
+    lsr = GetLineStatus();
+
+    if(!Error(lsr))
+	 return;
+    if(error & OVERRUN_ERROR)
+	 escrever -> Overrun;
+    if(error & PARITY_ERROR)
+	 escrever -> Parity;
+    if(error & FRAMING_ERROR)
+	 escrever -> Framing;
+    if(error & BREAK_DETECT_ERROR)
+	 escrever -> BreakDetect;
+}
+
+
+*************Listagem 5.3***************
+
+#define  SetDlabBit()	outportb(LCR, inportb(LCR) | 0x80)
+#define  ClearDlabBit()	outportb(LCR, inportb(LCR) & 0x7F)
+
+void SetBaudRate(long baudrate)
+{
+    unsigned int div;
+    unsigned char lsb, msb;
+
+    div = (unsigned int)(115200L / baudrate);
+    lsb = div;
+    msb = div >> 8;
+    SetDlabBit();
+    outportb(DLL, lsb);
+    outportb(DLM, msb);
+    ClearDlabBit();
+}
+
+
+************Listagem 6.1*************
+
+#define  PutData(data)	outportb(THR, data)
+#define  ThrEmpty(lsr)	(lsr & 0x20)
+
+void SendData(void)
+{
+    int lsr;
+
+    lsr = GetLineStatus();	/* obter o estado da linha LSR	*/
+    if(ThrEmpty(lsr)){		/* se o registo de saida est  vazio */
+         if(!OUT_FIFO_EMPTY){   /* e se h  dados para enviar  */
+              PutData(out_fifo[last_loaded]);   /* enviar car cter  */
+	      INC_FIFO(last_loaded);	/* incrementar a fifo	*/
+	 }
+    }
+}
+
+
+************Listagem 7.1************
+
+#define  DataAvail(lsr)	(lsr & 0x01)
+#define  GetData()		inportb(RBR)
+#define  CONTROL_CHAR	(0x00)
+#define  SPECIAL_CHAR	(0x1F)
+
+void Pooling(void)
+{
+    int lsr;
+
+    lsr = GetLineStatus();
+    if(DataAvail(lsr)){		/* se chegaram dados... 	*/
+	 ch = GetData();	/* e se n„o s„o especiais	*/
+	 if(ch != CONTROL_CHAR && ch != SPECIAL_CHAR){
+	      in_fifo[last_saved] = GetData();
+              INC_FIFO(last_saved);  /* incrementar a fifo de entrada */
+	 }
+    }
+
+    SendData();		/* enviar car cter	*/
+
+    Errors();
+}
+
+#define  IdentifyInterrupt()	inportb(IIR)
+#define  END_OF_INTERRUPT	(0x20)
+#define  DATA_AVAIL	(0x03)
+#define  STATUS_INT	(0x04)
+
+void interrupt int_receive(void)
+{
+    int ii, lsr;
+
+    ii = IdentifyInterrupt();	/* causa da interrup‡„o	*/
+
+    if(ii & 0x01)
+	 ii = 0;
+    else
+	 ii = ((ii >> 1) & 0x03) + 1;
+
+    if(ii==DATA_AVAIL){	/* se foram dados...	*/
+	 ch = GetData();
+	 if(ch!=CONTROL_CHAR && ch!=SPECIAL_CHAR){
+	      in_fifo[last_saved] = ch;	/* ler car cter	*/
+              INC_FIFO(last_saved);     /* incrementar a fifo */
+	 }
+    }
+    if(ii==STATUS_INT){	/* se houve erros 	*/
+	 lsr = GetLineStatus();
+	 Errors();
+    }
+
+    outportb(END_OF_INTERRUPT, 0x20);	/* comunicar ao PIC   */
+				/* fim de interrup‡„o */
+}
+
+*************Listagem 8.1**************
+
+#define  THR_REG_EMPTY	(0x02)
+
+void interrupt int_send_receive(void)
+{
+    int ii, lsr;
+
+    ii = IdentifyInterrupt();	/* causa da interrup‡„o ?  */
+
+    if(ii & 0x01)
+	 ii = 0;
+    else
+	 ii = ((ii >> 1) & 0x03) + 1;
+
+    if(ii==THR_REG_EMPTY){	/* se s„o dados para enviar    */
+	 if(OUT_FIFO_EMPTY)	/* se n„o h  dados...          */
+	      PutData(CONTROL_CHAR);        /* enviar car cter de controlo */
+	 else{
+              PutData(out_fifo[last_loaded]);  /* sen„o enviar o pr¢ximo  */
+	      INC_FIFO(last_loaded);	/* incrementar a fifo        */
+	 }
+    }
+    else{
+	 if(ii==DATA_AVAIL){	/* se h  chegada de caracteres */
+	      ch = GetData();	/* obter car cter              */
+	      if(ch!=CONTROL_CHAR && ch!=SPECIAL_CHAR){
+		   in_fifo[last_saved] = ch;	/* ler car cter       */
+		   INC_FIFO(last_saved);	/* incrementar a fifo */
+	      }
+	 }
+    }
+
+    if(ii==STATUS_INT){	/* se h  erros na comunica‡„o */
+	 lsr = GetLineStatus();
+	 Errors();
+    }
+    outportb(END_OF_INTERRUPT, 0x20);       /* comunicar ao PIC:  */
+				/* fim de interrup‡„o */
+}
+
+*************Listagem 9.1*************
+
+#define  GetPortInterrupt(port)	((port == COM1) ? 0x0C : 0x0B)
+#define  EnableInterrupt(i)	outportb(IER, (unsigned char)(i & 0x0F))
+#define  STATUS_ENABLE	(0x04)
+#define  SetModemControl(value)	outportb(MCR, (value) & 0x1F)
+void PrepareCommunications(void)
+{
+    int irq;
+
+    old_ISR = getvect(irq);
+
+    if(modo de comunica‡„o = apenas_interrup‡”es){
+	 EnableInterrupt((STATUS_ENABLE | DATA_AVAIL | THR_REG_EMPTY));
+	 setvect(irq, int_send_receive);
+    }
+    else{
+	 EnableInterrupt((STATUS_ENABLE | DATA_AVAIL));
+	 setvect(irq, int_receive);
+    }
+
+    ....
+
+    EnableInterrupt(0x00);
+    setvect(irq, old_ISR);
+    SetModemControl(0x00);
+}
+
+
+************Listagem 10.1*************
+
+void Communications(.......)
+{
+    .....
+
+    PrepareComunications();
+
+    do{
+	 if(metodo de recep‡„o = POOLING)
+	      Pooling();
+
+	 if(metodo de recep‡„o <> POOLING)
+	      SendData();
+
+	 if(!IN_FIFO_EMPTY){	/* se h  caracteres que chegaram e n„o  */
+              ch = in_fifo[last_read];  /* foram escritos no ecr„ */
+	      INC_FIFO(last_read);
+	      if(ch==CTRL_Z)	/* se for o Ctrl-Z  */
+		   flag = ON;	/* acabar a liga‡„o */
+	      else{
+		   /* sen„o escrever no ecr„  */
+                   c_r=0;       /* contador (receive) a zero */
+	      }
+         }
+	 if(kbhit()){		/* se houve uma tecla premida         */
+	      ch = getch();	/* analis -la...                      */
+	      if((ch > 31 && ch < 255) || ch==CTRL_Z ||
+		      ch==CR || ch==BCKSPC || ch==CONTROL_CHAR){
+
+                   out_fifo[last_written] = ch; /* por no ®buffer¯ de saida */
+		   INC_FIFO(last_written);
+		   Send();		/* sinalizar o envio        */
+		   if(ch != CTRL_Z)
+			/* escrever o car cter no ecr„     */
+		   else
+			flag = ON;	/* ou acabar a liga‡„o       */
+	      }
+	 }
+    }while(!flag);
+
+    if(!OUT_FIFO_EMPTY){	/* Se a liga‡„o n„o acabou e  */
+	 Pooling();		/* ainda h  caracteres para   */
+	 if(!OUT_FIFO_EMPTY)                  /* enviar, ent„o fazer isso   */
+				/* por pooling, caso o        */
+				/* utilizador deseje.         */
+				/* Liga‡„o terminada, mas o   */
+				/* envio de caracteres        */
+				/* continua enquanto a fifo de*/
+				/* sa¡da n„o estiver vazia.   */
+	      while(!OUT_FIFO_EMPTY)
+		   Pooling();
+
+    }
+}
+
+
+**************Listagem 11.1****************
+
+#define  GetModemStatus()	inportb(MSR)
+#define  SetPort(Port)	(_Port_ = Port)
+
+int DetectCommunications(void)
+{
+    int com;
+    com = 0;
+    SetPort(COM1);
+    SetModemControl(LOOP_BACK);
+    SetModemControl(LOOP_BACK | 0x0A);
+    if((GetModemStatus() & 0xF0) == 0x90){
+	 com = 1;
+	 SetPort(COM2);
+	 SetModemControl(LOOP_BACK);
+	 SetModemControl(LOOP_BACK | 0x0A);
+	 if((GetModemStatus() & 0xF0) == 0x90)
+	      com++;
+    }
+
+    SetPort(COM1);
+
+    return(com);
+}
+
+

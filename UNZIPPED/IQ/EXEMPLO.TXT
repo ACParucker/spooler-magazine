@@ -1,0 +1,673 @@
+TEMA:[DESPORTO    ]
+---------------  SET N§ 1  --------------
+------------  Pergunta N§  1  -----------
+Quantos jogadores existem no H¢quei sobre o 
+Gelo ?                                      
+                                            
+A - 3 jogadores
+B - 1 jogador
+C - 4 jogadores
+D - 11 jogadores
+E - 6 jogadores
+CERTA: E
+
+------------  Pergunta N§  2  -----------
+Qual a equipa que mais t¡tulos da N.B.A.    
+possui ?                                    
+                                            
+A - Chicago Bulls
+B - Los Angeles Lakers
+C - Boston Celtics
+D - Portland TrailBlazers
+E - Detroit Pistons
+CERTA: C
+
+------------  Pergunta N§  3  -----------
+No Raguˆbi, quantos pontos obt‚m uma equipa 
+com um pontap‚ de ressalto ?                
+                                            
+A - 2 pontos
+B - 3 pontos
+C - 1 ponto
+D - 6 pontos
+E - 4 pontos
+CERTA: B
+
+------------  Pergunta N§  4  -----------
+Em que consiste o Heptatlo ?                
+                                            
+                                            
+A - Na disputa de 10 provas.
+B - Nadar, correr, e andar de bicicleta.
+C - Numa corrida de cavalos.
+D - Na disputa de 5 provas de Atletismo
+E - Em 3 vit¢rias seguidas na mesma prova.
+CERTA: D
+
+------------  Pergunta N§  5  -----------
+Quantos jogos faz cada equipa da N.B.A. na  
+‚poca regular ?                             
+                                            
+A - 82 jogos
+B - 60 jogos
+C - 104 jogos
+D - 54 jogos
+E - 96 jogos
+CERTA: A
+
+------------  Pergunta N§  6  -----------
+Como se chama a Federa‡„o que orienta o     
+Andebol Europeu ?                           
+                                            
+A - F.A.E.
+B - Andebol Europa
+C - I.H.F.
+D - Europe Handball
+E - F.P.A.
+CERTA: C
+
+------------  Pergunta N§  7  -----------
+Quantos buracos tem um campo de Golfe ?     
+                                            
+                                            
+A - 24 buracos
+B - 18 buracos
+C - 21 buracos
+D - 16 buracos
+E - 20 buracos
+CERTA: B
+
+------------  Pergunta N§  8  -----------
+Qual foi o pa¡s classificado em 2§ lugar no 
+Torneio Ol¡mpico de Basquetebol em Barcelona
+ no ano de 1992 ?                           
+A - Federa‡„o Russa
+B - Estados Unidos da Am‚rica
+C - Angola
+D - Cro cia
+E - Espanha
+CERTA: D
+
+------------  Pergunta N§  9  -----------
+Que clube venceu o Campeonato Nacional de   
+Andebol em 1993 ?                           
+                                            
+A - S.L.Benfica
+B - Belenenses
+C - Sporting
+D - Acad‚mico Basket Club
+E - F.C.Porto
+CERTA: D
+
+------------  Pergunta N§ 10  -----------
+Quem foram os primeiros campe”es portugueses
+ de Voleibol de Praia ?                     
+                                            
+A - Lu¡s Quelhas e Nilson J£nior
+B - Jo„o Brenha e Miguel Maia
+C - Miguel Xisto e M rio Rodrigues
+D - Jo„o Miguel e Paul„o
+E - Miguel Maia e Jo„o Maia
+CERTA: B
+
+|***************  FIM DE QUESTIONARIO  ***************|
+---------------  SET N§ 2  --------------
+------------  Pergunta N§  1  -----------
+Qual o tempo total de um jogo de Raguˆbi ?  
+                                            
+                                            
+A - 50 minutos
+B - 100 minutos
+C - 90 minutos
+D - 120 minutos
+E - 80 minutos
+CERTA: E
+
+------------  Pergunta N§  2  -----------
+Qual destas equipas n„o ‚ uma equipa de     
+Baseball ?                                  
+                                            
+A - Cincinatti Reds
+B - Boston Red Sox
+C - Buffalo Bills
+D - Oakland Athletics
+E - Pittsburg Pirates
+CERTA: C
+
+------------  Pergunta N§  3  -----------
+De que cidade era a equipa dos Lakers (NBA) 
+antes de mudar para Los Angeles ?           
+                                            
+A - Tucson
+B - Pittsburg
+C - Washington D.C.
+D - Anchorage
+E - Minneapolis
+CERTA: E
+
+------------  Pergunta N§  4  -----------
+Quem n„o ‚ ou foi Golfista profissional ?   
+                                            
+                                            
+A - Ian Woosnam
+B - Daniel Silva
+C - Nick Faldo
+D - Mark Blundell
+E - Severiano Ballesteros
+CERTA: D
+
+------------  Pergunta N§  5  -----------
+Em que equipa jogava Tony Kukoc antes de se 
+transferir para os Chicago Bulls ?          
+                                            
+A - Barcelona
+B - Slobodna
+C - Real Madrid
+D - Benneton Treviso
+E - Phillips Milano
+CERTA: D
+
+------------  Pergunta N§  6  -----------
+Qual a alcunha da Selec‡„o de Raguˆbi da    
+Nova Zelƒndia ?                             
+                                            
+A - All Blacks
+B - ScareCrows
+C - Red Devils
+D - Killer Kiwis
+E - Mad Dogs
+CERTA: A
+
+------------  Pergunta N§  7  -----------
+Quantos  rbitros apitam um jogo de Andebol ?
+                                            
+                                            
+A - 3  rbitros
+B - 6  rbitros
+C - 2  rbitros
+D - Nenhum
+E - 1  rbitro
+CERTA: C
+
+------------  Pergunta N§  8  -----------
+Qual o pa¡s vencedor do Torneio Ol¡mpico de 
+H¢quei no Gelo em Albertville ?             
+                                            
+A - Estados Unidos da Am‚rica
+B - Su‚cia
+C - Canad 
+D - Alemanha
+E - Comunidade de Estados Independentes
+CERTA: E
+
+------------  Pergunta N§  9  -----------
+Qual o vencedor da Volta a Portugal em      
+Bicicleta na edi‡„o de 1989 ?               
+                                            
+A - Joaquim Gomes
+B - Ac cio da Silva
+C - Am‚rico Silva
+D - Fernando Carvalho
+E - Marco Chagas
+CERTA: A
+
+------------  Pergunta N§ 10  -----------
+Qual foi a £ltima equipa da N.B.A. a vencer 
+apenas dois t¡tulos consecutivos ?          
+                                            
+A - Chicago Bulls
+B - Portland TrailBlazers
+C - Detroit Pistons
+D - Boston Celtics
+E - Cleveland Cavaliers
+CERTA: C
+
+|***************  FIM DE QUESTIONARIO  ***************|
+---------------  SET N§ 3  --------------
+------------  Pergunta N§  1  -----------
+Quantas Ta‡as dos Clubes Campe”es Europeus  
+venceu o Real Madrid (at‚ 1993) ?           
+                                            
+A - 4 ta‡as
+B - 2 ta‡as
+C - 5 ta‡as
+D - 6 ta‡as
+E - 8 ta‡as
+CERTA: D
+
+------------  Pergunta N§  2  -----------
+Quem foi o famoso asa direita brasileiro que
+ alinhou na mesma equipa que Pel‚ no Mundial
+ de Futebol de 1958 ?                       
+A - Tost„o
+B - Zico
+C - Garrincha
+D - S¢crates
+E - Rivelino
+CERTA: C
+
+------------  Pergunta N§  3  -----------
+Qual a distƒncia do local da marca‡„o do    
+®Penalty¯ at‚ … linha de golo ?             
+                                            
+A - 11 metros
+B - 14 metros
+C - 10 metros
+D - 15 metros
+E - 8 metros
+CERTA: A
+
+------------  Pergunta N§  4  -----------
+Quem venceu o Campeonato Mundial em 1954 ?  
+                                            
+                                            
+A - Argentina
+B - Alemanha
+C - Brasil
+D - It lia
+E - Uruguai
+CERTA: B
+
+------------  Pergunta N§  5  -----------
+Quem foi o treinador que levou o S.L.B. …   
+conquista de dois t¡tulos europeus ?        
+                                            
+A - Mario Wilson
+B - Sven Goran Ericksson
+C - Eric Schwartz
+D - Bella Guttman
+E - Tele Santana
+CERTA: D
+
+------------  Pergunta N§  6  -----------
+Que Selec‡„o foi derrotada na final do      
+Campeonato do Mundo de 1974 ?               
+                                            
+A - It lia
+B - Hungria
+C - Argentina
+D - Uruguai
+E - Holanda
+CERTA: E
+
+------------  Pergunta N§  7  -----------
+Quantas finais europeias perderam o S.L.B., 
+o F.C.P. e o Sporting ?                     
+                                            
+A - 5 finais
+B - 2 finais
+C - 7 finais
+D - 4 finais
+E - 6 finais
+CERTA: C
+
+------------  Pergunta N§  8  -----------
+Qual o melhor marcador do Campeonato do     
+Mundo de 1978 ?                             
+                                            
+A - Eus‚bio
+B - Cruyff
+C - Lineker
+D - Rumenigge
+E - Kempes
+CERTA: E
+
+------------  Pergunta N§  9  -----------
+Com quantos golos se tornou Eus‚bio o melhor
+ marcador do Mundial de 1966 em Inglaterra ?
+                                            
+A - 12 golos 
+B - 8 golos
+C - 9 golos
+D - 13 golos
+E - 6 golos
+CERTA: C
+
+------------  Pergunta N§ 10  -----------
+Que pa¡s foi Vice-Campe„o Europeu no ano de 
+1984 ?                                      
+                                            
+A - Dinamarca
+B - Portugal
+C - Rom‚nia
+D - Alemanha
+E - Espanha
+CERTA: E
+
+|***************  FIM DE QUESTIONARIO  ***************|
+---------------  SET N§ 4  --------------
+------------  Pergunta N§  1  -----------
+Qual o resultado do jogo em que o A.C. Mil„o
+ derrotou o Steaua de Bucareste tornando-se 
+Campe„o Europeu ?                           
+A - 4-0
+B - 3-1
+C - 2-0
+D - 1-0
+E - 3-2
+CERTA: A
+
+------------  Pergunta N§  2  -----------
+Em que Campeonatos se sagrou o Brasil       
+Campe„o do Mundo ?                          
+                                            
+A - 1950, 1958, 1974
+B - 1958, 1962, 1970
+C - 1938, 1954, 1970, 1982
+D - 1950, 1970, 1978
+E - 1962, 1966, 1986
+CERTA: B
+
+------------  Pergunta N§  3  -----------
+Qual o resultado da final da Ta‡a de        
+Portugal entre Boavista e Benfica na ‚poca  
+de 1992-1993 ?                              
+A - Boavista 1 - Benfica 0
+B - Benfica 4 - Boavista 1
+C - Boavista 2 - Benfica 1
+D - Benfica 3 - Boavista 2
+E - Benfica 5 - Boavista 2
+CERTA: E
+
+------------  Pergunta N§  4  -----------
+Qual o nome do excˆntrico Guarda-Redes      
+Colombiano no Mundial de 1990 ?             
+                                            
+A - Sebaudi
+B - Zetti
+C - Higuita
+D - Lopez
+E - Goicochea
+CERTA: C
+
+------------  Pergunta N§  5  -----------
+Quem marcou o golo solit rio que derrotou o 
+S.L.Benfica na Final da Ta‡a dos Campe”es   
+Europeus de 1990 ?                          
+A - Rijkkard
+B - Ancelotti
+C - Donadoni
+D - Gullit
+E - Van Basten
+CERTA: A
+
+------------  Pergunta N§  6  -----------
+Em que Est dio foi disputada a Final da Ta‡a
+ dos Clubes Campe”es Europeus de 1992 ?     
+                                            
+A - Est dio da Luz
+B - Bari
+C - Chamartin
+D - Est dio Ol¡mpico de Munique
+E - Wembley
+CERTA: E
+
+------------  Pergunta N§  7  -----------
+Que pa¡s foi derrotado na Final do Campeona-
+to do Mundo de 1950 ?                       
+                                            
+A - Inglaterra
+B - Alemanha
+C - Brasil
+D - Argentina
+E - It lia
+CERTA: C
+
+------------  Pergunta N§  8  -----------
+Qual o pa¡s que derrotou a Alemanha na Final
+ do Campeonato Europeu de 1992 ?            
+                                            
+A - Su‚cia
+B - Fran‡a
+C - Holanda
+D - Dinamarca
+E - Comunidade de Estados Independentes
+CERTA: D
+
+------------  Pergunta N§  9  -----------
+Qual o Vencedor da Pepsi Cup 1992 ?         
+                                            
+                                            
+A - F.C. Porto
+B - S.L. Benfica
+C - S.C. Portugal
+D - F.C. Barcelona
+E - A.C. Mil„o
+CERTA: B
+
+------------  Pergunta N§ 10  -----------
+Quem forma os marcadores dos golos no jogo  
+que deu a Portugal o 1§ T¡tulo Mundial ?    
+                                            
+A - Eus‚bio e Torres
+B - Paulo Madeira e Paulo Sousa
+C - Abel e Jorge Couto
+D - Rui Costa e Gil
+E - Amaral e Jo„o Pinto
+CERTA: C
+
+|***************  FIM DE QUESTIONARIO  ***************|
+---------------  SET N§ 5  --------------
+------------  Pergunta N§  1  -----------
+Qual o resultado da final do Campeonato do  
+Mundo de Futebol de 1986 disputada no M‚xico
+ entre a Argentina e a Alemanha ?           
+A - 1-0
+B - 4-2
+C - 3-2
+D - 2-0
+E - 2-1
+CERTA: C
+
+------------  Pergunta N§  2  -----------
+Qual o nome do treinador que levou o F.C.   
+Barcelona … conquista do seu primeiro t¡tulo
+ de Campe„o Europeu ?                       
+A - John Toshack
+B - Benito Floro
+C - Guus Hiddink
+D - Bobby Robson
+E - Johan Cruyff
+CERTA: E
+
+------------  Pergunta N§  3  -----------
+Qual o nome do jogador teut¢nico que marcou 
+o golo que deu o t¡tulo mundial ao seu pa¡s 
+em 1990 ?                                   
+A - Matthaus
+B - Brehme
+C - Klinsmann
+D - Riedle
+E - Voller
+CERTA: B
+
+------------  Pergunta N§  4  -----------
+Qual a equipa a que pertencia o inglˆs Paul 
+Gascoigne antes de se tranferir para o Lazio
+ de Roma ?                                  
+A - O. Marselha
+B - Leeds United
+C - Liverpool
+D - Tottenham
+E - Manchester United
+CERTA: D
+
+------------  Pergunta N§  5  -----------
+Qual o nome do jogador que marcou o 2§ golo 
+do F.C.Porto na final da Ta‡a dos Campe”es  
+Europeus contra o Bayern de Munique ?       
+A - Madjer
+B - Futre
+C - Jo„o Pinto 
+D - Gomes
+E - Juary
+CERTA: E
+
+------------  Pergunta N§  6  -----------
+Em que pa¡s foi disputado o Campeonato do   
+Mundo de Futebol em 1950 ?                  
+                                            
+A - Uruguai
+B - M‚xico
+C - Alemanha
+D - Inglaterra
+E - Brasil
+CERTA: E
+
+------------  Pergunta N§  7  -----------
+Qual o Clube que mais vezes se sagrou Vice- 
+-Campe„o Europeu de Futebol ?               
+                                            
+A - S.L.Benfica
+B - F.C.Barcelona
+C - Ajax
+D - A.C.Mil„o
+E - Bayern de Munique
+CERTA: A
+
+------------  Pergunta N§  8  -----------
+Que clube venceu a Ta‡a de Honra da         
+Associa‡„o de Futebol de Lisboa em 1993 ?   
+                                            
+A - Sporting
+B - Belenenses
+C - Estrela da Amadora
+D - S.L.Benfica
+E - Estoril
+CERTA: B
+
+------------  Pergunta N§  9  -----------
+De que pa¡s ‚ origin rio o Guarda-Redes     
+Neno ?                                      
+                                            
+A - Guin‚-Bissau
+B - Angola
+C - Mo‡ambique
+D - S.Tom‚ e Pr¡ncipe
+E - Cabo Verde
+CERTA: E
+
+------------  Pergunta N§ 10  -----------
+Qual o nome do Guarda-Redes da selec‡„o     
+Vice-Campe„ Europeia em 1992 ?              
+                                            
+A - Schmachel
+B - Van Breukelen
+C - Ravelli
+D - Martini
+E - Ilgner 
+CERTA: E
+
+|***************  FIM DE QUESTIONARIO  ***************|
+---------------  SET N§ 6  --------------
+------------  Pergunta N§  1  -----------
+Qual a selec‡„o que foi 4¦ classificada no  
+Mundial de Futebol de 1966 ?                
+                                            
+A - Inglaterra
+B - Alemanha
+C - Portugal
+D - U.R.S.S.
+E - It lia
+CERTA: D
+
+------------  Pergunta N§  2  -----------
+Qual o pa¡s onde foi disputado o 1§ Grande  
+Pr‚mio de F¢rmula-1 em 1906 ?               
+                                            
+A - Inglaterra
+B - Estados Unidos
+C - Fran‡a
+D - Espanha
+E - It lia
+CERTA: C
+
+------------  Pergunta N§  3  -----------
+Em que cidade se disputaram as Ol¡mpiadas de
+ 1968 ?                                     
+                                            
+A - Londres
+B - T¢quio
+C - Cidade do M‚xico
+D - Los Angeles
+E - Paris
+CERTA: C
+
+------------  Pergunta N§  4  -----------
+Qual a edi‡„o dos Jogos Ol¡mpicos que foi   
+realizada em T¢quio em 1964 ?               
+                                            
+A - 14¦
+B - 18¦
+C - 13¦
+D - 15¦
+E - 20¦
+CERTA: B
+
+------------  Pergunta N§  5  -----------
+Em que ano a Norte-Americana Wilma Rudolph  
+venceu 3 medalhas de ouro nas provas de     
+atletismo dos Jogos Ol¡mpicos ?             
+A - 1968
+B - 1956
+C - 1972
+D - 1936
+E - 1960
+CERTA: E
+
+------------  Pergunta N§  6  -----------
+Antes de se transferir para o Real Madrid,  
+qual era a equipa de famoso Puskas ?        
+                                            
+A - Barcelona
+B - River Plate
+C - Katowice
+D - Honved
+E - D¡namo de Budapeste
+CERTA: D
+
+------------  Pergunta N§  7  -----------
+Onde se realizaram os Jogos Ol¡mpicos de    
+1962 ?                                      
+                                            
+A - Roma
+B - Amsterd„o
+C - Hels¡nquia
+D - Estocolmo
+E - Paris
+CERTA: C
+
+------------  Pergunta N§  8  -----------
+Em que ano nasceu Alexandre Yokochi,        
+considerado o maior nadador portuguˆs de    
+todos os tempos ?                           
+A - 1962
+B - 1963
+C - 1964
+D - 1965
+E - 1966
+CERTA: D
+
+------------  Pergunta N§  9  -----------
+Onde se disputaram os Jogos Ol¡mpicos em que
+ N dia Comaneci se tornou c‚lebre ?         
+                                            
+A - Munique
+B - Montreal
+C - Moscovo
+D - Atenas
+E - Paris
+CERTA: B
+
+------------  Pergunta N§ 10  -----------
+Qual foi a edi‡„o dos Jogos Ol¡mpicos       
+realizada em Moscovo em 1980 ?              
+                                            
+A - 17¦
+B - 24¦
+C - 19¦ 
+D - 22¦
+E - 21¦
+CERTA: D
+
+|***************  FIM DE QUESTIONARIO  ***************|

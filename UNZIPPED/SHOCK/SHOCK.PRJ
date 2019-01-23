@@ -1,0 +1,13 @@
+shock.c
+opcoes.c
+compfil.c
+compmap.c
+compbyte.c
+compsete.c
+comphuff.c
+compdiat.c
+analdata.c
+esc_shk.c
+proto.h
+config.h
+

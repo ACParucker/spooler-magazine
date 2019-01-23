@@ -1,0 +1,27 @@
+-----------> x_StartClock, x_StopClock,  x_HideClock,
+             x_ShowClock,  x_ClockColor, x_ClockPos
+
+  Como os £ltimos s„o sempre os primeiros, aqui estam as melhores rotinas
+  deste package (at‚ parece a s‚rio, n„o ‚ ?).
+
+  "Nenhuma interface fica completa sem um rel¢gio SEMPRE a funcionar l  num
+  canto do ecran..." Pois... N„o imaginam as horas que eu perdi a fazer esta
+  coisa... Nada como usar um rel¢gio normal... Este pessoal da inform tica
+  lembra-se de cada coisa...
+
+  Pronto, mas agora j  est  ! Acho que mais simples que isto n„o pode ser:
+  basta fazer x_StartClock, com a sua posi‡„o e cores para o rel¢gio aparecer
+  e come‡ar a funcionar (vamos l  ver !), e antes de acabar o programa fazem
+  x_StopClock. Et voil , poderiamos ficar j  por aqui, mas optei por incluir
+  algumas fun‡”es que poder„o fazer falta. Ent„o aqui vai...
+
+  A fun‡„o x_HideClock, deixa de escrever o rel¢gio no ecran (mas n„o o 
+  apaga), a fun‡„o x_ShowClock faz exactamente o contr rio. Aten‡„o, pois
+  quando o rel¢gio est  activo, mesmo que apaguem o ecran ele volta a 
+  aparecer (sou um g‚nio ou n„o ?). A fun‡„o x_ClockPos altera a posi‡„o do
+  rel¢gio no ecran e a x_ClockColor altera a cor, tanto de Foreground como
+  de Background (isto em inglˆs at‚ parece outra coisa !).
+
+  Pronto, pouco paleio e mais ac‡„o. 
+  Vamos l  ver uma demonstra‡„o.     (M„e, sou poeta !)
+

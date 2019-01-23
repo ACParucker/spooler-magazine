@@ -1,0 +1,96 @@
+
+
+                ***************  ENFOUNIT  ***************
+
+  INSTRU€™ES
+
+  limpa_parte(xi,yi,xf,yf,cor:integer) ; Apaga, dadas as coordenadas
+                                       ; inicias e finais e a cor com que
+                                       ; quer apagar, ser  a cor do ecran.
+
+  ig(gm,gd) ; Inicializa o modo grafico.
+            ; gd = Driver gr fico.
+            ; gm = Modo Gr fico.
+
+  aim(xi,yi,xf,yf:integer;
+      var p:pointer;var t:word) ; Apanha uma parte do ecran
+                                ; e guarda-o em memoria atraves do
+                                ; apontador 'p' o tamanho ‚ defenido
+                                ; por  't'.
+
+  jan(xi,yi,xf,yf,cor1,cor2,
+      cor,gro:integer;
+      var p:pointer;var t:word) ; Desenha uma janela com cores defenidas
+                                ; e guarda o que esta por baixo da janela
+                                ; para se reposto com putimage ap¢s a
+                                ; sua uteliza‡„o.
+
+  jan2(xi,yi,xf,yf,cor1,cor2,cor,gro:integer) ; Tem a mesma fun‡„o que o
+                                              ; anterior mas n„o guarda
+                                              ; o que est  por baixo da
+                                              ; janela.
+
+  lerl(x,y,t,cora,corl,
+      tam:integer;ch:char):string ; Tem a mesma fun‡„o que o Readln em
+                                  ; modo texto, 'x,y' s„o as coordenadas
+                                  ; (em pixels), 't' o tamanho da String,
+                                  ; 'cora' a cor que apaga as letras quando
+                                  ; se carrega em delete, 'corl' cor das
+                                  ; letras, 'tam' tamanho das letras em
+                                  ; pixels ( 8, 16, etc ), 'ch' ‚ o cursor.
+
+  " SetTextStyle(Font, Direction: Word; CharSize: Word) ; Fonte original. "
+
+  escreve(x,y,cor:integer;s:string) ; Escreve uma frase com fonte original
+                                    ; em relevo.
+
+  escreve2(x,y,cor:integer;s:string) ; Escreve uma frase com fonte original
+                                     ; mas com um rebordo de
+                                     ; cinzento escuro.
+
+  escreve3(x,y,cor,cor2:integer;s:string) ; Escreve uma frase com fonte
+                                          ; original mas com sombra, 'cor'
+                                          ; ‚ a cor da sombra, 'cor2' ‚
+                                          ; a cor da String.
+
+  inicrato ; Inicia o driver do rato.
+
+  rato ; Visualiza o rato no ecran ( em modo gr fico uma seta, em modo
+       ; texto o caracter 'Û' ).
+
+  ratopos(var x,y:integer) ; Carrega para as variaveis 'x,y' a actual
+                           ; posi‡„o do rato.
+
+  ratotec:integer ; Fun‡„o que detecta se alguma das teclas do rato
+                  ; foram premidas.
+
+  escrato ; Esconde o cursor do rato.
+
+  definir(x,y,xf,yf:integer) ; Define a  rea de trabalho do rato.
+
+  tecla(x,y,xf,yf:integer;estado:boolean) ; Desenha uma tecla cinzenta
+                                          ; com efeito de press„o (true)
+                                          ; ou normal (false).
+
+  detecta(xi,yi,xf,yf:integer):boolean ; Fun‡„o que detecta a presen‡a do
+                                       ; rato numa determinada  rea do
+                                       ; ecran.
+
+  marca(x,y,xf,yf:integer;est:boolean) ; Faz o efeito de press„o duma
+                                       ; tecla at‚ a tecla do rato
+                                       ; ser solta.
+
+  efesp(x,y,v,t,ca:integer;s:string;ch:char) ; Escreve letra a letra uma
+                                             ; um determinado intervalo
+                                             ; de tempo defenido
+                                             ; 'x,y' s„o as coordenadas
+                                             ; 'v' ‚ velocidade
+                                             ; 't' tamanho das letras
+                                             ; 's' frase
+                                             ; 'ca' cor
+                                             ; 'ch' cursor (_, Û, Ü, etc).
+
+  premir:char ; Tem a mesma finalidade que a fun‡„o 'readkey' mas n„o
+              ; espera pela entrada do caracter.
+
+

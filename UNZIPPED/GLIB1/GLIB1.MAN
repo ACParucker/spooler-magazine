@@ -1,0 +1,444 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     ......... ........ ....... ...... ..... .... ... .. .
+                   ......... ........ ....... ...... ..... .... ... .. .
+                 ......... ........ ....... ...... ..... .... ... .. .
+               ......... ........ ....... ...... ..... .... ... .. .
+             ......... ........ ....... ...... ..... .... ... .. .
+           ......... ........ ....... ...... ..... .... ... .. .
+         ......... ........ ....... ...... ..... .... ... .. .
+       ......... ........ ....... ...... ..... .... ... .. .
+     ......... ........ ....... ...... ..... .... ... .. .
+   ......... ........ ....... ...... ..... .... ... .. .
+   ......... ........ ....... ...... ..... .... ... .. .
+     ......... ........ Graphics Library vol.1... ... .. .
+       ......... ........ ....... Manual ..... .... ... .. .
+         ......... ........ ........ ..... ..... .... ... .. .
+           ......... ........Programado por Isaac MSC.. ... .. .
+             ......... ........ em 28 de Julho de 1994... ... .. .
+               ......... ........ ....... ...... ..... .... ... .. .
+                 ......... ........ ......GLIB1.PAS..... .... ... .. .
+                   ......... ........ ....... ...... ..... .... ... .. .
+                     ......... ........ ....... ...... ..... .... ... .. .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Initialize (procedure) [graph]
+------------------------------
+   Inicializa o modo gr fico em VGA 640x480x16 e modifica as cores (opcional)
+
+   Declara‡„o:
+      procedure Initialize(colors: Boolean; pt: string);
+
+   Significado:
+      Colors -> 'True' modifica as cores 'False' n„o
+      Pt     -> D  a path para os drivers e fontes. Default: 'C:\TP'
+
+   Exemplo:
+      Initialize(True,'');
+
+
+SetAllRGB (procedure) [graph]
+-----------------------------
+   Modifica todas as cores
+
+   Declara‡„o:
+      procedure SetAllRGB;
+
+   Significado:
+      (n„o tem op‡”es)
+
+   Exemplo:
+      SetAllRGB;
+
+
+Beep (procedure) [crt]
+----------------------
+   Produz um beep decrescente
+
+   Declara‡„o:
+      procedure Beep;
+
+   Significado:
+      (n„o tem op‡”es)
+
+   Exemplo:
+      Beep;
+
+
+RKey (function) [crt]
+------------------------
+   Pausa o programa e espera at‚ que uma tecla seja pressionada dando o char
+   correspondente. No caso de serem teclas especiais (ex.F1) d  o valor +128
+
+   Declara‡„o:
+      function RKey: char;
+
+   Significado:
+      (n„o tem op‡”es)
+
+   Exemplo:
+      ch:= RKey;
+
+
+RStrM (function) [graph, system]
+-------------------------------
+   Lˆ uma string do tipo mensagem, sendo o comprimento desta definido no
+   carregamento
+
+   Declara‡„o:
+      function RStrM(X,Y: integer;bc,size: byte;str,txt: string;
+                     var sda: byte;tt: boolean): string;
+
+
+
+
+
+
+   Significado:
+      X    -> Coordenada horizontal
+      Y    -> Coordenada vertical
+      Bc   -> Cor da sombra
+      Size -> Comprimento da string
+      Str  -> String para apare‡er dentro do espa‡o de escrita
+      Txt  -> String para apare‡er antes do espa‡o de escrita
+      Sda  -> Indicador do valor Ord() da £ltima tecla pressionada
+      Tt   -> 'True' recebe caract‚res 'False' escreve o back do RStrM
+
+   Exemplo:
+      Mora:= RStrM(30,120,3,35,'Av. Luisa Todi','Morada:',out,False);
+
+
+RStrU (function) [graph, system]
+--------------------------------
+   Lˆ uma string do tipo maiusculas, sendo o comprimento desta definido no
+   carregamento
+
+   Declara‡„o:
+      function RStrU(X,Y: integer;bc,size: byte;str,txt: string;
+                     var sda: byte;tt: boolean): string;
+
+   Significado:
+      X    -> Coordenada horizontal
+      Y    -> Coordenada vertical
+      Bc   -> Cor da sombra
+      Size -> Comprimento da string
+      Str  -> String para apare‡er dentro do espa‡o de escrita
+      Txt  -> String para apare‡er antes do espa‡o de escrita
+      Sda  -> Indicador do valor Ord() da £ltima tecla pressionada
+      Tt   -> 'True' recebe carect‚res 'False' escreve o back do RStrU
+
+   Exemplo:
+      Nome:= RStrU(30,100,3,40,'Isaac MSC','Nome:',out,False);
+
+
+RStrN (function) [graph, system]
+--------------------------------
+   Lˆ uma string do tipo num‚rica, sendo o comprimento desta definido no
+   carregamento
+
+   Declara‡„o:
+      function RStrN(X,Y: integer;bc,size: byte;str,txt: string;
+                     var sda: byte;tt: boolean): string;
+
+   Significado:
+      X    -> Coordenada horizontal
+      Y    -> Coordenada vertical
+      Bc   -> Cor da sombra
+      Size -> Comprimento da string
+      Str  -> String para apare‡er dentro do espa‡o de escrita
+      Txt  -> String para apare‡er antes do espa‡o de escrita
+      Sda  -> Indicador do valor Ord() da £ltima tecla pressionada
+      Tt   -> 'True' recebe carect‚res 'False' escreve o back do RStrN
+
+   Exemplo:
+      Cpos:= RStrN(30,140,3,4,'2900','C¢digo postal:',out,False);
+
+
+
+RStrV (function) [graph, system]
+--------------------------------
+   Lˆ uma string do tipo valor num‚rico, sendo o comprimento desta definido
+   no carregamento
+
+
+
+
+
+
+   Declara‡„o:
+      function RStrV(X,Y: integer;bc,size: byte;txt: string;
+                     var sda: byte;tt: boolean): string;
+
+   Significado:
+      X    -> Coordenada horizontal
+      Y    -> Coordenada vertical
+      Bc   -> Cor da sombra
+      Size -> Comprimento da string
+      Txt  -> String para apare‡er antes do espa‡o de escrita
+      Sda  -> Indicador do valor Ord() da £ltima tecla pressionada
+      Tt   -> 'True' recebe carect‚res 'False' escreve o back do RStrV
+
+   Exemplo:
+      Tele:= RStrV(30,160,3,10,'Telefone:',out,False);
+
+
+RStrD (function) [graph, system]
+--------------------------------
+   Lˆ uma data formatada por DD/MM/AAAA
+
+   Declara‡„o:
+      function RStrD(X,Y: integer;bc: byte;str,txt: string;
+                     var sda: byte;tt: boolean): string;
+
+   Significado:
+      X    -> Coordenada horizontal
+      Y    -> Coordenada vertical
+      Bc   -> Cor da sombra
+      Str  -> Data para apare‡er dentro do espa‡o de escrita
+      Txt  -> String para apare‡er antes do espa‡o de escrita
+      Sda  -> Indicador do valor Ord() da £ltima tecla pressionada
+      Tt   -> 'True' recebe caracteres 'False' escreve o back do RStrD
+
+   Exemplo:
+      Data:= RStrD(30,180,3,'19940728','Data:',out,False);
+
+
+WW (procedure) [graph]
+----------------------
+   Escreve no ecr„ uma string branca em 3D
+
+   Declara‡„o:
+      procedure WW(X,Y: integer; txt: string; bc: byte);
+
+   Significado:
+      X   -> Coordenada horizontal
+      Y   -> Coordenada vertical
+      Txt -> String
+      Bc  -> Cor da sombra
+
+   Exemplo:
+      WW(280,80,'Preencha os dados',3);
+
+
+WB (procedure) [graph]
+----------------------
+   Escreve no ecr„ uma string preta em 3D
+
+   Declara‡„o:
+      procedure WB(X,Y: integer; txt: string; bc: byte);
+
+   Significado:
+      X   -> Coordenada horizontal
+      Y   -> Coordenada vertical
+      Txt -> String
+
+
+
+
+
+
+
+      Bc  -> Cor da sombra
+
+   Exemplo:
+      WB(280,460,'Data inv lida',3);
+
+
+Box (procedure) [graph]
+-----------------------
+   Faz uma caixa em 3D conforme esteja ligada ou desligada
+
+   Declara‡„o:
+      procedure Box(X,Y,sX,sY,ft,fs: integer;txt: string;Tipo: Tipo);
+
+   Significado:
+      X    -> Coordenada central horizontal
+      Y    -> Coordenada central vertical
+      sX   -> Tamanho horizontal em pixels da caixa
+      sY   -> Tamanho vertical em pixels da caixa
+      Ft   -> Valor da fonte
+      Fs   -> Tamanho da fonte
+      Txt  -> String
+      Tipo -> 'True' caixa ON 'False' caixa OFF
+
+   Exemplo:
+      Box(320,400,40,20,0,0,'Ok',Off);
+
+
+SetRGB (procedure) [graph]
+--------------------------
+   Modifica uma cor especificada
+
+   Declara‡„o:
+      procedure SetRGB(c, r, g, b: byte);
+
+   Significado:
+      C -> Cor n£mero
+      R -> Valor RED
+      G -> Valor GREEN
+      B -> Valor BLUE
+
+   Exemplo:
+      SetRGB(15,63,22,42);
+
+
+FadeIn (procedure) [graph, system]
+--------------------------
+   Vai escurecendo as cores at‚ ficarem totalmente pretas
+
+   Declara‡„o:
+      procedure FadeIn;
+
+   Significado:
+      (n„o tem op‡”es)
+
+   Exemplo:
+      FadeIn;
+
+
+
+FadeOut (procedure) [graph, system]
+---------------------------
+   Volta a clarear as cores at‚ ficarem normais
+
+   Declara‡„o:
+      procedure FadeOut;
+
+
+
+
+
+
+
+   Significado:
+      (n„o tem op‡”es)
+
+   Exemplo:
+      FadeOut;
+
+
+QFadeIn (procedure) [graph, system]
+---------------------------
+   Escurece de vez as cores
+
+   Declara‡„o:
+      procedure QFadeIn;
+
+   Significado:
+      (n„o tem op‡”es)
+
+   Exemplo:
+      QFadeIn;
+
+
+QFadeOut (procedure) [graph, system]
+----------------------------
+   Normaliza as cores
+
+   Declara‡„o:
+      procedure QFadeOut;
+
+   Significado:
+      (n„o tem op‡”es)
+
+   Exemplo:
+      QFadeOut;
+
+
+SaveScr (procedure) [graph, system]
+-----------------------------------
+   Grava uma area do ecr„ na mem¢ria
+
+   Declara‡„o:
+      procedure SaveScr(x1,y1,x2,y2: integer;page: byte);
+
+   Significado:
+      X1   -> Coordenada horizontal do inicio da area rectƒngular
+      Y1   -> Coordenada vertical do inicio da area rectƒngular
+      X2   -> Coordenada horizontal do fim da area rectƒngular
+      Y2   -> Coordenada vertical do fim da area rectƒngular
+      Page -> Numero de p gina onde ser  feita a grava‡„o
+
+   Exemplo:
+      SaveScr(0,0,639,478,1);
+
+
+ReadScr (procedure) [graph, system]
+-----------------------------------
+   Recupera para o ecr„ uma area gravada
+
+   Declara‡„o:
+      procedure ReadScr(page: byte);
+
+   Significado:
+      Page -> Numero da p gina onde foi feita a grava‡„o
+
+   Exemplo:
+      ReadScr(1);
+
+
+DEF (integer) [system]
+-------------------
+   Valor usado para centrar a string txt na procedure Box
+
+   Declara‡„o
+      var DEF: integer;
+
+   Significado:
+      Por defeito a var DEF tem o valor 0
+
+   Exemplo:
+      DEF:= 7;
+
+
+EOF (fim) [GLib1]
+-----------------
+   Programado por  Isaac MSC  Mem Martins

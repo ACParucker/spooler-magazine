@@ -1,0 +1,30 @@
+-----------> x_IsColor
+
+  At‚ que enfim ! Aqui est  uma fun‡„o f cil de explicar e implementar !
+  
+  Um bom programa tem de fazer uma boa gest„o das cores usadas. N„o pode
+  estar demasiado berrante (se n„o, s¢ de ¢culos escuros ‚ que se pode olhar
+  para aquilo !), mas tamb‚m n„o conv‚m estar demasiado pobre (se n„o, por 
+  que se haviam de comprar monitores a cores ?). Geralmente o que se faz ‚
+  escolher um tom, e construir o(s) ecran(s) baseados nele. Mas isso s„o 
+  outras hist¢rias ...
+
+  Mas o que por vezes acontece ‚ um tipo fazer um bom programa, equilibrando
+  bem as cores no ecran, que num monitor policrom tico fica extraordin rio,
+  mas ao vˆ-lo num monitor mono n„o se percebe n‚pia ! E agora, o que fazer ?
+
+  A melhor solu‡„o (at‚ prova em contr rio) ‚ usar duas paletes distintas para
+  monitores poli e monocrom ticos, trabalhando na 1¦ com as diferentes cores
+  e na 2¦ com os v rios tons de cinzento. Mas como identificar o tipo de 
+  monitor ??? Uma maneira ‚ perguntar ao utilizador ... Pois, mas muitos n„o
+  sabem (nem querem saber !) o que ‚ mono/policrom tico ! E al‚m do mais, se
+  pensarmos um pouco, ‚ um pouco ridiculo o computador n„o saber identificar
+  um perif‚rico seu !
+
+  Esta fun‡„o faz isso mesmo : identifica o tipo de monitor instalado ! N„o
+  garanto, e visto que existem placas e monitores de in£meras marcas, que 
+  funcione em todo e qualquer par computador-monitor, mas no caso de n„o
+  operar correctamente no vosso contactem-me e depois logo se vˆ (agora s¢
+  tˆm que encontrar o meu contacto !).
+
+  J  agora, vamos l  tentar identificar o vosso tipo de monitor ...

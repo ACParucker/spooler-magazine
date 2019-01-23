@@ -1,0 +1,24 @@
+PROGRAMA Codigo ASCII
+{ Tabela de c¢digos ASCII }
+
+VARIAVEL
+   INTEIRO   c,cod,col;
+
+INICIO
+   decimais=0;
+   limpa_ecr;
+   Escreve "\c15;C¢digo Ascii\n\c12;Desenvolvimento da Lusa\n";
+   cod=0; col=1;
+   Repete
+     c=0;
+     Repete
+       emxy col,c+4;
+       escreve "\c14;",'cod,"\c13;",cod;
+       cod=cod+1;
+       c=c+1;
+     Ate c>15 | cod>255;
+     col=col+5;
+   Ate cod = 256;
+   emxy 10,23;
+FIM
+

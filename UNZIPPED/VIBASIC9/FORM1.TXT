@@ -1,0 +1,55 @@
+Sub botaoFim_Click ()
+  End
+End Sub
+
+Sub botaoImprimir_Click ()
+  botaoSortear.Visible = False
+  botaoLimpar.Visible = False
+  botaoImprimir.Visible = False
+  botaoFim.Visible = False
+  PrintForm
+  botaoSortear.Visible = True
+  botaoLimpar.Visible = True
+  botaoImprimir.Visible = True
+  botaoFim.Visible = True
+End Sub
+
+Sub botaoLimpar_Click ()
+  For c% = 0 To 9
+    For r% = 0 To 9
+      grid1.Col = c%
+      grid1.Row = r%
+      grid1.Text = ""
+    Next r%
+  Next c%
+End Sub
+
+Sub botaoSortear_Click ()
+  Static saidos
+  If IsEmpty(saidos) Then saidos = 0
+sorteia:
+  numero% = Int(Rnd * 100)'gera números entre 0 e 99
+  If numero% = 0 Then GoTo sorteia'se sair zero, não conta
+  linha% = numero% \ 10   'divisão inteira é \
+                          'a divisão float é /
+  coluna% = numero% Mod 10
+  'verifica se já saiu
+  grid1.Row = linha%
+  grid1.Col = coluna%
+  If Len(grid1.Text) <> 0 Then 'já saiu
+    GoTo sorteia
+  Else
+    saidos = saidos + 1
+    grid1.Text = numero%
+  End If
+  If saidos = 99 Then botaoSortear.Enabled = False
+End Sub
+
+Sub Form_Load ()
+  Randomize
+  For coluna% = 0 To 9
+    grid1.ColAlignment(coluna%) = 2    'CENTER
+  Next coluna%
+  label2 = Date$
+End Sub
+

@@ -1,0 +1,6 @@
+          Cor do Fundo
+ 
+  A cor do fundo dos textos pode ser configurada de acordo com os gostos pessoais de cada um.
+  Ao se escolher a opção Cor de Fundo no menu das Opções, terse-á acesso a uma janela que nos permite (através de valores RGB) controlar essa mesma cor.
+  Depois de termos escolhido a cor para usar como cor de fundo para os nossos textos, podemos gravar essa opção para usarmos sempre essa cor ou podemos usar essa cor apenas durante a sessão corrente do Electintro.
+

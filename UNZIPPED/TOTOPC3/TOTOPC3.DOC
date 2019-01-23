@@ -1,0 +1,1467 @@
+*****************************  TOTO_PC3  **********************************
+*                                                                         *
+*               Vers„o  Shareware/Dreamware 1995/11/17                    *
+*                        Computer Dreams Soft.                            *
+*                                                                         *
+*                 (c) L£cio Marino Miranda Quintal                        *
+*                          Ribeira Pretetes                               *
+*                            9125 Cani‡o                                  *
+*                         Madeira - Portugal                              *
+*   e-mail(at‚ 1997 ou 98 na Univ. da Madeira)---> lucio@cinfo29.uma.pt   *
+***************************************************************************
+
+- Este manual est  dividido em p ginas de 60 linhas por forma a facilitar a
+  impress„o com alguns tipos de impressoras !
+
+
+
+                               I-INTRODU€ŽO
+
+
+
+N„o existem muitas formas honestas de enriquecer e, jogar no totoloto ‚ uma
+das mais f ceis. Talvez por isso eu concebi este programa e talvez por isso
+vocˆ  est   a ler esta frase ! Continue por favor e conven‡a-se de que este
+n„o  ‚ apenas mais um programa que simplesmente lhe d  n£meros para colocar
+no seu boletim !
+
+
+
+Comecei a pensar em 1989 num programa que  me  facilitasse  o  emprego  das
+minhas teorias sobre o comportamento dos n£meros do totoloto :
+
+- Exactamente  porque  se  trata  de  um  sorteio  aleat¢rio,  h   certos
+  comportamentos expect veis com determinado n¡vel de probabilidade !
+
+Por EXEMPLO : - n„o ‚ de esperar  que  saia  a  mesma  chave  duas  semanas
+                consecutivas !
+              - ‚ pouco prov vel que todos os n£meros estejam entre 1 e  24
+                ou todos entre 25 e 49 !
+              - ‚ pouco prov vel que todos os n£meros sejam pares ou  todos
+                ¡mpares !
+              - qualquer  que  seja o n£mero,  mais tarde ou mais cedo sai,
+                pelo que, estando um n£mero bastante atrasado, ‚ de esperar
+                a sua sa¡da nas semanas seguintes!
+              - n„o  me  lembro  de alguma chave constitu¡da por 6  n£meros
+                consecutivos (tipo 21-22-23-24-25-26) !
+              - etc,etc.
+
+
+Regra geral, todas estas situa‡”es devem ser evitadas,  favorecendo  outras
+,  como  por  exemplo,  jogar com um n£mero fixo em todas as apostas por se
+julgar, por exemplo por intui‡„o, que esse n£mero sai mesmo nessa semana !
+A "seco", a probabilidade de uma aposta sair vitoriosa ‚ de 1 para 13983816
+, a probabilidade de sair uma chave com os n£meros todos de seguida ‚ de 44
+sobre 13983816 pois s¢ se pode constitu¡r  44  dessas  chaves,  enquanto  a
+probabilidade de isso n„o acontecer ‚ 13983772/13983816=0.99999685 !
+
+
+
+                                                                     PAG 01
+
+
+Existem v rias solu‡”es, desde  registar  os  13983816  de  apostas  (a  30
+escudos  por  aposta  ficaria  por mais de  419  mil  contos  !);  usar  um
+subconjunto  dos 49 n£meros; esquecer tudo isto e usar  sempre  n£meros  ao
+acaso;  fazer  um  filtragem  met¢dica  e sistem tica  de  todas as  chaves
+muito improv veis  (como  a  referida  acima);  recorrer  aos  tradicionais
+desdobramentos;  at‚ manter uma base de dados dos sorteios  mais  recentes,
+atribu¡ndo  maior  probabilidade   a  determinados  n£meros  e/ou  deixando
+alguns  de fora (probabilidade nula).
+
+
+A  via  que  proponho ‚ exactamente esta £ltima, ou seja, apostar mais nuns
+n£meros que noutros, desde a possibilidade de um n£mero ser  fixo  at‚  ser
+deixado de fora :
+
+-  Depois  de  analisar  atentamente o comportamento recente dos diferentes
+   n£meros sorteados, vocˆ criar  um contexto onde acha que a pr¢xima chave
+   se vai enquadrar, isto ‚, vocˆ decide com que n£meros jogar, com quantos
+   n£meros pares/¡mpares jogar, se h  algum n£mero que deve ser fixo, etc !
+   (todos os restantes detalhes ser„o   frente expostos).
+   Parte  dessa an lise dever , de  preferˆncia, ser feita com o aux¡lio de
+   um programa de computador, pois de outra forma, ou vocˆ  se  engana,  ou
+   antes de ter feito metade das observa‡”es j  n„o pode olhar mais para os
+   n£meros. Um dos programas a que pode recorrer ‚ o LOTTO PROPHET !
+
+   A outra parte da sua tentativa para ser totalista do totoloto consistir 
+   em representar esse contexto no meu  programa,  o  TOTO_PC3, que  gerar 
+   apostas  ao  acaso,  mas  que  obede‡am  …s condi‡”es definidas por si e
+   controladas pelo programa de computador (ou seja,‚ feita uma filtragem).
+   Observe  o  menu  e  facilmente  pode concluir  que, s¢  recorrendo a um
+   computador tal pode ser conseguido !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 02
+
+
+                             II-ALGUNS FACTOS
+
+
+... continuando com um pouco da "Hist¢ria"
+
+... Durante  alguns  meses  fui aperfei‡oando um programa inicial em Basic
+e Assembly no ZX-Spectrum 48K (ZX-TOTO), cuja £ltima vers„o era  capaz   de
+gerar  at‚ 5000 chaves e ocupava 3Kb de c¢digo m quina mais 6Kb de Sinclair
+Basic.
+
+
+Como  acredito e confio naquilo que concebo, cheguei a gastar 20000 escudos
+numa semana (muito dinheiro para um estudante que  n„o  ganhe),  ficando-me
+nessa  semana  por  2 quadras e alguns quinto pr‚mio. Ap¢s um interregno de
+alguns anos, regressei … Universidade em 1992, e a Turbo Pascal foi  eleita
+linguagem  de programa‡„o preferencial. A vers„o MS-DOS em Turbo Pascal 5.5
+surgiu em  1994  e  constituiu  uma  viragem,  pois  algumas  op‡”es  foram
+suprimidas  enquanto  outras foram acrescentadas. [ Por ex.:foi suprimida a
+op‡„o que permitia controlar  quantos  n£meros  iguais  (repetidos)  podiam
+existir  entre  as  chaves que iam sendo geradas. Actualmente considero que
+isso s¢ teria interesse em situa‡”es muito restritas em que apenas  algumas
+combina‡”es  s„o  permitidas  (usando  por  exemplo apenas 7 n£meros) o que
+implica que os n£meros se repitam por forma a poder gerar-se  chaves.  Esse
+n„o ‚ o caso geral ! ].
+
+
+                           OBSERVA€ŽO IMPORTANTE
+
+
+Os valores apresentados por defeito para os v rios parƒmetros foram obtidos
+ap¢s  a  an lise  de  v rios  milhares  de  chaves sorteadas ao acaso e sem
+quaisquer restri‡”es de qualquer esp‚cie, e nem todos caem num intervalo de
+confian‡a de 95% ! Dever  entrar a¡ com os seus  conhecimentos  pessoais  e
+intui‡„o  por  forma  a estabelecer o enquadramento mais prov vel …s chaves
+que lhe ser„o apresentadas pelo programa e que porventura venha a  registar
+nos boletins do totoloto, aumentando enormemente a possibilidade de acertar
+caso  a  chave  real  sorteada (ver notas) se enquadre no conjunto das suas
+op‡”es pois todas as apostas ser„o geradas nesse contexto/quadro !
+
+
+Este programa foi avaliado pelo meu distinto professor de Probabilidades  e
+Estat¡stica, cujo parecer foi muito favor vel e encorajador ! Tenho a honra
+de  dizer  que ele possu¡  o  Nr.  de S‚rie 00001 da Vers„o Registada deste
+programa !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 03
+
+
+Actualmente,  julgo que o programa inclu¡ o que considero mais fundamental,
+n„o obstante apelo a todos os que possam contribuir para o seu  alargamento
+que n„o hesitem em contactar-me !
+Vocˆ poder  pensar em basear-se neste e noutros programas  e  construir  um
+melhor. Se tal vier a acontecer, queira fazer o obs‚quio de fazer-me saber,
+terei todo o gosto em apoi -lo(a) e aprender consigo.
+
+
+
+
+
+Tanto  antes,  como  agora,  n„o  deixo  de  repetir  que,  mesmo  a melhor
+ferramenta,  quando  inconvenientemente   aplicada   produz   sempre   maus
+resultados  !  Neste caso, a quest„o principal reside em fornecer o "INPUT"
+adequado e em interpretar £tilmente o "OUTPUT" !
+
+A obten‡„o de dados estat¡sticos dever  ser  previamente  conseguida,  quer
+manualmente,   quer   recorrendo a programas como o LOTTO PROPHET. Com este
+£ltimo pode obter listagens dos n£meros  mais/menos  sorteados,  sa¡da   de
+parelhas,ternos  ou  quadras,  n£meros  mais  prov veis  para  os  sorteios
+seguintes,etc,  a  partir  de uma "base de dados", (neste caso no  ficheiro
+PROPHET.54 ,que ‚ fornecido com a Vers„o Registada) dos sorteios anteriores
+que dever  ser actualizada semanalmente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 04
+
+
+                      III-DIREITOS DE AUTOR E REGISTO
+
+
+
+
+- Porquˆ chamar a isto Dreamware ?
+
+
+
+-  Bem,  existe  o  Shareware  propriamente dito ( de que o Dreamware ‚ uma
+variante ), o Freeware, o  Beerware,  o  Charityware,  o  Chocolateware,  o
+Postcardware, e por a¡ fora. Dreamware tem a ver com a ilus„o daquilo a que
+chamamos  realidade,  tem a ver com o ideal que me levou a implementar este
+programa, de que talvez um dia possa dizer que, de facto usei um computador
+para acertar no totoloto, tem a ver com o prazer que tenho em  que  algumas
+das  minhas  ideias  ajudem  algumas  pessoas  que  certamente  usar„o este
+programa a aplicarem e testarem algumas das suas ideias !
+
+Est  mais que provado que raramente rejeitamos algo que nos interessa e que
+nos ‚ oferecido. Neste caso impus algumas restri‡”es (referidas  …  frente)
+que  n„o constituem entrave a uma  suficiente  avalia‡„o  do  programa,  as
+quais,  contudo,  se  tornam  importantes  numa  utiliza‡„o  continuada  do
+programa, pelo que nesse caso uma vers„o  original  registada  constitu¡  a
+melhor op‡„o !
+
+
+
+- Despesas ?
+
+
+
+Por  apenas  4500  esc. + 500 esc. para envio, receber  a  vers„o  integral
+com um n£mero de s‚rie que o identifique e o  seu  nome  ou  outra mensagem
+qualquer  no  ecran  de  introdu‡„o.  Receber  a vers„o Shareware do  LOTTO
+PROPHET  (cuja  distribui‡„o  est   autorizada e ‚ encorajada !) juntamente
+com  um  ficheiro (* PROPHET.54 *) onde est„o todos os sorteios do totoloto
+desde DEZ94  e que pode ser lido e usado pelo LOTTO   PROPHET;  ter   ainda
+acesso  a apoio t‚cnico da minha parte, quer por  correio  electr¢nico quer
+por correio convencional ( lucio@cinfo29.uma.pt ). Mencione sempre o n£mero
+de s‚rie do seu programa.
+
+
+
+O  programa  Shareware   LOTTO   PROPHET   4.0   tem   direitos  reservados
+mundialmente  para  a   DataMicro   Inc   (1987-1992)  e  as  condi‡”es  de
+distribui‡„o  e  utiliza‡„o  do  mesmo  est„o  descritas  no  manual  que o
+acompanha.
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 05
+
+
+                     !!! OS MEUS DIREITOS DE AUTOR !!!
+
+
+ - Cada  Vers„o Registada destina-se apenas a UM UTILIZADOR e apenas poder 
+   ser feita uma c¢pia de seguran‡a do pr¢prio utilizador  cujo  nome  est 
+   associado ao respectivo N£mero de S‚rie do programa.
+
+
+ - As  condi‡”es  de  utiliza‡„o  em geral e de livre circula‡„o da  vers„o
+   Shareware/Dreamware n„o registada, com n£mero de s‚rie  00000  e em  meu
+   nome s„o as seguintes :
+
+a) O  ficheiro  TOTOPC3.ZIP cont‚m o ficheiro de apresenta‡„o LEIAME.TXT, o
+   ficheiro de apresenta‡„o em inglˆs README.TXT, o programa TOTOPC3.EXE, o
+   manual  do  programa  TOTOPC3.DOC  e  o  ficheiro  com o formul rio para
+   registo TOTOPC3.REG, os quais dever„o manter-se na sua  forma  original,
+   sem  quaisquer  altera‡”es  ou omiss”es e compactados num £nico ficheiro
+   com o nome TOTOPC3.ZIP.
+
+
+b) As  seguintes  op‡”es do  menu principal est„o limitadas  e  os  valores
+   dos respectivos parƒmetros n„o s„o alter veis na vers„o Dreamware:
+   (todas est„o detalhadamente descritas   frente)
+
+   op‡„o "I" : N„o pode imprimir as chaves na impressora.
+   op‡„o "P" : A rela‡„o pares /¡mpares ‚ uma das seguintes-> 4-2;3-3;2-4.
+   op‡„o "D" : A rela‡„o baixos/altos   ‚ uma das seguintes-> 4-2;3-3;2-4.
+   op‡„o "N" : Apenas s„o admitidas at‚ duas termina‡”es.
+   op‡„o "M" : As  progress”es  aritm‚ticas   admitidas  tˆm  a   seguinte
+               distribui‡„o -> com raz„o at‚ 24 , 2 n£meros.
+                            -> com raz„o at‚ 48 , 1 n£mero.
+   op‡„o "L" : A  quantidade m xima de n£meros admitidos em cada linha  ou
+               coluna ‚ 3.
+
+
+c) Todos os direitos de altera‡„o (com ou sem aviso pr‚vio), quer da vers„o
+   registada, quer da vers„o Dreamware, est„o-me  reservados,  inclu¡ndo  a
+   possibilidade de uma edi‡„o futura de uma vers„o totalmente comercial !
+
+
+d) N„o assumo qualquer responsabilidade por quaisquer danos - materiais ou
+   morais - decorrentes da utiliza‡„o de qualquer destes programas ou de m 
+   interpreta‡„o do constante neste manual.
+
+
+e) Este programa e todos  os  ficheiros  associados  destinam-se  apenas  a
+   utilizadores residentes em Portugal.
+
+
+f) Declaro publicamente que todas as ideias  aqui  impl¡citas  (quer  neste
+   texto,  quer  no  programa  principal) n„o se basearam em qualquer outro
+   trabalho no sentido em que tal possa constituir pl gio.
+
+
+g) Assumo que tanto esta declara‡„o, como o restante manual foram  lidos  e
+   apenas nas condi‡”es aqui expostas pode este programa ser usado.
+
+
+                                                                     PAG 06
+
+
+                  IV- REAC€ŽO A ESTE PROGRAMA E O FUTURO
+
+
+
+
+
+Alguns aspectos, como  a  utiliza‡„o  do  rato, impress„o mais  agrad vel ,
+grava‡„o  das  chaves  para posterior verifica‡„o de resultados, gera‡„o de
+chaves de 6 a 12 n£meros, etc, s„o relevantes e poder„o vir a ser inclu¡dos
+em vers”es  futuras  caso  se  verifique  uma resposta satisfat¢ria a  esta
+edi‡„o  Dreamware. Para isso poder  contribuir, quer registando o programa,
+bem como tamb‚m enviando-me sugest”es tais como:
+
+
+
+
+- Vantagens  em  usar os ambientes Dos/Windows com Turbo Pascal, C, Visual
+  Basic, Borland Delphi ou outras linguagens.
+
+
+
+- Novas op‡”es ou modifica‡„o das actuais.
+
+
+
+- Propostas ao n¡vel da programa‡„o/estrutura de dados (terei todo o  gosto
+  em  fornecer parte do c¢digo fonte caso isso seja relevante para qualquer
+  aspecto que deseje ver implementado … sua maneira)  como  base  para  uma
+  expans„o e aperfei‡oamento deste sistema.
+
+
+
+- etc,etc...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 07
+
+
+                          V-OBSERVA€™ES PESSOAIS
+
+
+Durante  cinco  anos (1985-1990) "vivi" no mundo do Spectrum onde cheguei a
+estar envolvido na implementa‡„o de dois jogos - o NAVE e o BREAKNECK - que
+n„o chegaram a ser publicados nas ent„o conhecidas Your  Sinclair  e  Crash
+por termos pedido um montante considerado elevado ! Em Basic  lembro-me  de
+ter programado uma variante do Mastermind, al‚m do j  referido ZX-TOTO.
+A partir  de 92, durante o curso ( ENGENHARIA DE SISTEMAS - UNIVERSIDADE DA
+MADEIRA  ) e at‚ este momento (OUT95) j   lidei  com  diversas   linguagens
+de programa‡„o, nomeadamente a Pascal (em particular a TurboPascal 5.5/7.0)
+,o  assembly  para  Z80  e  8086,  a  C  e a Prolog/Arity Prolog 5.1. Estou
+habituado … Turbo Pascal e ‚ nessa  linguagem  que  tenho  implementado  os
+principais programas. Queria apenas destacar um simulador de Fila de Espera
+para Autocarros,baseado numa Cadeia de Acontecimentos Pendentes cuja vers„o
+em  modo  gr fico  usei para concorrer ao concurso Programas Cient¡ficos da
+Spooler.
+Para al‚m disso acho fascinante o poder de linguagens "simples" como  a  da
+Casio FX-9700-GE onde implementei o Simplex,  um  tra‡ador  de  superf¡cies
+para  fun‡”es da forma Z=f(x,y), um tra‡ador de traject¢rias de projecteis,
+os crit‚rios de Jury e de Routh (Teoria dos  Sistemas),  bem  como  algumas
+rotinas £teis em Electr¢nica (oscilosc¢pio e an lise em frequˆncia) !
+Neste  momento  estou  a  come‡ar  o  4§ ano do curso e o meu trabalho mais
+recente foi preparar a edi‡„o deste programa.
+
+
+
+
+                VI-REQUISITOS DE HARDWARE/SISTEMA OPERATIVO
+
+
+
+
+O programa dever  correr  em  qualquer  PC  XT/AT  ou  superior  com  placa
+H‚rcules ou superior.
+
+
+O  programa  foi  compilado em Turbo Pascal 5.5 correndo em ambiente MS-DOS
+5.0, pelo que n„o sei qual o seu comportamento com as vers”es anteriores.
+
+
+A   interface  com  o  utilizador  n„o ‚ um ponto forte (por exemplo, n„o ‚
+poss¡vel utilizar o rato) deste programa, mas para tal possuo  trˆs   libis
+inatac veis (!?) :
+
+
+a) O programa foi prim riamente concebido  para  uso  pessoal  exclusivo  e
+   nunca foi distribu¡do antes de OUT95.
+
+b) Preocupei-me sempre mais com a funcionalidade.
+
+c) Por enquanto, o computador que uso em casa ‚ um ATOnce-286  "dentro"  de
+   um Amiga 500, pelo que habitualmente trabalho em CGA 80x25.
+
+
+
+
+
+                                                                     PAG 08
+
+
+                               VII-CONCLUSŽO
+
+
+
+
+Como apontamento final a esta introdu‡„o, quero  alert -lo(a)  para  a  n„o
+existˆncia de f¢rmulas milagrosas para acertar no totoloto, pelo que dever 
+continuar  a  contar  com  a  chamada SORTE, apenas j  n„o precisa de tanta
+sorte como antes ! (de come‡ar a usar -eficazmente- este programa).
+
+
+
+
+
+
+Pretendo que este manual lhe permita compreender e testar todas as  fun‡”es
+deste programa, no entanto, estou dispon¡vel para quaisquer esclarecimentos
+pontuais, nomeadamente ao n¡vel da programa‡„o, (apenas  para  utilizadores
+registados  e  por ordem de pedido), quer por correio electr¢nico quer pela
+via  convencional  ( lucio@cinfo29.uma.pt ). Por favor mencione o n£mero de
+s‚rie  do  seu  programa.
+
+
+
+
+
+
+ACONSELHO-O(A)  VIVAMENTE  A LER ATENTAMENTE ESTE DOCUMENTO E  FAZER  TODOS
+OS TESTES QUE LHE APETECER ANTES DE COME€AR A USAR SERIAMENTE O PROGRAMA !!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 09
+
+
+
+                              VIII-O MANUAL
+
+                            NOTAS PRELIMINARES
+
+
+
+->     No menu todos os valores entre parenteses   direita  referem-se  aos
+       valores actuais dos respectivos parƒmetros.
+
+->     A  referˆncia  a  NUMEROS  ALEATORIOS  pressup”e, em geral, um valor
+       inteiro entre 1 e 49, excepto  quando  se  refira  expl¡citamente  …
+       fun‡„o  RANDOM  como tal, que gera um pseudo-aleat¢rio  real  X  tal
+       que 0<=X<1.
+
+->     Por vezes ‚ usado o termo Elemento em vez de N£mero e vice-versa.
+
+->     Chave  ou  Aposta:=Referem-se a 6 n£meros gerados pelo programa para
+       apresentar uma aposta simples do Totoloto.
+
+->     Chave real:=A que ‚ sorteada aos s bados, com transmiss„o pela RTP.
+
+->     Chave  Actual ou em Forma‡„o ou em Constru‡„o:=Refere-se a uma chave
+       em forma‡„o pelo sistema (programa), por vezes incompleta.
+
+->     Grupo:=Define um conjunto de n£meros a indicar pelo  utilizador  que
+       por qualquer motivo mere‡am uma qualifica‡„o comum,  nomeadamente  a
+       probabilidade  de  sa¡rem  e  quantos  elementos  desse  grupo ser„o
+       admitidos  em  cada  chave  gerada.
+       ATEN€ŽO : Pelo  menos um grupo tem de ser definido para poder  gerar
+       chaves.
+
+->     Os grupos e o seu cabe‡alho poder„o ser visualizados e/ou alterados.
+
+->     Probabilidade:=O  termo  ‚  por  vezes  usado sem o rigor que alguns
+       casos poder„o  requerer,  mas  mais  no  sentido  Laplaciano  de  um
+       acontecimento mais ou menos veros¡mel.
+
+->     Soma:=Define  o  somat¢rio  dos valores num‚ricos dos 6 elementos de
+       uma chave.
+
+->     Quando se pretende que indique uma resposta do tipo Sim/N„o ou TRUE/
+       FALSE,  em geral dever  carregar na tecla "S" para Sim=TRUE e noutra
+       qualquer para N„o=FALSE.
+
+->     A verifica‡„o da correc‡„o dos dados introduzidos pelo utilizador, ‚
+       em geral da responsabilidade do  mesmo.  Caso  suspeite  de  que  se
+       enganou  corrija  expl¡citamente  o  erro  ou volte a repetir toda a
+       opera‡„o. (a verifica‡„o das entradas do utilizador ‚ um aspecto que
+       futuramente poder   ser  garantido, mas n„o ‚ o caso actualmente).
+
+
+
+
+
+                                                                     
+                                                                     
+                                                                     
+                                                                     
+                                                                     PAG 10
+
+
+        AS TECLAS E AS DIVERSAS OP€™ES ASSOCIADAS NO MENU PRINCIPAL
+
+
+As op‡”es por ordem de apresenta‡„o no menu  principal,  premindo  a  tecla
+indicada s„o :
+
+
+tecla "I" = Impressora ON/OFF.
+
+
+      Simplesmente selecciona a sa¡da tambem na impressora. Se  estiver  no
+      estado   TRUE, a impressora deve encontrar-se pronta a imprimir (deve
+      estar ON LINE) quando premir  "RETURN",  caso  contr rio  recber  uma
+      mensagem de erro. As chaves s„o impressas (ou imprimidas!)  em grupos
+      de 10 (dez), sendo indicada a data actual do sistema.
+      Os  testes  foram  feitos  em  modo  Ibm  Proprinter,  isto  ‚,  numa
+      impressora "standard".
+
+
+tecla "A" = Definir/Adicionar algum grupo.
+
+
+      Podem  ser definidos at‚ 49 Grupos, podendo qualquer um conter at‚ 49
+      n£meros. A ideia dos n£meros serem distribu¡dos por diferentes grupos
+      parte do princ¡pio de que  h   sempre  diferentes  probabilidades  de
+      sa¡da   real   associadas  a  cada  n£mero  (pelo  menos  verifica-se
+      emp¡ricamente).
+      De  entre os 49 valores poss¡veis existir„o sempre alguns cuja sa¡da
+      ‚ suficientemente improv vel que poder„o ser  rejeitados,  (considere
+      por  exemplo um n£mero que tenha sa¡do nas £ltimas 3 semanas :- n„o ‚
+      de  esperar  que  apare‡a  pela  4¦  semana  consecutiva ) aumentando
+      significativamente  a  representatividade dos restantes nas apostas a
+      gerar. Definir uma probabilidade nula associada a um grupo equivale a
+      rejeitar todos os n£meros que o comp”em. A probabilidade para o grupo
+      no seu conjunto ‚ um  valor  entre  00%  e  100%  que  corresponde  …
+      amplitude  de  um  intervalo de reais  (TurboPascal) centrado em 0.5,
+      recorrendo-se … fun‡„o RANDOM para obter um valor real em [0,1) ou um
+      inteiro  em  [0,N)  por  RANDOM(N).  O  gerador  de  n£meros  pseudo-
+      aleat¢rios  ‚  inicializado  por  RANDOMIZE  com um valor derivado do
+      rel¢gio de sistema, portanto j  imprevis¡vel.
+      A probabilidade atribu¡da a um grupo ‚ independente da atribu¡da  aos
+      restantes , pelo que no seu conjunto n„o tˆm de  perfazer  100%  (Por
+      exemplo em 3 grupos, pode ter o 1§ com 100% e os restantes com 50% ).
+
+
+      EXEMPLO-Um  grupo  ao  qual  corresponda  uma  probabilidade  5 vezes
+      superior … de outro ser  representado, em m‚dia,  5  vezes  mais  nas
+      diferentes gera‡”es efectuadas.
+
+
+
+
+
+
+
+
+
+
+      (continua na p gina seguinte)                                  PAG 11
+
+
+      Se  a  op‡„o  "G" estiver a TRUE (Activa), primeiro tenta-se obter um
+      n£mero do 1§ grupo de acordo com a respectiva  probabilidade,  depois
+      do 2§ e assim sucessimente, enquanto que se estiver a FALSE os grupos
+      s„o  "chamados" aleat¢riamente, o que tem a vantagem de tornar todo o
+      processo mais aleat¢rio e a  desvantagem  de  n„o  garantir  o  mesmo
+      n£mero  de tentativas para incluir um elemento de cada grupo na chave
+      em forma‡„o. Ambas as situa‡”es podem ser desej veis,
+      por EXEMPLO :
+      -Se vocˆ tem 3 grupos com probabilidades de 100% (ou outras quaisquer
+      ) e admite em cada chave 3 n£meros do 1§ grupo, 1 n£mero do 2§  grupo
+      e 2 n£meros do 3§ grupo. Neste caso ter  interesse em colocar a op‡„o
+      "G"  a  TRUE (ou ON/Activa) pois dos 6 n£meros que comp”em um chave 3
+      ter„o de vir do 1§ grupo, 1 do 2§ grupo e 2 do 3§ grupo  (pois  neste
+      caso  ‚  a  £nica  possibilidade).  Agora, se em vez disso tivesse os
+      mesmos 3 grupos, com as  mesmas  probabilidades,  mas  permitindo  um
+      m ximo   de   3   n£meros   de   cada  grupo  em cada chave, passam a
+      existir v rias combina‡”es para a quantidade de n£meros de cada grupo
+      que  poder„o  aparecer  nessa  chave.A  seguir  s„o  apresentadas  as
+      combina‡”es poss¡veis para este £ltimo caso.
+
+           M ximo de n£meros do grupo I  ³ idem grupo II ³ idem grupo III
+                                 -----------------------------------
+      Em qualquer dos casos       3      ³        3      ³        0
+      a soma das colunas ‚ 6. <-- 3      ³        0      ³        3
+      Nestes casos pode ser       3      ³        2      ³        1
+      prefer¡vel colocar a        3      ³        1      ³        2
+      op‡„o "G" a FALSE  !       -----------------------------------
+                                  2      ³        3      ³        1
+                                  2      ³        2      ³        2
+                                  2      ³        1      ³        3
+                                 ----------------------------------
+                                  1      ³        3      ³        2
+                                  1      ³        2      ³        3
+                                 -----------------------------------
+                                  0      ³        3      ³        3
+
+
+      No  caso  de  um  grupo ao qual se atribuiu uma probabilidade de 100%
+      ser„o sempre feitas tentativas para incluir um dos seus elementos  na
+      chave actual (Dentro  do  grupo ‚ escolhida  uma  ordem  ao  acaso  e
+      extra¡do o valor que l  se encontre), at‚ um m ximo de 254 tentativas
+      de  modo  a  evitar  ciclos  infinitos (poderia haver ciclo  infinito
+      quando, por EXEMPLO, todos os elementos do grupo j   se  encontram na
+      chave actual).
+      O  m ximo  de  n£meros  de  um  grupo N em cada chave gerada define o
+      limite de elementos desse grupo admitidos nessa chave.
+      † que ter em conta que dois grupos com a mesma probabilidade mas  com
+      cardinalidade    significativamente    diferente   corresponder„o   a
+      probabilidades individuais bastante distintas:
+
+      EXEMPLO- 90% para grupo 1 com 30 elementos e
+               50% para grupo 2 com 10 elementos implica
+               0.9*1/30 para cada elemento do grupo1 e 0.5*1/10  para  cada
+               elemento  do grupo2 na primeira  tentativa (quando o grupo ‚
+               "chamado") e  1/30 e 1/10  respectivamente,  nas  tentativas
+               seguintes (quando se est  a tentar incluir um n£mero   desse
+               grupo numa chave) at‚ o m ximo de 254 tentativas.
+
+      (continua na p gina seguinte)                                  PAG 12
+
+
+      ATEN€ŽO :
+
+      Dever  ter-se o cuidado de garantir que ‚ poss¡vel  construir  alguma
+      chave  a  partir  dos  diferentes n£meros distribu¡dos pelos diversos
+      grupos  quando  os  seus  arranjos  s„o  filtrados  pelas  restri‡”es
+      definidas no programa. Por EXEMPLO: n„o faz sentido definir apenas um
+      grupo e apenas 5 elementos  desse  grupo  em  cada  chave,  pois  s„o
+      necess rios pelos menos 6 n£meros para formar uma aposta simples !
+      Outras  restri‡”es  poder„o  igualmente  levar  …  impossibilidade de
+      formar qualquer chave, por ex.: se tem 2 grupos,  um  formado  apenas
+      por n£meros pares e o outro apenas por  um  s¢  n£mero  ¡mpar  e,  na
+      paridade  ("P") definiu 4-2 (4 pares e 2 ¡mpares), o computador nunca
+      poder  encontrar os 2 ¡mpares (pois s¢ existe  um)  para  formar  uma
+      chave.
+
+NOTA  : N„o se esque‡a que se quiser definir um grupo com todos os valores
+        de 1 a 49 basta carregar na tecla "G" aquando da defini‡„o do grupo
+
+
+tecla "U" = Alterar algum grupo.
+
+      Caso se tenha enganado e pretenda reintroduzir os  valores  correctos
+      para algum dos grupos.
+
+NOTA:  Grupo Normal ‚ aquele que ‚ definido na op‡„o "A" do menu principal,
+do(s) qual(s) se  extraem  os  n£meros  a  incluir  numa  chave.  Grupo  de
+Repetidos ‚(s„o) o(s) definido na op‡„o  "R"  do  menu  principal  e  serve
+apenas para controlo.
+
+      O SUBMENU apresentado ‚ o seguinte :
+
+      tecla "V" = Visualizar um grupo Normal.
+                  Ser-lhe-   pedido  que indique qual o grupo a visualizar.
+                  Para um grupo Normal ser  mostrado o cabe‡alho do  grupo,
+                  onde se indica o seu n£mero de ordem, a sua probabilidade
+                  e  o  m ximo de n£meros desse grupo admitidos numa chave.
+                  Al‚m  disso  mostra  quantos  e  quais  os  valores   que
+                  constituem o grupo.
+
+      tecla "P" = Visualizar um grupo de Repetidos.
+                  Para um grupo de Repetidos basta mostrar quais os n£meros
+                  que se repetem entre dois grupos e quais os grupos.
+
+      tecla "D" = Apagar um grupo normal.
+
+      tecla "I" = Para inserir um n£mero num grupo normal.
+
+      tecla "R" = Para retirar um n£mero a um grupo normal.
+
+      tecla "C" = Alterar o cabe‡alho de um grupo normal. Ser-lhe-  pedido
+                  que indique qual o grupo, qual a probabilidade  associada
+                  a  esse grupo ( em % ) e o m ximo de n£meros admitidos em
+                  cada chave.
+
+      tecla "A" = Reintroduzir um grupo Normal, ou seja, o cabe‡alho  e  os
+                  n£meros.
+
+      tecla "T" = Apagar TODOS os grupos de Repetidos.
+                                                                     PAG 13
+
+
+tecla "P" = Definir a paridade.
+
+      Consideram-se   5  situa‡”es  poss¡veis,  que  no  seu  conjunto  s„o
+      contempladas por mais de 95% dos  casos  segundo  os  resultados
+      obtidos pela avalia‡„o de v rias dezenas de milhar de sequˆncias de 6
+      n£meros aleat¢rios sem quaisquer restri‡”es. S„o elas :
+
+      Na extrema esquerda:5-1 = Estando activa permite que uma  chave  seja
+      aceite quando possua exactamente  5  n£meros PAR  e  1  n£mero IMPAR.
+
+      ‘   esquerda       :4-2  = Estando activa permite que uma chave seja
+      aceite quando possua exactamente  4 n£meros  PAR  e  2 n£meros IMPAR.
+
+      Ao centro          :3-3  = Estando activa permite que uma chave seja
+      aceite quando possua exactamente  3 n£meros  PAR  e  3 n£meros  IMPAR.
+
+      ‘ direita          :2-4  = Estando activa permite que uma chave seja
+      aceite quando possua exactamente  2 n£meros  PAR  e  4 n£meros  IMPAR.
+
+      Na extrema direita :1-5 = Estando activa permite que uma  chave  seja
+      aceite quando possua exactamente  1  n£mero  PAR  e  5 n£meros  IMPAR.
+
+
+
+      ATEN€ŽO : Uma das  condi‡”es,  pelo  menos,  deve  estar  activa,  ou
+                nenhuma  chave ser  aceite.
+
+
+      A defini‡„o por defeito da rela‡„o pares-¡mpares em cada chave gerada
+      ‚  :
+
+                5 Pares - 1 Impar   : FALSE
+                4 Pares - 2 Impares : TRUE
+                3 Pares - 3 Impares : TRUE
+                2 Pares - 4 Impares : TRUE
+                1 Par   - 5 Impares : FALSE
+
+
+
+tecla "D" = Definir a dispers„o.
+
+
+      Tambem aqui se verifica que em mais  de  95%  dos  casos,  6  n£meros
+      aleat¢rios entre 1 e 49 tˆm uma distribui‡„o … volta de 24 do tipo :
+
+      08.5% com 5 valores <=24          e 1 valor   >24,
+      24.2% com 4 valores <=24          e 2 valores >24,
+      33.4% com 3 valores <=24 (baixos) e 3 valores >24 (altos),
+      23.6% com 2 valores <=24          e 4 valores >24,
+      08.5% com 1 valor   <=24          e 5 valores >24,
+     ÄÄÄÄÄÄÄ
+    = 97.8%
+
+
+
+
+
+
+      (continua na p gina seguinte)                                  PAG 14
+
+
+      Funciona de modo an logo … op‡„o "P", ou seja:
+
+
+      Na extrema esquerda:5-1 = Estando activa permite que uma  chave  seja
+      aceite quando possua exactamente  5  n£meros BAIXOS e  1 n£mero ALTO.
+
+      ‘   esquerda       :4-2  = Estando activa permite que uma chave seja
+      aceite quando possua exactamente 4 n£meros BAIXOS e 2 n£meros  ALTOS.
+
+      Ao centro          :3-3  = Estando activa permite que uma chave  seja
+      aceite quando possua exactamente 3 n£meros BAIXOS e 3 n£meros  ALTOS.
+
+      ‘  direita         :2-4  = Estando activa permite que uma chave seja
+      aceite quando possua exactamente 2 n£meros BAIXOS e 4 n£meros  ALTOS.
+
+      Na extrema direita :5-1 = Estando activa permite que uma  chave  seja
+      aceite quando possua exactamente  1 n£mero BAIXO  e 5  n£meros ALTOS.
+
+
+
+
+      ATEN€ŽO  : Uma  das  condi‡”es,  pelo  menos,  deve estar activa, ou
+                 nenhuma chave ser  aceite.
+
+
+
+      A defini‡„o por defeito da rela‡„o baixos-altos  em cada chave gerada
+      ‚  :
+
+                5 Baixos - 1 Alto   : FALSE
+                4 Baixos - 2 Altos  : TRUE
+                3 Baixos - 3 Altos  : TRUE
+                2 Baixos - 4 Altos  : TRUE
+                1 Baixo  - 5 Altos  : FALSE
+
+
+
+tecla  "N" = M ximo de termina‡”es admiss¡veis. Uma termina‡„o consiste num
+             algarismo entre 0 e 9.
+
+
+      Termina‡„o de N ‚ o algarismo N MOD 10 (resto  da  divis„o  inteira),
+      onde  N ‚ um aleat¢rio entre 1 e 49. Este parƒmetro pode variar entre
+      1  e  6,  constatando-se  que, em m‚dia, em mais de 95% dos casos n„o
+      existem mais do que 2 n£meros com a mesma termina‡„o.
+
+
+      EXEMPLO:
+
+      Na chave  02-08-15-25-38-41, temos as termina‡”es 5 e 8 duas vezes,
+      e a chave 02-08-15-25-38-48  s¢  seria  admiss¡vel  se  o  n§   de
+      termina‡”es permitido fosse pelo menos 3, pois temos o 08,38 e 48 com
+      a termina‡„o 8 !
+
+
+
+
+
+                                                                     PAG 15
+
+
+tecla "S" = Definir os limites da soma.
+
+
+
+      Define-se o limite inferior e superior para o somat¢rio dos 6 n£meros
+      com valores v lidos entre 21 (1,2,3,4,5,6) e 279 (44,45,46,47,48,49).
+      Verifica-se  que  a  sua  m‚dia geral ‚ 147 e em 77.2% dos casos esse
+      somat¢rio se encontra entre 110 e 190. Esta m‚dia sobe  de  147  para
+      172 para chaves com uma rela‡„o 2-4 entre baixos e altos e desce para
+      133 para uma rela‡„o 4-2 entre baixos e altos.
+
+      De acordo com PASSO1 (ver pags 23/24),a chave pode ser rejeitada como
+      um  todo  se  a  sua soma for inferior ao limite m¡nimo  definido.  O
+      limite superior ‚ sempre verificado  antes  de  se  aceitar  qualquer
+      n£mero.
+
+
+
+
+tecla "R" = Definir/Adicionar algum grupo de repetidos.
+
+
+
+      Com esta op‡„o pretende-se poder repetir v rios valores em diferentes
+      grupos  de  forma  que quando um elemento repetido ‚ seleccionado num
+      desses grupos, tambem se  incrementa  a  contagem  da  quantidade  de
+      elementos  desses grupos j  inclu¡dos na chave em constru‡„o (uma vez
+      que se define um m ximo de elementos de cada grupo em cada chave).
+
+      EXEMPLO-Um elemento do grupo 1 pode  obedecer  ao  limite  m ximo  de
+      elementos  desse  grupo na chave, mas implicar uma viola‡„o do limite
+      m ximo para o grupo 2 onde ele tambem exista.
+      Note-se  que um n£mero repetido vˆ acrescida a probabilidade de vir a
+      figurar numa chave (em geral).
+
+
+      Analise bem o exemplo dado na p gina seguinte.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      (continua na p gina seguinte)                                  PAG 16
+
+
+      Ilustremos isto com um EXEMPLO pr tico :
+
+
+      Digamos que definiu 3 grupos.
+
+
+      O 1§ com Probabilidade = 80% , M ximo de  n£meros  admitidos  =  2  e
+      formado pelos seguintes n£meros: 17-19-20-32-37-38-43-45-49
+
+      O 2§ com Probabilidade = 70% , M ximo de  n£meros  admitidos  =  2  e
+      formado pelos seguintes n£meros: 03-06-10-32-33-38-40
+
+      O 3§ com Probabilidade = 30% , M ximo de  n£meros  admitidos  =  0  e
+      formado pelos seguintes n£meros: 03-09-14-16-32-39-43
+
+
+      Suponhamos que a op‡„o "G" est  Activa (a TRUE), o que quer dizer que
+      os grupos s„o percorridos pela sua ordem de entrada e de acordo com a
+      probabilidade associada a cada um tenta-se incluir um ou mais n£meros
+      de cada grupo na chave em constru‡„o. Se ao juntar esse n£mero aos j 
+      existentes,   o  conjunto  resultante  ainda  obedece  ao  total  das
+      restri‡”es impostas, ent„o esse n£mero ‚ aceite e passa-se  ao  grupo
+      seguinte,  sen„o  tenta-se  incluir outro n£mero do mesmo grupo e, se
+      tal n„o for poss¡vel passa-se ao grupo seguinte.
+
+
+      suponhamos a seguinte sequˆncia de acontecimentos :
+
+
+GRUPO  N§ ESCOLHIDO  ACEITE           COMENT†RIO          CHAVE EM FORMA€ŽO
+---------------------------------------------------------------------------
+I    ³  17         SIM     N„o h  qualquer impedimento !         ³ 17-
+II   ³  03         NAO     Embora o 03 do 2§ grupo seja aceite   ³ 17-
+     ³                     ,o 03 do 3§ grupo ‚ rejeitado, ali s  ³
+     ³                     todos os elementos do 3§ grupo s„o-no ³
+     ³                     pois o m x. de n£meros admitidos = 0  ³ 17-
+III  ³  Qualquer   NAO                                           ³
+---------------------------------------------------------------------------
+I    ³  38         SIM     Podem existir 2 n£meros do 1§ grupo ( ³ 17-38
+     ³                     neste caso o 17 e o 38) e 2  do 2§ (  ³
+     ³                     apenas o 38 por enquanto) e como o 38 ³
+     ³                     n„o pertence ao 3§ grupo ‚ aceite.A   ³
+     ³                     partir daqui n„o aceita mais nenhum   ³
+     ³                     do 1§ grupo nesta chave !             ³
+---------------------------------------------------------------------------
+II   ³  10         SIM     Pois ainda pode aceitar mais um do 2§ ³ 17-38-10
+     ³                     grupo.                                ³
+III  ³  Qualquer   NAO     N„o aceita nenhum n§ do 3§ grupo !    ³ 17-38-10
+---------------------------------------------------------------------------
+                                                                 ³ etc,...
+
+
+
+
+
+
+
+
+      (continua na p gina seguinte)                                  PAG 17
+
+
+   -> Como  pode  verificar,  destes  3  grupos,  nesta  tentativa, n„o se
+      poderiam extrair mais n£meros !
+
+
+      A sua entrada … op‡„o "R" neste caso deveria ser a seguinte :
+
+
+      "Quantos conjuntos com n£meros repetidos     ? " 2 (seguido de RETURN)
+
+      "Qual o 1§ grupo do 1§ conjunto de repetidos ? " 1 (seguido de RETURN)
+      "Qual o 2§ grupo do 1§ conjunto de repetidos ? " 2 (seguido de RETURN)
+      "Prima "C" se o 2§ grupo est  inclu¡do no 1§   " Deveria premir qual-
+                                                       quer tecla excepto a
+                                                       "C" pois  apenas  se
+                                                       repetem o 32 e 38.
+      "ou indique quais os n£meros que se repetem
+       nesses grupos                               ? "
+
+      "Digite 0 para acabar ! "
+      "Indique n£mero 1 " 32                           (seguido de RETURN)
+      "Indique n£mero 2 " 38                           (seguido de RETURN)
+      "Indique n£mero 3 " 0                            (seguido de RETURN)
+
+
+
+      "Qual o 1§ grupo do 2§ conjunto de repetidos ? " 1 (seguido de RETURN)
+      "Qual o 2§ grupo do 2§ conjunto de repetidos ? " 3 (seguido de RETURN)
+      "Prima "C" se o 2§ grupo est  inclu¡do no 1§   " Deveria premir qual-
+                                                       quer tecla excepto a
+                                                       "C" pois  apenas  se
+                                                       repetem o 32 e 43.
+      "ou indique quais os n£meros que se repetem
+       nesses grupos                               ? "
+
+      "Digite 0 para acabar ! "
+      "Indique n£mero 1 " 32                           (seguido de RETURN)
+      "Indique n£mero 2 " 43                           (seguido de RETURN)
+      "Indique n£mero 3 " 0                            (seguido de RETURN)
+
+
+
+
+      ATEN€ŽO :
+      Fa‡a diversas experiˆncias at‚ ter a certeza de que sabe o que est  a
+      fazer !
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 18
+
+
+
+tecla "M" = Alterar profundidade da raz„o  nas  Progress”es  Aritm‚ticas  e
+      m ximo de n£meros em progress„o  aritm‚tica.
+
+
+      LEMBRE-SE  que  uma  progress„o aritm‚tica ‚ uma sequˆncia de n£meros
+      inteiros/naturais  em  que  o  seguinte  ‚ igual ao anterior mais uma
+      constante  'r' [ em nota‡„o matem tica An+1=An+r ou An+1=A0+(n+1)r  ]
+      em que  'r' ‚ a  raz„o da progress„o, 'A0' uma constante e 'n' define
+      a ordem de cada termo.
+
+
+      Verificando-se  que  em  sequˆncias obtidas ao acaso, a quantidade de
+      n£meros em p.a. (com raz„o entre 1 e 48), est  na  propor‡„o  inversa
+      do aumento da raz„o, pode ter interesse admitir diferentes m ximos de
+      n£meros em  p.a.  para  diferentes  raz”es.
+
+
+      Por EXEMPLO em 02-04-06-13-20-40 encontramos 3  n£meros  em  p.a.  de
+      raz„o r=2 (02-04-06); 3 n£meros em p.a. com r=7 (06-13-20); 2 n£meros
+      em  p.a.  com r=20 (20-40). Os saltos 2-6;2-13;2-20;...;4-13;...;6-40
+      n„o s„o entre elementos adjacentes e portanto n„o entram em quaisquer
+      progress”es aritm‚ticas.
+
+      Para valores da raz„o  superiores  a  23  praticamente n„o se detecta
+      qualquer rela‡„o desse tipo entre valores vizinhos numa chave.No caso
+      particular de raz„o=1  (n£meros  consecutivos)  detectou-se  num  dos
+      testes  (65535 sequˆncias de 6 n£meros) uma quantidade da  ordem  das
+      33000 sequˆncias de 2 consecutivos (em muitos casos mais do  que  uma
+      por chave, como em 1,2,10,23,34,35 onde econtramos 1-2 e 34-35), 2900
+      sequˆncias de 3 consecutivos,  172  sequˆncias de  4 consecutivos e 9
+      sequˆncias de 5 consecutivos,sendo evidente a predominƒncia de chaves
+      com apenas 2 n£meros em p.a..
+
+      Para s¢ um elemento tomado isoladamente  n„o  faz  sentido  falar  em
+      p.a., pelo que um m ximo de 1 para qualquer valor da raz„o equivale a
+      n„o haver qualquer sequˆncia em p.a. com essa raz„o.
+      Ao indicar valores deve ter em aten‡„o que para cada valor  da  raz„o
+      entre  o  valor  anterior  (come‡ando  em  1  e  at‚ 48) indicado e o
+      seguinte (DEVEM SER INTRODUZIDOS POR ORDEM ESTRITAMENTE CRESCENTE), a
+      chave a ser formada  ser  analisada e todas as sequˆncias em p.a. que
+      ultrapassem o valor dado para "M ximo  de   n£meros   em   progress„o
+      aritm‚tica   ?"  ser„o  rejeitadas.A  seguinte  entrada, por EXEMPLO,
+      seria inv lida : 10-3 ; 7-2 ; 20-1 ; pois 7<10 !
+
+
+      EXEMPLO-Para  uma  avalia‡„o dos n£meros em progress„o aritm‚tica a 2
+      passos com a divis„o 24,2,48,1, - que s„o os valores  por  defeito  -
+      significa que ser„o admitidas  chaves com  sequˆncias  de  2  n£meros
+      em p.a. com  raz„o  at‚ 24 e rejeitadas todas as poss¡veis sequˆncias
+      de  2 ou mais n£meros em p.a. com  raz„o superior a 24 e at‚ o m ximo
+      de 48  ( raz„o=48 implica a sequˆncia 1,49, a £nica poss¡vel  !).  Se
+      definir  1-1,  quer  dizer n„o aceitar quaisquer n£meros em p.a. pois
+      est  a rejeitar raz”es a partir de 1 (o 1§ 1 do 1-1) e   n„o   admite
+      p.a.(s)  pois um s¢ n£mero (o 2§ 1 do 1-1) n„o pode estar em p.a. (no
+      m¡nimo tˆm de existir dois n£meros para ter uma p.a.).
+
+
+      (continua na p gina seguinte)                                  PAG 19
+
+
+suponhamos  a  defini‡„o 24-2 ; 48-1 (os valores por defeito), em que todas
+as chaves a seguir apresentadas seriam rejeitadas :
+
+
+
+CHAVE               PORQU‰ A CHAVE SER† REJEITADA ?
+---------------------------------------------------------------------------
+10-15-20-31-39-43 ³ Os n£meros 10-15-20 est„o em p.a. com r=5 e apenas s„o
+                  ³ aceites sequˆncias de at‚ 2 n£meros em p.a. com raz„o
+                  ³ r at‚ 24.
+---------------------------------------------------------------------------                  ³
+01-07-10-15-32-49 ³ Os n£meros 15-32-49 est„o em p.a. com r=17 e apenas s„o
+                  ³ aceites sequˆncias de at‚ 2 n£meros em p.a. com raz„o
+                  ³ r at‚ 24.
+---------------------------------------------------------------------------                  ³
+01-02-05-30-33-41 ³ A sequˆncia 05-30 constitui uma p.a. com r=25 e, a
+                  ³ partir de r=24 n„o se aceitam n£meros em p.a. Note no
+                  ³ boletim o grande salto correspondente (o que justifica
+                  ³ n„o  se  aceitar n£meros em p.a. com raz”es a partir de
+                  ³ 24) !  Embora  tenha interesse  usar   v rios  valores,
+                  ³ estes dois (24-2;48-1) s„o os mais significativos !
+---------------------------------------------------------------------------
+
+
+
+tecla "L" = Definir/Alterar m ximos para Linhas/Colunas.
+
+
+
+      Verifica-se  que apenas em aproximadamente 4 % dos casos se tem mais
+      do que 2 n£meros da mesma coluna/linha (ordenadas de 1 a 7), pelo que
+      ,por defeito, s„o admitidos apenas 2 elementos de  cada  coluna/linha
+      em  cada  chave  gerada, podendo alterar qualquer deles para um valor
+      entre 0 e 6. Note-se contudo que na  pr tica  n„o  ‚  raro  sa¡rem  3
+      n£meros numa mesma coluna/linha.
+      Muitas vezes querer  apostar mais em determinadas COLUNAS OU LINHAS e
+      menos noutras. A altera‡„o uma a uma permiti-lo-  controlar o  m ximo
+      de  n£meros  que  aceita em cada uma das 7 linhas e das 7 colunas que
+      contituem a matriz de 49 posi‡”es de uma aposta. Trata-se de  um  dos
+      aspectos  normalmente focados nos jornais do apostador (1X2, Jackpot,
+      etc).
+      ‘ pergunta "Todos iguais (S/N) ?  ",  deve  premir  a  tecla  "S"  se
+      pretende  admitir  para  todas  as  linhas  e  todas  as  colunas uma
+      determinada quantidade m xima de n£meros.Se responder  NAO  (premindo
+      outra tecla qualquer) ser-lhe-  pedida a quantidade m xima de n£meros
+      admiss¡veis para cada uma das 7 linhas e 7 colunas. EXPERIMENTE !
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     PAG 20
+
+
+tecla "X" = Definir numeros fixos.
+
+
+
+      Pode ter-se  entre  1 e 5 n£meros fixos. De  acordo  com PASSO1  (ver
+      pags  23/24),  come‡a-se  por  coloc -los  na  chave em forma‡„o e os
+      restantes   valores   a   admitir   dever„o   ser    ajustados    aos
+      condicionalismos  impostos pelos primeiros ,de modo que a chave final
+      obedecer  sempre a todas as restri‡”es globais do sistema.
+
+
+      EXEMPLO-Um  n£mero cuja ausˆncia seja prolongada (mais de 20 semanas)
+      dever  concerteza surgir numa das  semanas  seguintes  e  poder   ser
+      usado  como n£mero fixo. Esta situa‡„o j  se verificou na pr tica por
+      diversas  vezes.  Outra situa‡„o frequente ‚ pegar-se num conjunto de
+      v rios n£meros muito prov veis (obtidos do LOTTO PROPHET por exemplo)
+      e combin -los 2 a 2, fazendo diversas apostas em que, de cada vez, se
+      usa 2 deles fixos ! Por EXEMPLO :
+
+
+      Suponha que de 09-14-21-34 ‚ muito prov vel a sa¡da de dois deles mas
+      vocˆ n„o imagina quais. A solu‡„o ‚ combin -los 2 a 2 e vem :
+      09-14 ; 09-21 ; 09-34 mais 14-21 ; 14-34 e  21-34  .Neste  caso  pode
+      fazer  por  exemplo  60 apostas em que em cada conjunto de 10 apostas
+      joga com dois deles fixos !
+
+
+
+tecla "T" = Definir chave a testar.
+
+
+
+      Com esta op‡„o pretende-se apenas que se possam realizar testes sobre
+      os poss¡veis resultados (sem ter em conta o  n£mero  suplementar)  da
+      sa¡da   real   de   determinada  chave  para  as  sucessivas  apostas
+      apresentadas pelo programa.
+      Imagine que imprimiu 100 apostas. Pode pegar numa delas e  introduzir
+      aqui  verificando  quais as hip¢teses da sua aposta caso a chave real
+      se enquadre nas restri‡”es que imp“s ao seu  conjunto  de  apostas  (
+      chaves).  As  restri‡”es a que me refiro s„o obviamente a Paridade, a
+      Dispers„o, a Soma, etc.
+
+
+      Se j  tiver definido  alguma  chave  antes  ser-lhe-   perguntado  se
+      pretende desactivar esta op‡„o (premindo "S"), sen„o ser-lhe-  pedida
+      uma nova chave para teste.
+      Note-se que para uma chave qualquer que obede‡a a todas as restri‡”es
+      impostas  e, portanto, da mesma fam¡lia das geradas pelo programa, os
+      virtuais resultados reais s„o em geral muito encorajadores, n„o sendo
+      raro obter-se 5 n£meros certos, dependendo do n£mero m‚dio de  chaves
+      avaliadas.
+
+
+
+
+
+
+
+                                                                     PAG 21
+
+
+tecla "C" = Visualizar a chave em forma‡„o.
+
+
+
+      Permite-lhe  ter  uma  ¡deia de como o computador (o programa) est  a
+      tentar  obter chaves, que embora 100% aleat¢rias, obedecem ao  quadro
+      geral  das  retri‡”es impostas, como sejam a Paridade, a Dispers„o, a
+      Soma, etc. Como ‚ ¢bvio n„o se trata de apenas  escolher  n£meros  ao
+      acaso  entre  1  e  49  (Para isso ‚ prefer¡vel construir uma tombola
+      idˆntica … usada pela entidade gestora do Totoloto. Talvez  isso  at‚
+      se   revele   muito   proveitoso  !?)  ou  de  condicionar  de  forma
+      tendenciosa as chaves. As chaves  s„o  aleat¢rias,  simplesmente  n„o
+      podem ser quaisquer !!
+
+      Uma   vez  que cada chave ‚ formada quer aceitando, quer rejeitando o
+      £ltimo n£mero sorteado se ao junt -lo aos j  seleccionados n„o formem
+      um conjunto aceit vel ou  rejeitando  todos os seis n£meros se o  seu
+      somat¢rio for  inferior ao limite m¡nimo para a soma (ver PASSO5 pags
+      23/24), esta op‡„o, quando activa, d  uma ideia  do  que  se  est   a
+      passar internamente no processo de gera‡„o de uma aposta.
+
+      Dever   indicar  o tempo de pausa (em milisegundos) entre a impress„o
+      de cada n£mero, por forma a poder acompanhar a evolu‡„o do processo.
+
+
+
+tecla "!" = Reinicializar valores.
+
+
+
+      Obtem-se  com SHIFT+1 e rep”e todos os parƒmetros aos valores fixados
+      inicialmente pelo programa. S„o eles :
+
+
+
+      Percorrer os grupos por ordem de entrada  :FALSE
+      Impressora ON/OFF                         :FALSE          (OFF)
+      N£mero de grupos                          :0
+      Paridade                                  :F,T,T,T,F      (F=FALSE)
+      Dispers„o                                 :F,T,T,T,F      (T=TRUE )
+      Termina‡”es                               :2
+      Soma                                      :110 a 190
+      Grupos de repetidos                       :0
+      Profundidade da raz„o e
+      m ximo de n£meros em p.a.                 :24,2,48,1
+      M ximo de n£meros em cada coluna/linha    :3
+      N£meros fixos                             :0
+      Chave a testar                            :FALSE
+      Visualizar chave                          :FALSE
+
+
+
+      tecla "ESCAPE" para retornar ao DOS.
+      tecla "RETURN" para gerar.
+      durante a gera‡„o, tecla "ESC" para voltar ao MENU.
+
+
+
+                                                                     PAG 22
+
+
+                             ALGORITMO GLOBAL
+
+
+As condi‡”es e ordem de verifica‡„o e preenchimento de uma chave s„o :
+
+
+
+
+PASSO1:
+   Caso  existam  n£meros  fixos, estes s„o inclu¡dos (o que pode verificar
+   com  a  op‡„o  "C"  activa)  e ‚ feita   a   respectiva   contagem   das
+   caracter¡sticas  a controlar (n£meros em cada coluna/linha, termina‡”es,
+   pares/impares, baixos/altos e soma). Os n£meros fixos ser„o em princ¡pio
+   em quantidade inferior a seis (claro que com 6 n£meros  fixos  todas  as
+   chaves seriam iguais) , devendo ter-se  o cuidado de n„o violar  nenhuma
+   das restri‡”es impostas, ou nenhuma chave ser  gerada.
+
+
+
+
+
+PASSO2:
+   De acordo com  a  probabilidade  atribu¡da  a  cada  grupo  tenta-se  1§
+   seleccionar  um  grupo  e  depois incluir um dos seus elementos na chave
+   actual (at‚ um m ximo de 254 tentativas). Se   frente esse subconjunto (
+   chave  em  constru‡„o de cardinalidade <=6) violar alguma das restri‡”es
+   impostas, ser  esse elemento que  ser   substitu¡do,  em  geral  por  um
+   elemento de outro grupo.Todos os restantes elementos foram anteriormente
+   testados  e devem ser mantidos enquanto se tenta juntar-lhes outros, que
+   escolhidos ao acaso, venham formar uma chave globalmente aceit vel.
+
+
+
+
+
+PASSO3:
+   Antes  de  juntar  o  novo  n£mero  aos  anteriores  verifica-se  se  se
+   ultrapassou  o  m ximo  admiss¡vel de elementos desse grupo, ou o m ximo
+   de termina‡”es (0,1,2,3,4,5,6,7,8,9), ou o m ximo de pares/impares, ou o
+   m ximo de baixos (<=24)/altos (>24), ou o m ximo em cada coluna/linha  e
+   o  m ximo  de  n£meros  em  progress„o  aritm‚tica  (de  acordo  com  as
+   defini‡”es em  "M" e n„o necessariamente pela ordem referida).
+
+
+
+
+
+PASSO4:
+   Se  os n£meros j  escolhidos mais o £ltimo seleccionado passarem o teste
+   em PASSO3 e o teste para o limite superior do seu  somat¢rio  ent„o esse
+   £ltimo vai juntar-se aos admiss¡veis e procede-se ao incremento adequado
+   dos diferentes parƒmetros testados em PASSO3. Passa-se ao passo seguinte
+   ( PASSO2 ) do ciclo at‚ se obterem 6 n£meros.
+
+
+
+
+
+                                                                     PAG 23
+
+
+PASSO5:
+   Nesta fase todos os 6 n£meros  s„o  testados  para  os  limites  do  seu
+   somat¢rio no que respeita ao seu valor m¡nimo. O facto de se fazer  este
+   teste  depois  de  obtidos os 6 n£meros candidatos a chave tem a ver com
+   n„o se poder determinar antes se esse min¡mo vai ou n„o ser ultrapassado
+   (pela  soma  dos  6).  Claro  que  isto  n„o se passa com o valor m ximo
+   admiss¡vel que, ao contr rio do anterior n„o deve  ser  ultrapassado  e,
+   por  conseguinte  n„o  se torna necess rio esperar at‚ a chave candidata
+   possuir 6 n£meros.
+
+
+   EXEMPLIFICANDO :
+
+   Suponhamos que definiu a soma entre os limites 140 e 160 !
+
+   N§ A JUNTAR ³ CHAVE EM FORMA€ŽO ³ SOMA ³ COMENT†RIO
+   ---------------------------------------------------
+   15           15                   15  -> A  chave  ‚  rejeitada, pois  o
+   38           15-38                53     somat¢rio  dos 6 elementos  n„o
+   10           15-38-10             63     atinge o min¡mo de 140 !  Claro
+   27           15-38-10-27          90     que isso s¢ aconteceu porque  o
+   41           15-38-10-27-41       131    £ltimo n£mero candidato ‚ muito
+   05           15-38-10-27-41-05    136    baixo ! Se em vez de  05  fosse
+                                            19,  a soma estaria entre 140 e
+                                            160 e esta chave seria aceite !
+
+   Seja agora a seguinte sequˆncia de acontecimentos :
+
+   N§ A JUNTAR ³ CHAVE EM FORMA€ŽO ³ SOMA ³ COMENT†RIO
+   ---------------------------------------------------
+   45           45                   45
+   48           45-48                93
+   40           45-48-40             133
+   47           45-48-40-47          180 -> Neste caso j  se ultrapassou  o
+                                            limite m ximo de 160 logo ao 4§
+                                            n£mero  e  portanto esse n£mero
+                                            dever     ser     imediatamente
+                                            substitu¡do por outro qualquer.
+
+
+
+PASSO6:
+   A aposta obtida ‚ ordenada e enviada para o ecran e/ou a impressora.
+
+
+
+
+
+
+
+
+
+***************************************************************************
+
+correio electr¢nico(at‚ 97 ou 98 na Univ. da Madeira): lucio@cinfo29.uma.pt
+
+***************************************************************************
+
+FIM DO DOCUMENTO !                                                   PAG 24
+
+
+

@@ -1,0 +1,89 @@
+Important MyComm Update Information!
+
+Three Items:
+
+--------------------
+Item 1 of 3:
+
+New with MyComm version 2.15
+Script language changes
+
+  Several changes were made to the MyComm "script" language.
+Some of the changes such as needing to enclose strings in
+quotes are not compatible with the previous version of the
+script language. This was unfortunately necessary to provide
+certain enhancements to the existing script language.
+The changes are fairly simple to make, however your script
+files will require some manual editing.
+
+Sorry for any inconvenience that this may have caused.
+
+Script language changes incompatible with versions
+of MyComm below version 2.15:
+
+- all strings must be enclosed in quotes i.e. "some string"
+
+- string flags must begin with 'S' i.e S1, S2, etc.
+
+- integer flags must begin with 'I' i.e. I1, I2, etc.
+
+Enhancements to MyComm script language
+
+- There are now ten rather than 5 string and integer flags
+
+- Several functions were enhanced to take optional parameters
+
+- Several new functions have been added.
+
+Please refer to Appendix E "Script Language" in MYCOMM.DOC
+for further information.
+
+--------------------
+Item 2 of 3:
+
+  A more standard notation for entering "control" characters in the
+setup strings and script function strings has been added starting with
+MyComm version 2.11.
+
+  For example '^M' now superceeds '|' as the Carraige Return symbol.
+The '|' (also known as the "pipe" symbol) is still supported in
+MyComm version 2.15 but will eventually be phased out.  As time
+permits all incidences of the '|' symbol should be replaced in your
+Modem Setup Strings and the XMIT() script function.
+
+--------------------
+Item 3 of 3:
+New with MyComm version 2.1 and above
+Configuration file changes
+
+  The format of the configuration file (MYCOMM.CFG) used by
+MyComm version 2.1x has changed due to features that have
+been added to MyComm.  For your convenience the program
+CNVRT2NW.EXE is provided to perform the necessary
+conversion for you.  Use this conversion program only if you
+are currently using MyComm version 2.0, 2.01, or 2.02.
+
+Usage of CNVRT2NW.EXE
+
+Step 1:     Copy CNVRT2NW.EXE to the directory that you keep
+            MyComm in.
+
+Step 2:     Type CNVRT2NW at the DOS prompt.  You will see
+            some short instructions.  Type 'Y' to continue,
+            or 'N' to quit.  The CNVRT2NW program will run
+            and perform the required conversion for you.
+
+  The CNVRT2NW program also creates the file MYCM_OLD.CFG
+which is a backup of your current configuration.  After you
+have determined that the conversion has taken place
+correctly you may delete the file MYCM_OLD.CFG.
+
+
+NOTE!
+
+  The CNVRT2NW.EXE program will NOT work with versions of MyComm
+below version 2.0!  Sorry for any inconvenience.
+
+
+Ken Dorshimer - Author MyComm data communications software
+

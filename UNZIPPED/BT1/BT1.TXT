@@ -1,0 +1,78 @@
+BATCH TOOLS
+
+ Intro
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ "Este ‚ meu primeiro contributo para a revista SPOOLER, … qual agrade‡o 
+  desde j  pela oportunidade que oferece aos leitores de participarem na
+  sua elabora‡„o. Desta vez, com o meu contributo,  pretendo  apresentar
+  programas que sejam mais £teis do ponto de vista do utilizador, e  n„o
+  tanto na complexidade das rotinas elaboradas em Pascal."
+
+ "Todos os utilit rios divulgados neste e pr¢ximos artigos destinam-se a
+  melhorar a apresenta‡„o e constru‡„o de batch files. E apesar de serem
+  pouco flexiveis, as batch files s„o indispens veis  para  necessidades
+  do dia-a-dia: s„o f ceis de alterar, e para as criar basta um programa 
+  vulgar de edi‡„o de texto. Pena que a linguagem batch nem sempre tenha 
+  a aten‡„o que merece, apesar de utilit rios com Bat2Exec e BE terem em
+  muito alargado as aplica‡”es poss¡veis com batch files.
+  Com os programas em seguida apresentados, a minha meta ‚ preencher uma
+  lacuna. Se conseguir motivar ao uso de batch files, os meus objectivos
+  ser„o alcan‡ados. Neste momento muitos de v¢s estar„o a torcer o nariz
+  e a pensar: 'Para que preciso de rotinas de batch?'. S¢ pe‡o que vejam
+  o que tenho para dizer, e experimentem os exemplos mostrados."
+
+ "Apesar da sua extrema simplicidade de constru‡„o o seguinte utilit rio
+  ‚ (o meu objectivo principal) muito £til e de f cil de usar:  falo  do
+  Batch Tools, cuja vers„o áeta fora conclu¡da no final de Mar‡o de 1994
+  e do qual fiz uma revis„o para apresentar na SPOOLER. O nome diz tudo;
+  espero que com ele que consiga ganhar a preferˆncia  dos  utilizadores
+  ferrenhos do BE. Com essa convic‡„o, embora mantendo um c¢digo simples
+  de programa‡„o, apresentarei no pr¢ximo artigo o BT2, que  trar   mais
+  algumas fun‡”es. No total, s„o 29 fun‡”es do BT para rotinas batch."
+  
+  Para iniciar o seu uso, basta teclar BT ou BT2 e apresenta-se a  lista
+  de todos os comandos dispon¡veis. Depois, ao acrescentar o nome de  um
+  comando qualquer, apresenta-se a sintaxe e a descri‡„o dos parƒmetros.
+  Antes de se conseguir assimilar todas as fun‡”es aconselho os leitores
+  a correrem as rotinas batch de demonstra‡„o, para ter j  uma ideia das 
+  capacidades de Batch Tools. Mesmo assim a leitura completa dos artigos
+  figura-se indispens vel para a compreens„o dos utilit rios."
+
+  Constru¡ o BT para agrupar v rios utilit rios que j  tinha criado.  Ao
+  ver que o Batch Enhancer era semelhante, decidi melhorar o BT e  fazer
+  o BT2 e BT3. S¢ para poder livrar-me do estigma BE. Os utilizadores de
+  Batch Tools verificar„o se assim ‚ ou n„o. ‘ data da publica‡„o  deste
+  artigo o BT3 j  dever  estar 'isento de bugs'. Posso garantir que  n„o
+  se trata de 'mais uma sequela' e espero incluir novidades em rela‡„o a
+  vers”es anteriores. De qualquer modo, 12 fun‡”es est„o j  completas.
+  Com esta vers„o devo fechar a trilogia... Talvez...
+
+  Embora n„o tenha ficado documentado, nem tenha feito qualquer  esp‚cie
+  de referˆncia nos manuais, o BTv1.1 e BT2v1.0 s¢ podem ser utilizados
+  correctamente em modos de texto com 80 colunas (80x25, 80x43, 80x50)."
+
+ "Como aux¡lio a rotinas batch, inclu¡ tamb‚m o CDFILE, um programa  que
+  permite o retorno ao direct¢rio currente ap¢s executar utilit rios  ou
+  aplica‡”es que tenham necessidade de mudan‡a de direct¢rio. CDFILE n„o
+  faz mais do que gravar o nome do direct¢rio currente num  ficheiro  de
+  texto e regressar a esse direct¢rio numa leitura posterior desse mesmo
+  ficheiro. Leia o artigo de CDFILE, e veja o que me motivou a fazer  um
+  programa t„o t„o simples."
+
+ "J  com mais uso vem tamb‚m o Screen Edit, que serve para criar  efeitos
+  semelhantes aos que se conseguem por sequˆncias de teclas de Escape, ao
+  usar o driver ANSI.SYS. O Screen Edit tem a vantagem de ser muito f cil
+  de criar novos ‚crans, partindo de um ficheiro de texto j  existente. O
+  Screen Edit apenas regista uma m scara de cor que pode ser aplicada  ao
+  ficheiro de texto como um filtro. Assim, podem-se ter v rios  ficheiros
+  com diversas matrizes de cor para aplicar ao mesmo texto  ou  logitipos
+  feitos com caracteres ASCII. O Screen Edit ‚ um programa que  pode  ser
+  facilmente alterado, e at‚ incluir fun‡”es como PaintTxt e PaintWin que
+  usei em BT2. No entanto, ao fazer isso seria preferivel utilizar outros
+  programas que s„o realmente editores de ficheiros ANSI."
+
+ "N„o ‚ demais agradecer novamente … Spooler por me ter permitido estrear
+  neste espa‡o. At‚ a uma pr¢xima oportunidade!"
+
+Luis Manuel Santos Guerra
+

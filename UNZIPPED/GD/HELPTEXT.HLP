@@ -1,0 +1,172 @@
+@MAINHELP
+            GDESIGNER ?
+  
+  O  GDesigner,   como o nome indica ‚
+um  programa  destinado a  facilitar a
+geometria   descritiva,  da¡   o   seu 
+nome...
+O  programa   calcula   as  projec‡”es  
+de pontos, rectas  segundo o m‚todo de 
+Monge. O seu funcionamento  ‚ bastante 
+intuitivo:
+   -  Os  bot”es  s„o  todos  do  tipo
+ligar/desligar.  Assim,  por  exemplo,
+para  sair  da  Ajuda  deve  colocar o
+cursor  sobre o bot„o  "Ajuda", que se
+encontra  iluminado,  e  pressionar  o
+bot„o esquerdo do rato.
+
+   - Para  se  movimentar no  texto de
+ajuda,  pode  utilizar as setas que se
+encontram do lado direito do texto.
+  Se  pretender informa‡„o sobre outro
+t¢pico,  utilize   os  bot”es  que  se
+encontram   a   direita  da  barra  de
+deslocamento do texto.
+@BUTTONS
+1
+2
+4
+5
+6
+7
+8
+9
+10
+@POINTS
+               Pontos
+
+  O menu de pontos permite a inser‡„o,
+elimina‡„o e altera‡„o de pontos.
+
+  Para  inserir  um ponto,  seleccione
+o  bot„o "Adicionar".  Devera aparecer
+no  ecr„n  uma  caixa  que lhe pede as
+coordenadas  do  ponto  e, de seguida,
+a sua designa‡„o.
+  As   coordenadas   podem   ter   uma
+casa decimal.  A designa‡„o do ponto e
+constitu¡da  por uma ou  duas  letras.
+Ap¢s  a  inser‡„o  dos dados,  o ponto
+aparece  no  ecr„n,e  a caixa de INPUT
+desaparece.
+
+  Para  eliminar  um  ponto existente,
+seleccione  o  bot„o "Apagar". Aparece
+no  ecr„n  uma  caixa com  a  lista de
+pontos. Utilize  as  teclas de  cursor
+e  o ENTER ou RETURN para seleccionar.
+O  ponto  ‚ imediatamente apagado  e a
+caixa de selec‡„o desaparece.
+Se  desistir  de   eliminar  o  ponto,
+simplesmente pressione ESC.
+
+  Para  alterar  um  ponto, seleccione
+o  bot„o  "Alterar".  -lhe   posto  … 
+disposi‡„o  uma lista  de pontos, onde 
+pode  escolher  o  ponto  a apagar. Em 
+seguida,     introduza     as    novas 
+coordenadas do ponto.
+
+@BUTTONS
+0
+2
+4
+@SLINE
+               Rectas
+
+  O funcionamento do menu de rectas  ‚
+semelhante ao do menu de pontos.
+  A   adi‡„o   de   rectas   ‚   feita
+seleccionando dois  pontos.  O desenho
+da  recta  ‚  feito  imediatamente  em
+seguida.
+  A  elimina‡„o  de  rectas  ‚ similar
+a  elimina‡„o  de  pontos.
+@BUTTONS
+0
+1
+4
+@3D
+              3Dimens”es
+
+  O bot„o 3Dimens”es  ‚  um  bot„o  do 
+tipo   ligar/desligar,   que   permite 
+aceder   ao   modo  3Dimens”es.  Neste 
+modo    visualiza-se    as    diversas 
+projec‡”es  na  prespectiva cavaleira.
+@BUTTONS
+0
+@INFO
+              Informa‡„o
+
+  O bot„o informa‡„o  permite obter os
+dados de dois objectos em  simultƒneo.
+Para  percorrer  a lista  de objectos,  
+utilize    os    bot”es   "Pr¢ximo"  e
+"Anterior"  de cada janela. Para obter
+os  dados das rectas  deve percorrer a
+lista  de  pontos  at‚ ao fim  para s¢
+depois,  percorrer a  lista de  rectas 
+at‚ encontrar a recta pretendida.
+@BUTTONS
+7
+8
+9
+@RULER
+                 R‚gua
+
+  O bot„o r‚gua serve para indicar  se
+se deseja que a r‚gua esteja  activada
+no desenho.  O  bot„o  r‚gua ‚ do tipo
+ligar/desligar.   Se   desligar   este 
+bot„o,    o    bot„o    Numera‡„o    ‚ 
+automaticamente desligado.
+@BUTTONS
+0
+8
+9
+@NUMBERS
+               Numera‡„o
+
+  O  bot„o  numera‡„o  permite ligar e
+desligar  a  numera‡„o  da  r‚gua. Se,
+quando  activar  a  numera‡„o, a r‚gua 
+estiver    desligada,    o   GDesigner 
+liga-a automaticamente.
+@BUTTONS
+0
+7
+9
+@CHARS
+              Designa‡”es
+
+   O bot„o Designa‡”es permite ligar e   
+desligar  a coloca‡„o  dos  nomes  dos 
+objectos no desenho.
+@BUTTONS
+0
+7
+8
+@CONTROL
+          Area de controlo
+
+   A  rea  de  controlo ‚  constitu¡da                
+pelos  bot”es  de  altera‡„o da escala
+e  do  passo  e pelos de  movimenta‡„o
+da     janela    de   visualiza‡„o.  A 
+altera‡„o   da   escala   permite  ter 
+mais    objectos    na    janela    de 
+visualiza‡„o,    embora    com   menos 
+defini‡„o.
+  O  passo  ‚  o valor utilizado  para 
+a     movimenta‡„o    da    janela  de
+visualiza‡„o.
+  As    setas   de   movimenta‡„o   da 
+janela   de   visualiza‡„o    permitem 
+deslocar   a    rea  que  ‚ desenhada. 
+Para voltar … posi‡„o inicial, clique 
+'O'.
+@BUTTONS
+0
+@END

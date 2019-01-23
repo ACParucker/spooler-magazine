@@ -1,0 +1,184 @@
+                    GESTéO DE CORRESPONDâNCIA
+                    ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                          
+INTRODUÄéO
+    Quando foi que enviei o documento A? Quando  foi que recebi o
+documento B? Qual a relaáÑo entre os documentos A e B? Aonde est†
+o documento C? Essas sÑo algumas das questîes  que as pessoas  se
+colocam quando nÑo  tàm a sua correspondància devidamente organi-
+zada. De facto, toda a ÆpapeladaØ que uma  pessoa recebe ou envia
+pode vir  a ter grande importÉncia e interesse num futuro pr¢ximo
+pelo que a gestÑo da correspondància de uma forma eficaz se torna
+fundamental. Por esses e outros motivos, pìs ÆmÑos-a-obraØ e ela-
+borei um  programa (em Clipper) de gestÑo  de correspondància que
+visa organizar, com efic†cia, toda a correspondància que um indi-
+v°duo recebe ou envia.
+    Criei um menu principal com imensas  opáîes de forma a permi-
+tir ao utilizador uma f†cil e r†pida  compreensÑo e utilizaáÑo do
+programa.
+
+BASES DE DADOS
+    Foram criadas 8 bases de dados, sÑo elas:
+     - Entradas.Dbf: ContÇm os documentos entrados;
+     - Saidas.Dbf: ContÇm os documentos sa°dos;
+     - Informa.Dbf: ContÇm algumas  configuraáîes necess†rias  ao
+                    bom funcionamento do programa;
+     - Codigo.Dbf: ContÇm o(s) c¢digo(s) de entrada no programa;
+     - Tipos.Dbf: ContÇm alguns tipos de documentos mais utiliza-
+                  dos;
+     - Rem_Dest.Dbf: ContÇm alguns nomes de  remetentes ou desti-
+                     nat†rios mais utilizados;
+     - Historia.Dbf: Esta base de dados Ç necess†ria para saber a
+                     hist¢ria de um documento;
+     - Numeros.Dbf: Esta base de dados Ç  necess†ria para consul-
+                    tas.
+
+OS CAMPOS
+    De seguida, serÑo apresentados todos os campos  necess†rios †
+entrada ou sa°da de um documento:
+    NñMERO: N£mero do documento. ê incrementado automaticamente;
+    DATA: Data de entrada ou sa°da do documento;
+    TIPO DE DOCUMENTO: Corresponde  ao tipo de documento  que deu
+                       entrada ou que sa°u, ou seja, se se  trata
+                       de uma carta, revista ou outro;
+    REFERâNCIA: Referància pr¢pria do documento;
+    DATA DO DOCUMENTO: Data do pr¢prio documento;
+    REMETENTE ou DESTINATÜRIO: Nome da pessoa, firma,instituiáÑo,
+                               etc. que envia ou a quem Ç enviado
+                               o documento;
+    ASSUNTO: Motivo do envio do documento;
+    ARQUIVO: ColocaáÑo do documento;
+    DOCUMENTO ANTERIOR: Consiste no n£mero do documento anterior.
+                        Se nÑo houver, entÑo o n£mero dever†  ser
+                        igual a 0. Este campo Ç importante porque
+                        Ç a partir dele que se vai obter a hist¢-
+                        ria de um documento.  ê de notar que se o
+                        documento  actual for uma entrada entÑo o
+                        documento  anterior  corresponder† a  uma
+                        sa°da; caso contr†rio, ser† vice-versa.
+    OBSERVAÄôES: Est† dispon°vel para qualquer observaáÑo respei-
+                 tante ao documento inserido.
+
+O MENU
+   O menu Ç constitu°do por 5 opáîes  que, por sua  vez, originam
+sub-menus:
+
+- DOCUMENTO:
+  - INSERIR DOCUMENTOS:
+    - ENTRADA DE DOCS,
+    - SAãDA DE DOCS: Insere um ou  mais documentos que  deram en-
+                     trada ou que sa°ram (conforme  a opáÑo esco-
+                     lhida);
+  - ALTERAR DOCUMENTOS:
+    - ENTRADA DE DOCS,
+    - SAãDAS DE DOCS: Altera  um  documento que  entrou  ou  sa°u
+                      (conforme a opáÑo escolhida). Para tal, se-
+                      r† necess†rio introduzir  o nß do documento
+                      a alterar;
+
+- CONSULTAS:
+  - ENTRADA DE DOCS,
+    SAãDAS DE DOCS:
+    - TODOS OS DOCS: Apresenta todos os documentos;
+    - PELO NñMERO: Apresenta um documento pelo seu n£mero. Assim,
+                   ser† necess†rio  introduzir o respectivo n£me-
+                   ro;
+    - PELO TIPO DE DOC: Apresenta  todos os documentos que tenham
+                        o  tipo igual †quele que  foi introduzido
+                        pelo utilizador;
+    - PELA DATA: Apresenta todos os  documentos que  tenhama data
+                 igual †quela  que foi  introduzida pelo utiliza-
+                 dor;
+    - PELA REFERâNCIA: Apresenta todos os documentos que tenham a
+                       referància igual †quela que foi introduzi-
+                       da pelo  utilizador;
+    - PELO REMETENTE/DESTINATÜRIO: Apresenta  todos os documentos
+                                   que tenham o remetente ou des-
+                                   tinat†rio igual †quele que foi
+                                   introduzido pelo utilizador;
+    - PELO ARQUIVO: Apresenta  todos os  documentos que  tenham o
+                    arquivo igual †quele que foi introduzido pelo
+                    utilizador.
+
+    Relembro que todas as  opáîes deste  £ltimo sub-menu ÆactuamØ
+conforme a opáÑo escolhida no pen£ltimo sub-menu, isto Ç, confor-
+me se trate de  entradas ou  sa°das de documentos.
+
+- HISTüRIA DE UM DOCUMENTO:
+  - ENTRADA DE DOCS,
+    SAãDA DE DOCS: Apresenta a hist¢ria de um documento de entra-
+                   da ou  de sa°da (conforme a opáÑo  escolhida).
+                   Para tal, ser†  necess†rio introduzir  o nß do
+                   respectivo documento.
+
+- LISTAGENS:
+  - Todos os sub-menus relativos a esta opáÑo sÑo  exactamente i-
+    guais † opáÑo CONSULTAS; o mesmo acontece com todas opáîes. A
+    £nica diferenáa reside no facto de  esta opáÑo apresentar to-
+    dos os documentos para a impressora (na opáÑo CONSULTAS tal Ç
+    feito para o ecrÑ).
+
+- DIVERSOS:
+  - SOBRE O PROGRAMA:
+    - O AUTOR: Apresenta o autor do programa;
+    - O PROGRAMA: Apresenta o pr¢prio programa;
+    - TECLAS DE ATALHO: Visualiza, no  ecrÑ, algumas teclas de a-
+                        talho que poderÑo ser utilizadas  no pro-
+                        grama;
+    - AJUDA: Apresenta um texto de ajuda ao utilizador;
+  - INFORMAÄôES GC: Apresenta duas informaáîes £teis,isto Ç, o nß
+                    de documentos que entraram e que sa°ram;
+  - INFORMAÄôES PC: Apresenta algumas informaáîes sobre o PC tais
+                    como:
+                       - Espaáo livre em disco;
+                       - Espaáo livre em mem¢ria;
+                       - Maior bloco de mem¢ria livre;
+                       - Mem¢ria livre para o DOS;
+                       - Data do sistema operativo;
+                       - Hora do sistema operativo;
+                       - Sistema operativo.
+  - SOM: Activa o desactiva o som no programa;
+  - ACTUALIZAR DATA: Actualiza a data do sistema;
+  - FORMATO DA DATA:
+    - FORMATO NACIONAL (Dia/Màs/Ano): Activa o formato nacional;
+    - FORMATO ANSI (Ano.Màs.Dia): Activa o formato ANSI.
+  - BASES DE DADOS:
+    - REMETENTES/DESTINATÜRIOS: Acrescenta um  novo  remetente ou
+                                destinat†rio  na  base  de  dados
+                                REM_DEST.DBF;
+    - TIPOS DE DOCUMENTOS: Acrescenta um novo tipo de documento a
+                           base de dados TIPOS.DBF;
+    - CüDIGOS DE ENTRADA: Acrescenta um novo c¢digo de entrada no
+                          programa. Para tal, ser† necess†rio in-
+                          troduzir um  c¢digo que j† se  encontre
+                          na base de  dados e, s¢ depois o utili-
+                          zador poder† inserir o novo c¢digo.
+
+- SAãDA:
+  - SAãDA PARA O DOS: Sai para o DOS  podendo, o utilizador, vol-
+                      tar de  novo ao programa. Para  tal, dever†
+                      escrever,  na linha  de comando, a  palavra
+                      EXIT.
+  - TERMINAR PROGRAMA: Termina a execuáÑo do programa.
+
+- Sü MAIS UMAS ÆCOISASØ
+    ê de notar que ao  entrar no programa Ç necess†rio introduzir
+um c¢digo, este corresponde a palavra  SPOOLER (por defeito). Re-
+fira-se que todos  os c¢digos  que se encontram na  base de dados
+CODIGOS.DBF estÑo codificados.
+    Para facilitar a  inseráÑo/alteraáÑo de um  do cumento, estÑo
+dispon°veis 3 teclas de atalho que dÑo origem a outros tantos me-
+nus de apoio. Assim:
+    - Alt-T: Permite a escolha de um tipo de documento que se en-
+             contre no menu apresentado;
+    - Alt-N: Permite a escolha do documento anterior;
+    - Alt-R: Permite a escolha de um  remetente (documento entra-
+             do);
+    - Alt-E: Permite  a escolha de um destinat†rio (documento en-
+             trado).
+    Na escolha  de um documento pelo seu  n£mero nas  alteraáîes,
+consultas e listagens existe, tambÇm, uma tecla de atalho (Alt-M)
+que facilita a procura do dito documento.
+
+    De notar que existe uma tecla de funáÑo (F1) que  apresenta a
+explicaáÑo de cada campo respeitante a um documento.

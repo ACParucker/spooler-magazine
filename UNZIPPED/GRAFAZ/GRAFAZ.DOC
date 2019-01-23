@@ -1,0 +1,590 @@
+
+
+
+
+
+                                GRAFAZ
+
+                              VersÑo 1.0
+
+
+
+
+
+
+
+
+
+TüPICOS.
+	- INTRODUÄéO
+	- OS FICHEIROS QUE FAZEM PARTE DO GRAFAZ
+	- INSTRUÄôES PARA O CARREGAMENTO
+	- O EDITOR DE GRÜFICOS
+	- DESENHANDO
+	- A ÜREA DE IMAGEM
+	- OS MENUS
+	- O EDITOR DE PALETES
+	- EDITANDO UMA COR
+	- AS OPÄôES
+	- O MENU LOCAL
+	- O UTILITÜRIO EGBINFO
+	- UTILIZANDO AS 'OBRAS-PRIMAS'
+	- NOTAS
+
+
+
+
+INTRODUÄéO
+Oi pessoal, vou aproveitar para fazer a minha apresentaáÑo, uma vez que por
+nÑo saber bem como Ç que "as coisas funcionavam", nÑo o fiz aquando da minha
+primeira intervenáÑo na Spooler. Chamo-me Nuno JoÑo e sou caloiro em
+Engenharia Inform†tica no IST. Programo h† j† 6 anos, embora s¢ Ö 1 no PC.
+Comecei atravÇs de um projecto da Faculdade de Ciàncias de Lisboa, o Projecto
+Minerva. A° programei em LOGO, depois passei ao BASIC (ZX SPECTRUM, tÑo bem
+conhecido de muitos de v¢s), ASSEMBLY e mais recentemente PASCAL. Gosto e
+sempre gostei da programaáÑo que envolve imagem e som, e por isso todos os
+programas que poderei eventualmente enviar Ö Spooler para apreciaáÑo tendo em
+vista a sua publicaáÑo, terÑo provavelmente a ver com imagem ou som. Quero
+terminar esta (j† longa) apresentaáÑo dando o meu incentivo pessoal e
+felicitando a Spooler pelo trabalho que tem vindo a desenvolver na divulgaáÑo
+do software PORTUGUâS, e tambÇm por excelentes artigos tais como, por ex.,
+MEMüRIA EXTENDIDA de JosÇ P†scoa. Jovens programadores portugueses, foráa!!
+
+Este programa permite fazer gr†ficos bidimensionais a 256 cores, na resoluáÑo
+MCGA 320x200, atÇ um tamanho m†ximo de 201x180 pontos. Foi concebido para ser
+uma ferramenta para o programador, de PASCAL, C, ou outra linguagem.
+AlÇm de permitir a definiáÑo de gr†ficos, o GRAFAZ tambÇm inclu° um editor de
+paletes. Os gr†ficos e respectivas paletes podem, de um modo simples, ser
+inclu°dos em qualquer programa de C ou PASCAL. Os gr†ficos e as paletes sÑo
+gravados em ficheiros independentes, podendo ser utilizados em separado, isto
+Ç, Ç possivel definir uma palete sem ser para uso exclusivo dos gr†ficos
+feitos no GRAFAZ. ê um meio de por exemplo definir paletes para usar na
+programaáÑo gr†fica com a unidade M256.
+O GRAFAZ  foi programado e compilado em Turbo Pascal 7.0. Em principio dever†
+poder ser compilado por outras versîes mais antigas, no m°nimo a 6 (nÑo posso
+dar a certeza quanto a isso, pois nÑo pude experimentar).
+Para correr necessita de pelo menos um 286 com placa VGA e rato, sem o qual
+nÑo funcionar†. Considerei o funcionamento de certas opáîes tambÇm pelo
+teclado apenas como um aux°lio ao rato. Por experiància pr¢pria, verifiquei
+que 'd† jeito' usar o rato com uma mÑo tendo a outra sobre o teclado, perto de
+teclas que executam certas funáîes, nÑo sendo necess†rio levar o rato de uma
+ponta Ö outra do ecran para ir selecionar uma opáÑo e depois voltar ao mesmo
+s°tio.
+
+
+OS FICHEIROS QUE FAZEM PARTE DO GRAFAZ
+Os ficheiros que acompanham o GRAFAZ sÑo:
+
+            - GRAFAZ.EXE     o execut†vel
+            - GRAFAZ.PAS     o c¢digo fonte
+            - GRAFAZIN.PAS   idem
+            - GRAFPAL.PAS    idem
+            - M256.PAS       idem (driver gr†fico)
+            - MOUSEA.PAS     idem ('driver' para o rato)
+
+            - EGBINFO.EXE    um utilit†rio em versÑo execut†vel
+            - EGBINFO.PAS    o c¢digo fonte do utilit†rio
+
+            - OMISSAO.PAL    a palete por omissÑo
+            - GRAFAZ.DOC     este ficheiro
+            - VULCAO.EGB     gr†fico exemplo
+
+            - SNOPY.EXE      versÑo execut†vel de um exemplo em PASCAL
+            - SNOPY.PAS      c¢digo fonte do anterior
+
+            - C1.EXE         versÑo execut†vel de um exemplo em C
+            - C1.C           programa exemplo em C
+
+            - BLAST.EGB      gr†fico utilizado num programa exemplo (C1)
+            - LOGO.EGB       idem (C1)
+            - SNOPY2.EGB     idem (SNOPY)
+            - SNOPY2B.EGB    idem (SNOPY)
+            - IMAGEM1.EGB    idem (SNOPY)(este ficheiro nÑo Ç 1 autàntico EGB)
+
+            - IMAGEM1.PCX a
+              IMAGEM4.PCX    esquemas 1 a 4 que completam este ficheiro.
+
+
+INSTRUÄôES PARA O CARREGAMENTO
+Para carregar o GRAFAZ basta escrever na linha de comandos: grafaz.
+Ao entrar, o GRAFAZ carrega o ficheiro OMISSAO.PAL, que Ç a palete por omissÑo.
+Este ficheiro deve estar tambÇm na mesma directoria. Se nÑo estiver, o ecran
+ficar† todo preto, mas o computador nÑo "gruda". Basta preesionar 2 vezes ESC
+para sair do programa.
+
+
+O EDITOR DE GRÜFICOS
+Ao se entrar no programa, o ecran ficar† com o seguinte aspecto (mais pixel,
+menos pixel):
+
+      (ver imagem1.pcx)
+
+-ESQUEMA 1
+
+Legenda
+             A - nß da cor
+       BV e BH - barras de deslocamento vertical e horizontal
+             C - caixa 'do canto'
+       C1 a C9 - cores da parte visivel da palete
+       CV e CH - caixas dos itens de deslocamento
+         D e E - cores activas
+             G - grelha de ediáÑo
+             S - caixas de sentido de deslocamento
+
+
+DESENHANDO
+No centro do ecran Ç vis°vel a grelha de ediáÑo (G), onde serÑo construidos os
+gr†ficos, ponto por ponto com a ajuda do rato. No lado direito est† a palete e
+as cores activas (C1 a C9, E e D). Para desenhar basta apenas mover o rato
+para a grelha e clicar no respectivo quadrado, com um dos dois botîes do rato.
+A cada botÑo do rato est† associada uma cor, e essa cor Ç visivel em qualquer
+momento nos itens D e E, sendo a cor do elemento E a cor associada ao botÑo
+esquerdo do rato, e a cor do elemento D a cor associada ao botÑo direito do
+mesmo. AlÇm disto, aparecer† na palete um D e um E, para assinalar as cores
+seleccionadas. Para associar outra cor ao botÑo esquerdo, ou direito, basta
+mover o rato para a 'zona dos C's' (C1 a C9) e fazer um clic sobre a cor
+desejada, com o botÑo do rato a que se quer associar essa mesma cor.
+NOTA: no esquema 1 s¢ estÑo representadas 9 cores (C1 a C9), mas na realidade
+      sÑo visiveis 21 cores simultaneamente.
+Ao entrar no programa sÑo vis°veis as primeiras 21 cores da palete, que Ç de
+256. Para se ter acesso Ös restantes cores, basta pressionar um dos botîes do
+rato sobre a †rea das cores activas. Se o botÑo pressionado fìr o direito, a
+palete avanáar†. Se por outro lado fìr pressionado o botÑo esquerdo a palete
+recuar†.
+Por vezes Ç necess†rio saber que cor Ç uma determinada cor do gr†fico que est†
+a ser editado, para se escolher a mesma cor na palete e terminar o gr†fico, ou
+alter†-lo. Mas com 256 cores pode ser um trabalho penoso, j† para nÑo falar
+que pode haver muitos tons dessa mesma cor, e at† bastante parecidos. Assim, a
+£nica maneira certa de saber que cor Ç, Ç sabendo o seu c¢digo de cor, e
+depois Ç s¢ procurar na palete a respectiva cor (ou c¢digo). Para se saber o
+c¢digo de uma cor, clica-se com o botÑo esquerdo do rato na †rea assinalada no
+esquema 1 com um A, ou seja na zona inferior direita do ecran. Clicando uma
+vez, aparecer† uma linha azul, indicando que a leitura de c¢digos de cor est†
+activa. A partir da°, onde quer que se clique no ecran (com qualquer um dos
+botîes do rato), Ö excepáÑo das †reas D e E que servem para 'rodar' a palete,
+e A, aparecer† na †rea A o c¢digo da cor. Depois basta procurar na palete a
+cor com o mesmo c¢digo (as cores estÑo por ordem numÇrica). Ao clicar
+novamente na †rea A, a 'leitura de c¢digo de cor' ser† desactivada, desapare-
+cendo a linha azul.
+
+
+A ÜREA DE IMAGEM
+Apenas podemos trabalhar uma parte da imagem de cada vez, mas em contrapartida
+essa parte Ç ampliada (47x30 pontos). Nas partes lateral esquerda e superior
+do ecran existem umas caixas, que contàm uma barra que indica que posiáÑo do
+quadro real (201x180) Ç actualmante vis°vel. Esta †rea vis°vel pode ser
+alterada se se posicionar o rato sobre uma das caixas assinaladas com um S,
+fazendo um clic. A movimentaáÑo da †rea far-se-† 'ponto por ponto', de acordo
+com a direáÑo da seta da respectiva caixa. Outra maneira possivel de fazer
+essa movimentaáÑo Ç clicar com o rato sobre o s°tio desejado numa das caixas
+assinaladas como CV e CH (esquema 1). Assim que Ç feito o clic, a barra de
+posiáÑo passar† a ocupar a posiáÑo em que foi feito o clic, e a †rea vis°vel
+ser† alterada de acordo com a nova posiáÑo da barra. Por outro lado, se o
+botÑo do rato nÑo fìr libertado, a barra acompanhar† o movimento do rato,
+vertical no caso da barra BV ou horizontal no caso da barra BH.
+A caixa C, no canto superior esquerdo da imagem, permite colocar a †rea
+vis°vel no canto superior esquerdo da †rea total (a barra BH encostada ao lado
+esquerdo da respectiva caixa e a barra BV na posiáÑo mais acima possivel).
+
+
+OS MENUS
+F1 - O primeiro menu, acedido pela tecla F1 ou por pressÑo no botÑo esquerdo
+     do rato, permite ver a imagem toda em tamanho natural. Pressionando um
+     dos botîes do rato ou uma tecla, voltar-se-† Ö grelha de ediáÑo.
+F2 - O segundo menu, acedido pela tecla F2 ou por pressÑo no botÑo esquerdo do
+     rato, permite gravar uma †rea da matriz (considero a matriz como sendo a
+     †rea total, ou seja uma †rea de 201x180 pontos), selecionada pelo utili-
+     zador, num ficheiro. A partir do momento em que Ç selecionada esta opáÑo,
+     Ç mostrada ao utilizador a †rea total, tal e qual como na opáÑo anterior.
+     A°, Ç permitido ao utilizador 'abrir' uma rectangulo, rectangulo este que
+     define a †rea que ser† gravada. Faz-se um clic com o botÑo esquerdo do
+     rato num ponto que ser† o ponto superior esquerdo do rectangulo,
+     libertando-se de seguida o botÑo do rato. EntÑo, pode mover-se o rato 'Ö
+     vontade', tornando o rectangulo maior ou menor, fazendo com que ele
+     'circunde' diferentes †reas. Assim que o utilizador considerar que est†
+     definida a †rea que lhe interessa gravar, basta fazer uma novo clic com o
+     rato (daqui para a frente, sempre que fìr mencionado 'definir uma †rea
+     com o rato', ser† da maneira que acabou de ser descrita). Neste momento
+     ser† pedido o nome do ficheiro.
+     No caso de ter sido escrito um nome para o ficheiro (pressionando ENTER
+     de seguida), e j† existir um ficheiro com o mesmo nome, na mesma
+     directoria, ser† perguntado ao utilizador se deseja reescrever o ficheiro.
+     Em caso afirmativo pressionar S, ou N em caso contr†rio.
+     NOTA: um ficheiro ao ser reescrito perde toda a sua anterior informaáÑo.
+F3 - O terceiro menu, acedido pela tecla F3 ou por pressÑo no botÑo esquerdo
+     do rato, permite carregar para a matriz um gr†fico prÇviamente gravado em
+     ficheiro pelo GRAFAZ. Ao ser escolhida esta opáÑo ser† apresentado ao
+     utilizador uma janela com os ficheiros *.EGB e directorias existentes na
+     presente directoria, juntamente com o seu tamanho (em bytes). PoderÑo ser
+     utilizadas as teclas do cursor (,), pgup, pgdn, home e end para movi-
+     mentar a barra que seleciona os ficheiros. Se fìr selecionada uma
+     directoria, passar-se-† Ö nova directoria, e assim sucessivamente. Os
+     ficheiros estÑo ordenados alfabÇticamente, e, se fìr pressionada uma
+     letra de A..Z, autom†ticamente serÑo apresentados os ficheiros a partir
+     do primeiro comeáado pela letra pressionada. Se nÑo houver nenhum fi-
+     cheiro comeáado por essa letra, nÑo haver† nenhuma alteraáÑo. Se fìr
+     preciso apagar algum ficheiro (para pìr as coisas em ordem), basta pres-
+     sionar DEL, seguido de 'S'. Se nÑo fìr pressionado o S, o ficheiro nÑo
+     ser† apagado. Para selecionar um ficheiro ou mudar de directoria pressio-
+     na-se ENTER ou clica-se uma vez (com o rato) em cima do respectivo nome.
+     Depois de pressionado ENTER (ou clic no rato), uma de quatro situaáîes
+     poder† ocorrer:
+        1¶, Ç selecionada uma directoria e entÑo Ç alterada a directoria
+            actual;
+        2¶, Ç selecionado um ficheiro, mas nÑo Ç um autàntico EGB;
+        3¶, Ç selecionado um ficheiro e este foi gravado pelo GRAFAZ, sendo
+            entÑo carregado e a †rea de imagem ai gravada Ç colocada na matriz
+            exactamente no s°tio de onde foi 'retirada' (gravada).
+        4¶, por alguma razÑo extraordin†ria, talvez por uma falha no hardware,
+            se o ficheiro nÑo fìr encontrado ser† dada uma mensagem ao
+            utilizador, informando-o do facto.
+     ESC ou clic no botÑo de menor uso do rato anula a opáÑo (fecha a janela).
+F4 - O quarto menu, acedido pela tecla F4 ou por pressÑo do botÑo esquerdo do
+     rato, d† acesso ao EDITOR DE PALETES, que ser† descrito mais Ö frente
+     neste documento.
+F5 - O quinto menu, acedido pela tecla F5 ou por pressÑo do botÑo esquerdo do
+     rato, permite ter acesso a um novo menu com algumas opáîes referentes Ö
+     ediáÑo da matriz, tais como a c¢pia ou a movimentaáÑo de de uma †rea da
+     matriz. As opáîes podem ser selecionadas por clic do rato ou por pressÑo
+     da tecla indicada.
+     O ecran ficar† com o seguinte aspecto:
+
+        (ver imagem2.pcx)
+
+-ESQUEMA 2
+
+     COPIAR permite copiar uma †rea da matriz real para outra posiáÑo (na
+            mesma matriz, ¢bviamente). Assim que Ç selecionada esta opáÑo, Ç
+            mostrada a matriz em tamanho real, como na opáÑo F1 VER, e entÑo
+            o utilizador poder† escolher a †rea (Ö semelhanÁa da opáÑo F2
+            GRAVAR) que deseja copiar para outro ponto da matriz. Depois de
+            escolhida a †rea, ficar† um rectangulo com o tamanho da †rea
+            escolhida 'colado' ao rato, e que pode ser deslocado para onde se
+            desejar dentro da matriz. Depois Ç s¢ clicar no sitio em que se
+            quer a c¢pia.
+     APAGAR ÜREA permite apagar uma †rea rectangular da matriz. Mostrada a
+            matriz, define-se uma †rea, e ao fazer-se o clic no botÑo esquerdo
+            do rato essa †rea ser† limpa permanentemente(com a cor de c¢digo 0).
+     APAGAR TUDO permite apagar toda a matriz, num acto irrevers°vel.
+            Depois de a opáÑo ter sido selecionada ela ficar† em 'highlight',
+            Ö espera da confirmaáÑo do utilizador, que ser† dada por um novo
+            clic do rato ou por pressÑo da tecla ENTER. Qualquer outra tecla
+            ou clic no botÑo direito do rato far† com que a opáÑo seja anulada.
+     ENCHER ÜREA permite encher uma determinada †rea com uma determinada cor.
+            Mostrada a matriz, clica-se com o rato num ponto que ser† de onde
+            se iniciar† o enchimento. A †rea ser† cheia com a cor associada ao
+            botÑo do rato com que se clicou. Ao ser feito o clic do rato, ser†
+            verificada a cor existente no 'ponto clicado', e entÑo essa cor
+            ser† substitu°da pela nova cor. O GRAFAZ far† o enchimento com
+            qualquer cor, Ö excepáÑo da cor 0. Este facto acontece porque foi
+            a £nica maneira que eu encontrei de nÑo ser necess†rio especificar
+            a cor da borda da †rea a encher. Se por algum motivo, durante um
+            enchimento de uma †rea o computador parecer ter 'craschado', basta
+            clicar o botÑo esquerdo do rato e o enchimento ser† interrompido
+            (nunca me aconteceu, mas por precauáÑo...).
+      MOVER Ç semelhante a COPIAR Ö excepáÑo de que a †rea original Ç apagada,
+            resultando apenas a c¢pia. A †rea Ç movida.
+      SOBRE Ç o habitual 'About...'.
+
+Clicando o botÑo direito ou pressionando ESC sai-se do menu.
+Para sair do GRAFAZ basta pressionar ESC duas vezes, j† que Ö primeira Ç
+solicitado ao utilizador que confirme a decisÑo de sair.
+
+
+O EDITOR DE PALETES
+Aqui podem criar-se ou modificar paletes, para uso com o GRAFAZ ou outro
+programa qualquer, uma vez que as paletes sÑo gravadas separadamente dos
+gr†ficos. Aspecto do editor (aproximadamente...):
+
+       (ver imagem3.pcx)
+
+-ESQUEMA 3
+
+Legenda
+             P - 256 quadrados, cada um apresentando uma das 256 cores
+             S - setas
+            CE - caixa de ediáÑo (de cores)
+    CR, CG, CB - caixas Red, Green e Blue (ou vermelha, verde e azul)
+    BR, BG, BB - barras Red, Green e Blue (ou vermelha, verde e azul)
+            CA - cor actual, uma barra com a cor a ser editada
+
+
+EDITANDO UMA COR
+No centro do ecran encontra-se a caixa de ediáÑo (CE), que permite alterar as
+'percentagens' das tràs componentes de cada cor, individualmente. Logo abaixo
+da caixa de ediáÑo est† indicado o c¢digo da cor actualmente a ser editada, e
+uma 'amostra' dessa cor, CA no esquema 3. AlÇm do c¢digo de cor encontra-se
+tambÇm presente um rectangulo que circunda a respectiva cor na palete (P).
+Existem duas maneiras para alterar a cor a ser editada: clicando com o rato
+num dos dois triangulos (assinalados por S no esquema 3), sendo o superior
+para avanáar uma cor e o inferior para recuar, tambÇm uma cor, ou entÑo Ç s¢
+clicar com o rato (botÑo esquerdo) na palete (P) sobre a cor que se deseja
+editar. O rectangulo passar† imediatamente a assinalar a nova cor a editar.
+Cada componente da cor possu° uma caixa com uma barra de 'percentagem'
+(coloco sempre percentagem entre ' porque nÑo se trata de uma real percentagem,
+uma vez que o valor de cada componente vai de 0 a 63 em vez de 0 a 100), que
+pode ser alterada, resultando na alteraáÑo da cor ou ton. As tràs componentes
+sÑo o que Ç vulgarmente chamado de RGB, red, green and blue, ou, em portuguàs,
+vermelho, verde e azul. Doseando-se estas tràs cores pode obter-se qualquer uma
+das 16,7 milhîes de cores (mas nÑo com o VGA standart ou qualquer placa SVGA,
+pelo que o GRAFAZ nÑo o faz, ele fica-se somente pelas 64x64x64=262144 cores,
+com apenas 256 simultÉneas) distinguiveis pelo olho humano. Existe para a
+caixa de cada componente duas outras caixas, uma com um '+' e outra com um '-'.
+Clicando-se numa destas caixas (6), a respectiva componente ser† alterada de
+acordo, indo de 1 em 1. Ao mesmo tempo Ç mostrada a 'percentagem' da componen-
+te logo no lado direito da caixa respectiva. Outra maneira Ç agir sobre os
+indicadores BR, BG ou BB (esquema 3), Ö semelhanáa das barras de posiáÑo (BV e
+BH no esquema 1) no Editor de Gr†ficos.
+
+
+AS OPÄôES
+EstÑo dispon°veis no canto superior esquerdo do ecran seis opáîes, acedidas
+por clic no botÑo esquerdo do rato sobre a opáÑo ou pela tecla respectiva (F1
+a F5), que facilitam a ediáÑo de paletes. Segue-se entÑo uma descriáÑo daquilo
+que cada uma faz:
+   - ESPALHAR: depois de selecionada esta opáÑo, clica-se com o rato
+               (botÑo esquerdo) numa cor da palete P (esquema 3). Essa cor
+               ganhar† Ç 31 tons mais claros, para 'a frente' na palete.
+   - RESET COR: ao ser selecionada como na opáÑo anterior, a cor a ser
+               actualmente editada ser† 'resetada', ou seja, colocada a preto.
+   - RESET PAL: ao ser selecionada como na opáÑo anterior, o GRAFAZ ficar† Ö
+               espera de confirmaáÑo, Ö semelhanáa da opáÑo APAGAR TUDO no
+               esquema 2. Se a opáÑo fìr confirmada, toda a palete Ö excepáÑo
+               das 16 primeiras cores ser† colocada a preto(se essas 16 fossem
+               tambÇm resetadas, nÑo se veria nada, pois as cores dos menus,
+               grelhas, etc. do GRAFAZ, fazem parte dessas primeiras 16.
+               (Alter†-las pode ser uma maneira de mudar as cores ao GRAFAZ).
+   - UNDO: desfaz a ñLTIMA operaáÑo feita Ö palete por qualquer uma das outras
+               opáîes.
+   - TROCAR e COPIAR: depois de selecionada uma destas opáîes, clica-se com o
+               rato em duas cores da palete P, com o botÑo esquerdo. No caso
+               da 1¶ (TROCAR), essas duas cores serÑo trocadas, e no caso da
+               2¶ (COPIAR), a 1¶ cor a ser clicada ser† copiada para a 2¶ cor,
+               resultando em duas cores iguais.
+
+
+O MENU LOCAL
+Se se pressionar o botÑo direito do rato em qualquer ponto do ecran, Ö excepáÑo
+da palete do lado direito, que continua activa, aparecer† um menu local:
+
+         (ver imagem4.pcx)
+
+-ESQUEMA 4
+
+Pressionando ESC ou o botÑo direito do rato sai-se do menu sem ter feito
+nenhuma opáÑo, que Ç o mesmo que escolher a opáÑo 1, por tecla (1) ou clic no
+botÑo esquerdo do rato sobre essa opáÑo.
+Qualquer uma das quatro opáîes pode ser selecionada por clic do rato (botÑo
+esquerdo) ou pressionando-se a tecla que lhe est† associada (1 a 4).
+Selecionando-se a segunda opáÑo, tem-se a possibilidade de carregar um palete.
+A maneira de carregar um ficheiro Ç em tudo idàntica Ö j† explicada para o
+caso de um EGB. Na terceira opáÑo, Ç pedido ao utilizador um nome de ficheiro,
+que Ç o nome do ficheiro com que vai ser gravada a palete actual.
+ESC permite anular qualquer uma das duas opáîes.
+A quarta opáÑo devolve ao programa a palete por omissÑo, ou seja aquela que
+est† activa Ö entrada do programa (carrega de novo a OMISSAO.PAL).
+Para sair do Editor de Paletes basta passar com o rato (sem clicar) sobre o
+quadrado do canto inferior esquerdo do ecran que diz 'SAIR'.
+
+
+O UTILITÜRIO EGBINFO
+Este pequeno utilit†rio fornece informaáîes sobre um ficheiro *.EGB gravado
+pelo GRAFAZ. Ao correr, Ç pedido ao utilizador o nome de um ficheiro incluindo
+a extensÑo, e entÑo se esse ficheiro existir e fìr um autàntico EGB, o
+utilit†rio fornecer† as seguintes informaáîes acerca do EGB:
+    - versÑo do GRAFAZ em que foi elaborado;
+    - largura e altura do gr†fico, em pontos (£til para se saber Ö
+      priori o tamanho necess†rio de um array para o guardar);
+    - mostra o gr†fico e assinala os seus limites (a linha que
+      circunda o gr†fico j† nÑo faz parte do mesmo).
+
+Para sair basta introduzir uma linha vazia (pressionar ENTER sem se ter
+escrito nada).
+
+
+UTILIZANDO AS VOSSAS 'OBRAS-PRIMAS'
+A utilizaáÑo de gr†ficos e paletes pode ser feita facilmente. Comeáando pelas
+paletes segue-se um exemplo de como carregar e activar uma palete num programa
+em PASCAL:
+
+     uses m256;
+
+        procedure loadpalete (nome_pal : string);
+        var pal : tip_pal;
+            pal_file : file of tip_pal;
+        begin
+             assign(pal_file, nome_pal + '.PAL');
+             reset(pal_file);
+             read(pal_file, pal);  { ler a palete do ficheiro }
+             close(pal_file);
+             ligapal(pal)          { activar a palete }
+        end;
+
+Como se và, nada mais simples. Basta ter-se um ficheiro, bri-lo, ler a palete
+de uma s¢ vez, fech†-lo e com o procedimento ligapal da j† referida M256,
+'ligar' a palete. Os ficheiros *.PAL ocupam sempre um espaáo de 768 bytes
+(3 bytes cada cor x 256 cores = 768 bytes). Estes ficheiros nÑo contàm nenhuma
+assinatura do programa, nem qualquer tipo de cabeáalho.
+Para usar um EGB, segue-se um exemplo:
+
+  uses m256;
+       { A var grafico ir† guardar o EGB para uso no programa. }
+       { alt seria a altura do gr†fico e larg a largura do mesmo, em pontos }
+  var grafico : array[1..alt, 1..larg] of byte;
+
+          procedure loadgrafico (nome : string);
+       {  Este procedimento carrega um ficheiro do GRAFAZ para um array }
+          var x, y : byte;
+              egb_file : file of byte;
+          begin
+               assign(egb_file, nome + '.EGB');  { nome Ç o nome do ficheiro }
+               reset(egb_file);
+               for x := 1 to 13 do  { isto Ç para 'eliminar' a assinatura do }
+                   read(egb_file, y);      { GRAFAZ }
+             { ler o bloco de dados para a vari†vel grafico }
+               for y := 1 to alt do      { 1 atÇ Ö altura m†xima do EGB }
+                   for x := 1 to larg do { 1 atÇ Ö largura m†xima do EGB }
+                       read(egb_file, grafico[x, y]);
+               close(egb_file)
+         end;
+
+
+         procedure poegrafico (posx, posy : word);
+       { Este procedimento imprime o grafico na posiÁ„o posx, posy do ecran. }
+         var x, y : byte;
+         begin
+              for y := posy to (posy + alt) do
+                  for x := posx to (posx + larg) do
+            { A condiáÑo seguinte faz com que a cor 0, que em principio Ç
+              a cor de fundo do gr†fico, nÑo seja impressa. }
+              if grafico[x, y] <> 0 then
+                 begin
+                      acor := grafico[x, y] ;
+                      ponto(x, y)
+                 end
+         end;
+
+  begin
+       mini;              { Inicializar o modo gr†fico. }
+       loadgrafico('c:\aaa\bbb\bola'); { Carregar o gr†fico. }
+       poegrafico(30, 30) { Imprimir o gr†fico na posiáÑo (30, 30) do ecran }
+  end.
+
+Para carregar um EGB 'como deve ser', falta ainda ao programa anterior um
+procedimento que carregue a palete e a active. Esse procedimento pode ser o
+primeiro dado, pelo que, depois de incluido neste £ltimo programa, a parte
+activa ficaria:
+
+  begin
+       mini;      { Inicializar o modo gr†fico. }
+       loadpalete('omissao');  { Carregar a palete OMISSAO (por exemplo) }
+       loadgrafico;       { Carregar o gr†fico. }
+       poegrafico(30, 30) { Imprimir o gr†fico na posiáÑo (30, 30) do ecran, }
+                          { com as cores correctas }
+  end.
+
+Para mais exemplos ver os programas exemplo incluidos.
+O programa SNOPY.EXE (utiliza IMAGEM1.EGB, SNOPY2.EGB e SNOPY2B.EGB), em
+PASCAL, faz uma pequena animaáÑo utilizando 2 EGBs que fiz com o GRAFAZ e um
+ficheiro que contÇm uma imagem de fundo e palete. O c¢digo fonte contÇm algumas
+consideraáîes sobre animaáÑo de um elemento sobre uma imagem de fundo sem se
+destruir esta £ltima.
+O programa C1.C (utiliza LOGO.EGB, BLAST.EGB e OMISSAO.PAL), em C, faz tambÇm
+uma pequena animaáÑo. Os coment†rios a este programa estÑo contidos no pr¢prio
+c¢digo fonte. NÑo posso fazer grandes coment†rios sobre a programaáÑo em C,
+porque nÑo programo em C, e o que sei foi o que aprendi para fazer o programa
+exemplo. No entanto creio que nÑo ser† dificil entender como carregar um EGB
+e coloc†-lo no ecran, e carregar uma palete e activ†-la.
+
+InformaáÑo sobre o formato dos *.EGB e *.PAL, ler o final do documento.
+
+
+NOTAS
+  - J† foi referido que ao entrar, o GRAFAZ carrega o ficheiro OMISSAO.PAL,
+    que consiste no ficheiro que contÇm a palete por omissÑo, ou inicial. No
+    caso de se desejar alterar essa palete permanentemente, pode-se definir
+    essa palete no Editor de Paletes e entÑo grav†-la com o nome OMISSAO. A
+    partir da°, ser† essa a palete que o GRAFAZ ir† carregar sempre que fìr
+    executado. Se j† se tiver uma palete gravada (pelo GRAFAZ), basta escrever
+    na linha de comandos (DOS):
+        REN <nome da palete>.PAL OMISSAO.PAL,
+    tendo em conta que a velha OMISSAO.PAL ser† perdida, a nÑo ser que
+    prÇviamente se faáa uma c¢pia com outro nome.
+  - Nos programas exemplo atr†s referidos, nÑo esquecer que, ao fazer o ASSIGN
+    para abrir uma ficheiro *.PAL ou *.EGB Ç necess†rio incluir o PATH, caso o
+    ficheiro nÑo esteja na directoria do programa que pretende abrir o
+    ficheiro.
+  - O GRAFAZ nÑo testa a presenáa de placa VGA, nem de um 286.
+  - O GRAFAZ nÑo testa a presenáa de um 'mouse driver'.
+  - O GRAFAZ trabalha apenas com uma drive, a drive de onde foi carregado.
+  - Quem Ç "canhoto" j† deve estar a pensar 'L† se esqueceram outra vez de
+    n¢s!'. Pois nÑo Ç o caso. No inicio do ficheiro GRAFAZ.PAS existem duas
+    constantes, botdir e botesq. Para vocàs, basta trocar os valores destas
+    duas vari†veis, compilar, e tàm o problema resolvido!
+
+
+Estrutura dos ficheiros *.EGB:
+    Cabeáalho - primeiros 13 bytes, em que os 9 primeiros sÑo a
+                assinatura do programa, que Ç 'GRAFAZ(espaáo)1'+ chr(13).
+                Os dois bytes seguintes sÑo a posiáÑo (x,y) do EGB na matriz
+                do GRAFAZ. Os dois seguintes, sÑo a largura e a altura do EGB,
+                respectivamente Notem que a largura e altura fornecidas pelo
+                cabeáalho sÑo resultado da subtraáÑo das posiáîes m†ximas do
+                EGB na matriz pelas m°nimas, isto Ç, se o EGB foi retirado de
+                ((x,y),(x1,y1)), a largura Ç (x1-x) e a altura (y1-y). Isto
+                quer dizer que o nß de pontos que o EGB possui em altura Ç
+                o nß do cabeáalho mais um. O mesmo para a largura.
+                Exemplo de um record em PASCAL para o cabeáalho:
+                 type GRAFAZ1Header =
+                           RECORD
+                                 assin : array[1..9] of char; { assinatura }
+                                 matXpos, matYpos : byte;  { pos na matriz }
+                                 larg, alt : byte          { dimensîes }
+                           END;
+                NÑo podem substituir 'assin : array[1..9] of char;' por
+                'assin : string[9];', porque as strings tàm um byte extra,
+                que indica o comprimento, e assim o RECORD nÑo 'bate certo'
+                com o cabeáalho.
+
+    Corpo -  a partir daqui estÑo os dados da imagem, linha a linha.
+             (x,y), (x1,y), (x2,y), (x3,y), (x...
+             (x,y1),(x1,y1),(x2,y1),(x3,y1),(x..
+             (x,y..
+
+
+
+Estrutura dos ficheiros *.PAL:
+  NÑo possuem nenhuma estrutura especial, nem assinatura.
+  Contàm simplesmente os dados, 3 bytes para cada cor, por ordem crescente
+  de cores. Ao carregarem um ficheiro *.PAL para uma vari†vel do tipo Tip_pal
+  definido na unidade M256, tàm acesso f†cil a qualquer componente (R, G ou B)
+  de qualquer c¢digo de cor da palete.
+
+
+
+CRãTICAS, INFORMAÄôES, ETC.,
+      RUA JOSê MERGULHéO, Nß4  6ßL REBOLEIRA SUL
+      2700 AMADORA
+      OU  TELF. (01) 4956868.
+
+
+Bons gr†ficos!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

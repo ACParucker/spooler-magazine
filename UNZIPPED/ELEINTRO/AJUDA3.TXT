@@ -1,0 +1,5 @@
+               Imprimir lição
+
+   Esta opção permite imprimir uma lição para ser lida mais tarde ou numa altura de maior conveniência.
+   Basta 'clicar' em << ou >> até que o indicador mostre o nº da lição que se pertende imprimir.
+   É também possivel escolher a fonte a ser usado na impressão.

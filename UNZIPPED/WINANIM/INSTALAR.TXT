@@ -1,0 +1,3 @@
+Copiar os ficheiros *.vbx *.dll para o directorio \windows\system
+para se poder correr o ficheiro WinAnim
+

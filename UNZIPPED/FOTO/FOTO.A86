@@ -1,0 +1,1091 @@
+; FOTOGRAFA 1.5a - Um programa para "fotografar" o ecrÑ em modo texto 80x25,
+;                por Vasco Veloso. VersÑo Spooler.
+
+; NOTA : Algumas rotinas nÑo sÑo da minha autoria, mas foram tornadas Dom°nio
+;        P£blico pelo seu autor, Franco Gomes.
+
+
+JMP START               ; Este Ç um salto de respeito. Deixe para ver depois.
+
+TAMNF EQU 40
+
+HOTKY:  DW 07200h       ; Uma 'word' para guardar o 'Hot Key' que activa o
+                        ; programa residente. (Ctrl-PrtScr)
+NAODA:  DB 0
+
+OLD16:  DD 0            ; Espaáo para guardar o endereáo do 'velho' Int16h.
+ACT16:  DD 0
+
+GR_ANT_D:
+        DB      1,9,42,2,23,'Gravar ecrÑ [A]nterior',2,31,'∫',2,7,'±±',0
+GR_ANT_A:
+        DB      1,9,42,2,31,'Gravar ecrÑ ',2,30,'[A]',2,31,'nterior∫',2,7,'±±',0
+
+MENU  : DB      2,31,1,8,14
+        DB      '…ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕµ FOTOGRAFA 1.5a ∆ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕª'
+        DB      2,31,1,9,14
+        DB      '∫ ',2,30,'[G]',2,31,'uardar ecrÑ corrente   '
+        DB      1,10,14,2,31
+        DB      '∫ '
+        DB      'Gravar ecrÑ ',2,30,'[C]',2,31,'orrente    ',2,30,'[D]',2,31
+        DB      'esinstalar  '
+        DB      '       ∫',2,7,'±±'
+        DB      1,11,14,2,31
+        DB      '∫        Alterar nome do ',2,30,'[F]',2,31,'icheiro de ecrÑ  :    ∫',2,7,'±±'
+        DB      1,12,14,2,31
+        DB      '∫                                                 ∫',2,7,'±±'
+        DB      1,13,14,2,31
+        DB      '∫ Ficheiro ',2,30,'[T]',2,31,'ipo:    ('
+F_TEXTO:DB      '˚' ;˚ = #251
+        DB      ') Texto     ('
+F_BIN:  DB      ' '
+        DB      ') Bin†rio   ∫',2,7,'±±'
+        DB      1,14,14,2,31
+        DB      '∫                   ESC - SAIR                    ∫',2,7,'±±'
+        DB      2,31,1,15,14
+        DB      '»ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕº',2,7,'±±'
+        DB      1,16,16,2,7
+        DB      '±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±',0
+
+MFICHE: DB      1,12,16,2,31
+FICHEC: DB      TAMNF DUP(' '),0
+
+JANELA: DB      1,10,9,2,79
+        DB      ' ÷ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∑'
+        DB      1,11,9
+        DB      ' ∫                                                  ∫',2,7,'±±'
+        DB      1,12,9,2,79
+        DB      ' ”ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒΩ',2,7,'±±'
+        DB      1,13,11
+        DB      '±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±',0
+GRAVA : DB      1,11,21,2,79
+        DB      'GRAVANDO... Por favor aguarde',0
+FERRO : DB      1,11,12,2,79
+        DB      'ERRO NO TRATAMENTO DO FICHEIRO - TAREFA TERMINADA',0
+FEXIST: DB      1,11,12,2,79
+        DB      '    FICHEIRO JÜ EXISTENTE - Reescrever (S/N) ?',0
+NDES  : DB      1,11,12,2,79
+        DB      ' ERRO FATAL : DESINSTALAÄéO IMPOSSãVEL',0
+INTRF : DB      1,10,14,2,79
+        DB      '¥ Introduza novo nome de ficheiro √',0
+PRTCL : DB      1,12,23,2,79 
+        DB      '¥ Prima uma tecla para continuar... √',0
+
+FECRA  :DB 'ECRA.TXT',0      ; Ficheiro de ecrÑ 'default' - Ç assumido
+                             ; quando nÑo sÑo passados parÉmetros.
+HANDLE :DW 0                 ; Para a rotina de gravaáÑo.
+DADOS  :DB 0                 ; Idem ""
+
+ECRAN  :DW 0                 ; Para guardar o segmento da mem¢ria v°deo.
+CONTA  :DB 0                 ; Para guardar iteraáîes.
+PCURSOR:DW 0                 ; Guarda a posiáÑo do cursor, aquando da chamada.
+PAR    :DB 0                 ; 'Flag' de parÉmetros - indica sa foram ou nÑo
+                             ; passados alguns.
+GR_ANT :DB 0                 ; Para assinalar se a opáÑo 'Gravar ecrÑ Anterior'
+                             ; deve ser executada.
+
+INSMD:  DW 0
+JATEC:  DB 0            ; Indicador para 'INPUT'
+STRIN:  DW 0            ; Para a rotina 'INPUT'
+COL  :  DB 0            ; Idem
+LIN  :  DB 0            ; Pois... ""
+
+SAVBX:  DW 0            ; Espaáo para guardar todos os registos.
+SAVCX:  DW 0            ; Est† f†cil de ver qual Ç o registo, nÑo est†?
+SAVDX:  DW 0            ;
+SAVBP:  DW 0            ;
+SAVDI:  DW 0            ;
+SAVSI:  DW 0            ;
+SAVDS:  DW 0            ;
+SAVES:  DW 0            ;
+SAVSS:  DW 0            ;
+SAVSP:  DW 0            ;
+FLAGS:  DW 0            ;
+SAVIP:  DW 0            ;
+SAVCS:  DW 0            ;
+
+; ************************************************************************
+
+ASSIN:  DW 0            ; Esta 'word' vai conter uma 'assinatura' que
+                        ; permite verificar se o programa j† se encontra
+                        ; instalado. Esta 'word' deve estar precisamente
+                        ; antes do 'label' onde 'arranca' o programa
+                        ; residente. Para mais detalhes veja-se a rotina
+                        ; 'START' l† mais para o fim.
+;                    ⁄ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒø
+; ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¥ In°cio do Programa residente √ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+;                    ¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒŸ
+;
+;    A rotina 'NOV16', que se segue, Ç executada sempre que se pressionar
+;    uma tecla. O c¢digo da tecla (ou teclas) Ç analisado e se nÑo se tratar
+;    da nossa tecla de arranque (HotKey), este programa nÑo faz absolutamente
+;    nada deixando o campo de acáÑo o mais depressa poss°vel!
+
+
+NOV16:  CMP AH,0        ; Và-se qual a funáÑo (em AH) que foi usada
+        JZ >L0          ; para chamar a interrupáÑo 16h.
+        CMP AH,16       ; S¢ nos interessam as funáîes AH=0 ou AH=16
+        JZ >L0          ; que correspondem Ö leitura do teclado.
+
+        JMP FAR D[CS:OLD16]
+
+L0:     STI                  ; Simula-se uma interrupáÑo:
+        PUSHF                ; Empilham-se as 'flags',
+        CLI                  ; desligam-se as interrupáîes
+        CALL FAR D[CS:OLD16] ; e chama-se o 'velho' Int16h.
+        CMP AX,[CS:HOTKY]    ; AX retorna com o c¢digo ASCII e Scan code
+        JZ >L1               ; da tecla (ou teclas) premida. Compara-se
+                             ; com a nossa 'HotKey'. Se nÑo for igual
+        IRET                 ; a interrupáÑo nÑo passa daqui e retorna.
+
+L1:     MOV [CS:SAVBX],BX    ; Foi accionada a nossa 'Tecla Quente'!!!
+        MOV [CS:SAVCX],CX    ; Guardam-se todos os registos cuidadosamente.
+        MOV [CS:SAVDX],DX    ; - EntÑo e o AX?
+        MOV [CS:SAVBP],BP    ; - O AX que se... (NÑo Ç preciso guardar o AX).
+        MOV [CS:SAVDI],DI
+        MOV [CS:SAVSI],SI
+        MOV [CS:SAVDS],DS
+        MOV [CS:SAVES],ES
+
+        POP [CS:SAVIP]       ; 'Rouba-se' Ö pilha o bilhete de volta
+        POP [CS:SAVCS]       ; da interrupáÑo, e guarda-se em s°tio seguro.
+        POP [CS:FLAGS]       ; Guardam-se tambÇm as 'flags'.
+
+        MOV [CS:SAVSS],SS    ; NÑo esquecer de guardar o endereáo da pr¢pria
+        MOV [CS:SAVSP],SP    ; pilha. ('Stack' para os angl¢fonos).
+
+        STI                  ; Isto Ç para por as 'flags' mais Ö vontade...
+        CLD                  ; '- a gente diz STI e CLD Ös flags e elas...'
+
+        PUSHF                ; Empilhamos as novas e descontra°das 'Flags'.
+        MOV AX,CS            ; O AX vai ver qual o 'Code Segment'.
+        PUSH AX              ; Empilhamos o nosso segmento e 'offset'
+        MOV AX,VOLTA         ; para fazer uma partida ao 'IRET'.
+        PUSH AX
+        IRET                 ; E pronto! Em vez de voltar para onde devia,
+                             ; a interrupáÑo termina, com as voltas trocadas,
+                             ; e a execuáÑo do processador vai retomar
+                             ; aqui, j† a seguir. (HÇ, hÇ, hÇ...)
+
+VOLTA:  MOV AX,CS            ; Depois de lubridiado o novo Int16h, vamos apontar
+        MOV DS,AX            ; todos os registos de segmento para este
+        MOV ES,AX            ; nosso segmento.
+
+        PUSH ES         ; verifica-se se algum outro programa residente
+                        ; foi posteriormente alojado em mem¢ria desviando
+                        ; o nosso INT16h.
+        MOV AX,03516h   ; ObtÇm-se o end. do vector actual do Int16h
+        INT 33          ; End. do Int16h em ES:BX
+        MOV DX,ES
+        POP ES
+        CMP BX,NOV16    ; Se nÑo Ç igual ao nosso INT16h Ç porque outro
+        JNZ >L0         ; programa residente o desviou.
+        MOV AX,DS
+        CMP DX,AX
+        JNZ >L0
+        MOV B[NAODA],0
+        JMP >L1
+L0:     MOV B[NAODA],1  ; Coloca-se a '1' o byte 'NAODA' para avisar quando
+                        ; se solicitar a desinstalaáÑo deste residente, que tal
+                        ; nÑo Ç poss°vel, caso contr†rio o outro programa
+                        ; que foi instalado ap¢s este, ficar† ÆbaralhadoØ
+                        ; de todo.
+
+L1:     MOV W[ACT16+2],DX
+        MOV W[ACT16],BX      ; Guarda-se o corrente vector do INT16h.
+                             ; (seja ele o nosso ou outro).
+
+        PUSH DS
+        MOV AX,02516h        ; Como j† nÑo precisamos de manter o Int16h
+        LDS DX,[OLD16]       ; desviado (enganado j† ele foi), vamos
+        INT 33               ; repor em funcionamento a velha interrupáÑo
+        POP DS               ; de I/O do teclado.
+
+        CALL ACCAO      ; Um estalo da 'claquete' e l† vamos.
+                        ; ...
+                        ; ...
+                        ; ...
+
+                        ; ... E j† volt†mos.
+
+        CMP AL,0        ; Se o valor 0 foi retornado em AL Ç porque
+        JNZ >L2         ; o estimado utilizador resolveu desinstalar
+                        ; o programa residente.
+
+        MOV AH,73       ; Para tal, liberta-se a mem¢ria do segmento ocupado
+        INT 33          ; por este programa (em ES).
+
+        PUSH ES
+        MOV ES,W[44]    ; Liberta-se tambÇm a mem¢ria ocupada
+        MOV AH,73       ; pelo 'DOS Environment'. Muitos residentes nÑo fazem
+        INT 33          ; isto, o que resulta que ficam sempre uns
+        POP ES          ; bytes 'fantasmas' a ocupar espaáo na dita cuja
+                        ; mem¢ria.
+        JMP >L3         ; Siga-se o pequeno salto...
+
+L2:
+        PUSH DS
+        MOV AX,02516h   ; Aqui o respeit†vel utilizador desactivou o programa.
+        LDS DX,[ACT16]  ; Tornamos a desviar o Int16h para a nossa rotina.
+        INT 33          ; '- Chiáa!!! Este gajo Ç muito chato!' - Vociferou
+        POP DS          ;  a interrupáÑo 16h, j† danada da Silva.
+
+L3:     MOV BX,[SAVBX]  ; VÑo-se buscar todos os registos anteriormente
+        MOV CX,[SAVCX]  ; guardados com todos os cuidados.
+        MOV DX,[SAVDX]
+        MOV BP,[SAVBP]
+        MOV DI,[SAVDI]
+        MOV SI,[SAVSI]
+        MOV DS,[SAVDS]
+        MOV ES,[CS:SAVES]
+        MOV SS,[CS:SAVSS]
+        MOV SP,[CS:SAVSP]
+
+        MOV AX,[CS:FLAGS] ; As 'flags' colocam-se tal e qual como estavam...
+        PUSH AX
+        MOV AX,[CS:SAVCS]
+        PUSH AX           ; Empilha-se o endereáo para onde a interrupáÑo
+        MOV AX,[CS:SAVIP] ; deveria ter voltado da primeira vez...
+        PUSH AX
+
+        XOR AX,AX         ; O AX vai de tanga, para nÑo dar bronca no 'buffer'
+                          ; do teclado...
+
+        IRET              ; E z†z! A rotina volta sÑ e salva, como se nada
+                          ; se tivesse passado. De facto, levou uma lavagem
+                          ; ao cÇrebro e jura que foi apanhada num disco
+                          ; voador...
+
+; ***************************************************************************
+; ****  Aqui segue-se tudo aquilo que o Int16h vai esquecer! ****************
+; ***************************************************************************
+
+ACCAO:
+       PUSH ES
+
+       MOV AH,0F         ; Vai-se ver qual o modo v°deo
+       INT 010           ; ...
+       CMP AL,02         ; Se for 80x25 cor
+       JE >L0
+       CMP AL,03         ; ou 80x25 mono
+       JE >L0            ; prossegue-se,
+       POP ES            ; caso contr†rio
+       RET               ; RETorna-se.
+
+ L0:   CALL SAVE2        ; Guarda-se o ecrÑ corrente, por causa da janela
+       CALL SAVCURSOR    ; Guarda-se a posiáÑo corrente do cursor
+       MOV DX,25 BY 25   ; Coloca-se o cursor na 25¶ linha do ecrÑ,
+       CALL CRSIN        ; Para que nÑo se veja.
+       CALL OPCOES       ; Chama-se a rotina que vai tratar da escolha das
+                         ; opáîes.
+       MOV DX,[PCURSOR]  ; Recoloca-se o cursor na posiáÑo anterior.
+       CALL CRSIN
+
+       POP ES
+       RET
+
+OPCOES:
+       MOV DI,MENU       ; Imprime-se no ecrÑ a janela-menu.
+       CALL ESCREVE
+
+       CMP B[GR_ANT],0FF ; Deve-se executar a opáÑo 'Gravar ecrÑ Anterior' ?
+       JE >L1            ; NÑo.
+       MOV DI,GR_ANT_A   ; Sim. Pìe-se Ö cor normal.
+       JMP SHORT >L2     ; Hop...
+ L1 :  MOV DI,GR_ANT_D   ; Pìe-se a opáÑo a cinzento.
+ L2 :  CALL ESCREVE      ; Escreve-se a opáÑo, seja qual for a cor.
+       MOV DI,MFICHE     ; Faz-se a mesma coisa ao nome do ficheiro.
+       CALL ESCREVE
+                         ; Aqui, segue-se a rotina para tratar as opáîes.
+ L0 :  MOV AH,0          ; Là-se uma tecla...
+       INT 016
+       CALL UPCASE       ; Converte-se para ma°usculas, para facilitar.
+
+       CMP AL,'G'        ; Guardar ecran corrente
+       JNE >L1
+       CALL REST2
+       CALL SAVE1
+       MOV B[GR_ANT],0
+       RET
+
+ L1 :  CMP B[GR_ANT],0FF ; Deve-se executar esta opáÑo ?
+       JE >L2            ; NÑo. Que pena...
+       CMP AL,'A'        ; Gravar ecrÑ anterior
+       JNE >L2
+       CALL REST2
+       CALL GR_ECRA
+       RET
+
+ L2 :  CMP AL,'C'        ; Gravar ecrÑ corrente
+       JNE >L3
+       CALL REST2
+       CALL SAVE1
+       CALL GR_ECRA
+       RET
+
+ L3 :  CMP AL,'D'        ; Desinstalar
+       JNE >L5
+       CMP B[NAODA],1
+       JE >L4
+       XOR AX,AX
+       CALL REST2
+       RET
+ L4 :  MOV DI,JANELA
+       CALL ESCREVE
+       MOV DI,NDES
+       CALL ESCREVE
+       MOV DI,PRTCL
+       CALL ESCREVE
+       CALL PAUSA
+       CALL REST2
+       MOV AX,0FFFF
+       RET
+
+ L5 :  CMP AL,27xD       ; Sair do menu
+       JNE >L6
+       CALL REST2
+       RET
+
+ L6 :  CMP AL,'F'        ; Alterar o nome do ficheiro de ecrÑ
+       JNE >L7
+       MOV DI,JANELA
+       CALL ESCREVE
+       MOV DI,INTRF
+       CALL ESCREVE
+       MOV DH,11         ; Preparam-se os registos para
+       MOV DL,11         ; chamar a rotina INPUT, que se ir† encarregar
+       MOV CL,TAMNF      ; de ler o novo nome de ficheiro.
+       MOV CH,79xD       ; Coloca-se em CH o atributo de cor,
+       MOV DI,FICHEC     ; pìe-se em DI o endereáo da string destino...
+       CALL INPUT        ; e chama-se a rotina.
+       CALL REST2
+       MOV DX,25 BY 25   ; Esconde-se o cursor
+       CALL CRSIN
+       JMP OPCOES
+
+L7 :   CMP AL,'T'
+       IF NE JMP L0
+       CMP B[F_TEXTO],' '
+       JNE >L8
+       MOV B[F_TEXTO],'˚'
+       MOV B[F_BIN],' '
+       JMP OPCOES
+L8 :   MOV B[F_BIN],'˚'
+       MOV B[F_TEXTO],' '
+       JMP OPCOES
+
+GR_ECRA:
+       PUSH AX,DX,CX,DI,ES
+
+       MOV B[CONTA],0
+
+  L0:  MOV DX,FICHEC     ; Abre-se o ficheiro...
+       MOV CX,0          ;
+       MOV AH,05B        ;
+       INT 021h          ;
+       IF C JMP ERRO     ; Erro ?
+
+       MOV [HANDLE],AX   ; Guarda-se o handle do ficheiro do ecrÑ
+                         ; Preparam-se os registos para a leitura do ecrÑ:
+
+       MOV DI,JANELA
+       CALL ESCREVE
+       MOV DI,GRAVA
+       CALL ESCREVE
+
+       MOV ES,[ECRAN]    ; Segmento inicial da mem¢ria v°deo
+       MOV DI,4000       ; Offset do local onde comeáa o ecrÑ anteriormente
+                         ; guardado
+       CMP B[F_BIN],'˚'
+       JE >L01
+       MOV CX,2000       ; N£mero de bytes a ler, se for s¢ texto.
+       JMP SHORT >L1
+  L01: MOV CX,4000       ; N£mero de bytes a ler, se for bin†rio.
+
+  L1:  ES MOV AX,W[DI]   ; Là-se um byte...
+       MOV [DADOS],AL    ; e pìe-se numa vari†vel na mem¢ria, por causa da
+                         ; futura gravaáÑo.
+       MOV BX,[HANDLE]   ; Preparam-se os registos para a escrita
+       MOV DX,DADOS
+       PUSH CX
+       MOV CX,1          ; Escreve-se no ficheiro...
+       MOV AH,040h       ; ê a funáÑo 40h do INT 21h, e o offset dos dados vem
+       INT 021h          ; em DX; em CX vem o nß de bytes a escrever.
+       POP CX
+       CMP AX,0          ; Se AX=0,isso significa que o ficheiro nÑo foi escrito
+       JE ERRO           ; Erro ?
+       CMP B[F_BIN],'˚'  ; O formato Ç de um ficheiro bin†rio ?
+       JNE >L10          ; Se nÑo for, prossegue-se normalmente para texto.
+       INC DI            ; Se for, tambÇm se gravam os atributos de cor.
+       JMP SHORT >L11    ; Assim, o contador s¢ Ç incrementado de um byte.
+                         ; SenÑo,
+  L10: ADD DI,2          ; incrementa-se o apontador aos dados do ecrÑ de 2 bytes,
+  L11: INC B[CONTA]      ; incrementa-se o contador de caracteres por linha.
+       CMP B[F_BIN],'˚'  ; Se for um ficheiro bin†rio,
+       JE >L2            ; nÑo se grava a sequància CR/LF.
+       CMP B[CONTA],80xD ; J† se escreveram 80 ?
+       JNE >L2
+
+       MOV B[CONTA],0    ; Se sim, zera-se o contador e
+       MOV BX,[HANDLE]   ; prepara-se tudo para escrever
+       MOV B[DADOS],13xD ; um CR/LF no ficheiro, por causa dos editores
+       MOV DX,DADOS      ; de texto esquisitos.
+       PUSH CX
+       MOV CX,1          ; Escreve-se no ficheiro...
+       MOV AH,040h       ;
+       INT 021h          ;
+       POP CX
+       CMP AX,0
+       JE ERRO           ; Erro ?
+       MOV B[DADOS],10xD
+       MOV BX,[HANDLE]
+       MOV DX,DADOS
+       PUSH CX
+       MOV CX,1          ; Escreve-se no ficheiro...
+       MOV AH,040h       ;
+       INT 021h          ;
+       POP CX
+       CMP AX,0
+       JE ERRO           ; Erro ?
+ L2 :  LOOP L1           ; Repete-se o ciclo CX vezes
+
+       MOV BX,[HANDLE]   ; Fecha-se o ficheiro...
+       MOV AH,03Eh       ;
+       INT 021h          ;
+
+       JMP SHORT >L5
+
+ERRO:  PUSH AX
+       MOV DI,JANELA
+       CALL ESCREVE
+       POP AX
+       CMP AL,050        ; Ser† que se tentou abrir um ficheiro existente ?
+       JNE >L4
+       MOV DI,FEXIST     ; Tentou-se.
+       CALL ESCREVE      ; Escreve-se a mensagem correspondente.
+       MOV AH,0          ; Là-se uma tecla...
+       INT 016
+       CALL UPCASE       ; Mai£sculas...
+       CMP AL,'S'        ; Se nÑo se deseja reescrever,
+       JNE >L5           ; salta-se para regressar.
+       MOV AH,041        ; Apaga-se o ficheiro, porque senÑo d† barraca.
+       MOV DX,FICHEC
+       INT 021
+       JC >L4            ; Se ocorreu qualquer outro erro, salta-se.
+       JMP L0            ; Caso contr†rio, prossegue-se.
+  L4:  MOV DI,FERRO
+       CALL ESCREVE
+       MOV DI,PRTCL
+       CALL ESCREVE
+       CALL PAUSA
+
+  L5:  CALL REST2
+       POP ES,DI,CX,DX,AX
+       RET
+
+PAUSA:
+        MOV AX,0
+        INT 016
+        RET
+
+ESCREVE:                     ; Esta rotina escreve uma string de dados no
+                             ; ecrÑ, com os seguintes dados:
+       MOV ES,[ECRAN]        ; Valor do segmento de v°deo
+       MOV SI,DI             ; Em DI vem o offset da string de dados
+       XOR DI,DI
+  L1:
+       MOV AL,B[SI]          ; Pìe-se um byte de dados em AX...
+       CMP AL,0              ; Se for zero, Ç porque j† se chegou ao fim.
+       JE >L4                ; Salta-se para o RETorno
+
+       CMP AL,1              ; Se AX for 1, vai-se mudar a posiáÑo do texto
+       JNE >L2
+       INC SI                ; Aponta-se para o pr¢ximo byte...
+       MOV BH,B[SI]          ; là-se a linha...
+       INC SI
+       MOV BL,B[SI]          ; a coluna...
+       INC SI
+       CALL CALPO            ; e calcula-se o offset v°deo (obrigado, Franco Gomes)
+       JMP SHORT L1          ; E l† voltamos ao princ°pio...
+  L2:
+       CMP AL,2              ; Se AL for 2, Ç porque queremos mudar a cor.
+       JNE >L3
+       INC SI                ; Portanto, aponta-se para o byte que contÇm
+       MOV AH,B[SI]          ; o repectivo atributo e actualiza-se.
+       INC SI
+       JMP SHORT L1          ; L† voltamos para tr†s ! Livra !
+  L3:
+       MOV ES:[DI],AX        ; Aqui, escreve-se na mem¢ria v°deo o byte de dados,
+       ADD DI,2              ; com AH = cor e AL = caracter. Incrementa-se o
+       INC SI                ; offset v°deo e o da string de dados...
+       JMP L1                ; E recomeáa tudo outra vez.
+  L4:
+       RET                   ; RETornamos ao s°tio de onde nos chamaram...
+
+
+; ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+;
+;               INPUT - Là um car†cter do teclado e escreve-o no ecrÑ
+;                       Detecta as teclas 'Enter', 'Escape', 'Backspace',
+;                            'Home', 'End', '-> ', '<- ', 'Del' e 'Ins'.
+;
+;       Antes de chamar a rotina, DX deve conter as coordenadas iniciais;
+;                                 CL o n£mero m†ximo de caracteres;
+;                                 CH o atributo de cor;
+;                                 DI o endereáo onde guardar a string
+;
+; ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+INPUT:  MOV [STRIN],DI
+        MOV [LIN],DH
+        MOV [COL],DL
+        MOV BX,DX       ; DX tr†z coord. p/ o cursor; CL nß limite de caractere
+        ADD CL,DL       ; BL = posiáÑo inicial
+        DEC CL          ; CL = posiáÑo limite
+        CALL STEND      ; Coloca o cursor no fim da palavra j† existente
+                        ; (se existir)
+        CMP B[JATEC],0  ; Se 'JATEC'=1 Ç porque j† vem em AX uma tecla para
+        JZ >L0          ; analizar.
+        CALL CRSIN
+        MOV B[JATEC],0
+        JMP >L1
+L0:     CALL CRSIN      ; Coloca o cursor nas coord. DX
+        MOV AH,0
+        INT 22          ; Espera que uma tecla seja premida
+L1:     CMP AL,0        ; O c¢digo ASCII vem em AL. Se AL=0 entÑo
+        JZ >L3          ; foi premida uma tecla especial
+        CMP AL,27       ; tecla 'Escape' ?
+        JZ >L4
+        CMP AL,13       ; Tecla 'Enter' ?
+        JZ >L5
+        CMP AL,9
+        JZ >L8          ; Tecla 'TAB' ?
+        CMP AL,8        ; Tecla 'Backspace' ?
+        JZ >L6
+
+        ; A partir daqui sÑo teclas para escrever
+
+        MOV AH,[INSMD]  ; Và se modo insert ON
+        CMP AH,1
+        JZ >L7
+
+L2:     CALL IMPRI
+        CMP DL,CL
+        JZ L0
+        INC DL
+        JMP L0
+
+L3:     CALL SCODS
+        JMP L0
+L4:     RET
+L5:     CALL ARMAZ
+        JMP L4
+L6:     CALL BCSPC
+        JMP L0
+
+L7:     CALL MKINS
+        JMP L2
+L8:     CALL MKTAB
+        JMP L0
+
+MKTAB:  INC DL
+        MOV AL,DL
+        XOR AH,AH
+        MOV DL,8
+        DIV DL
+        INC AL
+        MUL DL
+        MOV DL,AL
+        CMP DL,CL
+        JA >L0
+        RET
+L0:     MOV DL,CL
+        RET
+
+MKINS:  CMP DL,CL
+        JZ >L1
+        PUSH BX,CX
+        MOV BL,CL
+        SUB CL,DL
+        INC CL
+        XOR CH,CH
+        CALL CALPO
+        MOV SI,DI
+        DEC SI
+        DEC SI
+        MOV BX,[ECRAN]
+L0:     PUSH DS,ES
+        MOV DS,BX
+        MOV ES,BX
+        STD
+        MOVSB
+        DEC SI
+        DEC DI
+        POP ES,DS
+        LOOP L0
+        POP CX,BX
+L1:     RET
+
+
+RDCUR:  PUSH BX         ; Là o car†cter na pos. do cursor.
+        MOV AH,8
+        XOR BH,BH
+        INT 16
+        POP BX
+        RET
+
+IMPRI:  PUSH BX,CX ; Escreve car†cter na posiáÑo do cursor
+        MOV BL,CH
+        MOV AH,9
+        XOR BH,BH
+        MOV CX,1
+        INT 16
+        POP CX,BX
+        RET
+
+SCODS:  CMP AH,71       ; Tecla 'Home' ?
+        JZ >L0
+        CMP AH,79       ; Tecla 'End' ?
+        JZ >L1
+        CMP AH,75       ; Tecla '<-' ?
+        JZ >L2
+        CMP AH,77       ; Tecla '->' ?
+        JZ >L3
+        CMP AH,83       ; Tecla 'Del' ?
+        JZ >L4
+        CMP AH,82       ; Tecla 'Ins'
+        JZ >L5
+        RET
+L0:     CALL SHOME
+        RET
+L1:     CALL STEND
+        RET
+L2:     CALL SESQU
+        RET
+L3:     CALL SEDIR
+        RET
+L4:     CALL STDEL
+        RET
+L5:     CALL STINS
+        RET
+
+SHOME:  MOV DL,BL
+        RET
+STEND:  PUSH AX
+        MOV DL,CL
+L0:     CALL CRSIN
+        CALL RDCUR
+        CMP AL,32
+        JNZ >L1
+        CMP DL,BL
+        JZ >L2
+        DEC DL
+        JMP L0
+L1:     CMP DL,CL
+        JZ >L2
+        INC DL
+L2:     POP AX
+        RET
+SESQU:  CMP DL,BL
+        JZ >L0
+        DEC DL
+L0:     RET
+SEDIR:  CMP DL,CL
+        JZ >L0
+        INC DL
+L0:     RET
+STDEL:  MOV AL,32
+        CALL IMPRI
+        RET
+STINS:  MOV AL,[INSMD]
+        CMP AL,0
+        JZ >L0
+        XOR AL,AL
+        CALL CRPEQ
+        JMP >L1
+L0:     MOV AL,1
+        CALL CRGRD
+L1:     MOV [INSMD],AL
+        RET
+
+CRPEQ:  PUSH AX,BX,CX
+        MOV AH,3        ; cursor pequeno
+        XOR BH,BH
+        INT 16
+        MOV CH,CL
+        DEC CH
+        MOV AH,1
+        INT 16
+        POP CX,BX,AX
+        RET
+
+CRGRD:  PUSH AX,BX,CX   ; Cursor grande
+        MOV AH,3
+        XOR BH,BH
+        INT 16
+        MOV AL,CL
+        XOR AH,AH
+        MOV CH,2
+        DIV CH
+        MOV CH,AL
+        MOV AH,1
+        INT 16
+        POP CX,BX,AX
+        RET
+
+ARMAZ:  PUSH AX
+        MOV BH,[LIN]
+        MOV BL,[COL]
+        CALL CALPO
+        MOV ES,[ECRAN]
+        MOV SI,[STRIN]
+        MOV CX,TAMNF
+L0:     ES MOV AX,[DI]
+        CALL UPCASE
+        MOV B[SI],AL
+        INC DI,2
+        INC SI
+        LOOP L0
+        POP AX
+        RET
+
+BCSPC:  CMP DL,BL
+        JA >L0
+        RET
+L0:     PUSH BX,CX
+        MOV BX,DX
+        SUB CL,DL
+        INC CL
+        XOR CH,CH       ; CX = nß de caracteres a mudar
+        CALL CALPO
+        MOV SI,DI
+        DEC DI
+        DEC DI
+        MOV AX,[ECRAN]
+L1:     PUSH DS,ES
+        MOV DS,AX
+        MOV ES,AX
+        CLD
+        MOVSB
+        INC SI
+        INC DI
+        POP ES,DS
+        LOOP L1
+        PUSH ES
+        MOV ES,AX
+        MOV AL,32
+        STOSB
+        POP ES
+        POP CX,BX
+        DEC DL
+        RET
+
+; ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+;
+;       CRSIN - Coloca o cursor nas coordenadas contidas em DX
+;
+; ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+CRSIN:  PUSH AX,BX
+        MOV AH,2        ; DX tr†z valor para as cordenadas.
+        XOR BH,BH
+        INT 16
+        POP BX,AX
+        RET
+
+SAVCURSOR:
+        PUSH AX,BX
+        XOR BH,BH
+        MOV AH,3
+        INT 010
+        MOV [PCURSOR],DX
+        POP BX,AX
+        RET
+
+CALPO: PUSH AX,BX
+       MOV AL,BH
+       MOV BH,160
+       MUL BH
+       XOR BH,BH
+       ADD BL,BL
+       ADD AX,BX
+       MOV DI,AX
+       POP BX,AX
+       RET
+
+SAVE1  :
+       PUSH DI
+       MOV DI,4000
+       JMP SHORT SAVESCR
+SAVE2  :
+       PUSH DI
+       MOV DI,8000
+       JMP SHORT SAVESCR
+SAVE3  :
+       PUSH DI
+       MOV DI,12000
+SAVESCR:
+       PUSH AX,CX,SI,DS,ES
+       MOV AX,[ECRAN]
+       MOV DS,AX
+       MOV ES,AX
+       MOV CX,2000
+       XOR SI,SI
+       CLD
+       REP MOVSW
+       POP ES,DS,SI,CX,AX
+       POP DI
+       RET
+
+REST1: PUSH SI
+       MOV SI,4000
+       JMP SHORT RESTSCR
+REST2: PUSH SI
+       MOV SI,8000
+       JMP SHORT RESTSCR
+REST3: PUSH SI
+       MOV SI,12000
+RESTSCR:
+       PUSH AX,CX,DI,DS,ES
+       XOR DI,DI
+       MOV AX,[ECRAN]
+       MOV DS,AX
+       MOV ES,AX
+       MOV CX,2000
+       CLD
+       REP MOVSW
+       POP ES,DS,DI,CX,AX
+       POP SI
+       RET
+
+COPIA_STRING0:          ; Esta rotina vai passar o conte£do de uma string,
+                        ; cujo endereáo Ç passado em SI (origem), para uma outra,
+                        ; cujo endereáo Ç passado em DI (destino). Se AX for
+                        ; 1, entÑo s¢ se anula aquela vari†vel cujo endereáo
+                        ; foi passado em DI. Caso contr†rio, copia-se. Ambas as
+                        ; strings devem acabar em 0.
+       PUSH DI
+  L0:  CMP B[DI],0      ; Se um byte de destino contiver 0, entÑo j† se chegou
+       JE >L1           ; ao fim, e salta-se.
+       MOV B[DI],0      ; Caso contr†rio, zera-se o byte corrente,
+       INC DI           ; aponta-se para o pr¢ximo,
+       JMP SHORT L0     ; e repete-se o ciclo.
+  L1:  POP DI
+       CMP AX,1         ; Se AX contiver 1, entÑo nÑo se passa daqui.
+       JE RET
+  L2:  CMP B[SI],0      ; Se um byte de origem corrente contiver zero,
+       JE RET           ; chegou-se ao fim da string origem. RETorna-se.
+       MOV AL,B[SI]
+       MOV B[DI],AL     ; Caso contr†rio, copia-se,
+       INC DI           ; incrementa-se os apontadores
+       INC SI
+       JMP SHORT L2     ; e volta-se a repetir o ciclo.
+
+UPCASE:                      ; Esta rotina converte o valor ASCII de AL
+                             ; para mai£sculas, se AL for uma letra min£scula.
+                             ; Note-se que ignora os caracteres especiais
+                             ; (†,ä,á,etc.), ou entÑo... asneira !
+        CMP AL,':'           ; Se se tratarem dos dois pontos, nÑo se lhes
+        JE >L3               ; toca, senÑo d† barraca.
+        SUB AL,'0'           ; ê um algarismo ?
+        JC >L2               ; NÑo... ê menor !
+        CMP AL,10            ; ê ?
+        JB >L2               ; Se for, nÑo se converte.
+        ADD AL,'0'           ; Restaura-se o valor original de AL...
+        JE >L3
+        AND AL,0DF           ; E converte-se para mai£sculas.
+        JMP >L3              ; RETorna-se.
+   L2:
+        ADD AL,'0'           ; Restaura-se AL.
+   L3:
+        RET
+
+START:
+
+        PUSH ES         ; Verifica-se se este programa j† se encontra
+        MOV AX,03516h   ; residente em mem¢ria
+        INT 33
+        MOV SI,BX
+        MOV BX,ES
+        POP ES
+
+        PUSH DS
+        SUB SI,2
+        MOV DS,BX
+        LODSW           ; Và-se a word no espaáo destinado Ö ÆassinaturaØ.
+        POP DS
+
+        CMP AX,'FT'
+        JNZ INSTL       ; Se l† nÑo se encontrar ÆFTØ entÑo instale-se.
+        MOV BX,AX
+        CALL LE_PARAMETROS ; O utilizador pode ter solicitado ajuda...
+
+        CMP B[INST],0F
+        JE >L0
+        MOV AH,09
+        MOV DX,TXT_2
+        INT 021h
+
+EX:     MOV AX,04C00h   ; Retorna ao DOS
+        INT 33
+
+; ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+;
+;       INSTL - InstalaáÑo do programa residente na mem¢ria
+;
+; ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+INSTL:
+        CALL VIDEO        ; Determina-se o valor do segmento de v°deo
+                          ; e coloca-se na vari†vel ECRAN
+        MOV B[INST],00
+L0:     PUSH AX,SI,DI
+        MOV DI,FICHEC
+        CALL LE_PARAMETROS
+        CMP B[INST],0F
+        JE EX
+        CMP B[PAR],0FF
+        JE >L1
+        MOV AX,0
+        MOV SI,FECRA
+        MOV DI,FICHEC
+        CALL COPIA_STRING0
+ L1:    POP DI,SI,AX
+
+        PUSH ES         ; ObtÇm-se o end. do vector do Int16h (leitura do teclado)
+        MOV AX,03516h
+        INT 33          ; End. do Int16h em ES:BX
+        MOV [OLD16],BX
+        MOV [OLD16+2],ES
+        POP ES
+
+        MOV [ASSIN],'FT'; Marca com assinatura
+
+        XOR DX,DX
+
+        MOV AH,9
+        MOV DX,TXT_1
+        INT 021         ; Imprime msg. a confirmar a instalaáÑo.
+
+        CMP B[PAR],0FF  ; Foram passados parÉmetros ?
+        JE >L2          ; Foram. NÑo se escreve a sintaxe.
+        MOV AH,9
+        MOV DX,TXT_3
+        INT 021
+
+L2:     MOV DX,TXT_4    ; Escreve-se o texto que antecede o nome do
+        MOV AH,9        ; ficheiro de ecrÑ.
+        INT 021
+        MOV B[FICHEC][TAMNF][-3],13  ; Prepara-se a string para escrever
+        MOV B[FICHEC][TAMNF][-2],10  ; o nome do ficheiro de imagem, por
+        MOV B[FICHEC][TAMNF][-1],'$' ; causa do INT 21h.
+        MOV AH,9
+        MOV DX,FICHEC
+        INT 021                      ; E escreve-se.
+        MOV B[FICHEC][TAMNF][-3],' '
+        MOV B[FICHEC][TAMNF][-2],' '
+        MOV B[FICHEC][TAMNF][-1],' ' ; Volta-se a pìr tudo como estava.
+
+        MOV B[GR_ANT],0FF
+
+        MOV AX,02516h
+        MOV DX,NOV16
+        INT 33           ; Estabelece o novo Int16h (o nosso).
+
+        MOV DX,START
+        INT 39           ; Termina e permanece residente.
+
+
+LE_PARAMETROS:               ; Esta rotina là o 1ß parÉmetro passado ao
+                             ; programa. DI = Offset da string para onde
+                             ; o parÉmetro vai ser lido.
+
+        MOV B[PAR],0         ; Pìe-se a flag de parÉmetros a zero...
+
+        MOV SI,081           ; Pointer para os parÉmetros.
+
+  L0:   LODSB                ; "Comem-se" os espaáos eventualmente existentes
+        CMP AL,' '
+        JE L0
+                             ; Vai-se ver qual Ç o primeiro caracter da
+        CMP AL,'/'           ; string de parÉmetros. Se nÑo for uma barra,
+        JNE >L3              ; pomo-nos na alheta.
+        LODSB
+        CMP AL,'?'           ; Se se tratar de um ponto de interrogaáÑo,
+        JNE >L1              ; mostra-se a ajuda.
+        CALL AJUDA
+        RET
+  L1:
+        CMP AL,020           ; ê um espaáo ?
+        JE >L2               ; Se for, nÑo interessa. Repete-se.
+        CMP AL,00            ; Se for um caracter nulo, isso quer dizer que
+        JE >L3               ; houve barraca. Sai-se daqui a todo o g†s !
+        CMP AL,0D            ; ê o caracter que indica que a string de parÉmetros
+        JE >L3               ; chegou ao fim ? Se for, vamos embora.
+        CMP BX,'FT'          ; O programa j† estava instalado ?
+        JE >L2               ; Se sim, nÑo se altera o nome do ficheiro de ecrÑ.
+        CALL UPCASE          ; Converte-se AL para mai£sculas.
+        MOV [DI],AL          ; Guarda-se o byte ( atÇ que enfim !)
+        INC DI               ; Incrementa-se o apontador para a string destino
+        MOV B[PAR],0FF       ; e pîe-se uma flag a on para dizer que nÑo est†
+                             ; vazia ( a string... ).
+  L2:   LODSB                ; Là-se agora o pr¢ximo byte da string de
+                             ; parÉmetros.
+        JMP SHORT L1
+  L3:
+        RET
+
+VIDEO: MOV AH,15
+       INT 16
+       CMP AL,7
+       JB >L1
+       CMP AL,10
+       JA >L2
+       MOV AX,45056
+       JMP SHORT >L3
+  L1:  MOV AX,47104
+       JMP SHORT >L3
+  L2:  MOV AX,40960
+  L3:  MOV [ECRAN],AX
+       RET
+
+AJUDA:  MOV DX,HELP
+        MOV AH,9
+        INT 021
+        CMP BX,'FT'
+        IF NE MOV B[INST],0F
+        RET
+
+HELP :  DB 13,10
+        DB 'Este programa tem como finalidade capturar ecrans, em modo',13,10
+        DB 'texto (80x25), gravando-o num ficheiro (fich. de ecrÑ).',13,10
+        DB 'Se, aquando da chamada do programa, estiver activo outro',13,10
+        DB 'modo, nada acontecer†; caso contr†rio, ser† mostrado um menu.',13,10
+        DB 'Foi feito por Vasco Veloso, e aceito cr°ticas, sugestîes e afins',13,10
+        DB 'para o Apartado 206 - Lagos',13,10
+        DB 13,10,13,10
+        DB 'Sintaxe : FOTO [/? | /ficheiro.ext]',13,10
+        DB '            /?              - Mostra esta ajuda',13,10
+        DB '            /ficheiro.ecr   - ê onde se especifica o nome do',13,10
+        DB '                             ficheiro onde se gravar† o ecrÑ.',13,10
+        DB 13,10,'$'
+
+TXT_1:  DB 13,10,'FOTOGRAFA 1.5a (versÑo Spooler),     Vasco Veloso    1993'
+        DB 13,10,'Instalado                        Ctrl-PrtScr para activar'
+        DB 13,10,'$'
+
+TXT_2:  DB 13,10,'FOTOGRAFA 1.5a (versÑo Spooler),     Vasco Veloso    1993'
+        DB 13,10,'J† estava instalado              Ctrl-PrtScr para activar'
+        DB 13,10,'$'
+
+TXT_3:  DB 13,10
+        DB 'SINTAXE : FOTO [/? | /Nome_Ficheiro.Ext]',13,10,13,10
+        DB '            EXEMPLO:',13,10
+        DB '                    FOTO /c:ecra.txt',13,10
+        DB '                    FOTO /?',13,10
+        DB '                    FOTO',13,10
+        DB '$'
+
+TXT_4:  DB 13,10,'Ficheiro de ecrÑ : ','$'
+
+INST :  DB 0

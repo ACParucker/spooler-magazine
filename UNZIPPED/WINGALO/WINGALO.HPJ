@@ -1,0 +1,10 @@
+[OPTIONS]
+title = WinGalo
+index = index_ID
+compress = 0
+warning = 3
+report = 1
+
+[FILES]
+wingalo.rtf
+

@@ -1,0 +1,33 @@
+Type info
+  nome As String * 70
+  morada As String * 70
+  localidade As String * 30
+  cpostal As String * 30
+  nascimento As Variant
+  telefone As String * 15
+End Type
+
+Global listaAmigos() As info   'Array que guarda os dados
+Global totalAmigos As Integer  'Total de elementos do array
+Global registoCorrente As Integer
+
+Sub guardaAmigo ()
+  listaAmigos(registoCorrente).nome = form1.nome
+  listaAmigos(registoCorrente).morada = form1.morada
+  listaAmigos(registoCorrente).localidade = form1.localidade
+  listaAmigos(registoCorrente).cpostal = form1.cpostal
+  listaAmigos(registoCorrente).telefone = form1.telefone
+  listaAmigos(registoCorrente).nascimento = form1.nascimento
+End Sub
+
+Sub mostraRegisto ()
+  form1.nome = listaAmigos(registoCorrente).nome
+  form1.morada = listaAmigos(registoCorrente).morada
+  form1.localidade = listaAmigos(registoCorrente).localidade
+  form1.cpostal = listaAmigos(registoCorrente).cpostal
+  form1.telefone = listaAmigos(registoCorrente).telefone
+  form1.nascimento = listaAmigos(registoCorrente).nascimento
+  form1.numRegisto = registoCorrente
+  form1.nome.SetFocus
+End Sub
+

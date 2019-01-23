@@ -1,0 +1,26 @@
+
+Sub botaoACT_Click ()
+  hora.Caption = Time
+  dataExtenso.Caption = Date
+End Sub
+
+Sub botaoFIM_Click ()
+  End
+End Sub
+
+Sub dataCHECK_Click ()
+  If dataCHECK.Value Then  'tem X - é para mostrar a data
+    dataLabel.Visible = True
+    dataExtenso.Visible = True
+  Else
+    dataLabel.Visible = False
+    dataExtenso.Visible = False
+  End If
+End Sub
+
+Sub Form_Load ()
+  hora.Caption = Time           'Label que imprime a hora no ecrã
+  dataExtenso.Caption = Date    'label que imprime a data no ecrã
+                                'por defeito, dataExtenso.Visible=False
+End Sub
+

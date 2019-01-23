@@ -1,0 +1,281 @@
+ALIVE SOFTWARE
+presents ...
+
+                           V G A    S H A R K S   (tm)
+
+VGA SHARKS  is an underwater  action arcade  game.  You are a  Scubaman
+and your mission is to collect and study rare marine creatures from the
+bottom of the sea,  while avoiding your dreadful foes.  Well, it is not
+going to be easy.  Of course you are armed  with  your  trusty Stun-gun
+that tranquilizes your  enemies for awhile,  and you can always retreat
+into your Electrosonic base that repels the sharks, the raybats and the
+rest of your rivals.  Your diving uniform is state of the art,  but you
+can  survive  only a few shark bites,  and it is  useless  against  the
+deadly poison of the Killer-Jelly-fish.
+
+VGA SHARKS  is distributed as Shareware:  if you like the program and
+wish to receive the additional ten episodes from the Scubaman's Quest
+series, then use ORDER.DOC to order it from Alive Software.
+
+VGA SHARKS source code,  object code,  game library pictures and
+manuals on paper or on disk,  are  (C) Copyright 1990-93 by ALIVE
+SOFTWARE.  Game Design by Bill Dedes.
+
+REQUIREMENTS: IBM AT or compatibles.  640K memory and VGA graphics.
+              SoundBlaster, Adlib, Mouse or Joystick are optional.
+
+                                INDEX
+
+      1..................   DISCLAIMER
+      2..................   DISTRIBUTION
+      3..................   GETTING STARTED
+      4..................   OPERATION
+      5..................   ACKNOWLEDGEMENTS
+      6..................   SPECIAL NOTES FOR SHAREWARE VERSION
+
+
+
+1.                              DISCLAIMER
+
+This program is provided "as is" and it is without warranty of any kind
+that it will  work  correctly in any or all  situations.  No  liability
+shall be assumed for direct or  consequential  damage caused by the use
+of this software.  The only claim  Alive Software  makes is  that there
+are no  intentional bugs or  fatal errors in any  original copy  of the
+program that you received directly from Alive Software.
+
+
+2.                       SHAREWARE  DISTRIBUTION
+
+VGA SHARKS is distributed as Shareware: if you like the program and
+would like to receive the latest version, the additional games, sound
+effects and graphics, please use ORDER.DOC to order it.  Feel free to pass
+this program to friends and relatives, as long as all of the files are
+included in the distributed disk and are not be altered in any way.
+If you are a vendor and plan to sell this program for profit, please read
+file VENDOR.DOC
+
+
+                                Page 1 of 5
+
+3.                        GETTING STARTED
+
+To start the program simply type  VSHARKS  <Enter>.
+
+Then the installation  menu will be displayed on the screen. Use the arrow
+keys to move the  highlighted  bar to  a menu  entry you  wish to change
+and press <Enter>.  Then  select a new item.  Please note  that when using
+the keyboard, the "NUM LOCK" key must be OFF.
+
+The installation menu has 5 entries:
+
+1. START THE GAME, gets things  started  when the installation is done.
+2. GRAPH : You must specify who is your VGA card manufacturer for this
+   program to operate correctly.  If your card is not included
+   in this list,  read  file README.DOC for more  information.
+3. SOUND : When sound is ON,  you will  be  hearing  music  and sounds
+   during the game play.
+4. POINT : Activates the  Keyboard,  or the Mouse, or the Joystick. If
+   you plan to use the Joystick,  it must be plugged in before
+   running  VSHARKS.  Also If you  plan to use  the mouse, the
+   mouse driver must be loaded before running VSHARKS.
+5. EXIT TO DOS :  Returns you back to the system.
+
+The very first  time you run the program,  and every  time you change a
+selection from the installation menu, the program will try to save your
+choices in a configuration  file called  VSHARKS.CFG, so next  time you
+run the program it will read this file back and  remember what VGA card
+you have, if  you want sound to be ON or OFF and what is  your pointing
+device preference.  If the current disk is write-protected you will get
+a "Write Protect Error Message", simply  unprotect the  disk  and retry.
+Press <Enter>  at the START THE GAME option,  now you are ready to play.
+
+After  the installation  is done  you will  see the  opening  screen of
+VGA SHARKS.  If the sound is ON, you will hear the opening music theme,
+you can either listen to it, or you can press any key  or mouse  button
+to start.  Then  the program  will pick one  of the  available games at
+random and begin a self-playing demo. It will keep the demo going until
+you press a  keyboard key,  or a Mouse button,  or a Joystick button to
+start ( depending on what pointing device you are using )
+
+4.                           OPERATION
+
+4.1  ABOUT VGA SHARKS :
+You are Scubaman, a noted marine biologist,  and your  mission is to
+collect rare marine creatures for study. You swim towards them and when
+you are in contact you capture them. Then you must bring them back into
+your cage. You receive 10  points for every  creature you capture.  You
+must also avoid  contact  with your enemies.  Your  enemies  range from
+the easy-going Raybats, to the angry sharks,  to the deadly Jelly-fish.
+
+You can use in self defense your  stun-gun  that  shoots tranquilizers.
+Once hit,  your enemy becomes  disoriented and sinks  down  the bottom.
+It  remains inactive  for  several  seconds,  until the effect  of  the
+tranquilizer  wears off.  If you are in trouble you can  always retreat
+in your steal cage.  When inside, you are protected from your enemies.
+Also once inside the cage, a sonic  generator will keep the enemies away.
+
+                              Page 2 of 5
+
+As you move  up to higher levels  the effect of the  stun-gun wears off
+faster, as your enemies get used to it,  so after they are shot and hit
+the bottom, they become active  again in shorter periods of time.  Also
+in higher levels, your enemies become more numerous and more aggressive.
+Finally remember that your enemies outnumber  you, they are independent,
+crafty and smart but you are smarter and faster.
+
+4.2  MENUS
+
+When using the keyboard or the Joystick : At any  time during  the game
+press <ESC> to call the main menu,  then use the  arrow keys to move up
+or down, press the <SPACEBAR> or the <Enter>  key to select menu items,
+or press <ESC> again to skip a selection.  "Num Lock" key  must be OFF.
+When using the Mouse:  Click on the right button to call the main menu,
+then  click on the left button to  select items,  or click on the right
+button again to skip a selection.
+
+:------------:
+:   START    :  Gets things started.
+:------------:
+:------------:
+:   GAMES    :  VGA SHARKS presently includes 3 games.  Several  other
+:------------:  games  will  be  included  in the  next version.
+
+*  RAYBATS    This  is  a  training  session  game,  recommended  for
+              children and novice players.  The  raybats are slow but
+follow you  closely.  Use this game to  train yourself in  maneuvering
+and to practice shooting.  In this game, your cage is moveable.
+
+
+*  SHARKS    This is a game of  medium  complexity. Your uniform can
+             only withstand 50 shark bites, after that you are shark food.
+HINTS: Do not fire your stun-gun from far away,  the sharks are smart enough
+to see your  shot coming  and avoid it.  Try  to avoid contact with them.
+Avoid screen corners, because the sharks will surround.
+
+* KILLER JELLY-FISH  In this game you face the poisonous Killer Jelly-
+                  fish,  if they touch  you  once,  you are doomed.
+The pace of  this game is purposely slow,  but due to  the fact  that
+there are so many Jelly-fish against you the complexity is tremendous.
+Since the action is slow this becomes a game of logic that exercsizes
+your mind more than your mechanical reflexes.
+HINTS:  Try to distract the  jelly-fish away from the marine creature
+you are trying to collect, then quickly move around them and pick it up.
+
+                                Page 3 of 5
+
+
+:------------:
+:  SPEED     :  Controls  the  pace  of the  game.   The  program  will
+:------------:  adjust  the pace to your system's  speed in most cases.
+
+:------------:
+:    HELP    :  There is a  brief help  message to  remind what keys or
+:------------:  buttons to press.
+
+:------------:
+:   DEMO     :  Will start a self-playing demo.  You can watch the demo
+:------------:  to get an idea about the game play.
+
+:------------:
+:    QUIT    :  Allows you to end the game and return to DOS.
+:------------:
+
+4.3  GAME COMMANDS
+
+Keyboard :  Use the following keys to change the Scubaman's direction.
+----------  The four Arrow keys and Home, End, PgUp, PgDn keys.
+Once you press a key, the Scubaman will maintain this direction until a
+screen boundary in  encountered  or another  direction  key is pressed.
+Press the <SPACEBAR> to shoot.  Press <ESC> to call the menu.
+
+Joystick :  All of the  above  keys are active,  plus  you  can use the
+----------  joystick  to  move  the Scubaman.  To fire, push any button.
+
+Mouse  :   Move the mouse slightly  towards the  direction  you want to
+--------   move.  It might take a little of practice  to  perfect using
+the mouse. Always remember that your mouse DOES NOT move the
+Scubaman, it  simply  changes  his  direction.  Then the  Frogman  will
+maintain this direction.  Click on the  Left button to fire,  Click  on
+the Right button to call up the main menu.
+
+
+4.4  SCORE.
+
+You get 1 score point for  every enemy you shoot down,  10 score points
+for  every  marine  creature you  capture  in the  cage.  Once you have
+accumulated 100 points,  you move to a more difficult level and you are
+given a brand new uniform, so all previous bites are erased.  There are
+10 levels total. If you survive all 10 levels you win the game.  On the
+bottom left of the screen.  BITE simply counts the number of  bites you
+have suffered.  Your uniform can only take 50 Shark bites and finally,
+if the poisonous Jelly-fish touches you are doomed.
+
+5.                DOCUMENTATION AND ACKNOWLEDGEMENTS
+
+If you have a printer, please print out and read the documentation file
+VSHARKS.DOC.  Simply  type:  VSHARKS.DOC  PRN  at the DOS  prompt.  The
+opening music theme is Beethoven's "Albumblatt: Fur Elise", other music
+cuts include,  Mozart's "Symphony # 40",  Rossini's  "The  William Tell
+Overture", Bach's "TOCCATA AND FUGE IN D MINOR".
+
+                                Page 4 of 5
+
+
+6.                   SPECIAL NOTES FOR SHAREWARE VERSION
+
+Here is a list of benefits you get by ordering the complete Scubaman's
+Quest series for ONLY $  22  ( U.S. Dollars )  plus shipping.
+
+* YOU GET THE LATEST ENHANCED version of Scubaman's Quest which includes
+  ten episodes.  It features scrolling VGA graphics and optional Sound-
+  Blaster support.  It does not support Mouse however.
+
+* When you order from Alive Software you will also get more FREE Shareware,
+  our catalog, newsletter, new product announcements and low cost updates.
+
+* Registered users Get TECHNICAL support through phone, mail, E-mail or
+  our BBS.
+
+ For more information run program ALIVECAT.EXE, our catalog containing
+ detailed descriptions of our programs.
+
+ For Information on how to contact us or on how to Order, print or list
+ and fill out our order form  ORDER.DOC  and mail or fax it to Alive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ALIVE SOFTWARE,  P.O. BOX 4004,  SANTA CLARA,  CA   95056   U.S.A.
+                             Page 5 of 5
+
+
+

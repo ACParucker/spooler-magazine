@@ -1,0 +1,518 @@
+
+
+ 2.1 Sintaxe e exemplos de todos os comandos - Exemplos de rotinas batch
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ASCIITBL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: ASCIITBL [?]
+
+	  [?]
+	  Ao teclar ?, ‚ apresentada a tabela ASCII dos
+	  caracteres disponiveis e dos valores decimais
+	  correspondentes, de valor entre de 0 a 255.
+
+ COLORREF
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: COLORREF [?]
+
+	  [?]
+	  Ao teclar ?, visualizam-se exemplos de todas as
+	  combina‡”es de cor que se encontram dispon¡veis
+	  em Batch Tools, cujo valor varia entre 0 e 255.
+     
+ COLORIZE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: COLORIZE [coluna] [linha] [lim1] [lim2] [tempo] [texto] [opt]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [lim1] e [lim2]
+	  Respectivamente, os limites inferior e superior do valor que a cor
+	  a ser aleatoriamente atribuida a cada caracter do [texto] ir  ter,
+	  de acordo com: 0 <= lim1 <= lim2 <= 255. Mais info, use ColorRef.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras
+	  use como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto tem mais do que 80 caracteres, a parte em excesso
+	  ser  truncada.
+
+	  [opt]
+	  Escolha como op‡„o TECLA ou FIMTXT: o ciclo de atribui‡„o aleat¢ria
+	  de cores a cada caracter termina, respectivamente, se uma tecla for
+	  pressionada ou quando for atribuida nova cor a todos os caracteres.
+
+ Exemplo: COLORIZE 1 1 0 255 10 Testeÿdaÿfun‡„oÿColorize TECLA
+	  - Escreve a frase acima na coluna 1 e linha 1. Cada caracter dessa
+	    frase muda de cor ap¢s 10 milisegundos. O efeito acaba quando  o
+	    utilizador pressionar qualquer tecla.
+
+
+ CRUSH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: CRUSH [coluna] [linha] [cor] [tempo] [texto] [crush]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras
+	  use como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto tem mais do que 80 caracteres, a parte em excesso
+	  ser  truncada.
+
+	  [crush]
+	  Modo de aparecimento do texto seleccionando uma das seguintes
+	  op‡”es: DTRO, FORA, ESQ_DTRO, ESQ_FORA, DIR_DTRP, DIR_FORA.
+
+ Exemplo: CRUSH 40 10 25 100 Testeÿdaÿfun‡„oÿCrushÿFora FORA
+	  - Expande a frase acima desde a coluna 40 e linha 10, com os
+	    caracteres brancos de fundo azul. Atraso de 1 cent‚simo de
+	    segundo para escrever cada caracter.
+
+ DICE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: DICE [cor] [tempo] [sorteia]
+	  ou
+	  DICE [sorteia]
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso no sorteio de um valor aleat¢rio, em milisegundos.
+	  Serve para tornar o valor mais leg¡vel (n„o exagere!).
+
+	  [sorteia]
+	  Ao teclar SORTEIA como parƒmetro, ‚ sorteado aleatoriamente
+	  um valor num‚rico entre 1 e 6, E esse valor tem sa¡da  para
+	  ErrorLevel. Se [sorteia] for o £nico parƒmetro, o sorteio ‚
+	  imediato e o resultado n„o tem output para o monitor.
+
+ Exemplo: DICE 9 250 SORTEIA
+	  - Sorteia um n£mero entre 1 a 6, entre cada 25 d‚cimos de segundo.
+	    Mostra o resultado com a cor azul, depois de se  pressionar  uma
+	    tecla qualquer.
+
+ MOVECOR
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: MOVECOR [coluna] [linha] [cor_txt] [cor_cur] [tempo] [texto] [rpt] 
+		  [movecor]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor_txt] e [cor_cur]
+	  Define a cor do texto e do cursor, cujo valor varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras
+	  use como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto tem mais do que 80 caracteres, a parte em excesso
+	  ser  truncada.
+
+	  [rpt]
+	  N£mero de vezes que a opera‡„o [movecor] ‚ repetida.
+
+	  [movecor]
+	  Escolha um dos seguintes e veja o resultado: ESQ, DIR, AMBOS.
+
+ Exemplo:  MOVECOR 6 20 2 10 100 Testeÿdaÿfun‡„oÿMoveCorÿAmbos 9 AMBOS
+	   - Escreve a frase acima na coluna 6, linha 20 com os caracteres
+	     de cor verde escuro. Da esquerda para a direita e vice-versa,
+	     um caracter da frase acima vai sendo iluminado a verde claro,
+	     durante 1 cent‚simo de segundo. O processo repete-se 9 vezes.  
+
+ PAINTTXT
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: PAINTTXT [coluna] [linha] [cor] [tamanho]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor a atribuir a texto que se encontre presente no ‚cran,
+	  que varia entre 0 e 255.
+
+	  [tamanho]
+	  N£mero de caracteres aos quais quer atribuir nova cor.
+
+ Exemplo:  PAINTTXT 40 4 20 40
+	   - Pinta 40 caracteres que se encontrem a partir da coordenada
+	     de valor 40 de coluna e 4 de linha, com cor vermelha sob um
+	     fundo azul.
+
+ PAINTWIN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: PAINTWIN [x1] [y1] [x2] [y2] [cor]
+
+	  [x1] e [x2]
+	  Define as coordenadas horizontais esquerda e direita da janela.
+	  x2 > x1 e x1 e x2 tˆm valores entre 1 e 80, no modo 80x25.
+
+	  [y1] e [y2]
+	  Define as coordenadas verticais superior e inferior da janela.
+	  y2 > y1 e y1 e y2 tˆm valores entre 1 e 25, no modo 80x25.
+
+	  [cor]
+	  Cor a atribuir a texto que se encontre presente na janela
+	  que foi definida com as coordenadas acima.
+
+ Exemplo: PAINTWIN 1 1 80 25 240
+	  - Atribui cor preta sob fundo branco (reverse) a todo o ‚cran.
+
+ PAUSEKEY
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: PAUSEKEY [cor] [texto] [teclas]
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [texto]
+	  Texto onde se apresentam as teclas que anulam a pausa.
+
+	  [teclas]
+	  Lista das teclas (letras ou n£meros), at‚ 8 no m ximo.
+	  Ap¢s a press„o de uma dessas teclas, ser   devolvido o
+	  valor ErrorLevel igual … posi‡„o dessa tecla na lista.
+
+ Exemplo: PAUSEKEY 9 TecleÿAÿBÿouÿCÿparaÿprosseguir abc
+	  - Escreve a frase acima com cor azul e s¢ suspende a pausa
+	    quando for teclado 'a','b' ou 'c' (min£sculos).
+
+ REPEAT
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: REPEAT [n] [nome.rpt]
+
+	  [n]
+	  N£mero de vezes que uma batch file recursiva ‚ executada.
+
+	  [nome.rpt]
+	  Nome do ficheiro onde se grava o valor de [n]. A instru‡„o
+	  "Repeat [n] [nome.rpt]" s¢ deve usada  com a "If Not Exist
+	  [nome.rpt] GoTo End" e apenas em batch files recursivas. ‘
+	  medida que se repete "Repeat [n] [nome.rpt]" o valor [n] ‚
+	  decrementado, e gravado no ficheiro [nome.rpt]. No momento
+	  em que [n] tiver o valor 1, o ficheiro ser  apagado. O uso
+	  da instru‡„o "If Not Exist [nome.rpt] GoTo End" verifica a
+	  ausˆncia de [nome.rpt], e salta para a label  identificada
+	  como End. As instru‡”es "Repeat..." e "If Not..." s¢ podem
+	  ser usadas no inicio da batch file a executar; a label End
+	  deve ser a £ltima linha dessa mesma batch file.
+	  Examine a batch file Repeat.Bat que serve de demonstra‡„o.
+
+ Exemplo: eis uma rotina batch
+	  de nome EXEMPLO.BAT
+
+	  @echo off
+	  rem O ficheiro Exemplo.Bat
+	  rem ‚ executado 7 vezes.           
+	  BT2 REPEAT 7 REPETE.DAT
+	  IF NOT EXIST REPETE.DAT GOTO END
+	  echo *
+	  EXEMPLO.BAT
+	  :END
+
+	  - A batch file de com exemplo.bat ser  executada apenas 7 vezes.
+	    Na primeira vez a batch ‚ executada, ‚ gravado o n£mero 7  num
+	    ficheiro de texto de nome repete.dat. Nas pr¢ximas vezes que a
+	    batch file ‚ executada, o parƒmetro 7 ‚ ignorado, e s¢ ‚  lido
+	    o valor guardado no ficheiro repete.dat, o qual ‚ subtra¡do de
+	    uma unidade. Assim, o valor 7 para 6 ... 1. Quando toma  valor
+	    1, o ficheiro repete.dat ‚ apagado, e a instru‡„o If Not Exist
+	    repete.dat faz o salto para a label End, porque o ficheiro  de
+	    nome repete.dat foi apagado, e logo, j  n„o existe.
+
+ SCRAMBLE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: SCRAMBLE [cor] [texto] [rpt]
+	  ou
+	  SCRAMBLE [cor] [texto]
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [texto]
+	  Conjunto de caracteres, cuja posi‡„o relativa
+	  ser  aleatoriamente alterada.
+
+	  [rpt]
+	  N£mero de vezes que se pergunta pela palavra original.
+	  Este parƒmetro ‚ opcional. Devolve um valor ErrorLevel
+	  1 ao acertar na palavra original, e 0 ao falhar  todas
+	  as tentantivas permitidas com [rpt].
+
+ Exemplo: SCRAMBLE 15 Istoÿ‚ÿumÿpuzzle 3
+	  - Baralha todos os caracteres da frase acima, com cor branca.
+	    O utilizador tem trˆs tentativas para acertar na frase original,
+	    com os caracteres na mesma ordem e tamanho (maisc£las ou n„o).
+
+ SLICE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: SLICE [coluna] [linha] [cor] [tempo] [texto] [slice]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras
+	  use como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto tem mais do que 80 caracteres, a parte em excesso
+	  ser  truncada.
+
+	  [slice]
+	  Modo de aparecimento do texto seleccionando uma das seguintes
+	  op‡”es apresentadas: DTRO, FORA.
+
+ Exemplo: SLICE 40 1 1 250 Testeÿdaÿfun‡„oÿSliceÿDtro DTRO
+	  - Corta a frase acima em duas metades, e reune-as na coordenada de
+	    coluna 40 e linha 1. A cor ‚ azul, e o atraso na escrita de cada
+	    caracter ‚ de 25 d‚cimos de segundo.
+
+ TYPECHR
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: TYPECHR [coluna] [linha] [cor] [tempo] [chr] [n]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do caracter a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [chr]
+	  Valor ASCII do caracter a ser escrito [n] vezes no ‚cran.
+	  Use a fun‡„o AsciiTbl para saber o n£mero decimal que lhe
+	  corresponde na tabela.
+
+	  [n]
+	  N£mero de vezes que [chr] ‚ escrito.
+
+ Exemplo: TYPECHR 70 12 7 100 254 10
+	  - Escreve a partir da coluna 70, linha 12, o caracter 'ş' com cor
+	    cinzenta, dez vezes, com um atraso na escrita de um cent‚simo de
+	    segundo. 
+
+ TYPEIT2
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: TYPEIT2 [coluna] [linha] [cor_txt] [cor_bar] [freq] [freq_tempo] 
+		  [tempo] [texto]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor_txt] e [cor_bar]
+	  Define as cores do texto e da barra. Valor num‚rico entre 0 e 255.
+
+	  [freq]
+	  Frequˆncia do som da batida medido em Hertz. Varia entre 0 e 32767.
+
+	  [freq_tempo]
+	  Dura‡„o do som medido em milisegundos.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras
+	  use como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto tem mais do que 80 caracteres, a parte em excesso
+	  ser  truncada.
+
+ Exemplo: TYPEIT2 1 2 7 15 75 50 25 Testeÿdaÿfun‡„oÿTypeIt2
+	  - Escreve a frase acima na linha 2, com caracteres cinzentos; a
+	    barra cursora ‚ branca. Por cada caracter escrito, ‚ ouvido o
+	    som de 74 Hertz durante 50 mil‚simos de segundo. O atraso  na
+	    escrita de cada caracter ‚ de 25 mil‚simos de segundo. 
+
+ VSCROLL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: VSCROLL [coluna] [linha] [cor] [tempo] [texto] [scroll]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras
+	  use como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto tem mais do que 80 caracteres, a parte em excesso
+	  ser  truncada.
+
+	  [scroll]
+	  Modo de aparecimento do texto seleccionando uma das seguintes
+	  op‡”es apresentadas: BAIXO, 25, 43, 50.
+
+    Nota: Os modos 25, 43, e 50 dizem respeito ao scroll vertical de baixo
+	  para cima. Use cada um desses modo de acordo com o n£mero m ximo
+	  de linhas disponiveis no modo de texto currente.
+
+ Exemplo: VSCROLL 1 10 9 20 Testeÿdaÿfun‡„oÿVScroll 25
+	  - Escreve a frase acima, caracter a caracter, com cor azul.
+	    Cada caracter parte da linha 25 e sobe at‚ chegar … linha 10.
+	    O primeiro termina na linha 10, coluna 1, e os  outros  param
+	    nas colunas seguintes, at‚ a frase estar completa.  O  atraso
+	    na escrita de um caracter em cada posi‡„o leva  10  mil‚simos
+	    de segundo.  
+
+ VTYPEXY
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: VTYPEXY [coluna] [linha] [cor_txt] [cor_cur] [tempo] [texto]
+		  [cursor]
+
+	  [coluna] e [linha]
+	  Respectivamente as coordenadas x e y no monitor, de valores entre
+	  1 a 80 para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor_txt] e [cor_cur]
+	  Define a cor do texto e do cursor, cujo valor varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras
+	  use como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto tem mais do que 80 caracteres, a parte em excesso
+	  ser  truncada.
+
+	  [cursor]
+	  Cursor que precede a frase a escrever no ‚cran.
+
+ Exemplo: VTYPEXY 20 3 10 2 100 Escrito na vertical *
+	  - Escreve a frase acima, ao alto, na coluna 20, desde a linha 3 at‚
+	    ao final da frase. Os caracteres da frase s„o verdes claros, e  a
+	    cor do cursor * ‚ verde escura. A escrita de cada caracter demora
+	    100 mil‚simos de segundo. 
+ 
+ VER
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe:  VER
+
+ Exemplo:  VER
+	   - O ‚cran ter  este aspecto:
+
+	     Batch Tools 2 v1.0 (c) 1994
+	     por Luis Manuel Santos Guerra
+	     para a revista SPOOLER
+	     em 94-10-16
+
+
+ 2.2 Macros e Alias
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Macros e Alias (dependendo de usar o Ms-Dos ou NDos) podem simplificar ao
+ m ximo o uso de utilit rios que tenham muitos parƒmetros. Enquanto que as
+ batch files podem ser lentas, dependendo da sua extens„o, Macros e  Alias
+ ficam residentes em mem¢ria. N„o ‚ demais dizer que o BT2 tem de estar na
+ path para tamb‚m poder ser assim utilizado.
+
+ 
+ 2.1 NDOS.COM
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Para utilizadores do NDos, construam um ficheiro de nome BtAlias.lst e
+ escrevam as linhas abaixo, ou outras de sua preferˆncia. Para carregar
+ alias em mem¢ria, escrever Alias /R BtAlias.Lst na prompt do DOS.
+
+ ascii = bt2 asciitbl ?
+ colorinfo = bt2 colorref ?
+ crush = bt2 crush 40 1 7 100 %1 %2
+ movecor = bt2 movecor 1 1 7 15 100 %1 5 ambos
+ slice = bt2 slice 40 1 7 100 %1 %2
+ typeit2 = bt2 typeit2 1 1 9 11 75 50 50 %1
+ vscroll_baixo = bt2 vscroll 1 10 9 100 %1 baixo
+ vscroll_cima = bt2 vscroll 1 10 9 100 %1 25
+
+ Se n„o houver espa‡o suficiente de environment para guardar estas alias,
+ editar ou criar um ficheiro NDos.Ini, onde est  o NDos.Com, e escreva as
+ linhas em falta:
+ [Primary]
+ Environment = 512
+
+ Para explicar para que servem os parƒmetros %1 e %2 vejam os exemplos:
+ ALIAS               = COMANDOS
+ crush ol  dtro    = bt2 crush 40 1 7 100 ol  dtro
+ movecor ol        = bt2 movecor 1 1 7 15 100 ol  5 ambos
+ slice ol  dtro    = bt2 slice 40 1 7 100 ol  dtro
+ typeit2 ol        = bt2 typeit2 1 1 9 11 75 50 50 ol 
+ vscroll_baixo ol  = bt2 vscroll 1 10 9 100 ol  baixo
+ vscroll_cima ol   = bt2 vscroll 1 10 9 100 ol  25
+
+ 
+ 2.1.2 COMMAND.COM
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Para os que utilizam o Ms-Dos com o Command.Com fazer a seguinte 
+ batch file de nome Macros.Bat:
+
+ @echo off
+ if %config%==ndos goto ndos_end
+ :macros
+ doskey btmacros=echo off $tdoskey /macros $techo on
+ doskey ascii=echo off $tbt2 asciitbl ? $techo on
+ doskey colorinfo=echo off $tbt2 colorref ? $techo on
+ doskey crush=echo off $bt2 crush 40 1 7 100 $1 $2$techo on
+ doskey movecor=echo off $tbt2 movecor 1 1 7 15 100 $1 5 ambos $techo on
+ doskey slice=echo off $tbt2 slice 40 1 7 100 $1 $2 $techo on
+ doskey typeit2=echo off $bt2 typeit2 1 1 9 11 75 50 50 $1$techo on
+ doskey vscroll_baixo=echo off $bt2 vscroll 1 10 9 100 $1 baixo$techo on
+ doskey vscroll_cima=echo off $bt2 vscroll 1 10 9 100 $1 25$techo on
+ doskey macros=echo off $tdoskey /macros $techo on
+ echo Macros Doskey carregados
+ echo Para ajuda tecle BTMACROS no prompt do DOS
+ echo Limpe todas as macros com Alt-F10
+ echo.
+ goto end
+ :ndos_end
+ echo Para usar s¢ com o Command.Com n„o com NDos.com
+ :end
+
+ Com a linha 'if %config%==ndos goto ndos_end' parto do principio que h 
+ um item chamado 'ndos' num menu de multiconfigura‡„o do Config.Sys. 
+ Ou seja, onde ‚ executada a linha SHELL=C:\NDOS.COM @C:\NDOS.INI /P .
+ Se o utilizador nunca usa o NDos ent„o pode excluir todas as linhas que
+ que fazem referˆncia a outras labels que n„o :macros.
+
+ Para explicar para que servem os parƒmetros $1 e $2 vejam os exemplos:
+ MACRO             = COMANDOS
+ crush ol  dtro    = echo off $bt2 crush 40 1 7 100 ol  dtrotecho on
+ movecor ol        = echo off $tbt2 movecor 1 1 7 15 100 ol  5 ambos $techo on
+ slice ol  fora    = echo off $tbt2 slice 40 1 7 100 ol  fora $techo on
+ typeit2 ol        = echo off $bt2 typeit2 1 1 9 11 75 50 50 ol  $techo on
+ vscroll_baixo ol  = echo off $bt2 vscroll 1 10 9 100 ol  baixo$techo on
+ vscroll_cima ol   = echo off $bt2 vscroll 1 10 9 100 ol  25$techo on
+
+

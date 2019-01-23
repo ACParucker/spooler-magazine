@@ -1,0 +1,586 @@
+; ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+; ³                            Segura 1.0                                  ³
+; ³                      (c) Vasco Veloso 1994                             ³
+; ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;  Um programa para substituir (…s vezes!) o backup do DOS, e para ensinar
+; alguns princ¡pios de programa‡„o em Assembly.
+;
+; Se utilizar este programa numa base regular, por favor contacte o autor:
+;
+; Vasco Veloso
+; Apartado 206
+; 8603 Lagos CODEX
+;
+
+   call Obtem_Ctrl_Break     ; Capturamos o gestor do Control-Break
+   call IniciaDados          ; Inicializamos os v rios campos de dados
+   jnc >l1
+   call Erro
+   jmp >l4
+l1:lea si, Dir_Corr
+   call ObtemDirCorrente     ; Obtemos o nome da directoria corrente, e
+   lea dx, Directoria
+   call MudaDirectoria       ; mudamo-nos para a directoria de origem.
+   call ConfirmaFonte        ; Confirmamos a fonte dos ficheiros.
+   jnc >l2
+   call Erro                 ; Se estiver errada, provocamos um erro.
+   jmp >l4
+l2:call FazBackup
+   jmp >l3
+Gere_Ctrl_Break:
+   call Fecha_Backup         ;  para aqui que vimos sempre que o utilizador
+   mov ah, 041               ; prime Ctrl+Break, para fechar e apagar o
+   lea dx, FicheiroB         ; ficheiro de backup deixado incompleto.
+   int 021
+   jmp >l4                   ; N„o vamos fechar o ficheiro outra vez !...
+l3:call Fecha_Backup         ; Fechamos o ficheiro de backup,
+l4:lea dx, Dir_Corr          ; voltamos … directoria onde est vamos,
+   call MudaDirectoria
+   mov ah, 033               ; restauramos o estado do Ctrl-Break,
+   mov al, 1
+   mov dl, b Break
+   int 021
+   mov al, 10                ; mudamos de linha...
+   int 029
+   int 020                   ; e sa¡mos !!!
+
+; ********************** Principais rotinas ***********************************
+
+Obtem_Ctrl_Break:   ; >>>>>>>>> Captura do gestor do Ctrl-Break
+   mov ah, 033               ; Guardamos o estado actual do Ctrl-Break...
+   xor al, al
+   int 021
+   mov b Break, dl
+   mov ah, 033               ; E a seguir ligamo-lo, para que o utilizador
+   mov al, 1                 ; possa cancelar o backup a qualquer altura,
+   mov dl, 1                 ; mesmo no meio de uma escrita ou leitura.
+   int 021
+   mov ah, 025               ; Ao capturarmos este gestor, se o utilizador
+   mov al, 023               ; interromper o programa premindo ^C, ser 
+   lea dx, Gere_Ctrl_Break   ; sempre deixado na directoria de execu‡„o do
+   int 021                   ; programa : veja onde est  o Gere_Ctrl_Break !
+   ret
+
+ConfirmaFonte:      ; >>>>>>>>>> Confirma‡„o da fonte dos ficheiros
+   mov ah, 04e               ; Fun‡„o ®Find First¯ do DOS
+   mov cx, Todos             ; Ser  que, em todos os ficheiros, os que
+   lea dx, WildFile          ; o utilizador deu est„o correctos ?
+   int 021                   ; Vejamos...
+   ret
+
+IniciaDados:        ; >>>>>>>>>> Inicializa‡„o das estruturas de dados
+                    ;            internas
+   lea dx, Nome_Prog         ; Imprimimos no ecr„ o nome deste programa.
+   call Escreve
+   call LeParametros         ; Lˆem-se os parƒmetros passados...
+   jnc >l1                   ; Eram incorrectos ?
+   lea dx, Ajuda             ; Se eram, mostra-se a ajuda,
+   call Escreve
+   mov al, MausPar           ; sinaliza-se o erro,
+   stc
+   ret                       ; e sa¡mos.
+
+l1:call Ver_Drive            ; A drive de destino ‚ a A ou a B ?
+   jnc >l2
+   lea dx, Ajuda             ; Se n„o for, mostramos a ajuda,
+   call Escreve
+   mov al, DrvInv            ; sinalizamos o erro,
+   ret                       ; e sa¡mos.
+
+l2:mov b FicheiroB, b Drv_Dest ; Coloca-se a drive de destino no nome do
+                               ; ficheiro de backup.
+   call MudaDTA              ; Dizemos ao DOS que queremos um DTA para n¢s.
+   call Tira_Directoria      ; Obtemos a directoria dada no parƒmetro
+   ret
+
+; ********************** Cria‡„o do backup ***********************************
+
+FazBackup:          ; >>>>>>>>>> Rotina para guardar os ficheiros fonte.
+   cmp w HandleB, 0          ; Se o handle de ficheiro de backup for 0,
+   jne >l1                   ; ent„o temos que o criar. Se n„o, continuamos.
+   call IncContadorDeDiscos  ; Incrementamos o contador de discos,
+   call Mostra_Instrucao     ; mostramos a famosa mensagem,
+   call Cria_Backup          ; e criamos o ficheiro de backup.
+   if c jmp Erro
+l1:cmp b Escr_Dir, True      ; Ser  que j  guard mos a directoria de origem ?
+   je >l2                    ; se sim, n„o o fazemos.
+   lea si, Directoria
+   call ObtemDirCorrente
+   lea dx, Escrevendo        ; Mostramos ao utilizador que estamos a
+   call Escreve              ; escrever algo no disco.
+   lea dx, Directoria        ; Dizemos que estamos a escrever a directoria
+   call Escreve              ; de origem...
+   lea si, Directoria        ; Colocamos o nome da directoria de origem
+   lea di, Nome              ; no nosso DTA.
+   mov cx, 64
+   rep movsb
+   mov w Tamanho, 0          ; Pomos o tamanho da directoria a zero !!!
+   mov w Tamanho+2, 0
+   mov b Atributo, Directory ; Colocamos no DTA a informa‡„o de que ‚ um
+   call Grava_DTA            ; direct¢rio e gravamo-lo.
+   if c jmp Erro             ; Se houve algum erro, adeus !
+   cmp ax, Tam_DTA           ; Escreveu-se o DTA todo ?
+   if ne jmp Trunca_Backup   ; Se n„o, truncamos o ficheiro de backup.
+   mov b Escr_Dir, True      ; Assinalamos que j  escrevemos a directoria.
+   xor ax, ax                ; Limpamos o ®buffer¯ com o nome do ficheiro
+   mov cx, 32                ; no DTA.
+   lea di, Nome
+   rep stosw
+   mov ah, 04e               ; Fun‡„o ®Find First¯ do DOS
+   mov cx, Todos             ; Vamos encontrar o primeiro dos ficheiros
+   lea dx, Ficheiros         ; a guardar, para n„o dar barraca a seguir.
+   int 021
+l2:cmp w HandleF, 0          ; Ser  que j  abrimos o ficheiro fonte ?
+   jne >l3
+   call Abre_Fonte           ; Se n„o, fazˆmo-lo. Em princ¡pio, n„o h  erros,
+                             ; pois o DOS j  encontrou o ficheiro.
+   if c jmp Erro             ; Mas nunca se sabe.
+   lea dx, Escrevendo        ; Mostramos a j  famosa mensagem ®Escrevendo ...¯
+   call Escreve
+   lea dx, Nome
+   call Escreve
+   call Grava_DTA            ; Gravamos o header do ficheiro
+   cmp ax, Tam_DTA           ; Grav mos o DTA todo ?
+   if ne jmp Trunca_Backup   ; Se n„o, truncamos o ficheiro de backup.
+l3:mov ah, 03f               ; Lemos um byte do ficheiro fonte.
+   mov bx, w HandleF         ; Em princ¡pio n„o h  erros, pois trata-se de
+   mov cx, 1                 ; um ficheiro cujo nome foi dado pelo DOS.
+   lea dx, Buffer            ; No entanto, podem surgir os tem¡veis
+   int 021                   ; ®Data error reading...¯ .
+   if c jmp Erro             ; Logo, verificamos para erros.
+   cmp ax, 0                 ; Ser  que cheg mos ao fim do ficheiro fonte ?
+   je >l5                    ; Se sim, SALTAMOS daqui para fora.
+   call Escreve_Backup       ; Escrevemos o byte no ficheiro de backup.
+   if c jmp Erro
+   cmp ax, 0                 ; O disco de backup est  cheio ?
+   jne >l4
+   call Disco_Cheio          ; Se estiver, tratamos j  do assunto.
+                             ; e refazemos o processo:
+
+l4:jmp short l3              ; Escrevemos todo o ficheiro.
+
+l5:xor ax, ax                ; Limpamos o ®buffer¯ com o nome do ficheiro
+   mov cx, 32                ; no DTA.
+   lea di, Nome
+   rep stosw
+   mov ah, 04f               ; ®Find next matching file¯ - Procuramos mais
+   int 021                   ; um ficheiro fonte.
+   jc >l6                    ; Se houve erro, n„o h  mais ficheiros.
+   mov b Buffer, 'C'         ; Sinalizamos que Continua...
+   jmp >l7
+l6:mov b Buffer, 'F'         ; ou sinaliza-se o Fim !
+l7:call Escreve_Backup       ; Escrevemos no ficheiro de backup.
+   if c jmp Erro             ; Houve erro ? Se sim, ciao !
+   cmp ax, 0                 ; escrevemos zero bytes ?
+   jne >l8
+   call Disco_Cheio          ; Se sim, mudamos de disco.
+   jmp short l7
+l8:call Fecha_Fonte          ; Fechamos o ficheiro fonte...
+   if c jmp Erro             ; Verificamos para erros, pois nunca se sabe...
+   cmp b Buffer, 'F'         ; Cheg mos ao Fim ?
+   je >l9                    ; Se sim, sa¡mos.
+   jmp short l2              ; Caso contr rio, continuamos.
+l9:ret
+
+; ********************** Tratamento do disco *********************************
+
+Disco_Cheio:           ; >>>>>>>> Tratamento deste caso
+   call Fecha_Backup         ; Fechamos o ficheiro actual de backup,
+   call IncContadorDeDiscos  ; incrementamos o contador de discos,
+   lea dx, CrLf
+   call Escreve
+   call Mostra_Instrucao     ; mostramos a famosa mensagem,
+   call Cria_Backup          ; criamos o ficheiro e
+   jnc >l1                   ; testamos para erros.
+   pop bx                    ; Retiramos o endere‡o de retorno do stack,
+   jmp Erro                  ; porque queremos sair do ®FazBackup¯.
+l1:lea dx, Continuando       ; Se n„o houve erro, mostramos uma mensagenzita
+   call Escreve              ; elucidativa...
+   lea dx, Nome
+   call Escreve
+   mov cx, 0ffff             ; Colocamos -1 em cxdx: estendemos o sinal em
+   mov dx, -1                ; cx e colocamos o n£mero em dx.
+   mov ah, 042               ; Vamos ajustar o ®file pointer¯ para recuar
+   mov bx, w HandleF         ; cxdx bytes do ficheiro com o handle em bx,
+   mov al, 1                 ; a partir da posi‡„o corrente do ficheiro.
+   int 021                   ; For‡a!
+   ret                       ; RETornamos.
+
+Escreve_Backup:        ; >>>>>>>
+   mov ah, 040               ; Escrevemos o byte lido
+   mov bx, w HandleB         ; no ficheiro de backup.
+   lea dx, Buffer
+   mov cx, 1
+
+   int 021
+   ret
+
+Trunca_Backup:         ; >>>>>>> Trunca o ficheiro de backup; usa-se aquando
+                       ;         da escrita dos headers.
+                       ; AX -> N£mero de bytes escritos
+   neg ax                    ; Tornamos o n§ de bytes escritos negativos
+   cwd                       ; e convertˆmo-lo numa doubleword para axdx.
+   mov cx, dx                ; Colocamos axdx em cxdx, para a fun‡„o
+   mov dx, ax
+   mov ah, 042               ; do DOS a seguir: Vamos truncar o ficheiro.
+   mov bx, w HandleB         ; Primeiro, ajustamos o ®file pointer¯.
+   mov al, 2                 ; Recuamo-lo o n§ de bytes escritos, a partir
+   int 021                   ; do fim do ficheiro.
+   mov ah, 040               ; Agora, truncamos o ficheiro, escrevendo-lhe
+   mov bx, w HandleB         ; zero bytes.
+   xor cx, cx
+   int 021
+   call Fecha_Backup         ; Fechamos o ficheiro de backup...
+   jmp short FazBackup       ; e repetimos o processo, para um segundo disco.
+
+
+Grava_DTA:             ; >>>>>>> Grava os dados do nosso DTA
+   mov ah, 040               ; Fun‡„o para escrever num ficheiro
+   mov bx, w HandleB         ; Handle do ficheiro
+   mov cx, Tam_DTA           ; Tamanho do nosso DTA
+   lea dx, Atributo          ; In¡cio dos dados a gravar
+   int 021                   ; Gravamos.
+   ret
+
+Abre_Fonte:           ; >>>>>>> Abrimos o ficheiro fonte, a partir do DTA
+   mov ah, 03d               ; Fun‡„o ®open file¯ do DOS
+   mov al, 0                 ; Modo de acesso: s¢ leitura
+   lea dx, Nome              ; Nome do ficheiro
+   int 021                   ; Abrimos
+   mov w HandleF, ax         ; Guardamos o handle do ficheiro
+   ret
+
+Fecha_Fonte:          ; >>>>>>> Fechamos o ficheiro fonte
+   mov ah, 03e
+   mov bx, w HandleF
+   int 021
+   mov w HandleF, 0
+   ret
+
+Cria_Backup:           ; >>>>>>> Cria o ficheiro de backup
+   mov ah, 036               ; Vamos verificar se o disco em quest„o
+   mov dl, b Drv_Dest        ; tem espa‡o livre suficiente.
+   sub dl, 'A' - 1           ; DL -> drive (0=defeito, 1=A, 2=B, ...)
+   int 021
+   cmp bx, 0                 ; BX = n£mero de sectores livres
+   ja >l1
+   lea dx, DiscoCheio        ; N„o h  sectores livres ?
+   call Escreve              ; Pouca-vergonha! Dizemo-lo ao utilizador,
+   xor ah, ah                ; esperamos que prima uma tecla
+   int 016
+   lea dx, CrLf
+   call Escreve
+   jmp short Cria_Backup     ; E tentamos outra vez. Paciˆncia !!!!
+l1:lea dx, FicheiroB         ; Finalmente (?) h  espa‡o livre em disco !
+   mov ah, 03c               ; Criamos o ficheiro de backup.
+   mov cx, Normal
+   int 021
+   mov HandleB, ax           ; Guardamos o seu handle.
+   ret                       ; Retornamos.
+
+Fecha_Backup:           ; >>>>>>> Fechamos o ficheiro de backup
+   mov ah, 03e
+   mov bx, w HandleB
+   int 021
+   mov w HandleB, 0
+   ret
+
+MudaDTA:               ; >>>>>>> Mudamos o DTA que o DOS usa
+   mov ah, 01a               ; Fazemos com que o DOS use um DTA s¢ nosso !
+   lea dx, DTA
+   int 021
+   ret
+
+ObtemDirCorrente:      ; >>>>>>>
+                       ; SI -> offset de destino da path devolvida
+   xor ax, ax                ; Colocamos o buffer de destino a zeros
+   mov di, si
+   mov cx, 32                ; 32 * 2 = 64 bytes
+   rep stosw
+   mov ah, 047               ; Obtemos o nome do direct¢rio corrente.
+   mov dl, 0                 ; Drive por defeito
+   inc si                    ; Mais um, porque o DOS n„o d  o backslash (\)
+   int 021                   ; antes do nome do direct¢rio.
+   mov b[si-1], '\'          ; Por isso, n¢s pomo-lo l  !
+   cmp b[Directoria], 0      ; Se o utilizador n„o especificou nenhum
+   jne >l1                   ; direct¢rio de origem, ent„o ‚ porque
+   dec si                    ; esse ser  o direct¢rio corrente. Logo,
+   lea di, Directoria        ; movemo-lo para o local do direct¢rio de origem,
+   mov cx, 64                ; para o escrevermos mais tarde no ficheiro.
+   rep movsb
+l1:ret
+
+MudaDirectoria:        ; >>>>>>>
+   mov ah, 03b               ; Mudamo-nos para a directoria dada em dx.
+   int 021
+   ret
+
+IncContadorDeDiscos:   ; >>>>>>> Incrementamos o contador de discos
+   sub b Cont_Disc, 030      ; Convertemos o contador para ®unpacked decimal¯
+   sub b Cont_Disc[1], 030
+   sub b Cont_Disc[2], 030
+   stc                       ; Ligamos o carry
+   mov cx, 3                 ; Vamos adicionar trˆs bytes
+l1:mov bx, cx
+   mov al, b Cont_Disc[bx-1]
+   adc al, 0                 ; Incrementamos o contador de discos usados.
+   aaa                       ; Ajustamos o resultado, se for caso disso
+   mov b Cont_Disc[bx-1], al
+   loop l1
+   add b Cont_Disc, 030      ; Voltamos a converter o contador em ASCII
+   add b Cont_Disc[1], 030
+   add b Cont_Disc[2], 030
+   mov cx, 3                 ; Movemos o contador para a mensagem
+   lea si, Cont_Disc
+   lea di, No_Disco
+   rep movsb
+   ret
+
+; ********************** Obten‡„o de dados dos parƒmetros *********************
+
+Ver_Drive:             ; >>>>>>>> Ser  que a drive que o utilizador deu ‚
+                       ;          v lida ?
+   and b[Drv_Dest], 0df      ; Tornamos a drive mai£scula.
+   mov al, b[Drv_Dest]       ; Colocamo-la em al, s¢ por causa da rapidez (?!?)
+   clc                       ; Para todos os efeitos, n„o h  erros.
+   cmp al, 'A'               ;  a drive A ?
+   jne >l1                   ; N„o. Vamos ver se ‚ a outra.
+   ret                       ;  a drive A !  v lida.
+l1:cmp al, 'B'               ; Ser  a drive B ?
+   jne >l2                   ; N„o.  pena.
+   ret
+l2:stc                       ; Sinalizamos o erro.
+   ret
+
+Tira_Directoria:      ; >>>>>>>>> Retiramos a directoria de origem
+   mov ah, 04e               ; Encontramos o primeiro ficheiro a guardar,
+   mov cx, Todos             ; vindo do(s) especificado(s) como parƒmetro.
+   lea dx, WildFile
+   int 021
+   jnc >l0                   ; Houve erro? Se n„o, ‚ porque h  ficheiros com
+   lea di, WildFile          ; o nome dado. Caso contr rio, pode ser um
+   dec di                    ; direct¢rio.
+   mov ah, 04e               ; Ent„o, verificamos se existe algum direct¢rio
+   mov cx, Directory         ; com o nome dado pelo utilizador.
+   lea dx, WildFile
+   int 021
+   jnc >l9                   ; Caso exista, continuamos.
+   mov al, 2                 ; Se n„o existir, for‡amos o erro tipo ®File
+   jmp >l6                   ; not found¯ e desandamos.
+l9:inc di                    ; Em caso contr rio, colocamos o wildcard '\*.*'
+   cmp b[di],0               ; no fim da path dada.
+   jne l9
+   lea si, Todos_Fich        ; A fonte ‚ a zona onde est  esse wildcard.
+   mov cx,5                  ; Vamos mover cinco caracteres.
+   cmp b[di-1], '\'          ; Se o £ltimo caracter do ®WildFile¯ for '\',
+   jne >l8                   ; ent„o s¢ se colocam '*.*';
+   inc si                    ; logo, incrementa-se a fonte para o 2§ caract.
+   dec cx                    ; e vamos mover s¢ 4 caracteres.
+l8:rep movsb                 ; Move-se.
+                             ; E fazemos tudo como normalmente.
+l0:xor cx, cx
+   lea si, WildFile
+l1:lodsb
+   cmp al, '\'
+   jne >l2
+   mov cx, si
+l2:cmp al,0
+   jne l1                    ; Cx leva o offset do £ltimo caracter '\'
+   push si                   ; Fim da string
+   push cx                   ; –ltimo caracter '\'
+   lea di, Directoria
+   lea si, WildFile
+   cmp cx, 0
+   je >l4
+   sub cx, offset WildFile
+   cmp cx, 1
+   je >l3
+   dec cx
+l3:rep movsb
+l4:pop si                    ; Recuperamos o n£mero do £ltimo '\'
+   pop cx                    ; e o offset do fim da string.
+   cmp si, 0
+   jne >l5
+   lea si, WildFile
+l5:lea di, Ficheiros
+   sub cx, si                ; Obtemos o n£mero de caracteres a mover.
+   rep movsb                 ; Move-se.
+l6:ret
+
+LeParametros:    ; >>>>>>>>>> Lemos os parƒmetros passados
+   mov si, 080          ; cs:080 -> Tamanho, em bytes, dos parƒmetros passados.
+   cmp b[si], 0         ; Se n„o foram passados quaisquer parƒmetros,
+   je > l5              ; vamo-nos j  embora.
+   xor ch, ch           ; Caso contr rio, colocamos o n£mero de bytes
+   mov cl, b[si]        ; do parƒmetro em cx.
+   dec cl
+   inc si               ; Apontamos para o 1§ caracter dos parƒmetros,
+   lea di, WildFile     ; e para o s¡tio onde ficar  o nome do(s) ficheiro(s)
+   clc                  ; de origem. Aproveitamos e limpamos a casa.
+
+l1:cmp b[si], 0d        ;  o caracter CR ?
+   je >l4               ; Se for, h  barraca !
+   cmp b[si], ' '       ;  um espa‡o ?
+   jne >l2              ; Se n„o, tudo bem;
+   inc si               ; caso contr rio, temos que ir para a pr¢xima posi‡„o
+   jmp short l1         ; da linha de comando.
+l2:cmp b[si], ' '       ; Se for um espa‡o, temos que ®partir¯ a linha
+   je >l3               ; de comando.
+   movsb                ; Guardamos o caracter
+   loop l2
+   jmp >l5              ; Se n„o houver segundo parƒmetro, adeus !
+
+l3:lea di,Drv_Dest      ; Vamos buscar a drive.
+   cmp b[si], 0d        ;  o caracter CR ?
+   je >l4               ; Se for, h  barraca !
+   cmp b[si], ' '       ;  um espa‡o ?
+   jne >l4              ; Se n„o, tudo bem;
+   inc si               ; caso contr rio, temos que ir para a pr¢xima posi‡„o
+   jmp short l3         ; na linha de comando.
+l4:movsb                ; Guardamos a drive de destino
+
+   cmp b WildFile, 0    ; N„o foi lido o ficheiro de destino ?
+   jne >l6              ; Foi! Uau!
+l5:stc
+l6:ret
+
+; ********************** Mensagens de erro e de ajuda *************************
+
+Erro:
+   cmp al, 2           ; Erro n£mero 2 (File not found) ?
+   jne >l1
+   lea dx, FichNEnc    ; Se sim, coloca-se em dx o endere‡o da mensagem.
+   jmp >l8
+l1:cmp al, 3           ; Erro n£mero 3 (Path not found) ?
+   jne >l2
+   lea dx, PathNEnc
+   jmp >l8
+l2:cmp al, 4           ; Erro n£mero 4 (No handles available) ?
+   jne >l3
+   lea dx, NoHandles
+   jmp >l8
+l3:cmp al, 5           ; Erro n£mero 5 (Access denied) ?
+   jne >l4
+   lea dx, AcDenied
+   jmp >l8
+l4:cmp al, 18          ; Erro n£mero 18 (No more files to be found) ?
+   jne >l5
+   lea dx, FichInex    ; Normalmente, significa que o direct¢rio de origem
+   jmp >l8             ; est  vazio.
+l5:cmp al, DrvInv      ; Erro ®Drive inv lida¯ ?
+   jne >l6
+   lea dx, Erro_Drv
+   jmp >l8
+l6:cmp al, MausPar     ; Erro ®Parƒmetros insuficientes¯ ?
+   jne >l7
+   lea dx, Erro_Util
+   jmp >l8
+l7:lea dx, ErroDesc
+l8:call Escreve        ; Escreve-se a mensagem.
+   stc                 ; ®Refor‡amos¯ o erro, porque podemos ter sido
+                       ; chamados de dentro de uma sub-rotina.
+   ret                 ; Retornamos.
+
+Escreve:
+   mov ah, 09
+   int 021
+   ret
+
+Mostra_Instrucao:
+   lea dx, MensDisco
+   call Escreve
+   mov ah, 0
+   int 016
+   lea dx, CrLf
+   call Escreve
+   ret
+
+; ********************** Dados do programa ************************************
+
+False     equ 0
+True      equ !False
+                            ; Erros locais:
+DrvInv    equ 0ff           ; Drive de destino inv lida
+MausPar   equ 0fe           ; Maus parƒmetros
+
+Normal    equ 0             ; Atributos dos ficheiros
+ReadOnly  equ 01
+Hidden    equ 02
+System    equ 04
+Directory equ 010
+Archive   equ 020
+Todos     equ ReadOnly + Hidden + Archive
+
+Escr_Dir   db False      ; Flag para sinalizar a escrita ou n„o da
+                         ; directoria de origem
+
+Break      db 0          ; Lugar onde se guarda o estado do Ctrl-Break ao
+                         ; entrar no programa.
+
+HandleB    dw 0          ; File handles do ficheiro de backup
+HandleF    dw 0          ; e do(s) de origem.
+
+Buffer     db 0          ; Buffer para o caracter lido do ficheiro fonte
+
+WildFile   db 64 dup(0)  ; Ficheiro(s) de origem dado(s) na linha de comando
+Ficheiros  db 64 dup(0)  ; Especifica‡„o dos ficheiros a guardar,
+                         ; independentemente do direct¢rio corrente.
+Directoria db 64 dup(0)  ; Nome do direct¢rio dos ficheiros de origem.
+           db 0d,024
+Todos_Fich db '\*.*',0   ; Especifica‡„o de todos os ficheiros de um dado
+                         ; direct¢rio.
+
+Dir_Corr  db 64 dup(0)   ; Buffer que conter  o nome do direct¢rio no qual
+                         ; o programa foi executado.
+
+FicheiroB db 'X:\SEGURA.' ; Ficheiro de backup
+Cont_Disc db '000'        ; Contador de discos (inicializado a 0)
+          db 0
+
+DTA       db 21 dup(0)    ; DTA - Disk Transfer Area
+Atributo  db 0            ; A utilizar pelas fun‡”es 4e e 4f do DOS.
+Hora      dw 0            ; Hora do ficheiro
+Dia       dw 0            ; Data do ficheiro
+Tamanho   dd 0            ; Tamanho do ficheiro a guardar (4 bytes => +40M !)
+Nome      db 64 dup (0)   ; e seu nome.
+Tam_DTA   equ $-(offset Atributo)    ; C lculo do tamanho do DTA a gravar
+          db 0d,024
+
+MensDisco db 10,13,07,'Insira disco n£mero '
+No_Disco  db '000'
+          db ' na drive '
+Drv_Dest  db 'X:'
+          db ' e prima qualquer tecla quando pronto...',024
+
+Ajuda     db 13,10,'Modo de utiliza‡„o:  '
+          db 'SEGURA <ficheiros origem> <drive de destino>'
+          db 13,10,21 dup (' '), 'A drive de destino s¢ pode ser A: ou B: !'
+          db 13,10
+          db 13,10,'Se utilizar este programa regularmente, por favor contacte'
+          db 13,10,'o autor:                 Vasco Veloso'
+          db 13,10,'                         Apartado 206'
+          db 13,10,'                         8603 Lagos CODEX'
+          db 13,10,024
+
+Nome_Prog db 'Segura 1.0 - Vers„o Spooler'
+          db 13,10,'(c) Vasco Veloso 1994'
+          db 13,10,024
+
+DiscoCheio  db 07
+            db 13,10,'O disco de destino est  cheio !'
+            db 13,10,'Substitua e prima qualquer tecla quando pronto...'
+            db 024
+Continuando db 10,'Continuando ',024
+Escrevendo  db 10,'Escrevendo ',024
+CrLf        db 13,10,024
+
+Erro_Util db 13,10,'ERRO: Parƒmetros insuficientes.',13,10,024
+Erro_Drv  db 13,10,'ERRO: Drive de destino inv lida.',13,10,024
+FichInex  db 13,10,'ERRO: O direct¢rio de origem est  vazio.',13,10,024
+FichNEnc  db 13,10,'ERRO: Ficheiro(s) de origem n„o encontrado(s).',13,10,024
+PathNEnc  db 13,10,'ERRO: Caminho n„o encontrado.',13,10,024
+NoHandles db 13,10,'ERRO: N„o h  mais file handles.'
+          db 13,10,'      Aumente o parƒmetro FILES= no CONFIG.SYS.'
+          db 13,10,024
+AcDenied  db 13,10,'ERRO: Acesso negado.',13,10,024
+ErroDesc  db 13,10,'ERRO: Erro de origem desconhecida.',13,10,024

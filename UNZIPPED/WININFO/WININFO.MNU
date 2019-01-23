@@ -1,0 +1,16 @@
+WinInfo MENU
+BEGIN
+    POPUP      "&Ficheiro"
+    BEGIN
+        MENUITEM   "&Gravar Informação Como...\tCtrl+S",IDM_GRAVARINFORMACAOCOMO
+        MENUITEM  SEPARATOR
+        MENUITEM   "&Sair\tAlt+F4",        IDM_SAIR
+    END
+    MENUITEM   "S&obre...",    IDM_SOBRE
+END 
+
+WinInfo ACCELERATORS
+BEGIN
+       "S",                 IDM_GRAVARINFORMACAOCOMO, VIRTKEY , CONTROL
+       VK_F4,               IDM_SAIR, VIRTKEY , ALT
+END 

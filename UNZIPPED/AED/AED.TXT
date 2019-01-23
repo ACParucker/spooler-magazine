@@ -1,0 +1,54 @@
+AED
+
+Apresentamos o programa classificado em terceiro lugar no passatempo ÆProgramas
+Cient°ficosØ, cujos resultados foram divulgados no Nß 32 da Spooler. ÆAEDØ -
+Algoritmos e Estruturas de Dados.
+
+
+IntroduáÑo
+
+O programa mostra e explica, atravÇs de uma interface gr†fica, diversos
+algoritmos e estruturas de dados comummente usados na programaáÑo. ê
+apresentada a Æ†rvoreØ como estrutura de dados, sendo ainda mostradas e
+explicadas as Æ†rvores bin†rias de pesquisaØ e as Æ†rvores AVLØ. Finalmente,
+sÑo explicadas e mostradas nas suas implementaáîes em arrays e com
+apontadores.
+
+InstalaáÑo
+
+INSTALL.COM
+Ficheiro respons†vel pela instalaáÑo do programa. Recebe como parÉmetros a
+drive onde desejamos instalar o programa e a placa gr†fica dispon°vel (por 
+exemplo: install c: vga). O INSTALL vai descomprimir o ficheiro AED_U1.EXE e  
+um dos ficheiros AED_UE.EXE ou AED_UV.EXE consoante a placa gr†fica recebida
+como parÉmetro.
+
+O programa Ç instalado na directoria \AED da drive dada como parÉmetro. Nessa
+directoria ficam vis°veis dois ficheiros: AED.EXE e AED.OVR. O primeiro
+ficheiro
+Ç o execut†vel e o ficheiro AED.OVR Ç o respons†vel pelo overlay. Na mesma
+directoria constam ainda v†rios ficheiros que estÑo escondidos, ou seja, com o
+atributo h (hidden) activo. Para ver esses ficheiros deve-se digitar o comando
+dir /a:h se tiver o DOS 6.0 ou posterior, ou entÑo deve digitar o comando
+attrib *.*.
+Depois do programa instalado basta execut†-lo.
+
+BMPS.EXE
+Ficheiro que contÇm os desenhos dos icones compactados.
+
+AED_FONT.EXE
+Ficheiro que contÇm o c¢digo fonte, ficheiros obj, e ficheiros tpu.
+
+AED_U1.EXE
+Ficheiro que contÇm todos os ficheiros necess†rios para o funcionamento do
+programa, excepto os ficheiros com as imagens espec°ficas a cada placa.
+
+AED_UE.EXE
+Ficheiro que contÇm as imagens para EGA.
+
+AED_UV.EXE
+Ficheiro que contÇm as imagens para a placa VGA.
+
+Grupo de alunos da Faculdade de Ciàncias de Lisboa
+representados por: Luis Manuel Santos
+

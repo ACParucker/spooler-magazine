@@ -1,0 +1,391 @@
+	/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+	\/                                               /\
+	/\      VERIFICA€ŽO DE INSTALA€ŽO DOS VIRUS      \/
+	\/                                               /\
+	/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+	****************************************************
+	** Autor  : Luciano Manuel Moleirinho de Oliveira **
+	** Morada : Rua D. Dinis, 117 - Serra Porto Urso  **
+	** C. P.  : 2425 MONTE REAL                       **
+	** Telef  : (044) 612794 - 611550                 **
+	** Fax    : (044) 611671                          **
+	****************************************************
+
+INT 21h - VIRUS - "Perfume"
+	  AX = 0B56h
+Retorna : AX = 4952h se residente
+
+INT 21h - VIRUS - "Crazy Imp"
+	  AX = 0D20h
+Retorna : AX = 1971h se residente
+
+INT 21h - VIRUS - "Possessed"
+	  AH = 30h
+	  DX = ABCDh
+Retorna : DX = DCBAh se instalado
+
+INT 21h - VIRUS - "Dutch-555"/"Quit 1992"
+	  AX = 30F1h
+Retorna : AL = 00h se residente
+
+INT 21h - VIRUS - "Burghofer"
+	  AX = 330Fh
+Retorna : AL = 0Fh se residente (DOS Retornas AL=FFh)
+
+INT 21h - VIRUS - "Oropax"
+	  AX = 33E0h
+Retorna : AL = E0h se residente (DOS Retornas AL=FFh)
+
+INT 21h - VIRUS - "Agiplan"/"Month 4-6"
+	  AX = 357Fh
+Retorna : DX = FFFFh se instalado
+
+INT 21h - VIRUS - "JD-448"
+	  AX = 3DFFh
+Retorna : AX = 4A44h se residente
+
+INT 21h - VIRUS - "Shake"
+	  AX = 4203h
+Retorna : AX = 1234h se residente
+
+INT 21h - VIRUS - "Invader"
+	  AX = 4243h
+Retorna : AX = 5678h se residente
+
+INT 21h - VIRUS - "MG", "699"/"Thirteen Minutes"
+	  AX = 4B04h
+Retorna : CF nula se "MG" residente
+	  AX = 044Bh se "699"/"Thirteen Minutes" residente
+
+INT 21h - VIRUS - "1063"/"Mono"
+	  AX = 4B25h
+Retorna : DI = 1234h se residente
+
+INT 21h - VIRUS - "Plastique"/"AntiCad"
+	  AX = 4B40h
+Retorna : AX = 5678h se residente
+
+INT 21h - VIRUS - "Jabberwocky"
+	  AX = 4B4Ah
+Retorna : AL = 57h se residente
+
+INT 21h - VIRUS - "Horse-2"
+	  AX = 4B4Bh
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "Murphy-2", "Patricia"/"Smack"
+	  AX = 4B4Dh
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "Plastique-2576"/"AntiCad-2576"
+	  AX = 4B50h
+Retorna : AX = 1234h se residente
+
+INT 21h - VIRUS - "Horse"
+	  AX = 4B53h
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "Sparse"
+	  AX = 4B55h
+Retorna : AX = 1231h se residente
+
+INT 21h - VIRUS - "Murphy-1", "Murphy-4"
+	  AX = 4B59h
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "Brothers"
+	  AX = 4B5Eh
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "Shirley"
+	  AX = 4B87h
+Retorna : AX = 6663h se residente
+
+INT 21h - VIRUS - "Zherkov-1882"
+	  AX = 4B95h
+Retorna : AX = 1973h se residente
+
+INT 21h - VIRUS - "1876"/"Dash-em"
+	  AX = 4BA7h
+Retorna : AX = B459h se residente
+
+INT 21h - VIRUS - "Nomenklatura"
+	  AX = 4BAAh
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "948"/"Screenplus1", "Magnitogorsk"
+	  AX = 4BAFh
+Retorna : AL = AFh se "Magnitogorsk" residente
+	  AL = FAh se "948"/"Screenplus1" residente
+
+INT 21h - VIRUS - "Lozinsky"/"Zherkov"
+	  AX = 4BDDh
+Retorna : AX = 1234h
+
+INT 21h - VIRUS - "Hitchcock", "Dark Avenger-1028", "1193"
+	  AX = 4BFEh
+Retorna : AX = 1234h se "Hitchcock" residente
+	  AX = ABCDh se "1193"/"Copyright" residente
+	  DI = 55BBh se "Dark Avenger-1028" residente
+
+INT 21h - VIRUS - "USSR-707", "Justice", "Europe 92"
+	  AX = 4BFFh
+Retorna : BL = FFh se "USSR-707" residente
+	  DI = 55AAh se "Justice" residente
+	  CF nula se "Europe 92" residente
+
+INT 21h - VIRUS - "Cascade"
+	  AX = 4BFFh
+	  SI = 0000h
+	  DI = 0000h
+Retorna : DI = 55AAh se instalado
+
+INT 21h - VIRUS - "516"/"Leapfrog"
+	  AX = 5252h
+Retorna : BX = FFEEh se residente
+
+INT 21h - VIRUS - "1067"/"Headcrash"
+	  AX = 58CCh
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "Rape-747"
+	  AX = 6969h
+Retorna : AX = 0666h se residente
+
+INT 21h - VIRUS - "Klaeren"/"Hate"
+	  AH = 76h
+Retorna : AL = 48h se residente
+
+INT 21h - VIRUS - "Growing Block"
+	  AX = 7700h
+Retorna : AX = 0920h se residente
+
+INT 21h - VIRUS - "Squeaker"
+	  AH = 7Fh
+Retorna : AH = 80h se residente
+
+INT 21h - VIRUS - "SVC"
+	  AH = 83h
+Retorna : DX = 1990h se residente
+
+INT 21h - VIRUS - "SVC 5.0" or "SVC 6.0"
+	  AH = 84h
+Retorna : DX = 1990h se residente
+	  BH = numero da vers„o
+
+INT 21h - VIRUS - "Vriest"
+	  AH = 89h
+Retorna : AX = 0123h se residente
+
+INT 21h - VIRUS - "Carioca"
+	  AH = 90h
+Retorna : AH = 01h se residente
+
+INT 21h - VIRUS - "789"/"Filehider"
+	  AX = A1D5h
+Retorna : AX = 900Dh se residente
+
+INT 21h - VIRUS - "Eddie-2"
+	  AX = A55Ah
+Retorna : AX = 5AA5h se residente
+
+INT 21h - VIRUS - "Blinker"
+	  AX = AA00h
+Retorna : AX = 00AAh se residente
+
+INT 21h - VIRUS - "Backtime"
+	  AX = AA03h
+Retorna : AX = 03AAh se residente
+
+INT 21h - VIRUS - "600" or "Voronezh"-family
+	  AH = ABh
+Retorna : AX = 5555h se residente
+
+INT 21h - VIRUS - "Hey You"
+	  AX = BBBBh
+Retorna : AX = 6969h
+
+INT 21h - VIRUS - "Datalock"
+	  AH = BEh
+Retorna : AX = 1234h se residente
+
+INT 21h - VIRUS - "USSR-1049"
+	  AX = BE00h
+	  CF verdadeira (valor 1)
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "Slow"/"Zerotime", "Solano"
+	  AH = C0h
+Retorna : AX = 0300h se "Slow"/"Zerotime" residente
+	  AX = 1234h se "Solano" residente
+
+INT 21h - VIRUS - "905"/"Backfont"
+	  AX = C301h
+	  DX = F1F1h
+Retorna : DX = 0E0Eh se residente
+
+INT 21h - VIRUS - "Sverdlov"
+	  AX = C500h
+Retorna : AX = 6731h se residente
+
+INT 21h - VIRUS - "Socha"
+	  AH = C6h
+Retorna : AL = 55h se residente
+
+INT 21h - VIRUS - "Yankee" or "MLTI"
+	  AX = C603h
+	  CF verdadeira (valor 1)
+Retorna : CF nula se residente
+
+INT 21h - VIRUS - "MH-757"
+	  AX = C700h
+Retorna : AL = 07h se residente
+
+INT 21h - VIRUS - "Milous"
+	  AH = CBh
+Retorna : AL = 07h se residente
+
+INT 21h - VIRUS - "Witcode"
+	  AX = CB02h
+Retorna : AX = 02CBh se residente
+
+INT 21h - VIRUS - "Westwood"
+	  AH = CCh
+Retorna : AX = 0700h se residente
+
+INT 21h - VIRUS - "Fellowship"
+	  AX = D000h
+Retorna : BX = 1234h se residente
+
+INT 21h - VIRUS - "Diamond-A", "Diamond-B"
+	  AX = D5AAh
+Retorna : AX = 2A55h se "Diamond-A" residente
+	  AX = 2A03h se a familia de virus "Diamond-B" ‚ residente
+
+INT 21h - VIRUS - "Dir"
+	  AX = D5AAh
+	  BP = DEAAh
+Retorna : SI = 4321h se residente
+
+INT 21h - VIRUS - "Gotcha"
+	  AX = DADAh
+Retorna : AH = A5h
+
+INT 21h - VIRUS - "Plovdiv 1.3"
+	  AX = DAFEh
+Retorna : AX = 1234h se residente
+
+INT 21h - VIRUS - "Durban"
+	  AH = DEh
+Retorna : AH = DFh se residente
+
+INT 21h - VIRUS - "Brothers"
+	  AX = DEDEh
+Retorna : AH = 41h se residente
+
+INT 21h - VIRUS - "Jerusalem", "Armagedon"
+	  AH = E0h
+Retorna : AX = 0300h se "Jerusalem" residente
+	  AX = DADAh se "Armagedon" residente
+
+INT 21h - VIRUS - "8-tunes"
+	  AX = E00Fh
+Retorna : AX = 4C31h se residente
+
+INT 21h - VIRUS - "Mendoza", "Fu Manchu"
+	  AH = E1h
+Retorna : AX = 0300h se "Mendoza" residente
+	  AX = 0400h se "Fu Manchu" residente
+
+INT 21h - VIRUS - "Anarkia"
+	  AH = E4h
+Retorna : AH = 04h se residente
+
+INT 21h - VIRUS - "Spyer"/"Kiev"
+	  AH = E7h
+Retorna : AH = 78h se residente
+
+INT 21h - VIRUS - "Terror"
+	  AX = EC59h
+Retorna : BP = EC59h se residente
+
+INT 21h - VIRUS - "Jerusalem-G", "Pregnant"
+	  AH = EEh
+Retorna : AX = 0300h se "Jerusalem-G" residente
+	  AL = 05h se "Pregnant" residente
+
+INT 21h - VIRUS - "Frere Jacques"
+	  AH = F0h
+Retorna : AX = 0300h se residente
+
+INT 21h - VIRUS - "PcVrsDs"
+	  AX = F2AAh
+Retorna : AH = AAh se residente
+
+INT 21h - VIRUS - "Carfield"
+	  AH = F3h
+Retorna : AX = 0400h se residente
+
+INT 21h - VIRUS - "GP1"
+	  AH = F7h
+Retorna : AX = 0300h se residente
+
+INT 21h - VIRUS - "Cinderella"
+	  AH = FBh
+Retorna : AH = 00h se residente
+
+INT 21h - VIRUS - "dBASE"
+	  AX = FB0Ah
+Retorna : AX = 0AFBh se residente
+
+INT 21h - VIRUS - "Troi"
+	  AH = FCh
+Retorna : AL = A5h se residente
+
+INT 21h - VIRUS - "Border"
+	  AH = FDh
+Retorna : AH = 13h se residente
+
+INT 21h - VIRUS - "483"
+	  AH = FEh
+Retorna : AH = 00h se residente
+
+INT 21h - VIRUS - "Flip"
+	  AX = FE01h
+Retorna : AX = 01FEh se residente
+
+INT 21h - VIRUS - "2468"/"Tequila"
+	  AX = FE02h
+Retorna : AX = 01FDh se residente
+
+INT 21h - VIRUS - "Black Monday"
+	  AX = FEDCh
+Retorna : AL = DCh se residente
+
+INT 21h - VIRUS - "Sunday", "Tumen 0.5", "Hero"
+	  AH = FFh
+Retorna : AH = 00h se "Tumen 0.5" ou "Hero" residente
+	  AX = 0400h se "Sunday" residente
+
+INT 21h - VIRUS - "Twins"
+	  AX = FF10h
+Retorna : AL = 07h se residente
+
+INT 21h - VIRUS - "08/15"/"Many Fingers"
+	  AX = FFFEh
+Retorna : AX = 0815h se residente
+
+INT 21h - VIRUS - "Ontario"
+	  AX = FFFFh
+Retorna : AX = 0000h se residente
+
+INT 21h - VIRUS - "Revenge"
+	  AX = FFFFh
+	  CX = 0000h
+Retorna : CX = 0006h se residente
+
+INT 60h - VIRUS - "Zero Bug"
+	O virus "Zero Bug" intercepta este vector. Considera-se a si
+      pr¢prio instalado se o offset 103h do segmento do handler
+      cont‚m os bytes "ZE"

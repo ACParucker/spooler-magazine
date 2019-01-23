@@ -1,0 +1,9 @@
+SUBS.BAS
+C:\WINDOWS\SYSTEM\THREED.VBX
+CODEFORM.FRM
+EDITCODE.FRM
+ProjWinSize=160,386,248,215
+ProjWinShow=0
+IconForm="Codeform"
+Title="Secur"
+ExeName="SECUR.EXE"

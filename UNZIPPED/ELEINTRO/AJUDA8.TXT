@@ -1,0 +1,3 @@
+                 Código de cores
+
+   Ao esolher-mos esta função no menu consultar, surge o código de cores que representa o valor das resistências, para poder-mos saber o valor das resistências que tenha-mos em casa ou que venha-mos a comprar, se este programa despertar am alguem o gosto pela electrónica.

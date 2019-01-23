@@ -1,0 +1,32 @@
+                     Diferença de Potencial
+
+   Se, por exemplo, tivermos dois recipientes com 
+água a alturas diferentes (ver figura), podemos 
+dizer que os dois recipientes estão a potenciais 
+diferentes (baseando-nos na física, que diz que a 
+energia potencial de um corpo é dada por Ep=mgh, 
+sendo m a massa do corpo, g a aceleração 
+causada pelo campo gravítico terrestre, que é 
+constante e igual a 9.8 m/s2, e h a altura do solo a 
+que o corpo se encontra, e que é medida em 
+Joules), por estarem a alturas diferentes. 
+   Como foi visto na lição anterior, podemos ter um 
+corpo com excesso de electrões e outro com falta.
+Ora a diferença de potencial eléctrica (Ddp), que é 
+uma espécie de energia potencial, é medida em 
+Volt (em homenagem a Alessandro Volta, que foi 
+quem primeiro observou os fenómenos eléctricos 
+ao dissecar uma rã, e Volt não tem plural), 
+representa-se por U (também pode aparecer 
+representada por V), e representa a diferença entre 
+o potencial eléctrico de dois pontos. Se num 
+circuito tivermos uma indicação semelhante à da 
+figura, isso significa que a Ddp entre esse ponto e
+o - do circuito (salvo indicação em contrário) tem 
+o valor indicado.
+
+                              Resumo
+
+Ddp - Diferença de potencial de dois pontos.
+Volt - Unidade SI para a diferença de potencial.
+U ou V - Letras que representam a Ddp.

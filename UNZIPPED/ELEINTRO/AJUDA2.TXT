@@ -1,0 +1,3 @@
+                Salvar  
+   
+   Ao escolher esta opção a partir do menu programa, salva a sua localização através das lições para que possa continuar numa outra altura.

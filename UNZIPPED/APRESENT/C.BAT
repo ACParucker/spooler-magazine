@@ -1,0 +1,1 @@
+tcc -ms -O -Z -d -B -I\hll\tc\include -L\hll\tc\lib %1

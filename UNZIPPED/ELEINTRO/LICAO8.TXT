@@ -1,0 +1,58 @@
+                       Transístores
+
+   O transístor foi provavelmente a maior 
+descoberta do mundo. Sem o transístor, a nossa 
+telvisão, que agora até pode ser de bolso, teria de 
+usar válvulas que são muito maiores (até 30 vezes 
+o tamanho de um transistor), para além do 
+inconveniente de precisarem de uma Ddp de 
+quase 300 V para funcionarem. Já imaginaram o 
+que seria andar com uma telvisão de 50 Kg no 
+bolso e uma bateria de 1 t às costas?
+   Teoricamente, um transístor equivale a dois 
+diodos ligados como mostra a figura, mas na 
+prática isso não se verifica. Um transístor consiste
+em três pedaços de germânio ou sílico ligados 
+conforme a figura e com excesso ou falta de 
+electrões conforme o seu tipo. Se for NPN 
+(negative, positive, negative), os dois pedaços das 
+bordas têm excesso de electrões e o do meio tem 
+falta, se for PNP (positive, negative, positive) é 
+exactamente o contrário.
+   Um transístor tem 3 terminais (salvo alguns 
+transístores especiais, destidados a aplicações 
+específicas) que são: base, colector e emissor.
+Quando temos um transístor ligado, se a sua base 
+estiver em aberto (não ligada), diz-se que o 
+transístor está ao corte, porque ele não está a 
+funcionar. Quando ligamos a sua base, o transístor 
+começa a funcionar, deixando-se atravessar por 
+uma corrente eléctrica (se esta corrente eléctrica 
+for igual ou muito próxima do valor máximo 
+permitido pelo transístor, diz-se que ele está em 
+saturação, uma vez que ele se encontra nas 
+condições ideais de funcionamento).
+   Mas, ao ligarmos a base, não só o transístor 
+começa a funcionar como também amplifica o 
+sinal que lhe seja aplicado na base, podendo 
+recolher-se esse sinal no colector, já amplificado.
+   No entanto, se usarmos um transístor para 
+funcionar como interrutor, o facto de que ele 
+amplifica o sinal não tem grande importância.
+   Também se usa transístores para controlar a 
+velocidade de motores c.c., uma vez que o valor 
+da corrente que atravessa o transístor depende do 
+valor do sinal aplicado na sua base.
+   Tal como nos outros componentes, há também 
+vários tipos de transístores, desde fototransístores 
+que não têm base e controlam-se atravéz da luz 
+(muito usados nas barreiras luminosas de alarmes 
+e também naqueles semáforos que apareceram 
+recentemente nos parques de diversões 
+aquáticas), até aos fets e mos-fets que se usam em
+aplicações especificas, passando pelos 
+transístores de potência, que podem aguentar uma 
+grande corrente eléctrica a atravessá-los (já vi um
+que aguentava 15 A, e para que se saiba, uma 
+intensidade de 50 mA que atravesse o coração 
+humano pode chegar para matar uma pessoa).

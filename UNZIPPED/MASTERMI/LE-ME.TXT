@@ -1,0 +1,81 @@
+                                MASTER MIND
+
+
+        A disquete cont‚m os seguintes ficheiros :
+
+                *       .chr    Ficheiros com as fontes em pascal.
+                *       .dat    Ficheiros de pontua‡„o e de op‡”es.
+             *  apresent.tpu    Unidade em pascal que cont‚m procedimentos
+                                de desenho.
+             *  drivers .tpu    Unidade em pascal que cont‚m o driver do rato.
+             *  graph   .tpu    Unidade em pascal que cont‚m o driver gr fico.
+                mao     .pas    Ficheiro que cont‚m a imagem da m„o.
+                logo    .pas    Ficheiro que cont‚m a imagem do computador.
+                mstmind .pas    Ficheiro que cont‚m a imagem do tabuleiro.
+                stare   .pas    Ficheiro que cont‚m a imagem da estrela.
+                master  .exe    Ficheiro execut vel. 
+                le-me   .txt    Este documento. 
+                
+             * n„o inclu¡dos por falta de espa‡o na disqueta Spooler.
+
+
+         Problemas que possam surgir :
+
+
+         1. O jogo n„o correr.
+
+              Bom neste caso podem ser duas coisas :
+
+                1.1.  O ficheiro execut vel n„o se encontra na directoria
+                      MASTER, logo n„o encontra os drivers necess rios.
+
+                1.2   Outra das hip¢teses ‚ ter uma placa de v¡deo j  
+                      muito antiguinha. A melhor solu‡„o ‚ comprar uma
+                      nova placa, tipo VGA. 
+                      
+
+         2. N„o aparece o rato.
+
+              Ou n„o tem rato ou as liga‡”es est„o mal feitas.
+
+
+          2.1  O rato s¢ funciona na parte superior do ‚cran.
+
+            2.1.1  Pois ‚, j  me aconteceu o mesmo. O melhor ser  obter de   
+                   um amigo ou qualquer outra pessoa um novo driver do rato,
+                   pelo menos mais recente. Tipo MOUSE.SYS ou MOUSE.EXE ou 
+                   coisa do g‚nero.
+
+
+         3. Dar erro de execu‡„o a meio do jogo.
+
+              Aconteceu porque V.Ex¦ teve o bom senso de proteger a dis-
+              quete. S¢ que este jogo precisa de gravar informa‡„o, sendo
+              assim a melhor solu‡„o ser  copiar a directoria para o disco
+              duro.
+              Quando saiu para DOS os caracteres estavam diferentes. N„o
+              se preocupe que n„o ‚ vir£s. Fa‡a apenas MODE CO80.
+
+
+         4. N„o sabe jogar o jogo.
+
+               Por alguma raz„o existem manuais, este jogo tem um. Caso
+               o deseje, ‚ s¢ pedi-lo para a morada abaixo indicada e enviar
+               a m¢dica quantia de 1.500$00 . Ser-lhe-  enviado um manual,
+               uma disquete com o jogo e ainda os ficheiros com os c¢digos
+               fonte que por acaso est„o escritos em pascal.
+
+          Bom, s¢ me resta desejar-lhe que se divirta aonde quer que esteja
+          com este jogo.
+
+          Qualquer sugest„o ou cr¡tica a este jogo ser  bem vinda para :
+
+               Pedro Nunes
+               Apartado 2253 jardim
+               3080 Figueira da foz
+
+O autor,
+
+Pedro Nunes
+
+

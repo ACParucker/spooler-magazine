@@ -1,0 +1,202 @@
+    A Project/Event Planner 2.2           (README.DOC - February 18, 1994)
+    ======================================================================
+    This file contains the following Sections:
+            1.  General Program and Author Information
+            2.  User Agreement
+            3.  ASP Member
+            4.  Registration Requirements
+            5.  Description of Distributed Files
+            6.  Installation and Getting Started
+    ======================================================================
+            SECTION 1.  GENERAL PROGRAM AND AUTHOR INFORMATION.
+    =======================================================================
+    Dear User:
+
+    This program can be used for quick overall project planning, activity
+    scheduling, and resource scheduling.  You can assign income and costs
+    to events (tasks) and resources to estimate a project's income and
+    cost.  You can define events that are tied to predecessors.  For these
+    related events, start and end times are automatically calculated.
+
+    You can shift all events in a plan forward or backward in time.  You
+    can define multiple calendars and use different calendars for each
+    resource.  The program allows free-form drawing of events on a scale
+    of days, weeks, months, or years.  On-line help and sample plans are
+    provided.
+
+    It will handle up to a few hundred events in a given plan, but it is
+    not suited for highly complex projects where thousands of tasks are
+    defined within a project plan.
+
+    This program requires Microsoft Windows 3.1 and a mouse (or equivalent
+    pointing device).
+
+    Thank you for trying this program.
+
+                Layton Fujii
+                Sapphire Software Inc.
+                6650 Hawaii Kai Drive
+                Suite 219
+                Honolulu, Hawaii  96825
+                USA
+
+                Phone: (808) 395-5587
+                CompuServe: 71223,3653
+
+    =======================================================================
+            SECTION 2.  USER AGREEMENT
+    =======================================================================
+    Users of this software must accept the following disclaimer of warranty:
+
+        "This software is supplied as is.  The author disclaims all
+        warranties, expressed or implied, including, without limitation,
+        the warranties of merchantability and of fitness for any purpose.
+        The author assumes no liability for damages, direct or conse-
+        quential, which may result from the use of this software."
+
+    ======================================================================
+            SECTION 3.  ASP MEMBER
+    ======================================================================
+    This program is produced by a member of the Association of Shareware
+    Professionals (ASP).  ASP wants to make sure that the shareware
+    principle works for you. If you are unable to resolve a
+    shareware-related problem with an ASP member by contacting the member
+    directly, ASP may be able to help. The ASP Ombudsman can help you
+    resolve a dispute or problem with an ASP member, but does not provide
+    technical support for members' products.  Please write to the ASP
+    Ombudsman at 545 Grover Road, Muskegon, MI 49442 or send a CompuServe
+    message via CompuServe Mail to ASP Ombudsman 70007,3536.
+
+    ======================================================================
+            SECTION 4.  REGISTRATION REQUIRMENENTS
+    ======================================================================
+    This is a Shareware program.  If you find this program useful and find
+    that you are using it after a reasonable trial period, you must make a
+    registration payment to Sapphire Software Inc.  To register, use the
+    program's "Registration" option in the "Help" menu or use the
+    "register.doc" file.
+
+    You are encouraged to pass a copy of this program (in its original form)
+    along to your friends for evaluation.  Please encourage them to
+    register their copy if they find that they can use it.
+
+    ======================================================================
+            SECTION 5.  DESCRIPTION OF DISTRIBUTED FILES
+    ======================================================================
+    1.  Informational Files (Not needed for program execution.  These
+        are text files that may be viewed by any text editor or word
+        processing program):
+        file_id.diz  -  Program summary information for BBS.
+        readme.doc   -  The file you are reading.
+        release.doc  -  Information about the differences between this
+                        version and the previous version.
+        register.doc -  Registration information.  Information is also
+                        provided in the "Registration" option of the
+                        program's "Help" menu.
+        vendor.doc   -  Information for shareware vendors and BBS SYSOPs.
+
+    2.  Required files for execution (may be placed in separate directory):
+        aplanr.exe   -  The program executable.
+        aplanr.hlp   -  On-line Windows help (not in text file format).
+
+    3.  Sample data files (may be placed in separate directory):
+        pvcal.dat    -  Calendar definitions file with sample definitions.
+        pvidx.dat    -  Plan index file.
+        pvrsc.dat    -  Resource definitions file with sample definitions.
+        pvyymmdd.sss -  These are plan files that use the following naming
+                        convention: yy = year, mm = month, dd = day,
+                        sss = sequence number.
+
+    4.  Windows Files:
+        aplanr.ini   -  This file is not distributed, but it is a Windows
+                        initialization file that is automatically created and
+                        maintained.  It is located where Windows keeps its
+                        other ".ini" type files.
+
+    ======================================================================
+            SECTION 6.  INSTALLATION AND GETTING STARTED
+    ======================================================================
+    1.  TO UPGRADE FROM A PREVIOUS VERSION, using the standard distribution
+        diskette provided directly by Sapphire Software Inc.:
+
+        a.  As a precautionary measure, be sure you make a backup of
+            the previous version of the program and data files
+            before upgrading.
+
+        b.  Use the DOS copy command or the Windows File Manager to
+            replace the old APLANR.EXE (program executable) and APLANR.HLP
+            (program help file) with the new versions from the distribution
+            diskette.  The new versions use the same filenames.  For example
+            if your old files reside in "c:\aplanr", sample commands to
+            copy the files are:
+
+                COPY  A:\APLANR.EXE  C:\APLANR
+                COPY  A:\APLANR.HLP  C:\APLANR
+
+        c.  If you would like to view the new sample plans, create a
+            new directory to hold them.  Then copy the samples from the
+            distribution diskette.  For example if "c:\aplanr" holds
+            the executable programs, you could create a directory
+            "c:\aplanr\samples".  A sample command to copy all the
+            sample data from a diskette in drive A is given below:
+
+                COPY  A:\PV*.*  C:\APLANR\SAMPLES
+            
+            You can then use the "Directories" option of the "Options"
+            menu to tell the program to use this directory to access the
+            sample data.
+
+            ***DO NOT*** copy the sample plans of the new version into the
+            same directory as your current plan files, because the sample
+            plan files will over-write yours.
+
+    2.  TO INSTALL A FRESH VERSION from the standard distribution diskette
+        provided directly from Sapphire Software Inc.:
+
+        a.  Create a directory to place the program files.  You
+            may use the Windows File Manager or DOS.  For example
+            in DOS type:
+
+                    MD  C:\APLANR
+
+        b.  Copy all the program files from the diskette to the
+            new directory.  You may use the Windows File Manager or
+            DOS.  For example in DOS type:
+
+                    COPY  A:\*.*  C:\APLANR
+
+            You do not have to copy all of the files to your disk,
+            but the required files are "APLANR.EXE" and "APLANR.HLP".
+            These are the program executable and help files respectively.
+            (See Item 2 in Section 5.)
+
+    3.  You may execute the program named "APLANR.EXE" directly with the
+        Windows File Manager.
+
+        If you want to set up an icon in a program group to execute
+        APLANR.EXE, refer to the "Working with Program Items" section
+        in the Program Manager chapter of the Windows User's Guide.
+            
+    4.  Upon starting the program for the first time, review the on-line
+        help information that is available from the program's "Help" menu.
+        You may print any of the help sections.
+
+    5.  Look at the sample plans, resource definitions, and calendar
+        definitions that are provided.
+
+    6.  Refer to the RELEASE.DOC file for additional information regarding
+        the current release.
+
+    7.  By default, all data resides in the same directory as the program
+        executable.  You may place your data in another location by doing
+        the following:
+
+        a.  Create the directory you want to store the data in.
+        
+        b.  Run APLANR and use the "Directories" option of the "Options"
+            menu to tell the program to use this directory for all data.
+
+    =======
+    THE END
+    =======
+

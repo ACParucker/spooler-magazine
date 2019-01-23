@@ -1,0 +1,32 @@
+-----------> x_PrintScr
+
+  Esta fun‡„o imprime o ecran (de texto) corrente para a 1§ porta 
+  paralela (LPT1).
+
+  E como ‚ que isto ‚ feito ? Come‡a por verificar a 'Enable Interrupt
+  Flag' e o 'Interrupt Signal'. Caso estejam os dois activos, decrementa
+  o 'Stack Pointer' e move-o para o 'Address Register'. Agora, e ap¢s
+  fazer 'Reset Enable Interrupt Flag' e colocar o 'Program Counter' no
+  'Data Output Register' basta activar a linha de 'Write'. Para finalizar
+  resta subir a linha 'Interrupt Acknowledge' e enviar o conte£do do
+  'Data Input Register' para o 'Program Counter'. E pronto, ‚ aqui que 
+  come‡a a execu‡„o da interrup‡„o 05h (Print Screen). Esclarecidos ?
+
+  A pr¢pria interrup‡„o coloca um valor na posi‡„o de mem¢ria 0000:0500h
+  idˆntica ao retornado por esta fun‡„o e que pode ser:
+
+    PRINT_COMPLETE  -  00h  -  n„o foi requerido o servi‡o, ou este j 
+                               foi completado
+    PRINT_PROGRESS  -  01h  -  o servi‡o encontra-se, neste momento, a
+                               ser executado
+    PRINT_ERROR     -  FFh  -  alguma coisa n„o funcionou: a impressora
+                               est  desligada (ou n„o existe), o papel
+                               encravou, tem falta de papel (afecta 70%
+                               dos portugueses), etc...
+
+  Executar esta fun‡„o ou carregar SHIFT-Prt Screen ‚ exactamente a mesma
+  coisa, mas evita que dentro de um programa se pe‡a ao utilizador para
+  fazer Print Screen (suponham que tˆm que imprimir 50 ecrans !).
+
+  Ok, j  que est„o curiosos vamos l  experimentar... Metam l  uma folhilha
+  para verem como ‚.

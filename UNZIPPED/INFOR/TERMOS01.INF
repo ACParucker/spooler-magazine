@@ -1,0 +1,336 @@
+ACEITA€O EM DUAS FASES
+
+ Usado em bases de dados  distribu¡das, este protocolo verifica primeiro se os
+sistemas envolvidos na transac‡„o corrente  est„o prontos para ®transferir¯ ou
+para ®rejeitar¯. O protocolo passa ent„o   opera‡„o apropriada  para finalizar
+a transac‡„o.
+
+ACESSO DIRECTO OU SELECTIVO
+
+ Modo  de  escrita, ou  de  leitura, segundo  o  qual  os dados s„o inseridos,
+extra¡dos, no seu  suporte, a partir  de um endere‡o que permita referenciar a
+sua posi‡„o. Esta opera‡„o s¢ ‚ poss¡vel para as mem¢rias endere‡ veis, que se
+designam ®de acesso directo¯.
+
+ACESSO SEQUENCIAL
+
+ Modo  de  escrita, ou de  leitura, segundo o  qual os dados s„o inseridos, ou
+extra¡dos, no  seu suporte, de acordo  com a ordem  pela qual se apresentam. O
+acesso sequencial ‚ o £nico poss¡vel para as mem¢rias n„o endere‡ veis, que se
+designam ®de acesso sequencial¯.
+
+ACCESS TIME
+
+ (Tempo  de  acesso),  ‚ o tempo  que  um disco  r¡gido  demora a  localizar e
+transferir  dados  de  ou  para a mem¢ria. Muitas  vezes os discos r¡gidos s„o
+caracterizados em fun‡„o do seu tempo m‚dio de acesso.
+
+Vˆr: TEMPO MDIO DE ACESSO
+
+ACCESSING
+
+ Acesso, admiss„o: ter acesso ou aceder  aos sistemas ou aos dados contidos em
+mem¢ria ou em disco. ACCESS: acesso.
+
+ACRONYM
+
+ Acr¢nimo - Palavra  constitu¡da  por  letras ou por s¡labas  retiradas de uma
+express„o: COBOL (COmmon Business Oriented Language); BIT (BInary digiT), etc.
+
+ACTUALIZA€O
+
+ Tratamento que consiste em introduzir dados novos num ficheiro, por inser‡„o,
+supress„o,  ou  modifica‡„o  de  artigos,  ou  registos,  sem  alterar  a  sua
+estrutura.
+
+ADA
+
+ (De Ada Lovelace, presumivelmente a primeira  mulher que, j  no s‚culo XIX se
+ocupou de computadores).  uma  das linguagens de mais recente desenvolvimento
+neste  campo, sendo a  continua‡„o do PASCAL e  conclu¡da em 1981. Prevˆ-se um
+bom futuro para a ADA, visto que tem importƒncia na fabrica‡„o de computadores
+e no aumento da capacidade de mem¢ria que se deu nos anos 70.
+
+ADDRESS
+
+ Endere‡o,  morada. O  endere‡o  ou  a  localiza‡„o de  um registo em mem¢ria.
+Tamb‚m  uma etiqueta, uma palavra ou um  n£mero que define a localiza‡„o de um
+registo, posi‡„o, campo, byte, etc., consoante  a   estrutura  organizativa do
+sistema.
+
+Vˆr: ENDERE€O
+
+ALGOL
+
+ Abreviatura  de ®ALGOrithmic  Language¯. Linguagem  evolu¡da concebida para a
+programa‡„o de problemas cient¡ficos, especialmente de natureza matem tica.
+
+ALGORITMO
+
+ Conjunto  finito  de  regras  bem  determinadas  que servem  para resolver um
+problema por meio de um n£mero finito de opera‡”es.
+
+ALLOCATION
+
+ Atribui‡„o - O estabelecimento ou marca‡„o de uma  rera de mem¢ria destinadas
+a alojar  programas ou rotinas atribu¡ndo-lhes os valores que correspondem aos
+endere‡os de funcionamento.
+
+ALU
+
+ Abreviatura de ®Arithmetical and Logical Unit¯ - Unidade Aritm‚tica e L¢gica.
+Designa o elemento que executa este tipo de c lculos num computador. 
+
+ANALŸGICO
+
+ Designa‡„o  oposta     de  ®num‚rico¯.  Adjectivo   que  qualifica  um   dado
+representado  por uma grandeza f¡sica que varia de forma cont¡nua e cujo valor
+lhe ‚ proporcional.
+
+AN†LISE
+
+ Em inform tica  designa os trabalhos de an lise de uma aplica‡„o assim como a
+concep‡„o  de uma nova solu‡„o. Estes  trabalhos s„o por  vezes designados por
+®an lise funcional¯, ou ®de concep‡„o¯. Tamb‚m designa a defini‡„o precisa dos
+tratamentos  em computador e dos procedimentos  externos que permitem realizar
+esta  solu‡„o,  sendo   usual  neste  caso  utilizar-se  uma  das  designa‡”es
+seguintes:  ®an lise  de  desenvolvimento¯,  ®an lise  orgƒnica¯   ou  ®estudo
+t‚cnico¯.
+
+ANALISTA
+
+ T‚cnico de inform tica encarregado dos trabalhos de an lise.
+
+ANSI
+
+ Acr¢nimo  de  ®American  National  Standard  Institute¯ - Instituto  Nacional
+Americano de Normaliza‡„o,  organismo que se ocupa da defini‡„o das normas que
+regem os produtos fabricados dos E.U.A.
+
+APL
+
+ Abreviatura  de ®A Programming Language¯. Linguagem evolu¡da concebida para a
+programa‡„o  de  problemas  cient¡ficos  em  modo  interactivo. A  potˆncia  e
+variedade dos seus operadores, fornecidos por um jogo de caracteres originais,
+conferem-lhe   extrema   concis„o   e   possibilidades   particulares  para  a
+manipula‡„o de listas e tabelas.
+
+APLICA€O
+
+ Conjunto  de  ficheiros,  programas,  procedimentos  e  meios  de tratamento,
+concebido e organizado para automatizar uma das fun‡”es da empresa.
+
+APPLESHARE FILE SERVER   (MACHINTOSH)
+
+ Programa  servidor de ficheiros  pr¢prio da Apple. O AppleShare corre num Mac
+(em geral num IIci ou num modelo superior) e permite a outros Mac's utilizarem
+ficheiros e impressoras ligadas ao servidor.
+
+APPLESHARE WORKSTATION   (MACHINTOSH)
+
+ Corresponde  ao software que o Mac utiliza para ligar recursos partilhados em
+rede, como  ‚ o  caso  de  impressoras e servidores de ficheiros. A Esta‡„o de
+Trabalho  AppleShare  apresenta-se  como uma  parte  integrante do Software de
+Sistema  do Machintosh. Virtualmente, produtos de rede de diversos fabricantes
+usam a Esta‡„o de Trabalho AppleShare como um seu cliente Machintosh.
+
+APPLE TALK
+
+ Conjunto  de  protocolos  de  rede da  Apple. Dantes, AppleTalk referia-se ao
+sistema  de cablagem, hoje  conhecido  como  LocalTalk. AppleTalk  corre sobre
+LocalTalk  bem  como sobre Ethernet ou Token Ring. Entre os servi‡os inclu¡dos
+no AppleTalk Encontram-se o AppleTalk Filling Protocol e o AppleTalk Service.
+
+APONTADOR
+
+ Registo, posi‡„o  de  mem¢ria, ou  zona de um registo, destinados a receber o
+endere‡o, ou  indicativo  de  outra  posi‡„o  de  mem¢ria, ou registo, que lhe
+esteja associado.
+
+AREA DE TRABALHO
+
+ Zona de  mem¢ria endere‡ vel na qual os dados s„o memorizados temporariamente
+no decorrer do seu tratamento.
+
+ASCII
+
+ Acr¢nimo  de  ®American  Standard  Code for Information Interchange¯ - C¢digo
+Padr„o  Americano  para  Permuta  de  Informa‡”es. A tabela  dos c¢digos ASCII
+come‡a  com  o  caractere  ®nulo¯  (c¢digo 000)  e termina com o caractere ®.¯
+(c¢digo 254).
+ Para visualizar estes caracteres basta premir simultƒneamente as teclas <ALT>
+e o n£mero do c¢digo pretendido no teclado num‚rico.
+
+Exemplo: <ATL> 178 = ²  (Este ‚ o caractere produzido pela combina‡„o daquelas
+                         duas tecla.)
+
+ASSEMBLADOR
+
+ Programa  espec¡fico  de  um  determinado  tipo  de  computador, destinado  a
+transformar em linguagem-m quina programas escritos em linguagem ®assembly¯ e,
+eventualmente, a ligar os subprogramas.
+
+Vˆr:  ASSEMBLY
+
+ASSEMBLAGEM
+
+ Utiliza‡„o de um assemblador.
+
+ASSEMBLY
+
+ Linguagem  simb¢lica espec¡fica de um determinado computador, no qual a maior
+parte das instru‡”es  s„o equivalentes cada uma, a uma instru‡„o da linguagem-
+m quina,  correspondendo  as   outras   (macro-instru‡”es)  a  uma  ou  v rias
+sequˆncias pr‚-definidas de instru‡”es.
+
+ASSEMBLER
+
+ MONTADOR - Termo  utilizado  para designar os programas destinados a traduzir
+as  instru‡”es  escritas  em  linguagem simb¢lica  para a linguagem-m quina, a
+£nica compreendida pelo processador do computador.
+
+ASSIGN
+
+ ATRIBUIR,  IMPUTAR,  DESIGNAR - atribuir  um  valor  num‚rico  ou  uma cadeia
+alfanum‚rica a uma vari vel. Comando do DOS: designar uma Drive com a letra de
+outra Drive, por exemplo: 
+
+                          ASSIGN A=B ,
+
+iria dirigir todos os acessos da Drive A para a Drive B.
+
+ASS‹NCRONO
+
+ Designa‡„o  que  qualifica  um  computador  cujos diferentes org„os funcionam
+independentemente  de qualquer ritmo £nico imposto por um rel¢gio. O in¡cio de
+cada  opera‡„o  ‚  determindo  por  um  sinal  emitido  no  final  da opera‡„o
+precedente, ou pela liberta‡„o dos org„os necess rios   execu‡„o da opera‡„o.
+ Impropriamente, qualifica  tamb‚m  uma transmiss„o de dados na qual a emiss„o
+de  cada  grupo  de  sinais, correspondente aos bits de um caractere, ou de um
+bloco, pode  iniciar-se  em  qualquer  momento, sendo os sinais no interior do
+mesmo grupo regulados numa base de tempo.
+ Pode  igualmente  qualificar, embora impropriamente, uma transmiss„o de dados
+como a anterior, na  qual cada  grupo  de sinais que representa um caractere ‚
+precedido de um sinal de partida e seguido de um sinal de paragem.
+
+ATRIBUI€O DINMICA DE MEMŸRIA
+
+ T‚cnica utilizada em multiprograma‡„o  para assegurar   mem¢ria principal, em
+cada instante, taxas m ximas de ocupa‡„o e actividade.
+
+AUTOM†TICA
+
+ Substantivo  que  designa  o conjunto  das disciplinas cient¡ficas e t‚cnicas
+utilizadas  para  a  concep‡„o  e emprego  dos  dispositivos  e conjuntos  que
+funcionam sem interven‡„o de um operador humano.
+
+AUTOM†TICO
+
+ Adjectivo  aplic vel a uma opera‡„o, ou processo, realiz veis sem interven‡„o
+de um operador humano.
+
+AUTOMATIZA€O
+
+ Utiliza‡„o de meios autom ticos para a realiza‡„o de um processo.
+ Designa  tamb‚m a transforma‡„o  de um procedimento, processo, ou instala‡„o,
+tendo em vista torn -lo autom tico.
+
+AVAN€O (OU ROLL FORWARD)
+
+ Avan‡o  ‚ uma  fun‡„o usada para a recupera‡„o de quedas do sistema. Faz-se a
+reposi‡„o de uma c¢pia de seguran‡a e s„o ent„o refeitas todas as altera‡”es  
+base  de  dados, conforme  indicado no  registo de transac‡”es, que descreve a
+totalidade das altera‡”es   base de dados.
+ 
+BACKGROUND
+
+ Tratamento, geralmente  por lotes, que, em multiprograma‡„o, n„o est  sujeito
+a limita‡”es  de  tempo e pode  ser executado quando os recursos do computador
+n„o  est„o atribu¡dos  a programas  em  ®tempo real¯, ou  a  outros  programas
+priorit rios.
+
+BACKUP OU BACK-UP
+
+ Conjunto  de  disposi‡”es,  incluindo  equipamento,  programas,  ficheiros  e
+procedimentos   de  reserva,  previstas   para  assegurar  a  continuidade  de
+explora‡„o  de  um  sistema   inform tico,   na  eventualidade   de  ocorrerem
+incidentes.
+ Em  termos  gerais  ‚ termo  que os anglo-sax¢nicos utilizam para designar as
+c¢pias de seguran‡a. Fazer um BACKUP de um ficheiro ou de um disco, ser  fazer
+uma c¢pia para  uma ou v rias disquetes, desse ficheiro, de outra disquete, ou
+do disco r¡gido.
+
+BANCO DE DADOS
+ 
+ Cojunto  de  ficheiros  afins  que  reunem quantidades volumosas de dados num
+dom¡nio  definido do  conhecimento e que servem para a realiza‡„o de consultas
+por parte de utilizadores diversos.
+
+BANDA MAGNTICA
+
+ Suporte  f¡sico  de  dados  constitu¡do  por  uma  banda  flex¡vel de mat‚ria
+pl stica, revestida numa das faces por uma camada de mat‚ria magnetiz vel.
+
+BANDA PERFURADA OU FITA PERFURADA
+
+ Suporte  f¡sico constitu¡do por uma fita male val, de papel, na qual se fazem
+perfura‡”es   de  dimens”es   fixas,  com  intervalos  regulares  e  de  forma
+codificada, que pemitem representar dados.
+
+BAR CHART
+
+ GR†FICOS DE BARRAS - Forma  mais  corrente de mostrar as varia‡”es de um dado
+parƒmetro  ao  longo  de  um  per¡odo  de  tempo, em  que  a altura das barras
+verticais corresponde   grandeza desse parƒmetro.
+
+BASES DE DADOS
+
+ Colec‡„o  de  dados  (representa‡”es  da  realidade), inter-relacionados, t„o
+coerentes  quanto  poss¡vel,  memorizados  com  uma  redundƒncia  calculada  e
+estruturados  de  maneira  a facilitar  a uma  explora‡„o, para satisfazer uma
+grande variedade de pedidos de informa‡„o expressos por numerosos utilizadores
+com exigˆncias de respostas compat¡veis com as suas condi‡”es de trabalho.
+
+Ou:
+
+ Conjunto  de  registos  armazenados  de  forma  mais  ou menos permanente num
+computador  (registos  persistentes),  e  que  s„o  partilhados  por  diversos
+Sistemas  de  Informa‡„o  com o objectivo de evitar a redundƒncia na recolha e
+manuten‡„o da informa‡„o.
+
+BASIC
+
+ Acr¢nimo de  Beginners All-purpose Symbolic Instruction Code,  isto ‚, C¢digo
+de Instru‡„o Simb¢lica Compreensivo para Principiantes.  usado principalmente
+em  pequenos  computadores  (pessoais  e   dom‚sticos).  Vantagens:  f cil  de
+aprender,  reage  logo    s  entradas  com  execu‡„o  ou  mensagens  de  erro.
+Inconvenientes: grande  volume de c lculos (quando n„o se emprega compilador),
+n„o  ‚  aplic vel  a  programas  grandes visto que ‚ pouco claro, complicado e
+propenso a erros.
+  uma  das  linguagens  denominadas  de alto n¡vel, e mesmo sendo considerada
+para  principiantes, quando  bem dominada e compilada, pode produzir programas
+eficientes e de qualidade.
+
+BATCH
+
+ BLOCO,  GRUPO. Designa‡„o  dada  a  ficheiros  constitu¡dos  por  um grupo de
+comandos  do  DOS, que  s„o  executados  sequencialmente. O  AUTOEXEC.BAT ‚ um
+ficheiro  BATCH  que  executa   uma  s‚rie  de  comandos  sem  interven‡„o  do
+utilizador.
+
+BAUD
+
+ Unidade  de  medida  utilizada nas transmiss”es telef¢nicas via MODEM. Tamb‚m
+serve  para  medir  a  velocidade  de  transferˆncia de dados entre a sa¡da do
+computador  e  um  perif‚rico  (impressora, rato, etc.). Ex:  2400  bauds  por
+segundo.
+
+BBS
+
+ Sigla  de  ®Buletin Board System¯. N„o ‚ mais que uma base de dados privada  
+qual  os  utilizadores  tem acesso por via telef¢nica. Mas para poder enviar e
+receber  informa‡”es  por  linha  telef¢nica  de  um  computador  (local) a um
+computador  (remoto)  ‚  necess rio  a  presen‡a  de um aparelho, o MODEM, que
+permite  traduzir  os  dados  em  impulsos  que  podem  ser enviados por linha
+telef¢nica   e  vice-versa.  Para   al‚m   disso,  ‚  necess rio   possuir  um
+software que permita a um dos PC's ®chamar¯ e ao outro ®atender¯ a chamada.

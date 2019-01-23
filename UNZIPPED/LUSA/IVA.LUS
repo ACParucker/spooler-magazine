@@ -1,0 +1,41 @@
+PROGRAMA  Valculo do IVA
+
+VARIAVEL REAL Vendas,
+              Iva;
+         Inteiro x1,y1,x2,y2,x,y;
+
+ROTINA Caixa;
+  x=x1;
+  REPETE
+    emxy x,y1; escreve "Ä";
+    emxy x,y2; escreve "Ä";
+    x=x+1;
+  ATE x=x2;
+  y=y1;
+  REPETE
+    emxy x1,y; escreve "³";
+    emxy x2,y; escreve "³";
+    y=y+1;
+  ATE y=y2;
+  emxy x1,y1; escreve "Ú";
+  emxy x2,y1; escreve "¿";
+  emxy x2,y2; escreve "Ù";
+  emxy x1,y2; escreve "À";
+FIMROTINA
+
+
+INICIO
+  decimais=2;
+  limpa_ecr;
+
+  cor=14;
+  x1=10; y1=5; x2=70; y2=7;
+  Executa Caixa;
+  emxy 32,6; escreve "C lculo do I.V.A.\n\n";
+
+  le "\n\ Qual o valor das vendas ? ",vendas,
+     "\nQual a percentagem do IVA ? ",iva;
+  escreve "\n\n\c12; Valor do IVA = ",iva%vendas,
+          "\n Vendas+IVA = ",vendas+Iva%vendas,"\n\n";
+FIM
+

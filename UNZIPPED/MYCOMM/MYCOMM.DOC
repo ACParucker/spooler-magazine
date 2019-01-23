@@ -1,0 +1,4447 @@
+
+
+
+
+
+
+
+
+                                MyComm  Version 2.15
+                         Unregistered Version Documentation
+                               Printed January 6, 1994
+                      Copyright (c) 1992 - 1994 - Ken Dorshimer
+                                 All Rights Reserved
+
+
+
+
+            MyComm is NOT Public Domain or free software.  The MyComm
+          software, support files, and documentation are Copyright (c) 1992
+          - 1994 Ken Dorshimer, all rights reserved.
+
+            MyComm is being marketed under the "Shareware" concept.  You
+          may use MyComm for a 30 day evaluation period to determine its
+          usefulness in your particular application.  After the 30 day
+          evaluation period you must register MyComm if you continue to use
+          it.
+
+            Registration is as follows:
+
+              Send $25 (twenty five U.S. dollars drawn on a U.S. bank),
+          plus $2 shipping and handling to:
+
+               Ken Dorshimer
+               P.O. Box 5143
+               Belmont, Ca. 94002
+
+            (Please send check or money order, do not send cash.  People
+          who want to order MyComm from outside the U.S. should obtain a
+          money order in U.S. dollars from a local bank.)
+
+            For your convenience there is a file called ORDER.FRM which is
+          an order form for MyComm.  An order form is also included in
+          Appendix F of this documentation.  Please note that if you
+          downloaded MyComm from a BBS that charges a subscription fee,
+          obtained a copy of MyComm from a "shareware disk copying"
+          service, or CD ROM library the registration fee for MyComm is not
+          paid for or collected by those services!
+
+
+
+
+
+
+
+          1.0  Introduction to MyComm                                1
+              1.1  Registration and Licensing                        2
+              1.2  Disclaimer and Warranty                           4
+              1.3  Definitions, Acronyms                             5
+              1.4  General System Requirements                       6
+              1.5  MyComm Files                                      6
+              1.6  MyComm Support and Technical Assistance           7
+          2.0  MyComm Installation                                   8
+              2.1  System Requirements                               8
+              2.2  MyComm Installation Instructions                  9
+              2.3  Running MyComm                                   11
+          3.0  MyComm Screens and Menus                             12
+              3.1  Terminal Screen                                  12
+              3.2  Help Menu - F1                                   13
+              3.3  Chat Mode - Alt A                                13
+              3.4  Send Break - Alt B                               14
+              3.5  Clear the Screen - Alt C                         14
+              3.6  Dialing Functions - Alt D                        14
+                  3.6.1  Add Phone List Item                        15
+                  3.6.2  Edit Phone List Item Screen                16
+                      3.6.2.1  Name                                 16
+                      3.6.2.2  Number                               16
+                      3.6.2.3  Baud Rate                            17
+                      3.6.2.4  Data Bits                            17
+                      3.6.2.5  Data Parity                          17
+                      3.6.2.6  Stop Bits                            17
+                      3.6.2.7  Default Protocol                     17
+                      3.6.2.8  Dial Prefix                          18
+                      3.6.2.9  Logon Name                           18
+                      3.6.2.10 Password                             18
+                      3.6.2.11 Terminal Type                        18
+                      3.6.2.12 Local Echo                           19
+                      3.6.2.13 Received BS (BackSpace) Destructive  19
+                      3.6.2.14 BS Key Sends BS or DELete            19
+                      3.6.2.15 Strip Hi Bits                        19
+                      3.6.2.16 Add LF after incoming CR             20
+                      3.6.2.17 Clear last date called               20
+                      3.6.2.18 Script                               20
+                      3.6.2.19 Save Changes                         20
+                  3.6.3  Delete an Item                             20
+                  3.6.4  Call Numbers (Dial)                        21
+                  3.6.5  Phone Item Info Screen                     22
+                  3.6.6  Manual Dial Screen                         22
+                  3.6.7  Mark Phone List Items                      23
+                  3.6.8  Find Phone List Items                      23
+                  3.6.9  Load Phone List Screen                     23
+                  3.6.10 Sort Phone List                            23
+                  3.6.11 Move Phone List Item                       24
+                  3.6.12 Print Phone List                           24
+              3.7  Local Echo On/Off - Alt E                        24
+              3.8  Hang Up Modem - Alt H                            24
+              3.9  Send Modem Initialization Strings - Alt I        25
+              3.10 Join Script - Alt J                              25
+
+                                         i
+
+
+
+
+
+
+              3.11 Present Line Status - Alt L                      26
+              3.12 Scroll Back - Alt K                              26
+              3.13 Manual Dial - Alt M                              27
+              3.14 Outside to DOS - Alt O                           27
+              3.14 Change Port Parameters - Alt P                   28
+              3.16 Quick Re-Dial - Alt Q                            28
+              3.17 Run External Program - Alt R                     28
+              3.18 Session Capture On/Off/Pause - Alt S             29
+              3.19 Terminal Emulation - Alt T                       29
+              3.20 Update Configuration - Alt U                     30
+                  3.20.1  Modem Setup Screen                        30
+                      3.20.1.1  COM Port                            31
+                      3.20.1.2  Modem Initialization String         32
+                      3.20.1.3  Modem Attention String              32
+                      3.20.1.4  Modem Hang Up String                32
+                      3.20.1.5  Modem Answer String                 33
+                      3.20.1.6  Modem Cancel Dial String            33
+                      3.20.1.7  Modem Dial Suffix String            33
+                      3.20.1.8  Dialing Wait Time                   33
+                      3.20.1.9  Pause Between Calls                 34
+                      3.20.1.10 Local Echo on by Default            34
+                      3.20.1.11 Use DTR to Hang Up Modem            34
+                      3.20.1.12 Use XON/XOFF Flow Control           34
+                      3.20.1.13 Use CTS/RTS Flow Control            35
+                      3.20.1.14 Use DSR/DTR Flow Control            35
+                      3.20.1.15 Dialing Prefixes                    35
+                      3.20.1.16 Connect Strings                     36
+                  3.20.2  Paths Setup                               36
+                      3.20.2.1  Download Directory                  37
+                      3.20.2.2  Upload Directory                    37
+                      3.20.2.3  Path\File for Screen Capture        37
+                      3.20.2.4  Session Capture Path\File           37
+                      3.20.2.5  Phone File Path\File                37
+                      3.20.2.6  Editor Path\Filename                37
+                      3.20.2.7  External Programs Path\Filename     38
+                  3.20.3  Protocols Setup                           38
+                      3.20.3.1  ASCII Transfers Setup               39
+                          3.20.3.1.1  Strip High Bits               39
+                          3.20.3.1.2  Remote Abort Char             39
+                          3.20.3.1.3  CR Translation                40
+                          3.20.3.1.4  LF Translation                40
+                          3.20.3.1.5  Local Echo On During Uploads  40
+                          3.20.3.1.6  Expand Blank Lines to Spaces  40
+                          3.20.3.1.7  Line Pace Time                40
+                          3.20.3.1.8  Character Pace Time           40
+                          3.20.3.1.9  Pacing Char                   41
+                      3.20.3.2  Zmodem Transfers Setup              41
+                      3.20.3.2.1  Zmodem 32 Bit CRC                 41
+                      3.20.3.2.2  Zmodem Auto Download Feature      41
+                      3.20.3.2.3  Zmodem Send Crash Recovery        41
+                      3.20.3.2.4  Zmodem Receive Crash Recovery     42
+                      3.20.3.3  External Protocols Setup            43
+                  3.20.4  Miscellaneous Options Setup               44
+                      3.20.4.1  Screen Background Color             44
+
+                                         ii
+
+
+
+
+
+
+                      3.20.4.2  Screen Text Color                   45
+                      3.20.4.3  Date Format Style                   45
+                      3.20.4.4  12 or 24 Hour Time Format           45
+                      3.20.4.5  Make Noise When Calls Connect       45
+                      3.20.4.6  Make Noise After File Transfers     45
+                      3.20.4.7  Use Direct Video                    45
+                      3.20.4.8  Your Name for sign on               46
+                      3.20.4.9  Password for sign on                46
+                      3.20.4.10 Clever quip for TagLine             46
+                      3.20.4.11 Guess Up/Download Filename          47
+                  3.20.5  COM Port Addresses                        47
+                  3.20.6  Restore to Defaults                       47
+                  3.20.7  Save Setup                                47
+              3.21 Send Screen to File - Alt W                      48
+              3.22 Exit MyComm - Alt X                              48
+              3.23 Help Screen - F1                                 48
+              3.24 Send Name - F2                                   48
+              3.25 Send Password - F3                               48
+              3.26 Send Tagline  - F4                               48
+              3.27 Transferring Files                               49
+                  3.27.1  Starting a File Transfer                  50
+                  3.27.2  File Transfer Hints                       52
+                  3.27.3  Download Files - PgDn                     52
+                  3.27.4  UpLoad Files - PgUp                       52
+                  3.27.5  ASCII File Transfers                      52
+                  3.27.6  SEAlink Derived File Transfers            53
+                  3.27.7  Xmodem File Transfers                     53
+                  3.27.8  1K-Xmodem File Transfers                  53
+                  3.27.9  Ymodem Batch File Transfers               54
+                  3.27.9  Ymodem-G Batch File Transfers             54
+                  3.27.11 Zmodem File Transfers                     54
+                  3.27.11 External Protocol File Transfers          55
+                  3.27.12 MyComm as a Host                          55
+          Appendix A - MyComm Command Summary                       57
+          Appendix B - MyComm Line Editing Functions                58
+          Appendix C - Terminal Emulation                           59
+          Appendix D - Troubleshooting                              62
+          Appendix E - MyComm Script Language                       65
+              1.0  Script Language Introduction                     65
+              1.2  Creating a Script                                65
+          2.0  Script Language                                      66
+              2.1  Special Script Characters                        67
+              2.2  Script Functions                                 67
+                  2.2.1  Labels                                     67
+                  2.2.2  WAITFOR()                                  68
+                  2.2.3  XMIT()                                     68
+                  2.2.4  GOTO()                                     68
+                  2.2.5  SETFLAG()                                  68
+                  2.2.6  INCFLAG()                                  69
+                  2.2.7  DECFLAG()                                  69
+                  2.2.8  IFFLAG()                                   69
+                  2.2.9  IFSCAN()                                   70
+                  2.2.10 SENDNAME()                                 70
+                  2.2.11 SENDPASS()                                 70
+
+                                         iii
+
+
+
+
+
+
+                  2.2.12 SENDFILE()                                 70
+                  2.2.13 RECVFILE()                                 71
+                  2.2.14 SNDBREAK()                                 71
+                  2.2.15 ALARM()                                    72
+                  2.2.16 PAUSE()                                    72
+                  2.2.17 HANGUP()                                   72
+                  2.2.18 IGNORECD()                                 72
+                  2.2.19 SETSTR()                                   73
+                  2.2.20 GOSUB()                                    73
+                  2.2.21 RETURN()                                   73
+                  2.2.22 EXIT()                                     74
+                  2.2.23 QUIT()                                     74
+          3.0  Script Syntax Checker                                75
+                  4.0  Script Sample                                76
+          Appendix F - MyComm Order Form                            77
+          Appendix G - MyComm Bug Report Form                       78
+          Appendix H - Planned Modifications and Upgrades           79
+          Appendix I - MyComm Revision History                      80
+          Appendix J - Control Characters                           81
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                         iv
+
+
+          MyComm Version 2.15 Documentation                    Page 1
+
+
+
+
+          1.0  Introduction to MyComm
+
+            MyComm is a small, yet powerful, data communications program
+          designed to enable users to access public bulletin board systems
+          (BBS's) and other telecommunication services.  MyComm is designed
+          to run under the PC/MS-DOS operating system using DOS version 3.3
+          or higher.  MyComm has a variety of built in file transfer
+          protocols including Zmodem, Xmodem, Xmodem-1K, Ymodem Batch,
+          Ymodem-G Batch, SEAlink, and of course ASCII.  There are also
+          slots to install up to six external file transfer protocols.
+
+            The driving principle behind MyComm is to provide a reliable,
+          powerful, and versatile communications package which is easy to
+          use, and small in size.  Great care has been taken to optimize
+          MyComm for operating speed and to keep the executable code size
+          small so that it takes up less of your valuable disk space.
+          MyComm is designed to be easy to use for both novice and
+          experienced users, and employs a menu system that is friendly and
+          simple to navigate through.
+
+          MyComm features include:
+
+          þ    A full featured communications package which is small in
+               size.
+
+          þ    Wide variety of popular file transfer protocols.
+
+          þ    Powerful, yet easy to use "script" language.
+
+          þ    Small code size which will run in less than 200K of RAM.
+
+          þ    Intelligent ANSI character translation which filters out
+               potentially harmful ANSI keyboard re-mapping sequences.
+
+          þ    Intelligent DOS shell function that brings you back to the
+               disk drive and directory that you started from when you
+               return to MyComm.
+
+          þ    Detection and use of the 16550 UART and FIFO buffers.
+
+          þ    Locates program and configuration files no matter what
+               directory MyComm is started from (DOS 3.0 or greater).
+
+          þ    Support for COM ports 1 through 8.
+
+          þ    Simple, and easy to use.  Some may even call it "fun"!
+
+
+          MyComm Version 2.15 Documentation                    Page 2
+
+
+
+          1.1  Registration and Licensing
+
+            MyComm is NOT Public Domain or free software.  The MyComm
+          software, support files, and documentation are Copyright (c) 1992
+          - 1994 Ken Dorshimer, all rights reserved.
+
+            MyComm is being marketed under the "Shareware" concept.  You
+          may use MyComm for a 30 day evaluation period to determine its
+          usefulness in your particular application.  After the 30 day
+          evaluation period you must register MyComm if you continue to use
+          it.
+
+            Registration is as follows:
+
+              Send $25 (twenty five U.S. dollars drawn on a U.S. bank),
+          plus $2 shipping and handling to:
+
+               Ken Dorshimer
+               P.O. Box 5143
+               Belmont, Ca. 94002
+
+            (Please send check or money order, do not send cash.  People
+          who want to order MyComm from outside the U.S. should obtain a
+          money order in U.S. dollars from a local bank.)
+
+            For your convenience there is a file called ORDER.FRM which is
+          an order form for MyComm.  The order form is also included in
+          Appendix F of this document.  Please note that if you downloaded
+          MyComm from a BBS that charges a subscription fee, obtained a
+          copy of MyComm from a "shareware disk copying" service, or CD ROM
+          library the registration fee for MyComm is not paid for or
+          collected by those services!
+
+            MyComm represents many, many hours of work on my part in
+          research, design, coding, testing, revising, enhancing and
+          writing the documentation.  Writing a piece of software like
+          MyComm is not trivial.  Your registration not only gives me the
+          incentive to continue producing and upgrading shareware products
+          like this one, but it is the right thing to do.
+
+            Let's face it.  $25 is not a lot to spend on a program that
+          does everything MyComm does.  Comparable communications packages
+          are generally much more expensive.  The Shareware market is an
+          "all risk" venture for the author, while the user has everything
+          to gain.  Your registration tells me that MyComm was worth
+          creating, and that people like it.  I like to know that people
+          appreciate the effort I put into a project, don't we all?  Enjoy
+          using the MyComm software, and I'm looking forward to hearing
+          from you.
+
+
+          MyComm Version 2.15 Documentation                    Page 3
+
+
+
+            When you register MyComm I will send you the most recent
+          version of MyComm and its documentation on disk (standard 3.5" or
+          5.25" floppy disk, 3.5" preferred).  At this time I am not
+          offering a printed manual in order to keep the cost of the
+          software reasonable.  Registered users will also be offered a
+          discount on future upgrades.
+
+          Multiple registrations to the same individual or site will be
+          discounted as follows:
+
+               1  to 5    copies      -  no discount
+               6  to 10   copies      -  5% discount
+               11 to 25   copies      - 10% discount
+               26 to 50   copies      - 20% discount
+               51 to 100  copies      - 30% discount
+               over 100 copies        - inquire for quote
+
+            Inquiries for site licenses and multiple registrations of
+          MyComm should be directed to the above address, or via Compuserve
+          (Tm) 73113,3536.  In the case of site licenses and multiple
+          registrations a maximum of five (5) diskettes will be sent with
+          the order unless otherwise negotiated.
+
+
+
+            Registered users will be granted license to use the MyComm
+          software as they deem fit and within the law.  The registered
+          version of MyComm may be duplicated for backup purposes only.
+          MyComm is not to be used on more than one computer at a time.
+          However a user may install MyComm on their computer at work and
+          their computer at home providing that the two computers are not
+          operated simultaneously.  Feel free to contact me regarding
+          multiple registrations and site licenses.
+
+            All users are granted a limited license to make copies of the
+          unregistered "shareware" version of MyComm for the purpose of
+          allowing others to try it out, and the unregistered version may
+          also be uploaded to public bulletin board systems subject to the
+          above restrictions as well as the following:
+
+               þ    MyComm must be distributed in completely unmodified
+                    form, including all support files and documentation.
+
+               þ    MyComm may not be included or bundled with any other
+                    product for any reason without a license from the
+                    author, Ken Dorshimer.
+
+               þ    No charge or payment may be levied or accepted for the
+                    MyComm software except by the author, Ken Dorshimer.
+
+
+          MyComm Version 2.15 Documentation                    Page 4
+
+
+
+            MyComm may not be sold or distributed through a third party
+          (this includes copying services and shareware distribution
+          outlets which distribute software for a copying fee) without the
+          expressed written permission of the author, Ken Dorshimer.
+          Shareware distribution services and bulletin boards which charge
+          a fee for software distribution should contact me for written
+          permission to distribute MyComm.
+
+            The MyComm executable file(s) and documentation, both the
+          "registered" and "unregistered" versions are copyrighted material
+          and may not be modified or reverse engineered in any manner.  If
+          you require modified or customized versions of MyComm for
+          whatever reason feel free to contact the author at the address
+          above.
+
+          1.2  Disclaimer and Warranty
+
+          Disclaimer and Warranty:
+
+            MyComm was designed and coded on a best efforts basis in
+          accordance with the standard of care usually and reasonably
+          expected in the performance of such computer software.
+
+            THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS".  THE
+          AUTHOR, KEN DORSHIMER, MAKES NO WARRANTY OF ANY KIND, EITHER
+          EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED
+          WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE
+          OR THE SOFTWARE'S USEFULNESS IN A PARTICULAR APPLICATION.  IN NO
+          EVENT SHALL THE AUTHOR, KEN DORSHIMER, BE LIABLE FOR ANY DAMAGES
+          (INCLUDING DAMAGES FOR LOSS OF BUSINESS OR PERSONAL PROFITS,
+          BUSINESS OR PERSONAL INTERRUPTION, LOSS OF BUSINESS OR PERSONAL
+          INFORMATION, OR OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF
+          OR INABILITY TO USE THIS PROGRAM, EVEN IF THE AUTHOR, KEN
+          DORSHIMER, HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+          THE USER ASSUMES FULL RESPONSIBILITY AND LIABILITY FOR THE PROPER
+          USE OF THE MYCOMM SOFTWARE AND ACCOMPANYING DOCUMENTATION.
+
+          <Whew>, glad the legal stuff is out of the way.  If I hadn't
+          included that my attorney would have me drawn and quartered.
+
+
+          MyComm Version 2.15 Documentation                    Page 5
+
+
+
+          1.3  Definitions, Acronyms, Acknowledgements, and Abbreviations
+
+               þ BBS       -  Bulletin Board System
+
+               þ IBM       -  Trademark, International Business Machines
+
+               þ Hayes     -  Hayes (trademark) compatible modems have
+                              become the defacto standard in modem
+                              communications. The Hayes command set are
+                              modem commands preceded by "AT"
+
+               þ DOS       -  Disk Operating System
+
+               þ MS-DOS    -  Microsoft Disk Operating System, trademark of
+                              Microsoft Corporation.
+
+               þ Shareware  - A marketing system where users are allowed to
+                              evaluate software before purchase and
+                              registration.
+
+               þ XMODEM    -  A file transfer protocol developed by Ward
+                              Christensen in the summer of 1977.
+
+               þ YMODEM    -  A file transfer protocol, based on XMODEM
+                              developed by Chuck Forsberg.
+
+               þ ZMODEM    -  A file transfer protocol, developed by Chuck
+                              Forsberg/Omen Technology, Inc.
+
+               þ SEAlink   -  A file transfer protocol, based on XMODEM
+                              developed by System Enhancement Associates,
+                              Inc. Copyright 1986, 1987 by System
+                              Enhancement Associates, Inc.
+
+               þ WordStar  -  Trademark (company unknown) of an editor
+                              which has been around since the early days of
+                              personal computers.
+
+               þ Unix      -  Trademark of operating system designed by
+                              Bell Labs/Western Electric.
+
+               þ VT-nnn    -  As in VT-52, VT-100, etc. are trademarks of
+                              the Digital Equipment Corporation.
+
+               þ 3270      -  3270 and 7171 are designations used by IBM
+                              for terminal emulation and protocol
+                              conversion respectively.
+
+
+          MyComm Version 2.15 Documentation                    Page 6
+
+
+
+               Any other names, trademarks, etc. not mentioned here belong
+               to whomever they belong to.  If there are errors or
+               omissions, and you let me know, I will make an effort to
+               correct them in the next version of this documentation.
+
+
+          1.4  General System Requirements
+
+            MyComm is designed to run under the PC/MS-DOS operating system.
+          MyComm may be run either from a hard drive or a floppy drive,
+          although a floppy drive is not recommended when performing file
+          transfers (just too slow).  Great care has been taken to keep the
+          code size small so MyComm will run with as little as 200K of main
+          memory (RAM) available.  MyComm will run using a Monochrome
+          Graphics Adapter (MGA), a true Hercules (Tm) monochrome card,
+          EGA, and VGA.
+
+            MyComm is designed to use modems which use the Hayes (Tm) "AT"
+          command set.  Your modem should support this standard or a subset
+          of it.  MyComm supports modem speeds of 300, 1200, 2400, 4800,
+          9600, 19200, 38400, 57600, and 115200 baud and a wide variety of
+          data bit, parity bit, and stop bit settings.
+
+
+          1.5  MyComm Files
+
+            The files included in the MyComm package are:
+
+               þ MYCOMM.EXE  -     MyComm main executable program.
+
+               þ MYCOMM.DOC  -     Documentation for MyComm (you're reading
+                                   it now).
+
+               þ ORDER.FRM   -     Order form for MyComm.
+
+               þ BUGRPT.FRM  -     Form to describe any problems or
+                                   bugs you may have found, or to make
+                                   suggestions for future versions of
+                                   MyComm.
+
+               þ SCP_CHK.EXE -     Program to check the syntax of script
+                                   file commands. See Appendix-E "MyComm
+                                   Script Language" for more information.
+
+
+          MyComm Version 2.15 Documentation                    Page 7
+
+
+
+            MyComm also creates and modifies the following files as part of
+          its normal operation:
+
+               þ MYCOMM.CFG   -    MyComm configuration file.
+
+               þ MYCOMM.PHN   -    MyComm phone list file.
+
+               þ MYCOMM.OLD   -    Backup of the MyComm phone list file.
+
+               þ MYCOMM.SCR   -    File created when you capture the screen
+                                   to a file (see Alt W).
+
+               þ MYCOMM.SES   -    File created when capturing your current
+                                   session to a file (see Alt S).
+
+               þ Other Files  -    phone lists that you create, script
+                                   files, and any files that were
+                                   downloaded.
+
+          1.6  MyComm Support and Technical Assistance
+
+            MyComm technical assistance is offered in the following ways:
+
+          þ    Contact the author through Compuserve at 73113,3536
+               (preferred method)
+
+          þ    Write to:
+               P.O. Box 5143
+               Belmont, Ca. 94002
+
+
+          MyComm Version 2.15 Documentation                    Page 8
+
+
+
+          2.0  MyComm Installation
+
+            MyComm is amazingly simple to install and use.  That's the
+          whole idea!  The instructions in this section will have you up
+          and running in no time.  Pay special attention to the information
+          that should be in your CONFIG.SYS file, and the stuff about the
+          COM ports.
+
+
+          2.1  System Requirements
+
+            MyComm is designed to run on IBM or compatible personal
+          computers under the MS-DOS operating system.  Machines may be of
+          the PC, XT, AT, 386 or above class of personal computers.
+
+            MyComm has the following system requirements:
+
+                þ   at least 200K of free memory (RAM).
+
+                þ   MS-DOS version 3.0 or greater or similar "after market"
+                    Disk Operating System.
+
+                þ   Hayes compatible modem which accepts the " AT " command
+                    set.
+
+                þ   Your CONFIG.SYS file should contain the statements:
+
+                         Device=ANSI.SYS
+                         Files=40
+                         Buffers=40
+
+                    If your CONFIG.SYS file does not contain these
+                    statements then you will need to modify the CONFIG.SYS
+                    file.  The CONFIG.SYS file may be edited with an
+                    ordinary text editor.  Simply type in a line that reads
+                    "Device=ANSI.SYS", "Files=40", and one that reads
+                    "Buffers=40" (without the quotes) and save the file.
+                    Refer to your DOS manual if you need more information
+                    on CONFIG.SYS.
+
+
+          MyComm Version 2.15 Documentation                    Page 9
+
+
+
+          2.2  MyComm Installation Instructions
+
+            Before you start the MyComm installation you should know which
+          COM port your modem is set for.  Consult your modem manual if
+          you're not sure.  Modems vary too much from one manufacturer to
+          another to describe every difference in this manual.
+
+          Step 1:   Modify your CONFIG.SYS file to make any of the required
+                    changes described in section 2.1 above.
+
+          Step 2:   Create a directory on your hard drive (or a floppy
+                    drive) called "MYCOMM" and change directory into the
+                    new "MYCOMM" directory.
+
+                               Example:
+
+                                   C:
+                                   CD\
+                                   MD MYCOMM
+                                   CD MYCOMM
+
+          Step 3:   Copy the MYCOMM files into this new directory.
+
+          Step 4:   Run MyComm.  At the DOS command prompt type "MYCOMM"
+                    then press the <Enter> key.
+
+          Step 5:   MyComm will start to load.  The first time MyComm is
+                    run it will tell you that it can't find the
+                    "Configuration File".  It will then create a new
+                    configuration file called MYCOMM.CFG.  MyComm will also
+                    create an empty phone dialing list called MYCOMM.PHN.
+
+          Step 6:   MyComm has a default COM port setting of COM Port 1.
+                    If your modem is set up for COM 1 already, don't sweat
+                    it.  Otherwise, MyComm will prompt you for the serial
+                    port to use.  Choose the COM Port that your modem is
+                    set on.  MyComm will then try to initialize the COM
+                    Port.  If all goes well you should see the letters "OK"
+                    on the screen under the copyright notice.  If the modem
+                    doesn't appear to be responding, try repeating Step 6
+                    using another COM Port (if you have more than one) or
+                    see Appendix D "Troubleshooting".
+
+
+          MyComm Version 2.15 Documentation                    Page 10
+
+
+
+                      You can see if the modem is responding correctly by
+                    typing "AT" (without the quotes) and then press
+                    <Enter>.  The modem should respond with "OK".  You may
+                    test the phone line connection by typing "ATM1DT"
+                    (again, without the quotes) then press <Enter>.  This
+                    command tells the modem to turn its' speaker on, then
+                    dial nothing.  You should hear a dial tone from the
+                    modem speaker.  Press <Enter> again and the dial tone
+                    should stop and the modem should respond with "NO
+                    CARRIER".
+
+           Step 7:  Press the <Alt> and "U" key.  This will bring up
+                    MyComm's Update Configuration Menu.  Go through each of
+                    the menu options and make any changes required.  The
+                    remainder of this documentation describes each of the
+                    MyComm options and functions.
+
+           Step 8:  You will also need to modify the "Modem Initialization
+                    String".  This is done in the "Modem Setup" screen.
+                    MyComm needs to see text response codes from the modem
+                    rather than numeric codes.  The general purpose
+                    initialization string that MyComm uses as by default
+                    is:
+
+                         AT M1 X4 Q0 V1 S0=0 S11=50 S7=50 &C1 &D2^M
+
+                    Broken down this means:
+
+                    AT     - "Hi modem! I'm sending you commands now".
+                    M1     - Turn on modem speaker (M0 turns it off).
+                    X4     - Select highest level of responses.
+                    Q0     - Always send responses.
+                    V1     - Send text responses.
+                    S0=0   - Do not answer the phone.
+                    S11=50 - Use fast dialing speed.
+                    S7=50  - Wait time for Carrier Detect in seconds.
+                    &C1    - Keep Carrier Detect (CD) low until a
+                             connection is made.
+                    &D2    - Use RTS/CTS flow control (important on
+                             high speed modems).
+                    ^M     - Send Carriage Return character (MyComm
+                             internal command - see also Appendix J).
+
+
+          MyComm Version 2.15 Documentation                    Page 11
+
+
+
+          2.3  Running MyComm
+
+            Section 3 of this document covers all the options and functions
+          that MyComm offers.  There are some additional items that should
+          be covered first.
+
+            MyComm may be started in a number of ways.  Below are three
+          different methods to start the MyComm program.
+
+          Method 1: Start MyComm from the directory that you installed
+                    MyComm in. For example:
+
+                         CD\MYCOMM
+
+                    then type "MYCOMM" and press the <Enter> key.  This
+                    will start the MyComm program.
+
+          Method 2: MyComm will also load from any directory if you have
+                    set a "Path" with the DOS path command that points to
+                    the directory MyComm lives in.  For example to set the
+                    path type:
+
+                         PATH=C:\MYCOMM
+
+                    providing of course that you installed MyComm in the
+                    directory C:\MYCOMM.  Just substitute the appropriate
+                    path in that case.
+
+          Method 3: You may also specify the "fully qualified" DOS path to
+                    start MyComm.  For example:
+
+                        C:\MYCOMM\MYCOMM
+
+                   will also cause MyComm to start.
+
+            If you have questions about the DOS Path commands or statements
+          please refer to your DOS manual.
+
+            If you are using DOS version 3.0 or higher MyComm will
+          automatically find it's configuration file.  This means that
+          MyComm may be started from any drive or directory on your system
+          without having to always start in the MyComm directory  This will
+          save you the trouble (and typing) of changing directories when
+          you want to use MyComm.
+
+            MyComm will however try to start a new phone file in the
+          directory you are in unless you have included the fully qualified
+          path to the phone directory file in the Setup options.  This
+          allows you to keep multiple phone files in different directories
+          depending on your needs.
+
+
+          MyComm Version 2.15 Documentation                    Page 12
+
+
+
+
+          3.0  MyComm Screens and Menus
+
+            MyComm has several screens and menus to allow you to change
+          various options and to perform various functions.  Most screens
+          and menus are brought up by pressing the <ALT> key and then a
+          letter.  Pressing <F1> while in the terminal screen shows you
+          Help Menu which lists all of the MyComm functions (see also
+          section 3.2).
+
+
+          3.1  Terminal Screen
+
+            When MyComm is first loaded, and after the configuration file
+          has been read, it defaults to the terminal screen which looks
+          like this:
+
+
+          MyComm <Version Information>
+          Copyright (c) 1992 - 1994 Ken Dorshimer  -  All rights reserved.
+
+          Press <F1> for Help
+          Press <Alt-D> for Dial Screen
+
+
+            You will see the version number, and copyright notice.
+
+            In the terminal screen you may enter regular Hayes - AT modem
+          commands, or choose one of the many MyComm functions.  The MyComm
+          functions are listed in the Help Menu which is displayed when you
+          press the <F1> key on your keyboard.  The MyComm functions are
+          described in more detail in the following sections of this
+          manual.
+
+
+          MyComm Version 2.15 Documentation                    Page 13
+
+
+
+          3.2  Help Menu - F1
+
+            Pressing the <F1> key brings up the MyComm Help Screen which
+          looks like this:
+
+          (NOTE: many of the MyComm screens shown in this documentation are
+          smaller than actual size so that they will fit on a printed
+          page.)
+
+          +------------------------------------------------| MyComm Help |+
+          |                                                               |
+          |                     MyComm Commands                           |
+          |                                                               |
+          |Alt A  Activate Chat Mode         Alt M  Manual Dial           |
+          |Alt B  Send Break                 Alt O  Outside to DOS        |
+          |Alt C  Clear the Screen           Alt P  Change Port Parameters|
+          |Alt D  Dialing Functions          Alt Q  Quick Re-Dial         |
+          |Alt E  Toggle Local Echo On/Off   Alt R  Run External Program  |
+          |Alt H  Hang up modem              Alt S  Session Capture On/Off|
+          |Alt I  Send Modem Init. String    Alt T  Terminal Emulation    |
+          |Alt K  Scroll BacK                Alt U  Update Configuration  |
+          |Alt L  Current Line Status        Alt W  Write Screen to File  |
+          |Alt J  Join Script                Alt X  EXit MyComm           |
+          |                                                               |
+          |                                                               |
+          |F1     Help With Commands         PgDn   Download Files        |
+          |F2     Send Name                  PgUp   Upload Files          |
+          |F3     Send Password                                           |
+          |F4     Send Tagline                                            |
+          |                                                               |
+          |                                                               |
+          |  MyComm <Version Information>                                 |
+          | Copyright (c) 1992 - 1994 Ken Dorshimer - All rights reserved.|
+          |                                                               |
+          +---------------------------------------------------------------+
+
+            Pressing <Esc> or any other key closes the MyComm Help Screen
+          window.
+
+
+          3.3  Chat Mode - Alt A
+
+            Pressing the <ALT> and the "A" key brings you into the MyComm
+          Chat window.  The chat screen is useful when you want to send
+          text messages or "chat" interactively with someone while on-line.
+          If you were not using the Chat Mode the "conversation" would
+          eventually end up looking like a garbled mess on your screen.
+
+
+          MyComm Version 2.15 Documentation                    Page 14
+
+
+
+            The Chat window is divided horizontally.  The top half of the
+          screen is where received characters are written, the bottom half
+          is where the characters you type are written.
+
+            To exit Chat Mode, press the <Esc> key.
+
+          Please note: Some BBS "chat" systems send special control
+          characters to emulate a split screen chat or colors.  Since there
+          is no filtering done by MyComm while in Chat Mode this may cause
+          strange looking characters in your receive window.  If this
+          occurs, exit from Chat Mode and allow the BBS software to control
+          the chat session.
+
+          3.4  Send Break - Alt B
+
+            Pressing the <ALT> and the "B" key sends a special modem signal
+          called "BREAK".  Some host systems use the Break signal to
+          perform special functions such as ending a session.
+
+
+          3.5  Clear the Screen - Alt C
+
+            Pressing the <ALT> and the "C" key clears the screen and resets
+          the current color attributes.  Many host systems send color
+          information which stays in place even after you log off. Clear
+          Screen resets the screen colors to the ones you chose.
+
+
+          3.6  Dialing Functions - Alt D
+
+            Pressing the <ALT> and the "D" keys displays the MyComm Dial
+          Screen.  From this screen you may add, delete, edit, view, find,
+          and mark phone list entries, and of course dial phone list
+          entries.  You will see the options available from this screen
+          written into the little window at the bottom of the screen. The
+          letter which activates an option will appear highlighted or in a
+          different color.  A description of the dialing functions follows.
+
+
+          MyComm Version 2.15 Documentation                    Page 15
+
+
+
+            You will see a bar highlighting the current phone list item.
+          The highlight bar may be moved up and down by using the Up-Arrow,
+          Down-Arrow, Page Up, Page Down, Home and End keys.  The highlight
+          bar appears as reverse video bar on monochrome screens.
+
+          +------------------------------------------------| Dial Screen |+
+          |                                                               |
+          |   #   Name                     Phone Number         Last Call |
+          |                                                               |
+          |   1   Your Favorite BBS       555-4657               01/26/92 |
+          |   2   The Music Board         555-8944               01/19/92 |
+          |   .           .                  .                      .     |
+          |   .           .                  .                      .     |
+          |   .           .                  .                      .     |
+          |  15                                                  00/00/00 |
+          |---------------------------------------------------------------|
+          |                                                               |
+          | Add  Edit  Delete  Call  Info  Manual  (Un)MarK  Find  Load   |
+          |                    Sort  moVe  Print                          |
+          +---------------------------------------------------------------+
+
+
+          3.6.1  Add Phone List Item
+
+            Pressing the "A" key in the Dial Screen window adds a blank
+          entry after the currently highlighted entry.
+
+
+          MyComm Version 2.15 Documentation                    Page 16
+
+
+
+          3.6.2  Edit Phone List Item Screen
+
+            Pressing the "E" key in the Dial Screen window brings up the
+          Dial Edit window.  This is where you set up the phone list entry
+          for each system you will call.  There are several options to
+          choose from, and each is described.  You may also use the Up-
+          Arrow and Down-Arrow keys to move between items.  Items such as
+          Name, Number, etc use MyComm's Line Editor described in Appendix
+          B.
+
+          +----------------------------------------| Edit |+
+          |                                                |
+          | Name:                 Your Favorite BBS        |
+          | Number:               555-4657                 |
+          | Baud Rate: 2400       Data Bits: 8             |
+          | Data Parity: None     Stop Bits: 1             |
+          | Default Protocol:     1K-Xmodem                |
+          | Dial Prefix: 1        ATDT*70                  |
+          | Logon Name:           Your Name                |
+          | Password:             Password                 |
+          | Terminal Type: ANSI                            |
+          | Local Echo: No                                 |
+          | Received BS Destructive: Yes                   |
+          | BS Key Sends BS or DELete: BS                  |
+          | Strip Hi Bits? (Pure ASCII): No                |
+          | Add LF after incoming CR?: No                  |
+          | Script                                         |
+          | Clear last date called and number of calls?    |
+          |                                                |
+          +------------------------------------------------+
+
+          The following describes each phone list item and how to configure
+          it.
+
+          3.6.2.1  Name
+
+            Just type in the name of the bulletin board system or person
+          you will call here.
+
+
+          3.6.2.2  Number
+
+            The telephone number of the system you will call goes in here.
+          The telephone number may include spaces or hyphens for
+          readability (modems usually ignore spaces and hyphens).
+          Characters such as letters or other gibberish will probably
+          confuse your modem.  MyComm will assume that whatever you put
+          here is a valid telephone number.
+
+
+          MyComm Version 2.15 Documentation                    Page 17
+
+
+
+          3.6.2.3  Baud Rate
+
+            Choose a baud rate (300, 1200, 2400, 4800, 9600, 19200, 38400,
+          57600, or 115200) that you want MyComm to use when connected to
+          the system.  For a more accurate reading of the data rate during
+          file transfers (described elsewhere in this manual) and the on-
+          line status (also described elsewhere in this manual) the baud
+          rate should be set to the rate of the system that you will be
+          calling.
+
+
+          3.6.2.4  Data Bits
+
+            Choose the data bits (5, 6, 7, 8) that you want MyComm to use
+          when connected to the system.  8 data bits is the most common
+          setting for public bulletin board systems.  7 data bits are
+          common on mainframes and many Unix (Tm) systems.  5 and 6 data
+          bits are rarely used by many systems any longer, but are included
+          for completeness.
+
+            Most host systems in their advertisements, etc. tell you what
+          Data, Parity, and Stop bits they expect.  You will often see them
+          listed as 8-N-1 or similar.  8-N-1 means 8 data bits, no parity
+          (None), and 1 stop bit. 8-N-1 is the most common setting used.
+          If in doubt, try 8-N-1 first.
+
+
+          3.6.2.5  Data Parity
+
+            Choose the data parity (None, Even, Odd, Mark, Space) that you
+          want MyComm to use when connected to the system.  None is usually
+          used on most systems, especially with 8 data bits.  Even parity
+          is common when using 7 data bits.
+
+
+          3.6.2.6  Stop Bits
+
+            Choose the stop bits (1, 2) that you want MyComm to use when
+          connected to the system.  1 stop bit is the most common.
+
+
+          3.6.2.7  Default Protocol
+
+            MyComm allows you to choose the file transfer protocol that you
+          will use by default for each system you call.  Choose the
+          protocol which best suits your needs.  A more complete
+          description of the various protocols is found later in this
+          manual in the section on Uploading and DownLoading Files.
+
+
+          MyComm Version 2.15 Documentation                    Page 18
+
+
+
+          3.6.2.8  Dial Prefix
+
+            Choose the dialing prefix that you want MyComm to use when
+          calling the number for this system.  MyComm has slots for three
+          different dialing prefixes.  Choose one by moving the highlight
+          bar to the selection you want.  The dialing prefixes may be
+          changed to suit your needs in the Update Configuration menu
+          option.
+
+
+          3.6.2.9  Logon Name
+
+            This option lets you enter the name that you log on with when
+          you call this system.  When bulletin board systems answer your
+          call they usually ask for your name and password.
+
+            Putting the characters "^M" at the end of the Logon Name causes
+          an <Enter> character to be sent.  Some BBS's don't like seeing an
+          <Enter> character immediately after the Logon Name string when
+          logging on, in which case you should leave the "^M" out.
+
+            If Logon Name is filled in MyComm will send your logon name
+          when you push the <F2> key to save you some typing.
+
+
+          3.6.2.10 Password
+            This option lets you enter the password that you log on with
+          when you call this system.  When bulletin board systems answer
+          your call they usually ask for your name and password.
+
+            If Password is filled in MyComm will send your logon password
+          when you push the <F3> key to save you some typing.  If you are
+          really security conscious, then you may leave this option blank.
+
+            Putting the characters "^M" at the end of the Password causes
+          an <Enter> character to be sent.  Some BBS's don't like seeing an
+          <Enter> character immediately after the Password string when
+          logging on, in which case you may leave the "^M" out.
+
+
+          3.6.2.11 Terminal Type
+            This option lets you choose the type of terminal emulation to
+          use when calling this system.  The choices are TTY, ANSI, VT-52,
+          VT-100 and 3270 (registered version only).
+
+            TTY (TeleTYpe) gives no emulation what-so-ever. The characters
+          appear on your screen just as they come in with no formatting.
+
+            ANSI emulation provides functions similar to your ANSI.SYS
+          driver to provide color attributes (except on mono monitors of
+          course), blinking characters and other goodies.  MyComm uses
+
+
+          MyComm Version 2.15 Documentation                    Page 19
+
+
+
+          intelligent ANSI character translation which filters out any ANSI
+          sequences which cause "keyboard re-mapping".  This prevents the
+          unscrupulous from sending ANSI sequences to your personal
+          computer system that could potentially cause damage or annoyance.
+
+            VT-52 and VT-100, and 3270 are most commonly used on mainframe
+          hosts.  Some bulletin boards also support these.  Both of these
+          emulations support a subset of the DEC protocols including a
+          mapping to the "keypad mode" used to generate commands on DEC
+          terminals.  It should be noted that VT-52 is an "ANSI
+          incompatible" emulation, and VT-100 is ANSI compatible.
+
+            A listing of the keys supported for the ANSI, VT-52, VT-100,
+          and 3270 emulations is in Appendix C - Terminal Emulations.
+
+          3.6.2.12 Local Echo
+
+            Local Echo is used when the other system does not send the
+          characters typed on your terminal back to you.  Most systems do
+          echo characters back, so Local Echo is normally off ("No").  If
+          you find that you can't see what you are typing when connected to
+          a system, set Local Echo on ("Yes").  On the other hand if you
+          see double characters when you hit a key (for example you see
+          "xx" when you type an "x") then Local Echo should be off ("No").
+
+
+          3.6.2.13 Received BS (BackSpace) Destructive
+
+            This option tells MyComm whether received BackSpace or DELete
+          characters should back up the cursor and erase what was there.
+          Usually this On.
+
+
+          3.6.2.14 BS Key Sends BS or DELete
+
+            This option tells MyComm whether to send a BS (BackSpace - 8
+          decimal) or DEL (Delete - 127 decimal) character when the
+          backspace key is pressed.  Usually this is set to BS.  Mainframe
+          hosts usually like to see DEL rather than BS.
+
+
+          3.6.2.15 Strip Hi Bits
+
+            This option tells MyComm whether to strip the high bit from
+          received and sent characters. Usually this is set to "No".
+
+            Just for your own information, bytes on the personal computer
+          are 8 bits long.  So, the bit-map of a byte might be 10011101.
+          The left-most bit is the high bit.  So if you were to strip the
+          high bit, the byte above would become 00011101.  Pure ASCII only
+          covers bytes in the range of 00000000 (0 decimal) to 01111111
+
+
+          MyComm Version 2.15 Documentation                    Page 20
+
+
+
+          (127 decimal).  The ANSI extended set includes values from
+          10000000 (128 decimal) to 11111111 (255 decimal).  So by
+          stripping the high bit, a character is guaranteed to be in the
+          range of the pure ASCII character set.
+
+
+          3.6.2.16 Add LF after incoming CR
+
+            This option tells MyComm whether to add a LF (Line Feed - 10
+          decimal) character after a CR (Carriage Return - 13 decimal)
+          character is received.  Usually this is set to "No".
+
+            If you notice that the lines on the screen seem to look odd or
+          do not scroll up properly, you will want to turn this on (Yes).
+
+
+          3.6.2.17 Clear last date called and number of calls
+
+            Each time you connect with a system MyComm updates the last
+          date and time called portion the dialing entry record.  If you
+          want to reset the date and time the system was last called and
+          the number of times you have called it, answer "Yes" here.
+
+          3.6.2.18 Script
+
+            This is where you will put the name of the script file that you
+          want to run ("Join") when you connect with this system.  For a
+          complete discussion of the MyComm script language see Appendix -
+          E "MyComm Script Language".
+
+
+          3.6.2.19 Save Changes (not shown in example)
+
+            MyComm asks if you want to save the changes you just made.  If
+          you answer "Yes" MyComm updates the phone file on your disk
+          drive.  When MyComm updates the phone file a backup of the phone
+          file is created and named PHONE.OLD.
+
+
+          3.6.3  Delete an Item
+
+            Pressing the "T" key allows you to delete the item that is
+          currently at the dialing highlight bar.  MyComm asks you to
+          confirm the delete request before proceeding.  MyComm also
+          updates the phone file on your disk drive.
+
+
+          MyComm Version 2.15 Documentation                    Page 21
+
+
+
+          3.6.4  Call Numbers (Dial)
+
+            Pressing the "C" key tells MyComm that it's time to start
+          calling numbers in the Dialing List  (See also section 3.6.7
+          (Un)MarK).  Pressing the <Enter> key also will start the dialing.
+
+            If no Dialing List Items are "marked" MyComm will dial the
+          number that the highlight bar is currently resting on.  If there
+          are "marked" Dialing List Items, MyComm will start dialing the
+          marked numbers in sequence until a connection is made.  During
+          the dialing attempts you may cancel the dialing by pressing the
+          <Esc> key.
+
+            While MyComm is calling numbers and waiting for a connection, a
+          Dial Status Window is displayed (see example below).  The status
+          window shows who is being called and the telephone number, how
+          many call tries have been made so far, the status of the last
+          dialing try, the time in seconds until this try "times out", the
+          time since you started calling, and the time that the current
+          dialing attempt started.
+
+          +-------------------------------------------------------| Dial |+
+          |                                                               |
+          |  Calling: Your Favorite BBS        At: 555-4657               |
+          |                                                               |
+          |  Try # 1       Last Status: None Yet        Dial Time:  42    |
+          |                                                               |
+          |  Dialing started at:  3:01:20   This try started at:  3:01:21 |
+          |                                                               |
+          |                                                               |
+          |          Hit ESC to quit dialing, 'N' for next number,        |
+          |          or 'D' to delete number from list.                   |
+          |                                                               |
+          +---------------------------------------------------------------+
+
+            Pressing the "N" key causes MyComm to stop dialing  the number
+          it is currently dialing and to skip to the next marked number.
+
+            Pressing the "D" key causes MyComm to stop dialing the number
+          it is currently calling and to remove it from the list of
+          "marked" numbers.  If you press "D" and the number is the only
+          one left in the "marked" list, MyComm will give you a warning and
+          stop dialing.
+
+            The Dial Time and Pause Time between calls is a user
+          configuration option which may be set up in the Update
+          Configuration menu described later in this document.
+
+
+          MyComm Version 2.15 Documentation                    Page 22
+
+
+
+          3.6.5  Phone Item Info Screen
+
+            The Phone Item Info Screen looks very much like the Edit Phone
+          List Item Screen with the exception that the Last Call Date, Last
+          Call Time, and Number of Calls fields are shown.  If you see
+          something you want to change, pressing "E" will bring you to the
+          Edit Phone List Item Screen.
+
+          +------------------------------| Phone Item Info |+
+          |                                                 |
+          | Name:                 Your Favorite BBS         |
+          | Number:               555-4657                  |
+          | Baud Rate: 2400       Data Bits: 8              |
+          | Data Parity: None     Stop Bits: 1              |
+          | Default Protocol:     1K-Xmodem                 |
+          | Dial Prefix: 1        ATDT*70                   |
+          | Logon Name:           Your Name                 |
+          | Password:             Password                  |
+          | Terminal Type: ANSI                             |
+          | Local Echo: No                                  |
+          | Received BS Destructive: Yes                    |
+          | BS Key Sends BS or DELete: BS                   |
+          | Strip Hi Bits? (Pure ASCII): No                 |
+          | Add LF after incoming CR?: No                   |
+          |                                                 |
+          | Last Call Date:       01/26/92                  |
+          | Last Call Time:        4:26:12                  |
+          | Number of Calls:            28                  |
+          |                                                 |
+          |          Press "E" to Edit Record               |
+          +-------------------------------------------------+
+
+
+          3.6.6  Manual Dial Screen
+
+            Pressing "M" brings up the Manual Dial Screen.  The Manual Dial
+          Screen lets you enter a single phone number to dial.  The dialing
+          prefix used is always Dialing Prefix number 1.
+          Pressing <Esc> cancels the function.  Pressing <Enter> accepts
+          the telephone number and the usual Dialing Status Window appears.
+
+          +-------------------------------------| Manual Dial |+
+          |                                                    |
+          |  Enter phone number: 555-1234                      |
+          |                                                    |
+          +----------------------------------------------------+
+
+
+          MyComm Version 2.15 Documentation                    Page 23
+
+
+
+          3.6.7  Mark Phone List Items
+
+            Pressing "K" marks or un-marks phone list items for later
+          dialing.  As a convenience, pressing the <Space> bar also marks
+          and un-marks items.  When a phone list item is marked a chevron
+          ("¯") will appear next to the item.
+
+
+          3.6.8  Find Phone List Items
+
+            Pressing "F" brings up the Find Phone List Items screen (not
+          shown).  Simply type in the characters in the name, or a partial
+          phone number that you want to find.  The search is started at the
+          top of the list.  If the search fails, a message is displayed.
+
+
+          3.6.9  Load Phone List Screen
+
+            Pressing "L" brings up the Load Phone List Screen.  You may
+          keep more than one phone dialing list.  Each list will hold up to
+          100 telephone numbers.  If the dialing list you select does not
+          yet exist, MyComm will display an empty dialing list.
+            Again, when changes are made to the phone file, MyComm will
+          create or update the file PHONE.OLD as a backup.  There is only
+          one PHONE.OLD backup file kept, so all new backups overwrite the
+          last PHONE.OLD backup file.
+
+
+          3.6.10 Sort Phone List
+
+            You may sort the Phone List in one of four ways:
+
+            - by BBS name
+            - by Telephone number
+            - by last date called
+            - by number of times called
+
+            The sort option will also ask you for Ascending or Descending
+          sort order.  Simply select the sort option that best suits your
+          needs.  The list will be saved in the new sort order.  Pressing
+          <Esc> exits the Sort menu.
+
+
+          MyComm Version 2.15 Documentation                    Page 24
+
+
+
+          3.6.11 Move Phone List Item
+
+            This option allows you to move a phone list item to another
+          location in the list.  This will save you some retyping if you
+          want to customize your phone list.
+
+            To use this option move the highlight bar to the phone list
+          item that you want to move.  Press the "V" key.  Next use the up
+          and down arrow keys to move the highlight bar to the position
+          that you would like the item moved to.  Press the <Enter> key to
+          make the move permanent, or <Esc> to quit the move.
+
+
+          3.6.12 Print Phone List
+
+            This option allows you to print the phone list.  The phone list
+          may also be "printed" to a text file.  The printed output shows
+          the BBS name, phone number, and last date called.
+
+            To use this option press "P".  You will then be asked for a
+          file name to "print" to.  To print to your printer (PRN) simply
+          press <Enter> (PRN is a standard DOS device name for the
+          printer).  A status message is displayed while the phone list is
+          being printed.  The printing may be stopped by pressing the <Esc>
+          key.
+
+
+          3.7  Local Echo On/Off - Alt E
+
+            Local Echo is used when the other system does not send the
+          characters you typed on your terminal back to you.  Most systems
+          do echo characters back, so Local Echo is normally off ("No").
+          If you find that you can't see what you are typing when connected
+          to a system, set Local Echo on (Yes).  On the other hand if you
+          see double characters when you hit a key (for example you see
+          "xx" when you type an "x") then Local Echo should be off ("No").
+
+
+          3.8  Hang Up Modem - Alt H
+
+              Pressing the <ALT> and the "H" key tells MyComm that you want
+          to disconnect from your current telephone connection.  MyComm
+          will try to hang up the phone first by dropping the modem signal
+          called DTR, and if that fails by sending the Hang Up String
+          defined in the Modem Setup Screen (see section 3.17.1  Modem
+          Setup Screen).  If you don't want MyComm to use DTR to hang up
+          the modem set the option "Use DTR to Hang Up Modem" in Modem
+          Setup Screen to "No".
+
+
+          MyComm Version 2.15 Documentation                    Page 25
+
+
+
+          3.9  Send Modem Initialization Strings - Alt I
+
+            Pressing the <ALT> and the "I" key brings up the Send Init.
+          String Menu shown below.  Choosing one of these options will send
+          the Modem Initialization String, or the Hang Up String (same as
+          <Alt> + H), or the Modem Attention String, or the Phone Answer
+          String.  These strings are defined in the Modem Setup Screen (see
+          section 3.17.1  Modem Setup Screen).
+
+               +-------| Send... |+
+               | Init. String     |
+               | Hang Up String   |
+               | Attention String |
+               | Phone Answer     |
+               +------------------+
+
+
+          3.10 Join Script - Alt J
+
+            This option will allow you to "Join" in or run a script file.
+          You will be asked to supply the name of the script file which
+          MyComm will then load.  If the script file can not be opened you
+          will see an error message.  You may quit the script by pressing
+          the <Esc> key until you see the "Yes/No" window that asks if you
+          want to quit the script.  See Appendix-E "Script Language" for
+          more information on script files.
+
+
+          MyComm Version 2.15 Documentation                    Page 26
+
+
+
+          3.11 Present Line Status - Alt L
+
+            Pressing the <ALT> and the "L" key brings up the Present Line
+          Status Window.  This window tells you the current COM Port
+          Status, i.e. what Port, Baud Rate, Data Bits, Parity Bits, and
+          Stop Bits are in effect, whether you are on-line and for how
+          long.  If you are on-line MyComm tells you the name of the system
+          you are logged onto, and the default file transfer protocol.
+          Also shown is the present Local Echo status and whether Session
+          Capture is active.  Pressing <Esc> closes the window.
+
+          +--------------------------| Present Line Status |+
+          |                                                 |
+          |  COM Port Status COM2, 2400, 8, N, 1           |
+          |    ----------------------------------------     |
+          |                                                 |
+          | On-line: Yes          Time On-line:  0:00:00    |
+          | Logged on to:         My Favorite BBS           |
+          | Current Protocol:     None                      |
+          |    ----------------------------------------     |
+          |                                                 |
+          | Local Echo On:      No                          |
+          | Screen Capture On:  Yes                         |
+          |    ----------------------------------------     |
+          |                                                 |
+          | Current Time: 12:34:56          Date: 01/23/93  |
+          +-------------------------------------------------+
+
+
+          3.12 Scroll Back - Alt K
+
+            Pressing the <ALT> and the "K" key brings up the "scroll back"
+          buffer.  MyComm saves the last few screens of received text for
+          you.  This option allows you to see what has been recently
+          received in case there was something that went by too quickly
+          that you would like to look at again.  The scroll back buffer
+          saves about two to three screens worth of information depending
+          on how much actual text was in the previous screens (about 4K's
+          worth).  The scroll back buffer does not display ANSI or high bit
+          characters, they are stripped out to leave more room for useful
+          information.
+
+            When the scroll back buffer is first shown it displays the very
+          beginning of the buffer information.  The up-arrow, down-arrow,
+          Page Up, and Page Down keys scroll the text.  You may also write
+          the buffer to a file by pressing the "W" key.  To exit press the
+          <Esc> key.
+
+
+          MyComm Version 2.15 Documentation                    Page 27
+
+
+
+          3.13 Manual Dial - Alt M
+
+            Pressing the <ALT> and the "M" key brings up the Manual Dial
+          Screen.  The Manual Dial Screen lets you enter in a single phone
+          number to dial.  The dialing prefix used is always Dialing Prefix
+          number 1.  The parity setting is always 8-N-1.
+          If you press <Esc> you may cancel the selection.  Pressing
+          <Enter> accepts the telephone number and the usual Dialing Status
+          Window appears.  This is exactly the same function as in the
+          Dialing Screen, selection "M", described above.
+
+
+          3.14 Outside to DOS - Alt O
+
+            Pressing the <ALT> and the "O" key lets you shell out of MyComm
+          to DOS.  You may use the Outside to DOS even when you are on-
+          line.  Typing "EXIT" on the DOS command line brings you back to
+          MyComm.
+
+            One point of interest here: if you switch to a different drive
+          or directory while in the DOS shell, MyComm will automagically
+          bring you back to the drive and directory you started from when
+          you type "EXIT" to return to MyComm.
+
+
+          MyComm Version 2.15 Documentation                    Page 28
+
+
+
+          3.14 Change Port Parameters - Alt P
+
+            Pressing the <ALT> and the "P" key brings up the Change Port
+          Parameters Screen (see example below).  MyComm will let you
+          change the port configuration, even while on-line.  Please note
+          however that changing the COM Port while on-line will probably
+          disconnect the current session.  However Data, Parity, and Stop
+          Bits may be changed.
+
+            Please note that the changes done here are not permanent.  To
+          make permanent changes to the COM port settings, you must use the
+          "Update Configuration" which is brought up by pressing <Alt> and
+          "U" then the "M" key.
+
+          +-----------------------| Change Port Parameters |+
+          |                                                 |
+          | Present settings: COM2, 2400, 8, N, 1           |
+          |                                                 |
+          | COM Port:2                                      |
+          |                                                 |
+          |           +---------+                           |
+          |           | 1: COM1 |                           |
+          +-----------| 2: COM2 |---------------------------+
+                      | 3: COM3 |
+                      | 4: COM4 |
+                      | 5: COM5 |
+                      | 6: COM6 |
+                      | 7: COM7 |
+                      | 8: COM8 |
+                      +---------+
+
+
+          3.16 Quick Re-Dial - Alt Q
+
+            Pressing the <ALT> and the "Q" key allows you to redial the
+          last number that MyComm dialed.  This is especially useful for
+          re-dialing manually entered telephone numbers.
+
+
+          3.17 Run External Program - Alt R
+
+            Pressing the <ALT> and the "R" key brings up the Run External
+          Program Screen (not shown).  MyComm lets you define an editor
+          program plus up to three other programs that you may run without
+          leaving your MyComm session.  The external programs are defined
+          in Paths Setup (see 3.19.2  Paths Setup).
+            If there is not enough available memory to run the external
+          program, the external program will not run and control passes
+          directly back to MyComm.
+
+
+          MyComm Version 2.15 Documentation                    Page 29
+
+
+
+          3.18 Session Capture On/Off/Pause - Alt S
+
+            Pressing the <ALT> and the "S" key opens the MyComm Session
+          Capture Screen (not shown).  You may either accept the default
+          name that MyComm provides for the capture file or enter a new
+          name.  If the Drive:\Path\Filename is in any way invalid, MyComm
+          will issue an error message.  You may also press <Esc> to leave
+          the Session Capture Screen without starting the Session Capture.
+
+            After a Session Capture has begun pressing the <ALT> and the
+          "S" key again will allow you to Close, or Pause/Resume the
+          capture file.
+
+            If you exit MyComm and forget to Close the Session Capture
+          file, MyComm will do it for you.
+
+            Please note that often while Session Capture is active, that
+          the display may appear jerky, or start and stop from time to
+          time.  This is normal during Session Capture as it is the time
+          that MyComm is writing the file to disk.
+
+
+            It may also be important to know that the Session Capture does
+          not do any ANSI filtering.  What you see is what you get.
+          Generally you will read the Session Capture file using a text
+          editor or word processor when you are no longer "on line".  Text
+          editors and word processors often perform ANSI filtering for you.
+
+
+          3.19 Terminal Emulation - Alt T
+
+            MyComm allows you to reset the Terminal Emulation even while
+          on-line.  The options are: TTY, ANSI, VT-52, VT-100, and 3270.
+          Further information on the emulation may be found in Appendix C -
+          "Terminal Emulations".
+
+
+          MyComm Version 2.15 Documentation                    Page 30
+
+
+
+          3.20 Update Configuration - Alt U
+
+            Pressing the <ALT> and the "U" key brings up the Update
+          Configuration Menu (see below).  From this menu you may choose
+          various options to allow you to customize the MyComm
+          configuration.  You may either use the Up and Down-Arrow keys,
+          then press <Enter> to choose an option, or simply press the
+          highlighted letter of the option you want.  A description of the
+          options that may be configured follows.
+
+                     +---| Update Configuration |+
+                     | Modem Setup               |
+                     | Paths and Filenames       |
+                     | File Transfer Options     |
+                     | Other Stuff for MyComm    |
+                     | COM Port Addresses        |
+                     | Save Configuration        |
+                     | Exit                      |
+                     +---------------------------+
+
+
+          3.20.1  Modem Setup Screen
+
+            The Modem Setup Screen (see below) allows you to make changes
+          to the various setting that control the modem.  You may move from
+          item to item by using the Up and Down-Arrow keys and then
+          pressing <Enter>.  Some of the items use MyComm's built in line
+          editor to modify the item, others use little pop-up Yes/No
+          windows.  If you want to exit without making any changes, just
+          press the <Esc> key.  A description of each item in the Modem
+          Setup Screen follows.
+
+
+          MyComm Version 2.15 Documentation                    Page 31
+
+
+
+
+          +------------------------------------------------| Modem Setup |+
+          |                                                               |
+          | COM Port:                        COM2, 2400, 8, N, 1          |
+          | Modem Initialization String:     ATM0X4Q0V1S0=0S11=50S7=50^M  |
+          | Modem Attention String:          +++                          |
+          | Modem Hang Up String:            ATH0^M                       |
+          | Modem Answer String:             ATA^M                        |
+          | Modem Cancel Dial String:        ^M                           |
+          | Modem Dial Suffix String:        ^M                           |
+          | Dialing Wait Time, in Seconds:    45                          |
+          | Pause Between Calls, in Seconds:   4                          |
+          | Local Echo on by Default?        No                           |
+          | Use DTR to Hang Up Modem?        Yes                          |
+          | Use XON/XOFF Flow Control?       Yes                          |
+          | Use CTS/RTS Flow Control?        No                           |
+          | Use DSR/DTR Flow Control?        No                           |
+          | Dialing Prefix #1:               ATDT*70                      |
+          | Dialing Prefix #2:               ATDT 9,                      |
+          | Dialing Prefix #3:               ATDT 1                       |
+          |                                                               |
+          |                                                               |
+          |          Use Up and Down Arrows to move between items         |
+          |               Hit <Enter> to edit, <Esc> to Quit              |
+          |                                                               |
+          +---------------------------------------------------------------+
+
+
+          3.20.1.1  COM Port
+
+            The COM Port selection allows you to set various COM port
+          settings.
+            When you first installed your modem you probably set the COM
+          port up for COM1, COM2, etc. use the setting correct for your
+          modem.  If you set the wrong COM port in this area, MyComm
+          doesn't mind, but won't let you dial numbers later on.
+
+            MyComm does not re-initialize the COM port when you make
+          changes in this menu.  The new COM port settings will be used the
+          next time that you run MyComm.  If you need to change the COM
+          port settings now, use the Alt-P function from the main terminal
+          screen.
+
+            The baud rate should be set to whatever the top speed of your
+          modem is.  Refer to your modem user manual if you're not sure.
+
+            The most common settings for the Data, Parity, and Stop bits
+          are 8-N-1 (8 data bits, no parity, 1 stop bit).  If you require
+          different settings, this is the place to change them.
+
+
+          MyComm Version 2.15 Documentation                    Page 32
+
+
+
+          3.20.1.2  Modem Initialization String
+
+            This option lets you set up the Modem Initialization String.
+          This is the string which is sent to the modem to "wake it up" and
+          set options when MyComm is first loaded.  The initialization
+          string is made up of Hayes "AT" commands.  The command line
+          always starts with the letters "AT".  The rest of the line
+          contains various options for your modem.  Your modem manual
+          should have a list of the commands that are valid for your modem.
+
+            MyComm always likes to have AT LEAST the Q0, V1, and X4
+          commands.  Q0 tells the modem to ALWAYS send result codes, V1
+          tells the modem to ALWAYS send the text, not numeric, result
+          codes.  MyComm needs the result codes in text format to monitor
+          call progress, and to send you other useful information that the
+          modem produces.  X4 (your modem may use X1, X2, etc) tells the
+          modem to send "verbose" modem status information to MyComm.
+            You should place "^M" at the end of the Initialization String
+          so that MyComm will send a Carriage Return at the end of the
+          line.
+
+          High speed modem users: If you need to set "flow control" options
+          for your modem in the setup string this is the place to do it.
+          For example, if your modem needs to use RTS/CTS flow control the
+          Hayes AT command "&K3" should be added to the initialization
+          string.
+
+
+          3.20.1.3  Modem Attention String
+
+            This is the Attention signal that tells the modem that you want
+          it's undivided attention for something.  Most Hayes compatible
+          modems use three plus signs "+++" as the attention string.  Refer
+          to your modem manual if you use a different Attention string.
+
+
+          3.20.1.4  Modem Hang Up String
+
+            This is the string that tells your modem to hang up the
+          telephone line.  On most Hayes compatible modems this is ATH0.
+          You may use the characters "^M" to have MyComm send a Carriage
+          Return after it sends the Hang Up string (recommended).  Refer to
+          your modem manual if you use a different Hang Up string.
+
+
+          MyComm Version 2.15 Documentation                    Page 33
+
+
+
+          3.20.1.5  Modem Answer String
+
+            This is the string that tells your modem to answer the
+          telephone.  On most Hayes compatible modems this is ATA.  You may
+          use the characters "^M" to have MyComm send a Carriage Return
+          after it sends the Answer string (recommended).  Refer to your
+          modem manual if you use a different Answer string.
+
+
+          3.20.1.6  Modem Cancel Dial String
+
+            This is the string that tells your modem to cancel dialing a
+          telephone number.  On most Hayes compatible modems this just a
+          Carriage Return (13 decimal).  You may use the characters "^M" to
+          send a Carriage Return after it sends the Cancel Dial string
+          (recommended).  Refer to your modem manual if you use a different
+          Cancel dialing string.
+
+
+          3.20.1.7  Modem Dial Suffix String
+
+            This is the string that tells your modem what to terminate
+          telephone numbers with when dialing.  On most Hayes compatible
+          modems this just a Carriage Return.  You may use the characters
+          "^M" to have MyComm send a Carriage Return as the Dial Suffix
+          string (recommended).  Refer to your modem manual if you use a
+          different Dial Suffix string.
+
+
+          3.20.1.8  Dialing Wait Time
+
+            After MyComm dials a number it waits for this amount of time
+          for a connection.  Waiting stops automatically if MyComm detects
+          a BUSY signal.  The valid range for Dialing Wait Time is 1 to 240
+          seconds.
+
+            In general a wait time of 45 seconds is good for most local and
+          long-distance calls, 60 seconds for international calls.
+
+            You will also want to add "S7=nn" (without the quotes), to your
+          modem Initialization String (see above). Replace "nn" with a
+          number greater than or equal to the time set in Dialing Wait
+          Time.
+
+
+          MyComm Version 2.15 Documentation                    Page 34
+
+
+
+          3.20.1.9  Pause Between Calls
+
+            If a connection is not made after dialing due to a BUSY signal
+          or a time-out, MyComm resets the modem and waits the amount of
+          seconds specified in the Pause Between Calls before trying to
+          dial again.  The valid range for Pause Between Calls is 0 to 60
+          seconds.
+
+            In most cases a pause time of 2 to 5 seconds is sufficient for
+          the modem to reset.
+
+
+          3.20.1.10 Local Echo on by Default
+
+            Local Echo is used when the other system does not send what you
+          typed on your terminal back to you.  Most systems do echo
+          characters back, so Local Echo is normally off ("No").  If you
+          find that you can't see what you are typing when connected to a
+          system, set Local Echo on (Yes).  On the other hand if you see
+          double characters when you hit a key (for example you see "xx"
+          when you type an "x") then Local Echo should be off ("No").
+
+
+          3.20.1.11 Use DTR to Hang Up Modem
+
+            This option allows you to set whether MyComm should use the
+          modem signal called DTR to terminate connections.  Using DTR to
+          hang up is usually faster than just sending the Hang Up String
+          (above).  This option is usually set to "Yes".
+
+            However, some modems don't like to have DTR messed with. You
+          can usually tell if the modem doesn't like you to fool with DTR
+          as it will cause your computer system to lock up (not a bad thing
+          really, just terribly annoying - re-booting always fixes this).
+          Refer to your modem manual if you have questions about whether to
+          use DTR to hang up the telephone connection.
+
+            NOTE: some modems require that you add "&D2" to your
+          initialization string (see above) to enable the DTR line
+          monitoring.  Check your modem manual for further details.
+
+          3.20.1.12 Use XON/XOFF Flow Control
+
+            This tells MyComm whether it should use the XON/XOFF flow
+          control while in terminal mode and during ASCII file transfers.
+          This default for this option is "Yes".
+
+
+          MyComm Version 2.15 Documentation                    Page 35
+
+
+
+          3.20.1.13 Use CTS/RTS Flow Control
+
+            This tells MyComm whether to use CTS/RTS flow control.
+          This is used with high speed modems and null modem cable links to
+          regulate the flow of data. If the modem supports CTS/RTS flow
+          control this should be on (refer to the user manual for your
+          modem).  If a null modem cable is being used and these signals
+          are to be sent over the cable, this should be on.
+            You may also want to add "&K3" to your initialization string
+          (see above) to enable your modem to follow CTS/RTS status.  This
+          option is most often used on high speed modems.
+
+
+          3.20.1.14 Use DSR/DTR Flow Control
+
+            This tells MyComm whether to use DSR/DTR flow control.
+
+           Hardware handshaking is used with high speed modems and
+          sometimes null modem cable links to regulate the flow of data.
+          If the modem supports DSR/DTR flow control this should be "Yes"
+          (refer to the user manual for your modem).  If a null modem cable
+          is being used and these signals are to be sent over the cable,
+          this should be on.
+
+            You may also want to add "&D2" to your initialization string
+          (see above) to enable your modem to follow DTR status.  This
+          option is most often used on high speed modems.
+
+
+          3.20.1.15 Dialing Prefixes
+
+            Dialing Prefixes are dialing codes such as area codes, that get
+          sent before a telephone number is dialed.  You may set up three
+          different dialing prefixes.  Each dialing prefix may be up to 25
+          character/digits long.
+
+            For example, if you have Call Waiting (Tm) you can disable it
+          by dialing *70 (that's asterisk - 70) before the number you're
+          calling (this works in the my dialing area, your dialing area may
+          differ).  If you were to set one of your dialing prefixes to *70
+          MyComm would "prefix" every number you called with *70.  The
+          dialing prefixes may also be used to store long distance codes,
+          or whatever dialing codes you would want to have dialed before a
+          number.
+
+
+          MyComm Version 2.15 Documentation                    Page 36
+
+
+
+          3.20.1.16 Connect Strings
+
+            MyComm will use the strings defined in Connect and No Connect
+          strings to determine the dialing status.  From this option you
+          will be able to change the strings that MyComm will use as
+          responses from your modem.
+
+            There is one "Connect" string and four "No Connect" strings.
+
+            The Connect string should be the same as the one your modem
+          generates when a connection has been made.  The default is
+          "CONNECT" which is fairly standard.  Please note: you must define
+          this string so that MyComm will know when a connection has been
+          made.  MyComm does not rely on the Carrier Detect signal to
+          determine when it has connected during dialing!
+
+            The "No Connect" strings should be set to whatever strings your
+          modem generates when a connection is not made during dialing.
+          When MyComm sees one of these responses from the modem during
+          dialing it stops waiting for a connection and moves on to the
+          next number to be dialed.  The default strings are "BUSY", "NO
+          CARRIER", "NO DIALTONE", and "VOICE".
+
+
+          3.20.2  Paths Setup
+
+            The Paths Setup Screen (see below) is where you set up paths to
+          directories that you want MyComm to know about.  A description of
+          the various system paths follows.
+
+
+          +---------------------------------------------| Paths Setup |+
+          |                                                            |
+          | Directory to Download files to:  C:\PUBLIC\                |
+          | Directory to Upload files from:  C:\PUBLIC\                |
+          | Path\File for Screen Capture:    C:\PUBLIC\MYCOMM.SCR      |
+          | Path\File for Session Capture:   C:\PUBLIC\MYCOMM.SES      |
+          | Path\File for Phone File:        C:\MYCOMM\MYCOMM.PHN      |
+          | Path\Filename.Ext for Editor:    C:\UTIL\EDITOR.EXE        |
+          | Path\Filename.Ext of Xter Prog1: C:\SOMEPRGM.EXE           |
+          | Path\Filename.Ext of Xter Prog2: C:\                       |
+          | Path\Filename.Ext of Xter Prog3: C:\                       |
+          |                                                            |
+          |                                                            |
+          |      Use Up and Down Arrows to move between items          |
+          |           Hit <Enter> to edit, <Esc> to Quit               |
+          |                                                            |
+          +------------------------------------------------------------+
+
+
+          MyComm Version 2.15 Documentation                    Page 37
+
+
+
+          3.20.2.1  Download Directory
+
+            This option tells MyComm which directory you want MyComm to put
+          files that are downloaded from another system.  Notice that the
+          path always ends in a backslash ( "\" ) character.
+
+
+          3.20.2.2  Upload Directory
+
+            This option tells MyComm which directory you want MyComm to get
+          the files from that will be uploaded to other systems.  Notice
+          that the path always ends in a backslash ( "\" ) character.
+
+
+          3.20.2.3  Path\File for Screen Capture
+
+            This option tells MyComm which directory and the filename that
+          you want MyComm to use for the Screen Capture file.  Screen
+          Capture is activated by <Alt> + W.
+
+
+          3.20.2.4  Session Capture Path\File
+
+            This option tells MyComm which directory and the filename that
+          you want MyComm to use for the Session Capture file.  Session
+          Capture is activated by <Alt> + S.
+
+
+          3.20.2.5  Phone File Path\File
+
+            This option tells MyComm which directory and the filename that
+          you want MyComm to use for the Phone File which contains your
+          dialing directory.  You may have multiple Phone Files, but this
+          is the one that MyComm will load when it starts up.
+
+
+          3.20.2.6  Editor Path\Filename
+
+            If you want to use an editor program without leaving MyComm,
+          this option lets you tell MyComm the path and filename of the
+          editor.  Notice that the filename of the editor must include not
+          only the filename, but the extension (.EXE or .COM) as well.
+
+
+          MyComm Version 2.15 Documentation                    Page 38
+
+
+
+          3.20.2.7  External Programs Path\Filename
+
+            You may define up to three other external programs to run
+          without leaving your MyComm session.  Use these options to tell
+          MyComm the paths and filenames of the programs.  Notice that the
+          filename of the programs must include not only the filename, but
+          the extension (.EXE, .COM, or .BAT) as well.
+
+
+          3.20.3  Protocols Setup
+
+            The Protocols Setup Menu (see example below) allows changes to
+          parameters for ASCII file transfers, Zmodem file transfers, and
+          the external protocols.
+          The usage of these options follows.
+
+               +--| Protocol Setup |+
+               | ASCII Transfers    |
+               | Zmodem Transfers   |
+               | EXternal Protocols |
+               | Exit               |
+               +--------------------+
+
+
+          MyComm Version 2.15 Documentation                    Page 39
+
+
+
+          3.20.3.1  ASCII Transfers Setup
+
+            The ASCII Transfers Setup screen (see example below) lets you
+          set up the parameters for ASCII file transfers.  ASCII file
+          transfers are only used to transfer text files.  Program files
+          and archived files, also known as binary files, should not be
+          transferred as ASCII files.  Most of the options for the ASCII
+          transfers work well with their default settings.  A description
+          of the different options follows.
+
+
+          +----------------------------| ASCII Transfers Setup |+
+          |                                                     |
+          | Strip High Bits?:                 No                |
+          | Remote Abort Char (0 for none):    0 (ASCII Value)  |
+          |                                                     |
+          | ASCII Upload Options                                |
+          | CR Translation:                 None                |
+          | LF Translation:                 None                |
+          | Local Echo On During Uploads?:   Yes                |
+          | Expand Blank Lines to Spaces?:    No                |
+          | Line Pace time in 1/10 seconds:    0                |
+          | Char Pace time in 1/10 seconds:    0                |
+          | Pacing Char (0 for none):          0 (ASCII Value)  |
+          |                                                     |
+          | ASCII Download Options                              |
+          | CR Translation:                 None                |
+          | LF Translation:                 None                |
+          |                                                     |
+          |    Use Up and Down Arrows to move between items     |
+          |          Hit <Enter> to edit, <Esc> to Quit         |
+          +-----------------------------------------------------+
+
+
+          3.20.3.1.1  Strip High Bits
+            This option tells MyComm whether to strip the high bit from
+          received and sent characters during ASCII uploads and downloads.
+          Usually this is set to "No".  See also section 3.6.2.15 "Strip
+          High Bits" for a discussion of "high bits".
+
+
+          3.20.3.1.2  Remote Abort Char
+
+            If the system you're performing the ASCII file transfer with
+          uses an abort char to cancel transfers you should set this value.
+          The value is in the range of 1 to 255.  A value of zero (0), the
+          default, means MyComm won't look for the abort character during
+          ASCII file transfers.
+
+
+          MyComm Version 2.15 Documentation                    Page 40
+
+
+
+          3.20.3.1.3  CR Translation Upload and Download
+
+            Some systems require a CR (Carriage Return) character placed
+          before the LF (Line Feed) character during ASCII file transfers.
+          If the lines of the file look odd after the transfer, this may be
+          the case.
+
+
+          3.20.3.1.4  LF Translation Upload and Download
+
+            Some systems require a LF (Line Feed) character placed after
+          the CR (Carriage Return)  character during ASCII file transfers.
+          If the lines of the file look odd after the transfer, this may be
+          the case.
+
+
+          3.20.3.1.5  Local Echo On During Uploads
+
+            During ASCII uploads if you want to watch the file transfer set
+          this option to "Yes".  This is often used when uploading a
+          message into a bulletin boards message base.  When this option is
+          set to "No", the usual file transfer window is shown as the
+          upload progresses.
+
+
+          3.20.3.1.6  Expand Blank Lines to Spaces
+
+            This option tells MyComm to expand lines that are empty except
+          for a CR/LF into a line of spaces that end with a CR/LF.  This is
+          useful when you are uploading a message to a bulletin board.
+          Some boards interpret a blank line with only a CR/LF as the end
+          of message signal.  Expanding blank lines allows you to upload
+          the entire message.
+
+
+          3.20.3.1.7  Line Pace Time
+
+            This options tells MyComm to how much time to wait between
+          sending each line of text from the ASCII file.  Some systems
+          can't handle high speed ASCII transfers, this gives the other
+          system time to "think".  The value entered from 0 (the default)
+          to 255 are in increments of 1/10 second (approximately).
+
+
+          3.20.3.1.8  Character Pace Time
+
+            This options tells MyComm how much time to wait before sending
+          each character from the ASCII file.  Some systems can't handle
+          high speed ASCII transfers, this gives the other system time to
+          "think".  The value entered from 0 (the default) to 255 is in
+          increments of 1/10 second (approximately).
+
+
+          MyComm Version 2.15 Documentation                    Page 41
+
+
+
+
+
+          3.20.3.1.9  Pacing Char
+
+            Some systems send a Pacing Character to limit throughput on
+          ASCII transfers.  MyComm will wait for the Pacing Char before
+          sending each line of the file.  The Pacing Char value ranges from
+          1 to 255 which represents an ASCII value.  A value of zero (0),
+          the default, means MyComm will not look for the Pacing Char.
+
+
+          3.20.3.2  Zmodem Transfers Setup
+
+            MyComm lets you define certain special functions used in the
+          Zmodem file transfer protocol.  A description of these follows.
+
+
+          3.20.3.2.1  Zmodem 32 Bit CRC
+
+            Zmodem uses either a 16 bit or a 32 bit CRC for error detection
+          during file transfers.  The 32 bit CRC provides a much higher
+          degree of accuracy than its 16 bit cousin.  However the
+          calculation involved in the 32 bit CRC may slow the file transfer
+          rate (by only a few CPS though).  If you want a high degree of
+          error detection this option should be set to "Yes".  For higher
+          transfer speed, set this option to "No".
+
+
+          3.20.3.2.2  Zmodem Auto Download Feature
+
+            When this option is set to "Yes" MyComm will automatically
+          start a Zmodem download file transfer for you.  The Zmodem
+          protocol at the host's end sends some special characters when it
+          starts up a Zmodem transfer.  MyComm looks for these characters
+          and will save you some typing by starting up the Zmodem download
+          for you.  If you don't want to use this feature, set this option
+          to "No".
+
+
+          3.20.3.2.3  Zmodem Send Crash Recovery
+
+            Sometimes a file transfer will fail after a file has been
+          partially sent.   A file transfer could fail due to excessive
+          line noise for example.  Zmodem has a rather nifty feature that
+          will attempt to restart a failed file transfer.
+
+            For normal use this feature should be set to "No".  If you want
+          to attempt to restart a failed Zmodem transfer set this option to
+          "Yes" before beginning the upload again.  If the system you are
+          trying to upload the file to supports the "Crash Recovery"
+          feature the file transfer will resume where it left off.
+
+
+          MyComm Version 2.15 Documentation                    Page 42
+
+
+
+
+
+          3.20.3.2.4  Zmodem Receive Crash Recovery
+
+            Sometimes a file transfer will fail after a file has been
+          partially received.  Zmodem has a rather nifty feature that will
+          attempt to restart a failed file transfer.
+
+            For Normal use this feature should be set to "No".  If you want
+          to attempt to restart a failed Zmodem transfer then set this
+          option to "Yes" before beginning the download again.  If the
+          system you are trying to download the file from supports the
+          "Crash Recovery" feature the file transfer will resume where it
+          left off.
+
+            THIS OPTION SHOULD BE USED WITH CARE.  If this option is set to
+          "Yes" and you download a file from another system that has the
+          same name as a file you already have in your download directory,
+          the end of the existing file will be overwritten with the
+          information from the new file.  This option should only be set to
+          "Yes" when you are attempting to restart a previously failed
+          Zmodem transfer.
+
+            NOTE: the Zmodem Crash Recovery option has some rudimentary
+          idiot proofing.  The option will not perform the transfer if the
+          file you have has a different time/date stamp than the other
+          system, or if the file that you have is larger than the file on
+          the other system.
+
+
+          MyComm Version 2.15 Documentation                    Page 43
+
+
+
+          3.20.3.3  External Protocols Setup
+
+            Up to six external file transfer protocols may be defined.
+          Once defined the external file transfer protocols will appear in
+          the Upload and Download protocol selection menus.
+            Use the Up and Down-Arrow keys to move from item to item.  The
+          <Enter> key selects an item for editing and saves the completed
+          edit.  Pressing the <Esc> key quits the edit.
+
+
+          +-----------------------------------| External Protocols Setup |+
+          |                                                               |
+          | Protocol  Name    Upload.Bat    Download.Bat     Ask FileName |
+          |                                                               |
+          |   1:   BIGFAST    BIGFASTU.BAT  BIGFASTD.BAT     No           |
+          |   2:                                             Yes          |
+          |   3:                                             Yes          |
+          |   4:                                             Yes          |
+          |   5:                                             Yes          |
+          |   6:                                             Yes          |
+          |                                                               |
+          |         Use Up and Down Arrows to move between items          |
+          |               Hit <Enter> to edit, <Esc> to Quit              |
+          +---------------------------------------------------------------+
+
+            The name of the external protocol should be typed in under the
+          "Name" heading as you would like it to appear in the MyComm
+          Upload and Download protocol selection menus.
+
+            In the fields for Upload.Bat and Download.Bat you will enter
+          the names of the DOS batch files that will be used to run the
+          external protocol.  External file transfer protocols are run as
+          DOS batch files from MyComm (see your DOS manual for information
+          on batch files).
+
+            In the selection marked "Ask FileName" tells MyComm whether you
+          should be asked the name of the file when performing downloads
+          (some file transfer protocols automatically get the filename for
+          you).
+
+            MyComm sends the COM Port number you are using, the Baud Rate,
+          and the Drive:\Path\ and filename as parameters for the batch
+          file.  Using the example above, let's say you are using an
+          external protocol called "BigFast", your COM Port is 2, the Baud
+          Rate is 2400, and your upload directory is "C:\PUBLIC\" and you
+          are uploading a file called MYSTUFF.ARC. The batch file for
+          Uploads with BigFast would look something like this:
+
+              REM BigFast Upload batch file
+              BigFast Send Port: %1  Baud: %2 %3
+
+
+          MyComm Version 2.15 Documentation                    Page 44
+
+
+
+          the %1 would be replaced by a "2", the %2 by "2400", and the %3
+          would be replaced with the name of the upload directory and the
+          filename: "C:\PUBLIC\MYSTUFF.ARC" when MyComm calls the .BAT file
+          to run.
+
+            External file transfer protocols often differ quite a bit, but
+          they usually come with enough documentation of their own to get
+          you going.
+
+          NOTE: Experience has shown that some external protocol drivers
+          may not release the COM port properly when they have completed
+          their business.  This causes the terminal to appear "locked" (no
+          characters come across the scree).  MyComm attempts to restore
+          the COM port after the external protocol has been called.  If
+          your terminal appears locked the COM port can be reset by using
+          the <ALT> + P function from the terminal window.
+
+
+          3.20.4  Miscellaneous Options Setup
+
+            The Miscellaneous Options Setup screen (see example below) lets
+          you set up special options for MyComm.
+
+
+          +------------------------------------| Misc. Options Setup |+
+          |                                                           |
+          | Screen Background Color:         Black                    |
+          | Screen Text Color:               Gray                     |
+          | Date Format Style:               MMDDYY                   |
+          | 12 or 24 Hour Time Format:       12 Hour                  |
+          | Make Noise When Calls Connect?:  Yes                      |
+          | Make Noise After File Transfers: Yes                      |
+          | Use Direct Video? (Faster):      Yes                      |
+          | Your Name for sign on :          Your Name^M              |
+          | Password for sign on :           Password^M               |
+          | Clever quip for TagLine:         Witty quote goes here... |
+          | Guess Up/Download Filenames:     Yes                      |
+          |                                                           |
+          |         Use Up and Down Arrows to move between items      |
+          |            Hit <Enter> to edit, <Esc> to Quit             |
+          +-----------------------------------------------------------+
+
+
+          3.20.4.1  Screen Background Color
+
+            This option tells MyComm what color to use for the screen
+          background color.  This option only affects the screen of the
+          terminal window.
+
+
+          MyComm Version 2.15 Documentation                    Page 45
+
+
+
+          3.20.4.2  Screen Text Color
+
+            This option tells MyComm what color to use for the screen
+          foreground (the text) color.  This option only affects the screen
+          of the terminal window.
+
+
+          3.20.4.3  Date Format Style
+
+            You may choose three date formats for MyComm to use when it
+          displays dates:  MM/DD/YY,  DD/MM/YY, or YY/MM/DD.  Choose
+          whichever one best fits your mood.
+
+
+          3.20.4.4  12 or 24 Hour Time Format
+
+            MyComm will display the time in either 12 hour or 24 hour
+          format. Choose the one that bests reflects how you identify with
+          time.
+
+
+          3.20.4.5  Make Noise When Calls Connect
+
+            MyComm sounds a short alarm noise when a connection is made
+          during dialing.  If you don't want MyComm to sound the alarm, set
+          this option to "No".
+
+
+          3.20.4.6  Make Noise After File Transfers
+
+            MyComm sounds a short alarm noise after a file transfer has
+          completed.  If you don't want MyComm to make the noise, set this
+          option to "No".
+
+
+          3.20.4.7  Use Direct Video
+
+            MyComm by default uses a system called "direct video" when
+          displaying information to the screen.  Unfortunately, direct
+          video will often "bleed through" to other programs in a
+          multitasking environment.  If you are using a multitasker and
+          getting bleed through from MyComm, set the Direct Video option to
+          "No".
+
+
+          MyComm Version 2.15 Documentation                    Page 46
+
+
+
+          3.20.4.8  Your Name for sign on
+
+            This option lets you enter the name that you log on with when
+          you call systems.  When bulletin board systems answer your call
+          they usually ask for your name and password.  This name becomes
+          the default for "Logon Name" for new numbers you add to the
+          dialing directory.  If Logon Name is filled in MyComm will send
+          your logon name to systems when you push the <F2> key to save you
+          some typing.
+
+
+          3.20.4.9  Password for sign on
+
+            This option lets you enter the password that you log on with
+          when you call systems.  When bulletin board systems answer your
+          call they usually ask for your password.  This password becomes
+          the default for "Logon Password" for new numbers you add to the
+          dialing directory.  If Logon Password is filled in MyComm will
+          send your logon password to systems when you push the <F3> key to
+          save you some typing.
+
+
+          3.20.4.10 Clever quip for TagLine
+
+            Many BBS's have message areas where you can converse with other
+          people.  If you want to be able to sign your name, leave a witty
+          quote or whatever without typing it over and over for each
+          message fill this area in.  When you press the <F4> key MyComm
+          will send the message you have entered here.  The message can be
+          up to 40 characters long.  You may also send ANSI "Escape"
+          sequences (see DOS manual) from the Tagline.
+
+            If you want to send the ASCII "ESCape character (27 decimal, 1B
+          hex) which usually precedes ANSI escape sequences, MyComm uses
+          the characters "^[ ". ("caret" sign left bracket).  For example,
+          the ANSI.SYS driver recognizes the string
+
+          <Esc>[5mThis is blinking<Esc>[0m
+
+          as a string that blinks. (note: <Esc> represents the 27 decimal
+          (1B hex) character here).  So, if your Tagline looked like
+
+          ^[[5mThis is blinking^[[0m
+
+          the other system would display "This is blinking" as a blinking
+          message line.
+
+
+          MyComm Version 2.15 Documentation                    Page 47
+
+
+
+          3.20.4.11 Guess Up/Download Filename
+
+            By default MyComm tries to "guess" the filename that you want
+          to upload or download.  MyComm will make a best guess as to what
+          you most recently typed that looked like a filename.  Having this
+          option set to "Yes" can save you time and typing when performing
+          file transfers.
+
+
+          3.20.5  COM Port Addresses
+
+            This option enables changes to the COM port addresses.  By
+          default MyComm uses standard addresses and Interrupt Request
+          Lines (IRQ) to communicate with your modem.  Most users will
+          never have a need to use this option.  It is most commonly used
+          when there is a conflict with a mouse or other serial device and
+          the modem.  By changing the base address and IRQ line this
+          problem can often be alleviated.  Modifying the COM port address
+          table and IRQ settings can be tricky.  If you are not entirely
+          certain that you know what you are doing this option is best left
+          alone.
+
+            You will see a table with the COM port number, the base address
+          it is using, and the IRQ line.  You move from field to field by
+          pressing the <Enter> key.  The base address is displayed in and
+          should be entered as a hexadecimal number.  The IRQ line will
+          take numbers between 2 and 7.
+
+            After you make changes you will have to reinstall the COM port.
+          This is done by going back to the main terminal window and
+          pressing <Alt> and 'P' and following the "Change Port" menu.
+
+
+          3.20.6  Restore to Defaults
+
+            This option will reset the MyComm configuration information to
+          it's defaults.  A message will appear warning you of this, and a
+          second "Yes/No" screen will ask if you want to proceed.  The
+          changes take effect immediately, but are not saved until you use
+          the "Save Setup" option.
+
+
+          3.20.7  Save Setup
+
+            This option saves the changes you made to the various
+          configuration items to the file MYCOMM.CFG.  If you make changes,
+          but do not save them, the changes will only remain active until
+          you exit from MyComm.
+
+
+          MyComm Version 2.15 Documentation                    Page 48
+
+
+
+          3.21 Send Screen to File - Alt W
+
+            Pressing the <ALT> and the "W" key takes a "snap shot" of the
+          currently displayed terminal screen and writes it out to the file
+          MYCOMM.SCR.  The resulting file will contain the text currently
+          on the screen.
+
+
+          3.22 Exit MyComm - Alt X
+
+            Pressing the <ALT> and the "X" key brings up a message box that
+          takes a Yes/No response.  Press "Y" to exit MyComm, or "N" or
+          <Esc> to cancel.
+
+
+          3.23 Help Screen - F1
+
+            When you are in the main terminal window pressing the F1 key
+          will show you a list of MyComm commands that are available to
+          you.
+
+          3.24 Send Name - F2
+
+            When bulletin board systems answer your call they usually ask
+          for your name and password.  This option sends the name that you
+          log on with when you call a system if your name is filled in for
+          the dialing directory entry for the system.
+
+
+          3.25 Send Password - F3
+
+            This option sends the password that you log on with when you
+          call a system. See also "Send Name" above.
+
+
+          3.26 Send Tagline  - F4
+
+            This is used to sign your name, or put a short quote, up to 40
+          characters at the end of a message.  This is set up in the
+          "Miscellaneous Options Setup" screen.
+
+
+          MyComm Version 2.15 Documentation                    Page 49
+
+
+
+          3.27 Transferring Files
+
+            MyComm has a wide variety of built in file transfer protocols
+          such as  Zmodem, Xmodem, Xmodem-1K, Ymodem Batch, Ymodem-G Batch,
+          SEAlink, and of course ASCII.  There are also slots to include up
+          to six external file transfer protocols if you would like to add
+          more.
+
+             You may Upload (send) files or Download (receive) files.  Most
+          host systems will have you start the file transfer at their end
+          first, and then wait for you to set up on your end.  Host systems
+          usually wait about a minute or so for you to set up, so don't
+          panic.
+
+            All file transfer protocols on MyComm use 8-N-1 (8 data bits,
+          No parity, and 1 stop bit).  MyComm automatically sets these
+          settings for you before the file transfer begins, then switches
+          back to what ever settings were in place before the transfer
+          began.
+            Except for ASCII file transfers, MyComm turns off the XON/XOFF
+          flow control switch if you have it set on.  This is done to
+          prevent the XON/XOFF codes as being mistaken as part of the
+          incoming file.  The original state of the XON/XOFF flow control
+          is restored at the end of the file transfer.  If your modem has
+          its own built in XON/XOFF flow control setting, you should turn
+          it off during file transfers (refer to your modem manual -
+          usually the &K option).
+
+            File transfers differ slightly from one host system to another.
+          Basically you need to know three things:
+
+               þ    whether you want to Upload (send) or Download (receive)
+                    a file
+
+               þ    the name of the file you want to send or receive
+
+               þ    which file transfer protocol you want to use
+
+            Probably you can figure out for yourself whether you are
+          uploading or downloading from a system, and what the file name is
+          that you want to transfer.  However you and the host system MUST
+          use the same file transfer protocol or the transfer will fail.
+          The tricky part sometimes is deciding which file transfer
+          protocol to use.  There are so many!
+
+            Actually it's easy to decide which file transfer protocol you
+          want to use.  When you request a file transfer from the host
+          system, they usually show you a list of file transfer protocols
+          that their system supports.  Just pick one that both MyComm and
+          the host system support, and you're on your way!
+
+
+          MyComm Version 2.15 Documentation                    Page 50
+
+
+
+            The two most frequently used protocols are Xmodem and Zmodem.
+          A little experimentation on your part will help you decide which
+          of the file transfer protocols best meets your needs.
+
+            A description of each of the file transfer protocols that
+          MyComm supports will be found later in this section.
+
+          3.27.1  Starting a File Transfer
+
+            The steps to start the file transfer from your end with MyComm
+          are simple:
+
+               þ    Press PgUp to send files, or PgDn to receive files
+
+               þ    Choose the file transfer protocol you want to use from
+                    the menu
+
+               þ    Type in the filename (if needed)
+
+               þ    The file transfer will start and display a status
+                    window
+
+               þ    When the file transfer completes MyComm makes a noise
+
+            MyComm's file transfer menus and screens look basically the
+          same for both uploads and downloads.  When you press PgUp or PgDn
+          a menu pops up showing you the different file transfer protocol
+          options you have (see example below).  Pick a protocol, or press
+          the <Esc> or "Q" key to cancel.
+
+          Download Protocol Menu Example
+
+                                  +------| Down Load |+
+                                  | ASCII             |
+                                  | SEAlink Derived   |
+                                  | Xmodem            |
+                                  | 1K-Xmodem         |
+                                  | Real Ymodem Batch |
+                                  | Ymodem Batch - 1K |
+                                  | Zmodem            |
+          external protocol ==>   | 1: BIGFAST        |
+          (example)               | Quit/None         |
+                                  +-------------------+
+
+            After you pick a file transfer protocol, MyComm will ask you
+          for the filename that you want to send or receive.  Some of the
+          file transfer protocols for receiving files, such as Ymodem Batch
+          and Zmodem, don't need to ask you the file name so you may not
+          always be asked for a filename.  MyComm ALWAYS asks for the
+          filename when you upload files.
+
+
+          MyComm Version 2.15 Documentation                    Page 51
+
+
+
+          Note:
+            When you upload files with the "batch" protocols you may also
+          use the DOS "wildcard" characters for filenames such as *.* or
+          ALL*.ARC, or FILE??.*, etc.
+
+            If the filename, or the path to the file (the directory) are
+          invalid or can't be found you will see an error message and you
+          may re-enter the filename.  If you want to exit without
+          performing the file transfer press the <Esc> key.
+
+            When the filename is entered correctly MyComm will start the
+          file transfer and the File Transfer Status Window shown below
+          will pop up.
+
+          Download/Upload Status Window
+
+          +------------------------------------------| Ymodem Download |+
+          |                                                             |
+          | Receiving: D:\PUBLIC\SOMEFILE.EXT                           |
+          | ----------------------------------------------------------- |
+          |                                                             |
+          | Xfer Time:     0:04:18        Bytes Received:   14567       |
+          | Elapsed Time:  0:01:18        Bytes Expected:   58645       |
+          | Approx. CPS:       186        Blocks Sent:        114       |
+          | ----------------------------------------------------------- |
+          |                                                             |
+          | Error Count: 0                Error Correction: CRC-16      |
+          | Last Error Message: Receiving File                          |
+          |                                                             |
+          +-------------------------------------------------------------+
+
+
+            The status window displays information about the file transfer
+          such as the file name being sent/received, an estimate of how
+          long it will take to do the transfer, the elapsed time, the CPS
+          rate (Characters Per Second), the bytes sent/received, the blocks
+          sent, error correction type, and error status.
+
+          Note:
+            Some protocols will not tell you the Xfer Time or the Bytes
+          Expected during downloads.  This is because some protocols do not
+          send an information "header" packet that tells MyComm how many
+          bytes to expect from the sender.
+
+            When MyComm calculates the amount of time a transfer will take
+          it does the calculation based on a "worst case" rate of 80%
+          efficiency. This is to take into consideration possible line
+          noise, packet resends, and other considerations.  Actual file
+          transfers may be faster than what MyComm calculates.
+
+
+          MyComm Version 2.15 Documentation                    Page 52
+
+
+
+            The CPS rate reflects only the number of bytes actually
+          sent/received from/to the file.  Overhead bytes such as CRC and
+          "escape" characters are not included in the calculation.  This
+          provides a more realistic picture of the file transfer progress.
+
+
+          3.27.2  File Transfer Hints
+
+               þ    Both the sender and receiver MUST use the same file
+                    transfer protocol
+
+               þ    If a file transfer keeps aborting using one protocol on
+                    a host system, try using a different one.
+
+               þ    It is not a good idea to upload or download from floppy
+                    disk.  Floppy drives are slow, so the read and write
+                    access time will slow down the transfer.  Floppy drives
+                    do not hold very much data.  If the floppy disk were to
+                    fill up during a download, the transfer would be
+                    aborted.
+
+
+          3.27.3  Download Files - PgDn
+
+              Pressing the PgDn (Page Down) key starts the file download
+          procedures previously discussed.
+
+
+          3.27.4  UpLoad Files - PgUp
+
+              Pressing the PgUp (Page Up) key starts the file upload
+          procedures previously discussed.
+
+
+          3.27.5  ASCII File Transfers
+
+            ASCII file transfers are only used to transfer text files.
+          Program files, also known as binary files, should not be
+          transferred as ASCII files.  ASCII uploads do not show the File
+          Transfer Status Window unless you have set the "Show Upload"
+          option to "No" in the ASCII Xfer configuration menu.  ASCII
+          transfers have no error correction, but just plough along as
+          though the characters were actually being typed from the
+          keyboard.  This is commonly referred to as a "send and pray"
+          protocol.
+
+            During ASCII downloads, the download continues until either a
+          Ctrl-Z (end of file marker) is received, or no characters have
+          been received for 10 seconds.  You may also stop the transfer at
+          any time by pressing the <ESC> key.
+
+
+          MyComm Version 2.15 Documentation                    Page 53
+
+
+
+          3.27.6  SEAlink Derived File Transfers
+
+            SEAlink is an advanced version of Xmodem developed by System
+          Enhancement Associates.  SEAlink uses a "sliding window" protocol
+          which sends ahead several packets while waiting for an
+          acknowledgement from the receiver.  This can result in transfers
+          that are 10 to 20 percent faster than plain Xmodem.  SEAlink
+          sends the file name and file size when the transfer starts up,
+          and can be used to send more than one file at a time.
+
+            The version of SEAlink that MyComm uses is known as "Derived
+          SEAlink" as MyComm does not support the "overdrive" option which
+          is only used in half-duplex links.
+
+
+          3.27.7  Xmodem File Transfers
+
+            Xmodem is probably the most widely used protocol today.  Xmodem
+          was originally developed by Ward Christensen in the summer of
+          1977 for use on CP/M machines, and was soon ported to the MS-DOS
+          environment.  Xmodem sends data in 128 byte blocks.  The block
+          count seen in the File Transfer Status Window shows the number of
+          128 byte blocks that have been transferred.  This has
+          euphemistically been called "Xmodem blocks" and has become
+          somewhat of a standard in P.C. data communications.
+
+            Xmodem has two flavors; Check Sum and CRC-16 mode.  MyComm
+          supports both Check Sum and CRC-16 mode, and automatically
+          selects the correct one to use.  The check sum mode is not nearly
+          as reliable as CRC-16, and isn't used as often.
+
+          3.27.8  1K-Xmodem File Transfers
+
+            Xmodem-1K is a variation of Xmodem which uses a 1K (1024 byte)
+          block to send data.  Under most conditions Xmodem-1K is slightly
+          faster than plain Xmodem.  If there is a lot of line noise
+          however, the throughput can degrade due to having to perform a
+          resend on the larger packet.
+
+            Some older host systems may refer to Xmodem-1K as "Ymodem" so
+          read the host system menu carefully.
+
+
+          MyComm Version 2.15 Documentation                    Page 54
+
+
+
+          3.27.9  Ymodem Batch File Transfers
+
+            The Ymodem Batch protocol can perform either single or batch
+          file transfers.  That is, it can send or receive one or more
+          files in a transfer session.  Ymodem Batch starts sessions by
+          sending the file name and size to the receiver, then sends the
+          file data.  Ymodem uses both a 128 byte or 1024 byte (1K) packet
+          size and MyComm chooses the correct packet size to use during the
+          transfer.
+
+
+          3.27.9  Ymodem-G Batch File Transfers
+
+            The Ymodem-G Batch protocol is similar to the regular Ymodem
+          Batch protocol. The difference is that Ymodem-G performs no error
+          correction what-so-ever and as such it is generally only used
+          with error correcting modems, or Null modem cables.  If an error
+          is detected during a transfer, the transfer is immediately
+          aborted.
+
+
+           3.27.11 Zmodem File Transfers
+
+            Zmodem is another widely used file transfer protocol.  It was
+          developed by Chuck Forsberg/Omen Technology, Inc.  Zmodem is an
+          extremely robust protocol as it recovers from errors well and
+          will try to keep the file transfer session going under adverse
+          conditions.
+
+            Zmodem will perform both single file and batch (multiple) file
+          transfers.  Like Ymodem, when receiving a file using Zmodem, you
+          don't have to type in the file name on your end.  Zmodem sends
+          the filename as part of a special "header" that MyComm
+          recognizes.
+
+            Zmodem uses either a 16 bit or 32 bit CRC (Cyclic Redundancy
+          Check) when transferring the file.  You will see the CRC type
+          displayed in the File Transfer Status Window.  The CRC is used
+          for error checking during the transfer.  MyComm automatically
+          selects the proper CRC type to use so you don't have to worry
+          about it.  The 16 bit CRC transfers often go a little faster than
+          32 bit CRC transfers.  However the 32 bit CRC is much more
+          reliable for error correction, and well worth the few seconds
+          added to the transfer time.
+
+
+          MyComm Version 2.15 Documentation                    Page 55
+
+
+
+          3.27.11 External Protocol File Transfers
+
+              MyComm lets you define up to six external file transfer
+          protocols.  The external file transfer protocols will also appear
+          in the Upload and Download protocol selection menus.
+
+            External protocols are set up in the External Protocols Setup
+          (see section 3.20.3.3 "External Protocols Setup").  External
+          protocols differ from vendor to vendor, so you should refer to
+          the particular protocol's documentation for more detailed
+          installation instructions.  MyComm invokes the external protocols
+          through the use of DOS "batch" files.  Parameters are passed to
+          the batch file in the following order: COM Port number (0 to 7),
+          BPS rate, and Drive:\Path\Filename which translate to batch
+          parameters %1, %2, and %3.
+
+
+          3.27.12 MyComm as a Host
+
+            At this point in time MyComm does not have a "host" mode per
+          Se.  This was a design decision in order to keep the code size
+          small.  A stand-alone host program is presently being considered
+          for development at the moment.
+
+            But, all hope is not lost.  It is entirely possible to transfer
+          files between two MyComm programs (or MyComm and another
+          communication program).  To do this one person acts as the
+          "host", and the other as caller.  As the caller you would just
+          call the other person as you would for any other bulletin board
+          system.
+
+          For this example, let's say you're the host since that's the
+          complicated part.
+
+          Step 1:   Prearrange a time for the other person to call you.
+
+          Step 2:   Get MyComm up and running.
+
+          Step 3:   When the other person calls you will hear the phone
+                    ringing or see the word "RING" appear on the MyComm
+                    terminal screen.  When you see "RING", type ATA then
+                    press the <Enter> key.  This tells your modem to answer
+                    the phone and initiate the carrier tones so the two
+                    modems will "talk" to each other.  Alternatively you
+                    could press <Alt> and the "I" key, then press "A" for
+                    the "Send Answer String" command.
+
+
+          MyComm Version 2.15 Documentation                    Page 56
+
+
+
+          Step 3a:  Alternative to Step 3: before the other person calls
+                    type ATS0=1 then press <Enter>.  This tells your modem
+                    to answer the modem on the first ring and to initiate
+                    the carrier tones.
+
+          Step 4:   When transferring files from one MyComm to another
+                    remember that when they are uploading, you are
+                    downloading and vice versa.  So if the other person
+                    wants to download a file from you they would start the
+                    download function at their end, and you would start an
+                    upload from your end.  The most important things to
+                    decide before doing the transfer are:
+
+                      - who is uploading/downloading to and from who
+
+                      - which file transfer protocol you are using (they
+                        MUST be the same)
+
+                      - and finally, what the filename is.
+
+          Step 4a   This is where the MyComm "chat" mode can be handy.  It
+                    can help you establish stuff while you're on-line with
+                    the other person.  If you would like to "chat" on-line
+                    with the other person, Press <Alt> and the "A" key to
+                    bring up the MyComm split screen chat mode (see section
+                    3.3 "Chat Mode").
+
+          Step 5:   If all goes smoothly the file transfer will be
+                    successful.  In fact for the most part it will be as
+                    though you had simply called another BBS, except this
+                    time you're interacting with a live person rather than
+                    the BBS software.
+
+
+
+
+
+
+          Appendix A - MyComm Command Summary
+
+                    Alt A - Chat Mode
+                    Alt B - Send Break
+                    Alt C - Clear the Screen
+                    Alt D - Dialing Functions
+                    Alt E - Local Echo On/Off
+                    Alt H - Hang Up Modem
+                    Alt I - Send Modem Initialization Strings
+                    Alt J - Join Script (Run a Script)
+                    Alt L - Present Line Status
+                    Alt K - Scroll Back
+                    Alt M - Manual Dial
+                    Alt O - Outside to DOS
+                    Alt P - Change Port Parameters
+                    Alt Q - Quick Re- Dial
+                    Alt R - Run External Program
+                    Alt S - Session Capture On/Off/Pause
+                    Alt T - Terminal Emulation
+                    Alt U - Update Configuration
+                    Alt W - Send Screen to File
+                    Alt X - Exit MyComm
+
+                    F1    - Help Screen
+                    F2    - Send Name
+                    F3    - Send Password
+                    F4    - Send Tagline
+
+                    PgUp  - Upload Files
+                    PgDn  - Download Files
+
+
+
+
+
+
+          Appendix B - MyComm Line Editing Functions
+
+            Many of the user configuration options and the dialing list
+          have sections that require a line of text to be input and edited.
+          MyComm has a built in line editor to perform simple editing on
+          these text lines.  The MyComm line editor uses a tiny subset of
+          WordStar type commands.  A description of the line edit commands
+          follows.
+
+          þ Enter       -     Terminates editing the line and keeps it
+
+          þ Esc         -     Terminates editing the line and does not keep
+                              it
+
+          þ Right Arrow -     Moves the cursor right.
+
+          þ Left Arrow  -     Moves the cursor left.  This is "non-
+                              destructive", the character is not erased as
+                              the cursor moves
+
+          þ BackSpace   -     Moves the cursor left.  This is
+                              "destructive", the character is erased as the
+                              cursor moves
+
+          þ End         -     Positions the cursor at the end of the line
+
+          þ Home        -     Positions the cursor at the beginning of the
+                              line
+
+          þ Ctrl + T    -     When the Ctrl key and the letter T are
+                              pressed simultaneously, the line is erased
+                              from the current cursor position to the end
+                              of the line
+
+          þ Ctrl + Y    -     When the Ctrl key and the letter Y are
+                              pressed simultaneously, the entire line is
+                              erased and the cursor is positioned at column
+                              one
+
+
+
+
+
+
+          Appendix C - Terminal Emulation
+
+            This is a list of the functions that MyComm supports in the
+          terminal emulators.
+
+          TTY
+
+            TTY does not provide any character translation what-so-ever.
+          The characters are simply displayed as they come in.
+
+
+          ANSI
+
+            ANSI provides mapping similar to that found in your ANSI.SYS
+          driver.  The color and screen attributes as described in the
+          "MS-DOS 5.0 User's Guide and Reference" are supported, except for
+          the keyboard mapping functions.  The following keys also generate
+          codes recognized by other systems operating in ANSI mode:
+
+            Direction (Arrow) Keys  - move cursor
+            Delete                  - sends DEL (127 decimal)
+            End                     - erase to end of line
+            Home                    - homes cursor
+            Ctrl-Home               - clears screen, and homes cursor
+            Function Keys           - do not generate a character
+
+
+
+
+
+
+          VT-52 and VT-100
+
+            The VT-52 and VT-100 emulations are typically used with
+          mainframe environments.  These emulations provide a subset of the
+          "application keyboard" functions defined in the "VT-200
+          Programmer Guide", Digital #EK-VT220-HR-001.  These emulations
+          will work in either a 7 or 8 bit environment.  A standard key pad
+          for these terminals looks like this:
+
+              +-----------------------+
+              | PF1 | PF2 | PF3 | PF4 |
+              |-----+-----+-----+-----|
+              |  7  |  8  |  9  |  -  |
+              |-----+-----+-----+-----|
+              |  4  |  5  |  6  |  ,  |
+              |-----+-----+-----+-----|
+              |  1  |  2  |  3  |  R  |
+              |-----------+-----|  T  |
+              |     0     |  .  |  N  |
+              +-----------------------+
+
+            MyComm defines these keys as follows:
+
+            PF1 through PF4     - <SHIFT> + F1 through F4
+            1 through 0         - <ALT> + F1 through F10
+            Minus Sign "-"      - <SHIFT> + F5
+            Comma ","           - <SHIFT> + F6
+            Decimal Point "."   - <SHIFT> + F7
+            RTN (Enter key)     - <SHIFT> + F8
+
+          NOTE: the above keys are the function keys on a standard PC
+          keyboard.  The PC numeric keypad has not been mapped to these
+          keys.
+          Also defined:
+
+            Direction (Arrow) Keys  - move cursor
+            Delete                  - sends DEL (127 decimal)
+            End                     - erase to end of line
+            Home                    - homes cursor
+            Ctrl-Home               - clears screen, and homes cursor
+
+
+
+
+
+
+          3270 Emulation - included in registered version only
+
+            This emulation is most commonly used when connecting to IBM
+          mainframe hosts.  This emulation should be used instead of VT-100
+          emulation when connecting through the 7171 protocol converter.
+          This emulation works best with 101 key PC keyboards (to get the
+          PF11, PF12, PF23, and PF24 keys).  The mapping to the PC keyboard
+          follows.
+
+          PC Keypad         Alternate            3270 emulation
+
+          <Shift> + F1                           PF1
+             ...                                 ...
+             ...                                 ...
+          <Shift> + F10                          PF10
+          <Shift> + F11    <Esc> + -             PF11
+          <Shift> + F12    <Esc> + =             PF12
+
+          <Alt> + F1                             PF13
+             ...                                 ...
+             ...                                 ...
+          <Alt> + F10                            PF22
+          <Alt> + F11      <Esc> + _             PF23
+          <Alt> + F12      <Esc> + +             PF24
+
+          <Ctrl> + F1                            PA1
+             ...                                 ...
+             ...                                 ...
+          <Ctrl> + F4                            PA4
+
+          Arrow Keys                         Arrow Keys
+          Insert                             Toggle Insert
+          <Shift> + <Tab>                    Back Tab
+          <Ctrl> + <Left Arrow>              BackSpace
+          Home                               Home
+          Delete                             DEL
+          <Ctrl> + Home                      CLEAR
+          End                                Erase to End of field
+          <Ctrl> + End                       Line Feed
+
+
+
+
+
+
+          Appendix D - Troubleshooting
+          This section should answer common problems that you might have
+          when using MyComm.
+
+          Problem:
+
+            - Modem doesn't respond.
+
+          Possible Causes:
+
+            -  Is the COM port the right one?  i.e COM 1, 2, 3, 4, 5, 6, 7,
+               or 8.
+
+            -  Is the modem installed correctly?
+            -  Is the modem really Hayes (Tm) compatible?
+
+            -  If this is an external modem, are the cables hooked up?
+               Is it plugged in?
+
+            -  MyComm uses default address and interrupt vectors for    COM
+               Ports of:
+
+               COM Port   Address  IRQ Line
+                  1        3F8        4
+                  2        2F8        3
+                  3        3E8        4
+                  4        2F8        3
+                  5        3E8        2
+                  6        2F8        2
+                  7        3E8        5
+                  8        2F8        5
+
+               If you have set these to something different, MyComm
+          probably won't like it.  Reset the interrupt vectors to their
+          standard settings.  If you don't know what this means, you
+          probably didn't fool with it in the first place, so don't mess
+          with it now.
+
+            MyComm allows user configuration of addresses or interrupt
+          vectors on the COM ports.  See the section "COM Port Addresses"
+          for more information.
+
+
+
+
+
+
+          Problem:
+
+            - Modem won't hang up the phone line.
+
+          Possible Causes:
+
+            -  Some modems have a DIP switch setting that keeps Carrier
+               Detect always on.  MyComm uses the Carrier Detect signal
+               (CD) to see if it's on-line, and to see when the modem has
+               released the phone line.  You should set your modem to let
+               software, in this case MyComm, to handle the Carrier Detect
+               signal.
+
+            -  Try adding the Hayes command &C1 to your initialization
+               string.  This tells the modem to raise Carrier Detect only
+               when connected.
+
+          Problem:
+
+            - Modem dials, but doesn't know when the connection is made.
+
+          Probable Causes:
+
+            -  Make certain that the modem is sending text responses rather
+               than numeric.  Add "Q0" and "V1" to your modem
+               initialization string.
+
+            -  Go into the "Modem Setup" screen and check the "Connect
+               Strings" setting.  Make sure that they look like the ones
+               your modem usually generates.
+
+          Problem:
+
+            -  The result codes from the modem are numbers instead of
+               text.
+
+          Possible Causes:
+
+            -  Try adding Q0 and V1 to the modem initialization string.
+               MyComm MUST see the result codes, and they have to be the
+               English Text.  Also try adding X4 to the initialization
+               string.
+
+          Problem:
+
+            -  When using a multitasker such as Windows (Tm), DoubleDOS
+               (Tm), etc, the MyComm displays bleed through to other
+               applications.
+
+          Possible Causes:
+
+            -  Set the option in the Miscellaneous Options Screen named
+               "Direct Screen Writes" to "No".
+
+
+
+
+
+
+          Problem:
+
+            -  When I call some services, the characters look weird, or
+               just garbage.
+
+          Possible Causes:
+
+            -  Make sure that the Baud Rate, Data Bits, etc. are set
+               correctly. Most public BBS's use 8-N-1, but some may use 7-
+               E-1 (often true with Unix (Tm) based systems and
+               mainframes).
+
+          Problem:
+
+            -  File transfers seem to always time out or abort.
+
+          Possible Causes:
+
+            -  MyComm will abort a transfer if there are too many errors in
+               the transfer due to line noise, or other unpredictable
+               circumstances.
+
+            -  Are you and the other guy are using the same file transfer
+               protocol?
+
+
+
+
+
+
+          Appendix E - MyComm Script Language
+
+          1.0  Script Language Introduction
+
+              This Appendix describes the format and syntax of the script
+          language used by MyComm.  The MyComm script language is a series
+          of commands in a text file that is read by MyComm to perform
+          certain functions.  For example, a script function could send
+          your name and password automatically when you log onto a system,
+          then perform steps to navigate through the host system menus to
+          gather your mail for you and then log off.
+
+            The script language used in MyComm consists of 22 commands that
+          are used to build scripts.  The script language is very simple,
+          yet very powerful.  It is designed in such a way that ordinary
+          people rather than programmers or technicians will find it easy
+          to use and understand.  MyComm's script language should be no
+          more difficult to use than writing DOS batch files.
+
+
+          1.2  Creating a Script
+
+            Scripts are created using a line editor, text editor, or word
+          processing software that can save files as plain unformatted
+          text.  It is similar to creating DOS "batch" files.
+
+          To Create a Script
+
+          Step 1:   Log onto the BBS or system that you want to create a
+                    script for.  As you log on write down the sequence of
+                    questions and responses that you receive and send.  For
+                    example if the host system has a prompt that says
+                    "Enter your Name:" and you type in your name at that
+                    point, write down the question asked by the host system
+                    and your response.  Optionally you may turn on the
+                    Session Capture (ALT + "S") to save your responses for
+                    later referral.
+
+
+          Step 2:   Log off the BBS or system. No sense in tying up their
+                    line.
+
+          Step 3:   Use your text editor to write the script file.  The
+                    script commands that MyComm understands are described
+                    later in this Appendix.  The script file must be saved
+                    to the same directory that the MyComm program is in
+                    (for example C:\MYCOMM) so that MyComm can find it
+                    later.
+
+          Step 4:   Test your script with the MyComm Script Checker,
+                    SCP_CHK.EXE (described later in this Appendix).  Revise
+                    the script and re-test as necessary.
+
+
+
+
+
+
+          Step 5:   Go to the Dialing Directory and edit the dialing entry
+                    for this BBS.  There is an option called "Scripts".
+                    Add the name of your script file here.
+
+          Step 6:   Call the BBS and test your script.  Sometimes it may
+                    take more than one try to get it all right.  Don't
+                    worry, it happens to us all.
+
+          2.0  Script Language
+
+            The MyComm script language consists of 22 commands which will
+          be described shortly.  The script files that you create must have
+          the file name extension .SCP, and must be saved in the same
+          directory that MyComm is in.  For example if you created a script
+          for MyBbs, the script file would be named MYBBS.SCP.
+
+            This manual will use the following conventions to describe the
+          functions and the parameters that they take:
+
+               FUNCNAME()     Function name is all CAPS. Please note that
+                              no function name is over eight characters
+                              long. All functions have the parameters
+                              enclosed with parenthesis.  The parameters
+                              are separated with commas.
+
+               <int>          Integer parameter.
+
+               <"string">     String parameter.  Please note that all
+                              incoming and outgoing strings may be a
+                              maximum of 60 characters in length.  Strings
+                              are case sensitive, "PassWord" and "password"
+                              are different strings!  Also note that the
+                              strings are enclosed in quotes.  Since commas
+                              are used as parameter delimiters, strings
+                              must not contain embedded commas!
+
+               <op1|op2|...>  Operator parameter.  Some functions use an
+                              operator.
+
+               <"label">      Label name.
+
+               <Sn>           Parameter may be one of the string flags S0
+                              through S9.
+
+               <In>           Parameter may be one of the integer flags I0
+                              through I9.
+
+               (optional)     Indicates the next parameter is optional
+
+               <"string"|Sn>  Parameter may either be a string constant or
+                              one of the string flags.
+
+
+
+
+
+
+               :label         Label within the script file.  All labels are
+                              preceded by a colon ':' character.  Labels
+                              may be up to eight (8) characters.
+
+               comments       Comments are preceded by a semi-colon ';'.
+                              The comments are free form and may be placed
+                              anywhere.  The rest of the line after the
+                              semi-colon is ignored by the script.
+
+            The script functions are described in the following sections.
+          The format of the descriptions is the function name, the
+          parameter it takes, and a description. For example:
+
+               WAITFOR(int waitsecs, "string"|Sn, (optional) "label"|Sn)
+
+          indicates that the WAITFOR function takes an integer parameter, a
+          string or "S" flag parameter, and an optional string or "S" flag
+          parameter.
+          2.1  Special Script Characters
+
+            There are several special characters that MyComm will interpret
+          for you when they are put into strings that you are sending to
+          the host system:
+
+          ^M ("caret" sign and capital "M")       This character sends a
+                                                  "carriage return", as
+                                                  though you had pressed
+                                                  <Enter> on the keyboard.
+
+          ^[ ("caret" sign and left bracket "[")  This character sends
+                                                  <Esc> as though you had
+                                                  pressed <Esc> on the
+                                                  keyboard.
+
+          ~ (tilde) -                             This character causes a
+                                                  100 millisecond delay.
+          2.2  Script Functions
+
+            The next section describes the various script functions that
+          are available.
+
+
+          2.2.1  Labels
+
+            Labels are used to produce logical execution branches within
+          the script file.  Labels are used with the GOTO(<label>) function
+          as well as several other functions which will branch when a
+          condition is met.
+
+
+
+
+
+
+          2.2.2  WAITFOR()
+
+          format: WAITFOR(int waitsecs, "string"|Sn, (optional) "label"|Sn)
+
+          WAITFOR() will wait up to <int> seconds for <string> and goto
+          <label> if the <string> is received.  If the <string> is not
+          received the next line in the script is executed.  Note that
+          <label> is optional in which case the next line in the script
+          would be executed regardless.
+
+          For example if you wanted to wait 30 seconds for the string
+          "PassWord" then jump to the label :GotPass
+
+               WAITFOR(30, "PassWord", "GotPass")
+
+          would do it.
+
+
+          2.2.3  XMIT()
+
+          format: XMIT("string"|Sn)
+
+          Transmit a "string".  For example:
+
+               XMIT("password")
+
+          would send the string "password".
+
+
+          2.2.4  GOTO()
+
+          format: GOTO("label"|Sn)
+
+          Jump to :label.  For example, if you have the label ":Lab001" in
+          your script, GOTO("Lab001") would jump to that label.  Script
+          execution resumes at the line after the label.
+
+
+          2.2.5  SETFLAG()
+
+          format: SETFLAG(In, int value)
+
+          Set integer flag to a value.  The flags are referenced as flag 0
+          through 9.  The flags can take on values between -999 and 9999.
+          This function has the following format:
+
+          For example to set flag 1 to 42:
+
+               SETFLAG(I1, 42)
+
+
+
+
+
+
+          2.2.6  INCFLAG()
+
+          format: INCFLAG(In)
+
+            The flags that were set (see SETFLAG() above) may be
+          incremented by 1.  To increment flag 1:
+
+               INCFLAG(I1)
+
+
+          2.2.7  DECFLAG()
+
+          format: DECFLAG(In)
+
+            The flags that were set (see SETFLAG() above) may be
+          decremented by 1.  To decrement flag 1:
+
+               DECFLAG(I1)
+
+
+          2.2.8  IFFLAG()
+
+          format: IFFLAG(In, <EQ|GT|LT|GE|LE|NE>, int value, "label"|Sn)
+
+            The integer flags may be tested for logical conditions.  If the
+          condition is met script execution continues at the statement
+          following the label.  The test condition operators are:
+
+               EQ - equal
+               GT - greater than
+               LT - less than
+               GE - greater than or equal
+               LE - less than or equal
+               NE - not equal
+
+          If you wanted to test to see if flag 1 was EQual to 42, then jump
+          to label :Lab001 you would enter:
+
+               IFFLAG(I1, EQ, 42, "Lab001")
+
+          NOTE: Quote characters are not used around the operators.
+
+
+
+
+
+
+          2.2.9  IFSCAN()
+
+          format: IFSCAN(Sn, "string"|Sn, "label"|Sn)
+
+            You may set up to ten scan strings to continuously scan for.
+          When the scan condition is met script execution continues at the
+          statement following the label.  For example if you wanted to scan
+          for the string "John Doe" and then jump to the label :Lab001 when
+          it was found:
+
+               IFSCAN(S1, "John Doe", "Lab001")
+
+          IFSCAN() recognizes S0 through S9 as valid flag names.  The
+          IFSCAN() function can be reset to scan for a new string by re-
+          using the string variable. For example:
+
+               IFSCAN(S1, "Bob Public", "Lab001")
+
+
+          2.2.10 SENDNAME()
+
+          format: SENDNAME()
+
+            The SENDNAME() function will send the name that you have
+          defined in your dialing directory entry for the BBS that the
+          script is "Joined" to.  SENDNAME() take no parameters.  If the
+          name entry in the dialing directory is blank nothing is sent.
+
+
+          2.2.11 SENDPASS()
+
+          format: SENDPASS()
+            The SENDPASS() function will send the password that you have
+          defined in the dialing directory entry for the BBS that the
+          script is "Joined" to.  SENDPASS() take no parameters.  If the
+          password entry in the dialing directory is blank nothing is sent.
+
+
+          2.2.12 SENDFILE()
+
+          format: SENDFILE(<op> A|S|X|K|Y|G|Z, "filename"|Sn)
+
+            The SENDFILE() function is used to upload a file to the host
+          system.  You will have to take care of any preparatory steps
+          within the script, such as telling the host that you are sending
+          a file.
+
+          The parameters are a one letter designator for the protocol, and
+          a "string" or string flag (S0..S9) for the filename.  The file
+          that you are sending should reside in the "Upload Directory" that
+          you have defined in MyComm.
+
+            The valid operators for <op> are:
+
+
+
+
+
+
+               A - ASCII
+               S - SEAlink
+               X - Xmodem
+               K - Xmodem-1K
+               Y - Ymodem Batch
+               G - Ymodem-G
+               Z - Zmodem
+
+          For example if you wanted to send the file "MYCOMM.ARC" using
+          Zmodem:
+
+               SENDFILE(Z, "MyComm.ARC")
+
+
+          2.2.13 RECVFILE()
+
+          format: RECVFILE(<op> A|S|X|K|Y|G|Z, optional "filename"|Sn)
+
+            RECVFILE() allows you to receive files from the host system.
+          You will have to take care of any preparatory steps within the
+          script, such as telling the host that you want to receive a file.
+
+          See SENDFILE() (above) for the list of valid operators.
+
+          For example if you wanted to download the file "STUFF.ARC" using
+          Xmodem:
+
+               RECVFILE(X, STUFF.ARC)
+
+          Please note that SEAlink, Ymodem, Ymodem-G, and Zmodem do not
+          require that a filename be specified.  These protocols send the
+          filename in a special header.  The ASCII, Xmodem, and Xmodem-1K
+          protocols always require that a filename is specified.
+
+            NOTE: if you have the Zmodem "Auto Download" feature turned on
+          there may be conflicts between the script Zmodem and the MyComm
+          Zmodem.  If you have the Zmodem "Auto Download" feature turned on
+          in MyComm the Zmodem file transfer will start automatically, and
+          you will not need to use this function during Zmodem downloads.
+
+
+          2.2.14 SNDBREAK()
+
+          format: SNDBREAK(optional <int ms>)
+
+            SNDBREAK() sends a "Break" signal for 1500 milliseconds.  It
+          will also take an optional parameter for the number of
+          milliseconds that the "Break" signal will be sent.
+
+
+
+
+
+
+          2.2.15 ALARM()
+
+          format: ALARM(optional <int ms>)
+
+            ALARM() will make a noise for <int> milliseconds.  For example
+          ALARM(1000) would sound a beep for one second.  The default alarm
+          duration is 500 milliseconds (1/2 second).
+
+
+          2.2.16 PAUSE()
+
+          format: PAUSE(int seconds)
+
+            PAUSE() will cause a delay for "seconds" seconds.  For example
+          PAUSE(5) would pause the script for 5 seconds.
+
+
+          2.2.17 HANGUP()
+
+          format: HANGUP()
+
+            The HANGUP() function causes the modem to disconnect.  HANGUP()
+          uses the information from the MyComm configuration file to send
+          the correct hang up string.
+
+
+          2.2.18 IGNORECD()
+          IGNORECD()
+
+          format: IGNORECD("Yes"|"No"|Sn)
+
+            This function "Ignore Carrier Detect" tells the script
+          processor to ignore the state of the "Carrier Detect" modem
+          signal.  By default if the carrier signal is lost the script
+          exits.  In some cases, such as while waiting for an incoming
+          call, it is useful for the script to continue execution even when
+          there is no carrier signal.
+
+            This function takes one parameter: a string of "Yes" or "No",
+          or one the string variables (S0..S9).  A value of "Yes" turns off
+          carrier detect monitoring within the script, "No" turns
+          monitoring back on.
+
+
+
+
+
+
+          2.2.19 SETSTR()
+          SETSTR()
+
+          format: SETSTR(Sn, "string"|Sn)
+
+          SETSTR() sets one of the string variables S0 through S9 to a
+          string constant or another string variable.  For example:
+
+               SETSTR(S2, "This String")
+
+          would set string variable S2 to "This String".
+
+            Please note that the SETSTR() function resets the "goto" label
+          of the string variable if that same string variable was
+          previously assigned with the IFSCAN() function.
+
+          2.2.20 GOSUB()
+          GOSUB()
+
+          format: GOSUB("label"|Sn)
+
+            The GOSUB() function is used to branch execution in the script.
+          It is similar to the GOTO() function except that later in the
+          script a RETURN() function may be used which will transfer script
+          execution to the statement following the last GOSUB().  For
+          example:
+
+               GOSUB("gosub1")     ; go to label "gosub1"
+               <statement1>        ; execution resumes here after RETURN()
+               <statement2>
+                    ...
+               <statement-n>
+
+               :gosub1             ; label for GOSUB() to go to
+               <statement1>
+               <statement2>
+                    ...
+               <statement-n>
+               RETURN()            ; return to statement after GOSUB()
+
+
+          2.2.21 RETURN()
+          RETURN()
+
+          format: RETURN()
+
+            The RETURN() function returns script execution to the statement
+          following the most recent GOSUB().  See the description of the
+          GOSUB() function above for details.
+
+
+
+
+
+
+          2.2.22 EXIT()
+          EXIT()
+
+          format: EXIT()
+
+            The EXIT() function exits the script and return control back to
+          MyComm.
+
+          2.2.23 QUIT()
+          QUIT()
+
+          format: QUIT()
+
+            The QUIT() function exits from the script and MyComm
+          completely.  Please note: QUIT() does not hang up the modem. If
+          you would like the modem to disconnect the HANGUP() function
+          should be used before QUIT().
+
+
+
+
+
+
+          3.0  Script Syntax Checker
+
+            The program SCP_CHK.EXE is used for checking the syntax of
+          script files.  To use the program to check a script file type:
+
+               SCP_CHK SCRIPT.SCP
+
+          Replace SCRIPT.SCP with your file name.  Also the .SCP extension
+          is assumed and you may leave it off if you like.  The output from
+          SCP_CHK will be display on the screen, or you may redirect the
+          output to a file.  For example
+
+               SCP_CHK MYSCRIPT > MYSCRIPT.OUT
+
+          would create the file MYSCRIPT.OUT with all the error
+          information.  This might prove useful if you have a long error
+          list.
+
+            The output from SCP_CHK will look something like this:
+
+               Line 3  ALARM  - Error  : too few arguments
+
+            This shows you the line number where the error occurred, the
+          function that caused the error, and the reason why it was an
+          error.  The error messages are self explanatory.  Simply re-edit
+          the script file and correct any errors.  Run SCP_CHK again to
+          make sure that you caught all the errors.
+
+
+
+
+
+
+          4.0  Script Sample
+
+            This is a sample of a working script file that picks up mail at
+          a local BBS.
+
+          waitfor(180, "=no change?")              ;get past opening screen
+          xmit("^M")
+          waitfor(30, "Do you want graphics")
+          xmit("Y^M")
+
+          waitfor(30, "your first name?")          ;login
+          sendname()
+          waitfor(30, "Is this correct?")
+          xmit("Y^M)
+          waitfor(30, "Password")
+          sendpass()
+
+          waitfor(180, "Scan Message Base")        ;get past local msgs
+          xmit("N^M")
+
+          waitfor(15,"Press (Enter) to continue?", jump1)
+          goto("nojump1")
+          :jump1
+          xmit("^M")
+          :nojump1
+          ;at main menu now...
+          waitfor(60, "Command?")
+          xmit("open^M")                           ;get to door section
+
+          waitfor(30, "Enter the DOOR # to Open")  ;open mail door
+          xmit("3^M)
+          waitfor(60, "mail Command?")
+          xmit("D^M")                              ;start mail gathering
+          waitfor(600, "receive these messages")
+          xmit("G^M")                              ;start mail d/l
+          ;zmodem will auto start here
+                                                   ;download complete
+          waitfor(60, "Thank you for visiting")    ;now logoff
+          hangup()
+          exit()                                   ;exit the script
+
+
+
+
+
+
+
+          Appendix F - MyComm Order Form
+
+                           MyComm Version 2.15  Order Form
+                      Copyright (c) 1992 - 1994 - Ken Dorshimer
+                                 All Rights Reserved
+
+                                      Mail to:
+                                    Ken Dorshimer
+                                    P.O. Box 5143
+                                 Belmont, Ca. 94002
+
+
+          Your Name: _________________________________________________
+
+          Address:   _________________________________________________
+
+                     _________________________________________________
+
+          City:      _________________________________________________
+
+
+          State:    _________      Zip Code: _________________________
+
+          Disk Format: 5.25" floppy ____   OR  3.5" semi-floppy ____
+
+
+          Number of Copies of MyComm  _______  X $25.00 =   __________
+
+          Number of Copies of MyComm  _______  X $2 S&H = + __________
+
+                                                Total:      __________
+
+
+          Please make check or Money Order payable to Ken Dorshimer, and
+          send to the address above (mine not yours).
+
+          Funds should be in U.S dollars, and drawn on a U.S. bank.
+
+            (Please send check or money order, do not send cash.  People
+          who want to order MyComm from outside the U.S. should obtain a
+          money order in U.S. dollars from a local bank).
+
+            Please note: I am not able to process credit card orders at
+          this time (several folks have asked me about this).
+
+
+
+
+
+
+          Appendix G - MyComm Bug Report Form
+
+                        MyComm Version 2.15  Bug Report Form
+
+            This form may be used to describe any problems, or bugs that you
+          may have found with MyComm.  You may also use it to describe any
+          enhancements you would like to see added to MyComm, or
+          suggestions for future versions.
+
+            Bug reports and suggestions are always welcome.  Of course all
+          bug reports and suggestions get much closer scrutiny when
+          accompanied by a registration check <grin>.
+
+          ----------------------------------------------------------
+
+          Machine Type __________________________     DOS Version ____
+
+          Machine BIOS Type _____________________     Monitor ________
+
+          Modem Brand __________________________      Speed     ______
+
+          Describe problem, bug, or suggestion:
+
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+          ____________________________________________________________
+
+
+                                      Mail To:
+                                    Ken Dorshimer
+                                    P.O. Box 5143
+                                 Belmont, Ca. 94002
+
+
+
+
+
+
+          Appendix H - Planned Modifications and Upgrades
+
+            At this time I am planning (contingent on the number of
+          registrations of MyComm) to make several modifications and
+          upgrades to MyComm.  Some of these are:
+
+
+                 þ  MS-Windows (Tm) and/or Deskview (Tm)
+                    compatibility
+
+                 þ  Compuserve-B file transfer protocol
+
+                 þ  KERMIT file transfer protocol
+
+                 þ  VT-200 Terminal Emulation
+
+                 þ  Script Language enhancements
+
+                 þ Command line switches to go directly to dialing
+                   directory, to start scripts, to start scripts
+                   at a specifed time of day automatically.
+
+                 þ  Simple Host/BBS mode
+
+            Of course upgrades are dependent on you, the end user.  MyComm
+          is user supported software.  If I see that people are interested
+          in the program, and interested enough to register it, I will feel
+          more inclined to continue to perform upgrades to MyComm.
+
+            The creation and development of a program like MyComm is by no
+          means trivial.  Continued user support in the form of
+          registrations gives me, your humble author, the incentive to keep
+          upgrading and improving MyComm.
+
+
+
+
+
+
+          Appendix I - MyComm Revision History
+
+          Note: Past versions of this section had every nuance of every
+          enhancement or bug fix listed.  I have decided to only list the
+          enhancements that pertain to the current major release for
+          brevity.
+
+          September 19, 1991  - MyComm Version 1.0 design began
+          February 16, 1992   - MyComm Version 1.0 completed
+          March 18, 1992      - MyComm Version 1.10 completed
+          April 11, 1992      - MyComm Version 1.20 completed
+          May 9, 1992         - MyComm Version 1.22 completed
+          April 8, 1993       - MyComm Version 2.0 (Major Revision)
+          June 19, 1993       - MyComm Version 2.01 (Bug fix)
+          July 7, 1993        - MyComm Version 2.02 (Bug fix)
+          August 8, 1993      - MyComm Version 2.1 (Enhancement)
+          November 11, 1993   - MyComm Version 2.11 (Maintenance release)
+          Nov. 93 - Jan 94    - MyComm Versions 2.12 - 2.14
+                                were "registered" releases only
+          January 3, 1994     - MyComm Version 2.15 (Enhancement)
+                                  - Enhanced script language
+                                  - Fixed minor bug in Ymodem
+
+
+
+
+
+
+          Appendix J - Control Characters
+
+            MyComm supports control characters that are standard with data
+          communications.  Control characters are preceded by the caret
+          character '^'.  The caret denotes that the next character will be
+          a control character.  For example ^M is the symbol for Carriage
+          Return or <Enter> which could be used to terminate your "Modem
+          Initialization String".  The '^' stands for Ctrl, so sending one
+          of these sequences would be similar to pressing the Ctrl key and
+          the character 'M' simultaneously.  The control characters are
+          especially useful when using the script language functions. For
+          example ^[  represents the ESCape character which is often used
+          to start a session on a BBS.
+
+           Please note that these control sequences are only interpreted by
+          MyComm when you are sending a string such as your "Modem
+          Initialization String", "Hangup String", etc. or with the XMIT()
+          function in the script language.  A listing of commonly used
+          control characters follows.
+
+          Sequence          Meaning
+
+          ^F                ACKnowledge
+          ^G                BELL
+          ^H                BackSpace
+          ^I                TAB
+          ^J                Line Feed
+          ^L                Form Feed
+          ^M                Carriage Return (Enter key)
+          ^Q                XON
+          ^S                XOFF
+          ^U                NAK
+          ^Z                SUB (also end of file)
+          ^[                ESCape
+
+
+
+
+
+
+
+          1K-Xmodem File Transfers  53
+          Add LF after incoming CR  20
+          Add Phone List Item  15
+          ALARM()  72
+          Alt A  13
+          Alt B  14
+          Alt C  14
+          Alt D  14
+          Alt E  24
+          Alt H  24
+          Alt I  25
+          Alt K  26
+          Alt L  25, 26
+          Alt M  27
+          Alt O  27
+          Alt P  28
+          Alt Q  28
+          Alt R  28
+          Alt S  29
+          Alt T  29
+          Alt U  30
+          Alt W  48
+          Alt X  48
+          ANSI Emulation  59
+          ASCII File Transfers  52
+          ASCII Transfers Setup  39
+          ASCII Transfers Setup Screen  39
+          Baud Rate  17
+          BS Key Sends BS or DELete  19
+          Bug Report Form  78
+          Call Numbers (Dial)  21
+          Caret Sign  81
+          Change Port Parameters - Alt P  28
+          Change Port Parameters Screen  28
+          Character Pace Time  40
+          Chat Mode - Alt A  13
+          Clear last date called  20
+          Clear the Screen - Alt C  14
+          Clever quip for TagLine  46
+          COM Port  31
+          COM Port Addresses  47
+          Command Summary  57
+          Connect Strings  36
+          Control Characters  81
+          CR Translation Upload and Download  40
+          Data Bits  17
+          Data Parity  17
+          Date Format Style  45
+          DEC VT-100 Emulation  59
+          DEC VT-52 Emulation  59
+          DECFLAG()  69
+          Default Protocol  17
+          Definitions, Acronyms  5
+
+
+
+
+
+
+          Delete an Item  20
+          Dial Prefix  18
+          Dial Screen  15
+          Dialing Functions - Alt D  14
+          Dialing Prefix #1  35
+          Dialing Prefix #2  35
+          Dialing Prefix #3  35
+          Dialing Prefixes  35
+          Dialing Status Window  21
+          Dialing Wait Time  33
+          Disclaimer and Warranty  4
+          Download Directory Path  37
+          Download Files - PgDn  52
+          Download Protocol Menu  50
+          Download/Upload Status Window  51
+          Edit Phone List Item Screen  16
+          Editor Path\Filename  37
+          Exit MyComm - Alt X  48
+          EXIT()  74
+          Expand Blank Lines to Spaces  40
+          External Programs Path\Filename  38
+          External Protocol File Transfers  55
+          External Protocols Setup  43
+          External Protocols Setup Screen  43
+          F1 key  13, 48
+          F2 key  48
+          F3 key  48
+          F4 key  48
+          File Transfer Hints  52
+          Filename Guessing  47
+          Find Phone List Items  23
+          General System Requirements  6
+          GOSUB()  73
+          GOTO()  68
+          Guess Filename  47
+          Guess Up/Download Filename  47
+          Hang Up Modem - Alt H  24
+          HANGUP()  72
+          Help Menu - F1  13
+          Help Screen  13
+          Help Screen - F1  48
+          High speed modem  32
+          IFFLAG()  69
+          IFSCAN()  70
+          Ignore Carrier Detect  72
+          IGNORECD()  72
+          INCFLAG()  69
+          Installation  8, 9
+          Introduction to MyComm  1
+          Join Script - Alt J  25
+          LF Translation Upload and Download  40
+          Line Editing Functions  58
+          Line Pace Time  40
+          Load Phone List Screen  23
+
+
+
+
+
+
+          Local Echo  19
+          Local Echo on by Default  34
+          Local Echo On During ASCII Uploads  40
+          Local Echo On/Off - Alt E  24
+          Logon Name  18
+          Make Noise After File Transfers  45
+          Make Noise When Calls Connect  45
+          Manual Dial - Alt M  27
+          Manual Dial Screen  22
+          Manual Dial Window  22
+          Mark Phone List Items  23
+          Miscellaneous Options Setup  44
+          Miscellaneous Options Setup Screen  44
+          Modem Answer String  33
+          Modem Attention String  32
+          Modem Cancel Dial String  33
+          Modem Dial Suffix String  33
+          Modem Hang Up String  32
+          Modem Initialization String  32
+          Modem Setup Screen  30, 31
+          Move Phone List Item  24
+          MyComm as a Host  55
+          MyComm Bug Report Form  78
+          MyComm Command Summary  57
+          MyComm Files  6
+          MyComm Installation  8
+          MyComm Line Editing Functions  58
+          MyComm Order Form  77
+          MyComm Registration and Licensing  2
+          MyComm Revision History  80
+          MyComm Screens and Menus  12
+          Name  16
+          Number  16
+          Order Form  77
+          Outside to DOS - Alt O  27
+          Pacing Char  41
+          Page Down  52
+          Page Up  52
+          Password  18
+          Password for sign on  46
+          Paths Setup  36
+          Paths Setup Screen  36
+          Pause Between Calls  34
+          PAUSE()  72
+          PgDn  52
+          PgUp  52
+          Phone File Path\File  37
+          Phone Item Info Screen  22
+          Planned Modifications and Upgrades  79
+          Present Line Status - Alt L  26
+          Present Line Status Window  26
+          Print Phone List  24
+          Protocols Setup  38
+          Protocols Setup Menu  38
+
+
+
+
+
+
+          Quick Re-Dial - Alt Q  28
+          QUIT()  74
+          Received BS (BackSpace) Destructive  19
+          RECVFILE()  71
+          Remote Abort Char  39
+          Restore to Defaults  47
+          RETURN()  73
+          Revision History  80
+          Run External Program - Alt R  28
+          Save Changes  20
+          Save Setup  47
+          SCP Files  66
+          SCP_CHK.EXE  75
+          Screen Background Color  44
+          Screen Capture Path\File  37
+          Screen Text Color  45
+          Screens and Menus  12
+          Script - Dialing Entry  20
+          Script, creating  65
+          Script Labels  67
+          Script Language  65, 66
+          Script Sample  76
+          Script Syntax Checker  75
+          Scripts, Special Characters  67
+          Scroll Back - Alt K  26
+          SEAlink Derived File Transfers  53
+          Send Break - Alt B  14
+          Send Init. String Menu  25
+          Send Modem Initialization Strings - Alt I  25
+          Send Name - F2  48
+          Send Password - F3  48
+          Send Screen to File - Alt W  48
+          Send Tagline  - F4  48
+          SENDFILE()  70
+          SENDNAME()  70
+          SENDPASS()  70
+          Session Capture On/Off/Pause - Alt S  29
+          Session Capture Path\File  37
+          SETFLAG()  68
+          SETSTR()  73
+          SNDBREAK()  71
+          Sort Phone List  23
+          Starting a File Transfer  50
+          Stop Bits  17
+          Strip Hi Bits  19
+          Strip High Bits  39
+          System Requirements  8
+          Terminal Emulation - Alt T  29
+          Terminal Screen  12
+          Terminal Type  18
+          Time Format - 12 or 24 Hour  45
+          Transferring Files  49
+          Troubleshooting  62
+          Update Configuration - Alt U  30
+
+
+
+
+
+
+          Update Configuration Menu  30
+          Upload Directory Path  37
+          UpLoad Files - PgUp  52
+          Use CTS/RTS Flow Control  35
+          Use Direct Video  45
+          Use DSR/DTR Flow Control  35
+          Use DTR to Hang Up Modem  34
+          Use XON/XOFF Flow Control  34
+          WAITFOR()  68
+          XMIT()  68
+          Xmodem File Transfers  53
+          Xmodem-1K  53
+          Ymodem  53
+          Ymodem Batch - 1K  54
+          Ymodem Batch File Transfers  54
+          Ymodem-G Batch  54
+          Your Name for sign on  46
+          Zmodem 32 Bit CRC  41
+          Zmodem Auto Download Feature  41
+          Zmodem File Transfers  54
+          Zmodem Receive Crash Recovery  42
+          Zmodem Send Crash Recovery  41
+          Zmodem Transfers Setup  41

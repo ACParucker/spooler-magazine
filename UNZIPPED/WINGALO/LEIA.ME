@@ -1,0 +1,20 @@
+Como construir o programa
+
+Para construir o programa, quem tem o compilador Borland C tem apenas que
+editar no ficheiro makefile as duas vari veis que tˆm a path para os
+ficheiros include (.H) do compilador e para as bibliotecas (.LIB) 
+do compilador, adaptando-as ao seu caso, podendo entao correr o MAKE.
+Quem tem o compilador Microsoft C, tem de, al‚m de editar as vari veis com as
+paths, trocar as vari veis assinaladas como espec¡ficas do compilador BorlandC
+para as vari veis assinaladas como espec¡ficas do compilador Microsoft C (basta
+colocar sinais # no in¡cio de cada linha das vari veis do Borland C e retirar os
+sinais # do inicio de cada linha das vari veis do Microsoft C), correndo ent„o
+o NMAKE.
+
+NOTA: Para se poder construir o programa tem de se ter pelo menos o compilador 
+Microsoft C/C++ 7.0 ou ent„o o Borland C++ 3.0 ou vers„o superior.
+
+NOTA2: A compila‡„o do programa foi testada com o BorlandC 3.1 .Apesar de
+se oferecer suporte para o uso do Microsoft C/C++, n„o h  garantias quanto ao
+c¢digo ser compil vel com esse compilador.
+

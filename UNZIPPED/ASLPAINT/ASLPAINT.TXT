@@ -1,0 +1,183 @@
+
+                              ASL PAINTER!
+
+------------------------------------------------------------------------
+    Contents:
+
+   I. Features
+  II. Requirements
+ III. Specifications
+  IV. General Notes
+   V. Ordering / Tech Support
+  VI. Distributor Notes  
+
+------------------------------------------------------------------------
+
+I. FEATURES 
+
+ASL Painter! is a full 256 color paint program with features and tools
+that the Paintbrush Applet that comes with Windows never even thought
+of. This small and fast program replaces Paintbrush for a mere $29.95
+and includes special effects and filtering that you'll only find in 
+programs costing up to hundreds of dollars more.
+
+ASL Painter! is *NOT* to be used with systems using only a 16 color 
+video driver. 
+
+
+ASL Painter! Tools:
+
+1. A full suite of Geometric Tools, including Perfect Circles, Ellipses,
+   Rectangles, Irregular Shape, three styles of Triangles, Line, Angled
+   Line, and a 3D Rectangle.
+
+2. Standard Drawing Tools including Freehand Pencils, Paint Fills, Spray 
+   Paint, and UNDO.
+
+3. Fonts with special Shadowing effects.
+
+4. Specialty Drawing Tools including a Radial Line tool, Charcoal Pencil,
+   Quill Pen, Calligraphy Pen, "Dry Paint", Airbrush, and Chalk.
+
+5. "Texture" laying tools including Paint Rollers, Watercolor Brushes, 
+   Pastel Crayons, Textured Watercolor, and Textured Spray Paint. 
+
+6. Special Smear and Smudge tools including Pixel Swap, Line Spread, 
+   Pixellator, and Finger Smudge.
+
+7. Area control tools including a Cutting Knife, Area Posterization,
+   Area Pixellation, and Area Negative.
+
+8. Color and Luminosity control including a color eyedropper and a 
+   Threshold (luminosity) eyedropper.
+
+
+ASL Painter! Image Editing Effects:
+
+1. Noise
+
+2. False Color
+
+3. Pixellation
+
+4. Pointillization
+
+5. Posterizing
+
+6. Color Negative
+
+7. Threshold Manipulation Suite (multiple options)
+
+8. Black and White Processing Suite (multiple options)
+
+
+Also Included: 
+
+1. ZOOM mode with 8 drawing tools: Pixel, Line, Open Box, Filled
+   Box, Open Ellipse, Filled Ellipse, Paint Fill, Dropper.
+
+2. Five default color palettes and the ability to work with ANY 256
+   color palette.
+
+
+II. REQUIREMENTS:
+
+256 color video driver (640x480 or better)
+386DX or better
+2 Megs RAM
+600k Hard Drive space.    <----- not much in this day and age!
+Windows 3.1 or better
+
+
+III. SPECIFICATIONS:
+
+Graphic Formats Read:    BMP, DIB, RLE
+Graphic Formats Written: BMP
+
+
+IV. NOTES
+
+All operating instructions are in the included on-line Help file.
+
+This version is the same as the fully registered version except that 
+the fully registered version does not include a "Test Drive" watermark
+on saved or copied images. This was the best way we could think of to
+let everyone play with all the tools and features and still maintain
+a degree of protection. In this manner you can see if this program is
+right for you and we sleep well. 
+
+Ordering ASL Painter! will get you the latest registered version.
+
+We will add tools and features in subsequent versions of the program.
+The support policy is to upgrade to the latest version for the cost 
+of materials, shipping and handling. In the USA this is generally 
+around the $5 to $8 neighbourhood. 
+
+Known Problems:
+
+Some video drivers don't like to run the Windows Stretchblt API call 
+correctly. This is used especially in the Zoom function. If you are
+experiencing any difficulties you may wish to try another video driver.
+
+Our experience has been that this is a function of the compiler AND
+the video driver. (This is our 18th project with this compiler.) 
+
+
+V. ORDERING / Tech Support
+
+Tech Support is at (209) 522 - 8666.
+
+To order by mail (check, cash, Money Order:)
+
+ASL 
+P.O. Box 581
+Ruidoso NM 88345
+
+By Credit Card:
+
+PsL (Public software Library, Houston TX)
+1-800-2424-PSL
+or
+(713) 524-6394
+or
+(713) 524-6398 FAX
+
+IMPORTANT! **************** ORDER PRODUCT # 11481 **************
+
+Overseas orders please add $4 shipping!
+
+
+In Europe or the UK:
+
+The Thompson Partnership
+Churchcroft, Bramshall
+Uttoxeter, Staffs ST145DE
+(0) 889 - 564601
+(0) 889 - 563219 FAX
+
+
+VI. DISTRIBUTOR NOTES
+
+As of July 1994 (release date) you are authorized to distribute the
+shareware version only. 
+
+ASL reserves all rights with respect to ASL Painter, including the right
+to distribution of shareware copies. 
+
+Your distribution of the shareware version of ASL Painter! for renumeration
+or not is indication that you recognise that ASL reserves all rights 
+including the right to stop all distribution.  
+
+Otherwise, we would prefer that you list ASL as the author name and that 
+is about the only requirement that we have AT THIS TIME.
+
+Here's a short description:
+
+ASL Painter! is a 256 color paint program with tools and
+features that you can't find anywhere else. Textures, Smears, 
+Art Tools and numerous Special Image Editing Effects give you 
+the ability to create eye-popping visuals with this simple
+yet powerful Windows Paintbrush replacement. Requires Windows
+3.1, 386DX, a 256 color video driver, and a stingy 600k of
+disk space. From ASL.
+

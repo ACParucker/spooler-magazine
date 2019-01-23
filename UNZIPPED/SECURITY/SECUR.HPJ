@@ -1,0 +1,28 @@
+[OPTIONS]
+errorlog = secur.err
+report=on
+warning = 3
+compress=yes
+oldkeyphrase=false
+contents=MM
+title=Secur Help
+
+[FILES]
+secur.rtf
+
+[CONFIG]
+browsebuttons()
+
+[WINDOWS]
+MAIN=,,0,,(192,192,192)
+
+[ALIAS]
+T1_E1=T1_C2
+T2_E1=T2_C2
+T3_E1=T3_C2
+
+[MAP]
+WC1 1
+WC2 2
+WC3 3
+WE1 4

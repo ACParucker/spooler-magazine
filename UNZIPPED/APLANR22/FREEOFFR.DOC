@@ -1,0 +1,47 @@
+    A Project/Event Planner 2.2          (FREEOFFR.DOC - February 21, 1994)
+    =======================================================================
+                        A Free Registration Offer
+    =======================================================================
+    Dear User:
+
+    I am looking for some "real world" examples of how this program is
+    used.  For a limited time (through June, 1994), the registration fee
+    for this program will be waived if you send instead a realistic sample
+    plan.  This sample plan must have a minimum of 35 events and must
+    reflect a real situation.
+
+    The sample plan should be created in a separate directory.  To set
+    up a separate directory, first create the new sub-directory
+    and then use the "Directories" option of the "Option" menu to set
+    the data directory to the new directory.  Blank pvcal.dat (calendars),
+    pvidx.dat (index), and pvrsc.dat (resource) files will automatically
+    be created.  You can then proceed to set up the sample plan.
+
+    When your sample is completed, copy ALL of the files in the data
+    directory to a diskette (3-1/2" or 5-1/4") and mail it to:
+        Sapphire Software, Inc.
+        6650 Hawaii Kai Drive
+        Suite 219
+        Honolulu, Hawaii
+        USA
+
+    If you have a CompuServe account, you may send the files (preferably
+    all in one compressed (ZIPed) file) to 71223,3653.
+
+    Please include a brief description of your sample.  This description
+    may be a text file on the diskette or a printed document.
+
+    If you do send a sample plan, you must agree in advance that you
+    are sending the sample plan with no restrictions or obligations
+    placed upon Sapphire Software Inc.  You must further agree that
+    the sample plan or a similar sample plan can be included in future
+    releases of this program.
+
+    With this in mind, please do not send any information that you
+    consider to be proprietary or confidential.
+
+    I am looking forward to some interesting sample plans.  Thank you and
+    Happy Planning !
+
+    Layton S. Fujii
+

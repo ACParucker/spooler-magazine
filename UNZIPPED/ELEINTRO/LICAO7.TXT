@@ -1,0 +1,55 @@
+                         Condensadores
+
+   Se tivermos, por exemplo, duas placas de 
+alúminio com uma folha de papel a separá-las, ao 
+ligarmos uma ao terminal positivo de uma pilha e 
+outra ao terminal negativo, quando desligarmos a 
+pilha, verifica-se que as placas armazenaram um 
+pouco de carga eléctrica (é mesmo muito pouco).
+   Ora, foi com base nisto que apareceram os 
+primeiros condensadores, compostos por duas 
+placas de um metal, com qualquer coisa no meio
+delas, a que se chama dieléctrico. É com base no 
+material de que é feito o dieléctrico que se dá o 
+nome aos condensadores. Por exemplo um 
+condensador cerâmico tem um dieléctrico de 
+cerâmica, um de poliester tem um de poliester, e 
+um de mica tem um dieléctrico de mica. Mas há um 
+caso diferente. Os condensadores electrolíticos, 
+têm um dieléctrico composto por químicos e, ao 
+contrário dos outros condensadores, estes têm 
+polaridade (Têm indicação de onde se liga o - e o 
++, enquanto que um cerâmico, por exemplo, pode 
+ser ligado em qualquer posição).
+   Claro que, como para todos os outros 
+componentes, há vários tipos de condensadores, 
+podendo um mesmo valor de condensador ter 
+tensões de trabalho diferentes, podendo ser 
+vertical ou horizontal, existindo também 
+condensadores variáveis que têm um 
+funcionamento parecido com os potenciómetros.
+   A unidade SI para capacidades é o Farad (F), 
+mas os valores de condensadores rondam 
+geralmente os microF, nF ou pF. Um condensador 
+de 10000 microF ligado a um led com uma 
+resistência pelo meio, demora cerca de 5 
+segundos a descarregar (pode parecer pouco, 
+mas em termos de electrónica, onde os circuitos 
+reagem em milésimos de segundo, isto já é muita
+coisa).
+   Uma das utilizações mais comuns para os 
+condensadores é a filtragem. Como foi visto na 
+lição anterior, os diodos podem rectificar a onda 
+de saída de um transformador (fazem com que a 
+corrente eléctrica tenha apenas um sentido), mas 
+a corrente eléctrica assim obtida ainda está longe 
+de ser uma c.c. No entanto, se a seguir à ponte 
+rectificadora dos diodos colocarmos um 
+condensador, quando o valor da tensão aumenta, 
+o condensador vai carregar e quando o valor da 
+tensão (Ddp) começa a diminuir, como diminui 
+mais depressa do que o condensador descarrega, 
+quando o valor da tensão começa a subir outra 
+vez o condensador ainda não descarregou 
+totalmente, o que vai "aplainar" a onda de saída, 
+tornando-a mais próxima de uma c.c. (ver figura).

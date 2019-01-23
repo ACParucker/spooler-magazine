@@ -1,0 +1,55 @@
+#include <windows.h>
+#include "wgmenudf.h"
+
+WinGalo MENU 
+BEGIN
+	POPUP "&Jogo"
+	BEGIN
+		MENUITEM "&Iniciar", IDM_INICIAR
+		MENUITEM SEPARATOR
+		MENUITEM "&Ajuda ", IDM_INDEX
+		MENUITEM "S&obre", IDM_SOBRE
+		MENUITEM SEPARATOR
+		MENUITEM "&Sair", IDM_SAIR
+	END
+
+	POPUP "&Opções"
+	BEGIN
+		MENUITEM "1 &Jogador", IDM_1JOGADOR, CHECKED
+		MENUITEM "2 J&ogadores", IDM_2JOGADORES
+		MENUITEM SEPARATOR
+		MENUITEM "&Circulos", IDM_BOLAS, CHECKED
+		MENUITEM "C&ruzes", IDM_CRUZES
+		MENUITEM SEPARATOR
+		MENUITEM "Nivel &1", IDM_NIVEL1, CHECKED
+		MENUITEM "Nivel &2", IDM_NIVEL2
+		MENUITEM "Nivel &3", IDM_NIVEL3
+	END
+
+END
+
+WinGalo ICON wingalo.ico
+
+AboutDlg DIALOG 19, 49, 150, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sobre - Wingalo"
+BEGIN
+	PUSHBUTTON "OK", IDB_OK, 60, 35, 30, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	ICON "wingalo", 102, 11, 9, 16, 16, WS_CHILD | WS_VISIBLE
+	CTEXT "WinGalo - Galo para Windows Ricardo Vinagre - 1994", -1, 40, 10, 99, 16, WS_CHILD | WS_VISIBLE | WS_GROUP
+END
+
+
+STRINGTABLE 
+BEGIN
+	ITID_WINBALL, "Vitória das Bolas"
+	ITID_WINCROSS, "Vitória das Cruzes"
+	ITID_EMPATE, "O jogo terminou empatado"
+	SSID_NOMORE, "O Programa já está activo em memória"
+END
+
+
+Mao_e_bola CURSOR "mao_bola.cur"
+Mao_e_cruz CURSOR "mao_cruz.cur"
+Proibido CURSOR "proibido.cur"
+

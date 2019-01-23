@@ -1,0 +1,6 @@
+VBJOYS.FRM
+VBJOYS.GLB
+ProjWinSize=96,511,248,215
+ProjWinShow=2
+Title="VBJOYS"
+ExeName="VBJOYS.EXE"

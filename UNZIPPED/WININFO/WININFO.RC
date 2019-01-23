@@ -1,0 +1,12 @@
+     /********************************************************************
+      *                                                                  *
+      *   Fonte: WinInfo.rc                                              *
+      *                                                                  *
+      ********************************************************************/
+
+#include "WinInfID.h"
+#include "WinInfo.mnu"
+
+WININFO ICON "wininfo.ico"
+
+#include "wininfo.dlg"

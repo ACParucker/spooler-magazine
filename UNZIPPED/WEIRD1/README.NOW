@@ -1,0 +1,47 @@
+NOTAS ADICIONAIS - WEIRD 1 - Feito por Tiago Ribeiro '94
+
+ ş Para usar a fun‡„o 'x_set' ‚ necess rio linkar o ficheiro INT2E.OBJ
+
+ ş O ficheiro WEIRD1.LIB ‚ constitu¡do por INT2E.OBJ e WEIRD1.OBJ. Este
+   £ltimo tem todas as fun‡”es apresentadas j  compiladas
+
+ ş A fun‡„o 'x_set' s¢ funciona no modelo de mem¢ria SMALL. Se for executada
+   noutro modelo n„o faz nada (nadinha mesmo !)
+
+ ş Para usar as fun‡”es gr ficas ‚ necess rio ter, no minimo, uma placa
+   VGA
+
+ ş Para criar o ficheiro DEMO.EXE, compilem o ficheiro MAIN.C, WEIRD1.C e
+   INT2E.ASM. Em seguida "linkem-nos" todos. Para vos poupar trabalho ( e
+   porque nem todos tˆm "assembladores" ), j  aqu¡ vai o INT2E compilado.
+   Para poup -los ainda mais, basta linkarem o vosso programa com o 
+   ficheiro WEIRD1.LIB para terem acesso a todas as fun‡”es. N„o se 
+   esque‡am de fazer -> #include "weird1.h", no inicio do vosso programa.
+
+
+>>>>>>>>>>>>> NOTA FINAL
+
+Esta colec‡„o de fun‡”es n„o pretende ser uma coisa extraordin ria.
+Ali s, estas fun‡”es nem nunca ser„o usadas por muitos de vocˆs !
+E ainda bem, porque uma delas ao ser testada, formatou-me o disco !
+Eh, eh, eh ... N„o acreditaram, pois n„o ?!
+Ok, e ap¢s este momento de stress, continuemos...
+Estava eu a dizer (leia-se, a escrever), que o meu objectivo ao criar,
+ou ao adaptar, estas fun‡”es foi o de apresentar coisas interessantes
+que se calhar vocˆs nem sabiam que se podiam fazer (pra dizer a verdade,
+nem eu!). J  conheciam a fun‡„o 2Eh do DOS ? Sabem verificar se o Windows
+ou o DosShell est„o activos ? (e se esta palavra, ap¢s o acordo, ainda
+leva um 'c' ?) Sabem for‡ar o computador a correr o POST ? Sabem fazer
+past‚is de bacalhau ? (ooops, wrong question !)
+Como eu n„o acredito que saibam fazer isto tudo (excepto talvez os
+past‚is), h„o-de encontrar para aqui alguma coisa interessante, n„o ‚ ?
+"‚‚‚‚‚‚ !"
+Alguma pergunta ou coment rio, telefonem (ou escrevam) para
+    Tiago Ribeiro (eu !)
+    Trav. Boa-Hora n§17 3§Fte
+    1300 Lisboa
+    Tel: 364 47 85
+(E aviso desde j  que todas as BOMBAS ser„o devolvidas ao remetente !)
+
+E pronto, est  na hora de ir vestir o meu colete de for‡as !
+I'll be back !

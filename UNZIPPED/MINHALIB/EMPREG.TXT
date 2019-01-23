@@ -1,0 +1,103 @@
+
+        Page No.     1
+        11/27/93
+        
+        Numero Nome do Empregado                                  N§Caixa Prev
+                                                                              
+                                                                              
+                                                                              
+        
+        
+            52 Alberto Guilherme Andrade Corte                    034013231   
+            36 Ana Cristina Nobrega Passos                        034272236   
+            72 Ana Isabel Goncalves Silva Faria Borges Goncalves  034272527   
+            65 Ana Isabel Nobrega Passos                          034240952   
+            29 Ana Luisa da Silva Freitas                         0           
+            73 Ana Luisa da Silva Freitas                         0           
+            28 Ana Maria da Silva Pereira                         0           
+            99 Ana Maria de F. Araujo Sol                         034169075   
+            74 Ana Rute Nobrega Passos                            034173773   
+            13 Ana Ruth                                           0           
+            75 Ana Teresa Pereira                                 034137672   
+            57 Arja Rodrigues de Sousa                            034130150   
+            76 Arlindo Silva                                      0           
+            77 Aurlia Maria S. Gomes                              0           
+            78 Bela Maria Pontes de Freitas                       034235107   
+             6 Carla Mendon‡a                                     034270971   
+            40 Carla Pilar Abreu Mendon‡a                         0           
+            39 Celia Maria Ferreira Camara                        0           
+            58 Claudia Mosser                                     034113050   
+            33 Coline Kahrel                                      0           
+            12 Cristina Manuela F. Dias                           0           
+            81 Elda Doroteia Ferreira Sousa                       034234068   
+             9 Enke Rodrigues                                     0           
+            47 Esmeralda Maria Gomes Menezes                      034220930   
+            55 Eugenia Andrade                                    034240139   
+             8 Eugenia Passos                                     0           
+            82 Eva Sardinha                                       034095431   
+            83 Ferdinanda Irene de Nobrega                        034257716   
+            84 Fernando Luis Rodrigues Ramos                      034242286   
+            85 Filomena Paulino De                                034250047   
+            86 Gertrud Schon                                      0           
+            11 Giselda Pontes                                     0           
+            88 Graca Maria Gomes Lopes                            034247553   
+            87 Graca Maria dos Reis Paulino Mendes                105565480   
+            14 Graca Meneses Ramos                                0           
+            89 Harriet Maul                                       0           
+            56 Helena Alexandra Portugal Silveira Teixeira Sousa  034133144   
+            41 Helena Paula Bastos de Abreu                       0           
+            27 Helena Paula Freitas Perneta                       0           
+            37 Helena Paula Gouveia Jesus Figueira Santos         0           
+             2 Helena Rodrigues                                   034271442   
+            91 Isabel Camara                                      0           
+            69 Isabel Maria Lomelino Araujo de Barros             034243085   
+            38 Isabel Portugal de Silveira Henrique de Freitas    034131970   
+             7 Joao Fatima Correia                                0           
+            48 Joao Joaquim Freitas Andrade                       0           
+            93 Joao de Jesus Teixeira Guiso                       0           
+            26 Joaquim Andrade                                    0           
+            30 Jose Antonio H. Silva                              0           
+        Page No.     2
+        11/27/93
+        
+        Numero Nome do Empregado                                  N§Caixa Prev
+                                                                              
+                                                                              
+                                                                              
+        
+        
+            46 Jose Mauricio Nobrega Caires                       0           
+            35 Jose Ricardo Jesus de Sousa                        0           
+            94 Ligia da Silva Gois                                0           
+            95 Lina Fatima Gouveia Perneta                        034240376   
+            50 Lucia Maria V. B. Figueiroa                        034202318   
+            54 Luis Anastacio Ferreira de Sousa                   034123600   
+            31 Manuel Jorge Correia Sousa                         0           
+            96 Manuel Jorge F. F. Rosa                            034110349   
+            97 Manuel Jorge Gouveia Pereira Silveira e Sousa      034210400   
+            59 Manuel dos Santos Goncalves Homem de Gouveia       034131224   
+            70 Marcia das Dores Nobrega Rodrigues                 034248970   
+            60 Maria Amelia Patricio de Freitas                   034171958   
+            61 Maria Cecilia Gois Nunes Viveiros                  034174518   
+            49 Maria Celia Castro Mendonca                        034245238   
+            79 Maria Graca Goncalves Andrade Barreiro             034233905   
+            63 Maria Manuela Gouveia de Sa Fontinha               034111493   
+            62 Maria Manuela de C. P. Cunha e Camacho             034110564   
+            32 Maria Rosario A. Ribeiro                           034110290   
+            80 Maria Rosario Meneses de Caires                    034245475   
+            53 Maria Rosina Andrade Ribeiro Pereira               034110629   
+            90 Maria Severina de Abreu                            0           
+            98 Maria da Piedade Martins                           0           
+            92 Miguel Portugal Teixeira                           0           
+            71 Rita Camacho                                       0           
+            34 Rosalina Silva                                     0           
+             3 Susana Cristina Rodrigues Teixeira                 034273116   
+            42 Susana M. Jardim Sousa                             034245262   
+             1 Teresa B. Vasconcelos                              034088790   
+            68 Teresa Benedita de Vasconcelos do Couto Cardoso    034099790   
+            45 Teresa Ferreira                                    0           
+            64 Teresa Graca Gomes Ferreira Dantas                 034239735   
+            43 Teresa Maria Gouveia Goncalves                     0           
+            66 Teresa Maria Sousa Costa Gouveia                   034172738   
+            44 Urbano Rodrigues                                   0           
+

@@ -1,0 +1,7 @@
+WJOYSCAL.FRM
+WJOYSCAL.GLB
+ProjWinSize=84,531,248,215
+ProjWinShow=2
+Title="WJOYSCAL"
+ExeName="WJOYSCAL.EXE"
+Path="J:"

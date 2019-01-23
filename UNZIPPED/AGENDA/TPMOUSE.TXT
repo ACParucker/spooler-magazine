@@ -1,0 +1,100 @@
+{****************************************************************************}
+{*                                                                          *}
+{*      TITULO        : AGENDA V.2.5                                        *}
+{*                                                                          *}
+{*      AUTOR         : Vasco Nascimento                                    *}
+{*                                                                          *}
+{*      PARA          : SPOOLER Magazine dos utilizadores PC                *}
+{*                                                                          *}
+{*      PROGRAMADO EM : TURBO PASCAL 6.0                                    *}
+{*                                                                          *}
+{*      FICHEIRO      : TPMOUSE.TPU                                         *}
+{*                                                                          *}
+{*      FUN€¶O        : Rotinas de controle do Mouse                        *}
+{*                                                                          *}
+{****************************************************************************}
+
+
+      Esta Unit foi-me arranjada por um amigo que no entanto nÆo me quis
+
+      arranjar as fontes. ao inv‚s disso descreveu-me pormenorizadamente
+
+      a fun‡Æo de todas as Procedures a Functions nela existentes tal
+
+      descri‡Æo ‚ a seguir apresentada tal como me foi fornecida:
+
+
+      CONST leftbutton:integer = 0;
+            rightbutton:integer =1;
+            eitherbutton:integer = 2;
+
+
+
+
+
+
+     Constructor Init;  <inicializa as vari veis da unit>
+
+
+     Function Setup:Boolean;  <‚ uma fun‡Æo de detec‡Æo de mouse, retorna
+                               TRUE se exitir um mouse no sistema e FALSE
+                               caso contr rio>
+
+
+     Procedure Hide;  <torna o cursor do mouse invisivel>
+
+
+     Procedure Show;  <torna o cursor do mouse visivel>
+
+
+     Procedure Move(x,y:Integer); <coloca o cursor do mouse nas coordenadas
+                                   X Y>
+
+
+     Procedure Getcoords(Var X,Y:Integer); <devolve as coordenadas do mouse
+                                            para as vari veis X Y>
+
+
+     Function Inbox(Left,Top,Right,Bottom,X,Y:Integer):Boolean; <verifica
+
+                   se o ponto de coordenadas X Y se encontra dentro do rec-
+                   tangulo formado pelas vari veis left,top,right,bottom
+                   retorna TRUE se se verificar ou FALSE caso contr rio>
+
+
+
+     Function WaitForInput(Whichbutton:Integer):Integer; <funciona como o
+
+                   ReadKey, com a variante de poder ler nÆo s¢ o teclado
+                   como tamb‚m os botäes do rato>
+
+
+                             **************
+                             * IMPORTANTE *
+                             **************
+
+
+
+     AS PROCEDURES E FUNCTIONS ACIMA DESCRITAS PERTENCEM AO OBJECTO
+
+     MOUSEOBJ, PORTANTO EM CADA PROGRAMA QUE AS VENHA A USAR TORNA-SE
+
+     NECESSµRIO DECLARAR UMA VARIµVEL DO TIPO MOUSEOBJ, QUE SERµ
+
+     DEPOIS USADA COMO PREFIXO DE CADA UMA DAS PROCEDURES E FUNCTIONS
+
+
+     EX:
+
+
+     VAR MOUSE:MOUSEOBJ
+
+     BEGIN
+       .
+       .
+       .
+       MOUSE.MOVE(50,100);
+       .
+       .
+       .
+     END.

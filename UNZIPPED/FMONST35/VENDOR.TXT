@@ -1,0 +1,112 @@
+VENDOR and ON-LINE INFORMATION
+
+
+
+=== Program information ===
+
+Name:           Font Monster
+
+Version:        3.5
+
+Categories:     Windows, windows utilities, fonts, font utilities
+
+Registration:   US$25
+
+Requires:       Microsoft Windows 3.1 or WFWG 3.11
+                Fonts (Type1, TrueType, or both)                
+                Adobe Type Manager 2.5 recommended only for Type1 users
+                
+Author:         Steven Fox
+
+Copyright:      Copyright (c) 1992-1994 by Leaping Lizards
+
+Address:        (for vendors only, for registration orders
+                and product support please see README.TXT)
+                Leaping Lizards
+                4F, No.10, Lane 41, YungKang Street
+                Taipei, Taiwan, R.O.C.
+
+E-mail:         riboflavin@twwde.com
+
+Fax:            886-2-729-0863
+
+
+
+
+=== Recommended descriptions for on-line services ===
+
+ONE LINE DESCRIPTION:
+
+Font Monster v3.5, a Type1/TrueType font editor, manager, cataloguer.
+
+
+LONG'ISH DESCRIPTION:
+
+Font Monster v3.5, the ultimate TrueType and Type1 font utility for
+font nerds and font novices alike. If you've got font troubles, you
+haven't got Font Monster. Acclaimed by thousands of DTP professionals
+world-wide. Registration is only $25.
+
+Font Monster can:
+* Rename any TrueType or Type1 font
+* Edit 50+ other font parameters
+* Visually edit kerning pairs
+* Fully manage ATM/Type1 and TrueType fonts without Windows restart
+* Let you install custom font groups from Program Manager icons
+* Preview and print font samples & catalogues without installing fonts
+
+NEW FEATURES IN v3.5:
+* A new fast font search utility scans your entire system for fonts,
+  which makes creating font groups a lot easier and faster.
+* Preview fonts when editing font groups.A visual-based kerning pair
+  editor for Type1 and TrueType fonts, which includes kerning pair
+  importing from other fonts.
+* Now automatically put your TrueType .FOT files anywhere you like,
+  not just your SYSTEM directory.
+* A new setup program makes installing and uninstalling Font Monster
+  virtually painless.
+
+
+
+=== DISTRIBUTION TERMS - READ CAREFULLY ===
+
+************************************************************
+If you can not abide by these terms, I reserve the right to 
+refuse further distribution of Font Monster by your company!
+************************************************************
+
+Please do not distribute this software after December 1994. Please
+obtain a newer version instead.
+
+SHAREWARE DEALERS:
+
+You are permitted to distribute Font Monster as long as you distribute 
+the unaltered and complete FMONST35.ZIP archive file you received. You may
+charge a fee for such distribution as long as it is less than US$5, and that
+it is made quite clear before distribution that this software is shareware
+and that an additional fee is required by the author.
+
+CD-ROM, MAGAZINE AND BOOK PUBLISHERS:
+
+Please contact the author directly for more information if you want to 
+include Font Monster on your CD-ROM, book or magazine. Please include 
+details about your publication including list price, est. number of 
+readers/users. WITHOUT WRITTEN OR E-MAIL PERMISSION FROM ME, YOU DO NOT 
+HAVE THE RIGHT TO PUBLISH FONT MONSTER.
+
+FREE OR SUBSCRIPTION ON-LINE SERVICES, ARCHIVE SITES, AND BBSs:
+
+If you fall into this category, you can post FMONST35.ZIP. No sweat.
+
+
+*EXCEPTIONS TO THE ABOVE NOTICES:
+
+If you received this program on a disk, directly from the author, that
+means I am already familiar with your service and that I want you to
+distribute my software, even if you might not necessarily abide by my
+stated guidelines.
+
+If you are an on-line service, or some sort of on-line archive site, and 
+you allow the issue of CD-ROMs containing files from your archives, you 
+have permission to include this version of Font Monster on the disk.
+

@@ -1,0 +1,58 @@
+//          Lista dos IFS utilizados no programa "IFS.PAS".
+//
+//                        Lista das cores:
+//          1 - Azul escuro             9 - Azul
+//          2 - Verde escuro           10 - Verde claro
+//          3 - Azul cinzento          11 - Azul claro
+//          4 - Vermelho escuro        12 - Vermelho
+//          5 - Roxo                   13 - Cor de rosa
+//          6 - Castanho alaranjado    14 - Amarelo
+//          7 - Cinzento claro         15 - Branco
+//          8 - Cinzento escuro
+//
+//            T¡tulo              1§valor: n§ de aplica‡”es.
+//                                2§...  : indica‡„o das aplica‡”es.
+//   1¦frase"       "2¦frase"     £ltimo : cor.
+//
+"O triƒngulo de" "Sierpinski"     3:  1  2  3    15                    //  1
+"O labirinto de" "Cantor"         3:  7  8  9    15                    //  2
+"O castelo de"   "Cantor"         3:  7  9 10    15                    //  3
+"As janelas"     "de Cantor"      2: 57 58    14                       //  4
+"A estrela de"   "Cantor"         5: 14 15 16 18 11    14              //  5
+"A estrela"      "decomposta"     6: 14 15 16 18 11 67    14           //  6
+"O cristal"      "sim‚trico"      5: 29 30 31 32 33    15              //  7
+"O cristal"      "de neve"        4: 19 20 21 22    15                 //  8
+"O cristal"      "de neve 2"      7: 29 30 31 32 33 56 56    15        //  9
+"Os pent gonos"  "centrados"     10: 29 30 31 32 33 95 96 97 98 99  15 // 10
+"O pent gono"    "de Von Kock"    6: 29 30 31 32 33 100    15          // 11
+"A toalha"       "de renda"       5: 59 60 61 62 63    13              // 12
+"Escolha"        "o nome..."      5: 59 60 61 62 93    11              // 13
+"A curva de"     "Von Kock"       2: 12 13    15                       // 14
+"A fun‡„o de"    "Weirstrass"     2: 40 41    15                       // 15
+"A  rvore de"    "natal"          4:  4  5  6 56    10                 // 16
+"A  rvore"       "no Outono"      5: 34 35 36 37 38    15              // 17
+"A  rvore"       "na Primavera"   6: 34 35 36 37 38  8    15           // 18
+"A  rvore"       "de Levi"        4: 48 49 50 51    10                 // 19
+"A  rvore"       "de Levi 2"      5: 48 49 50 51 88    10              // 20
+"A floresta"     "fractal"        6: 48 72 73 74 75 76    10           // 21
+"A floresta"     "fractal 2"      6: 34 35 36 37 77 78    15           // 22
+"O perfil"       "da floresta"    4: 89 90 91 92    10                 // 23
+"O feto de"      "Barnsley"       6: 23 24 25 26 23 23    10           // 24
+"O feto"         "de Hata"        3: 44 45 45    10                    // 25
+"A folha"        "de Hata"        4: 44 79 45 45    10                 // 26
+"As folhas"      "ca¡das"         2: 86 87    10                       // 27
+"A constela‡„o"  "do Zod¡aco"     8: 10 17 37  8 26 27 28 10    14     // 28
+"O Turbilh„o"    "da ventania"    4: 52 53 54 55    11                 // 29
+"O buraco"       "no espa‡o"      4:  7  9 10 56    14                 // 30
+"O papagaio"     "de papel"       4: 68 69 70 71    11                 // 31
+"A teia"         "da aranha"      6: 80 81 82 83 84 85    15           // 32
+"A malha"        "de Weierstrass" 3: 40 41 94    15                    // 33
+"Os flocos"      "de l„"          2: 42 43    15                       // 34
+"O cavalo"       "marinho  "      2: 46 47    12                       // 35
+"Cabelos"        "ao vento"       3: 40 41 46    15                    // 36
+"As montanhas"   "sim‚tricas"     3: 40 41 66    10                    // 37
+"Os triƒngulos"  "fractais"       3:  1  6 39    15                    // 38
+"A decomposi‡„o" "das esfinges"   6:  1  2  3  5 19 20    15           // 39
+"O aut¢mato"     "celular"        4:  1  6 39 65    15                 // 40
+"O tijolo"       "fractal"        4:  7  8  9 64    15                 // 41
+"Inscri‡”es"     "na pedra"       5:  7  8  9 64 101    15             // 42

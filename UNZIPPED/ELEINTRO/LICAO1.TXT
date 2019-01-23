@@ -1,0 +1,59 @@
+                       Corrente Eléctrica
+
+   Como todos sabemos (penso que toda a gente já
+ouviu pelo menos falar nisso), toda a matéria, seja 
+madeira, mármore, ouro, o que quer que seja, é 
+constituida por moléculas e estas constituidas por 
+átomos. Ora, estes átomos são compostos por um 
+núcleo central, onde estão localizados os protões 
+(partículas com carga positiva) e os neutrões 
+(partículas com carga nula), e à volta deste núcleo 
+giram os electrões (partículas com carga eléctrica 
+negativa), numa trajectória mais ou menos fixa que 
+poderemos chamar órbita (a figura mostra isto de 
+maneira mais clara).
+   Ora, os electrões das órbitas mais afastadas do 
+núcleo estão sobre a acção de uma atracção 
+magnética mais fraca (é como nos imans, quanto 
+mais afastados estão menor a sua atracção). 
+Sendo esta atracção mais fraca, estes electrões 
+estão mais susceptíveis a escaparem à sua órbita.
+   É precisamente isto que vai acontecer. Mas, uma 
+vez que na natureza as partículas têm tendência a 
+manter uma carga eléctrica neutra (igual número 
+de protões e de electrões), quando um electrão se 
+escapa à sua órbita, ele tem de ir para algum lado, 
+ou seja, o átomo mais próximo vai ficar com um 
+electrão a mais e o átomo do qual ele se escapou 
+vai ficar com um a menos (ver figura), e isto vai 
+fazer com que os electões das órbitas mais 
+afastadas do núcleo andem sempre "aos saltos" de 
+uns átomos para os outros, de forma a que a 
+matéria mantenha a sua carga eléctrica nula. Os 
+electrões com órbitas mais afastadas do núcleo 
+chamam-se electrões de valência.
+   Portanto, se tivermos uma placa de um material
+com excesso de electrões e uma outra com falta 
+deles, ao unirmos as duas placas com um fio 
+condutor (ou seja, um fio feito de um material cujos 
+electrões das órbitas exteriores, os electrões de 
+valência, tenham mais facilidade em saltar de uns 
+átomos para os outros), os electrões que estão na 
+placa em excesso vão-se "movimentar" através do 
+fio para a placa que os tem em falta (ver figura). É 
+a este movimento que chamamos corrente 
+eléctrica.
+
+                           Resumo
+
+Corrente eléctrica - Movimento de electrões ao
+longo de um material condutor.
+Electrões de Valência - Electrões situados nas 
+órbitas mais afastadas do núcleo e que têm alguma
+facilidade em saltar para outro átomo.
+Condutor Eléctrico - Material cujos átomos têm uma 
+certa facilidade em ceder electrões de valência.
+
+Nota: Ao contrário do que se pensa, a corrente 
+eléctrica "vai" de - para +, pois é o - que tem os 
+electrões em excesso.

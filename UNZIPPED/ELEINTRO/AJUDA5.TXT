@@ -1,0 +1,5 @@
+             Cor do Texto
+
+   Á semelhança da opção Cor do Fundo, esta opção permite defenir a cor a ser usada para as letras do texto.
+   É igualmente possivel gravar a informação para se utilizar sempre essa cor ou utiliza-la somente durante a actual sessão do Electintro.
+   Para se escolher a cor basta escolher a opção cujo fundo é da cor que queremos (só estão disponiveis 16 cores ).

@@ -1,0 +1,50 @@
+                     Plug-In for Program Manager v1.30
+                     ---------------------------------
+
+                        P A C K I N G    L I S T
+                       --------------------------
+
+                             February 5, 1993
+
+
+        The complete "Plug-In for Program Manager" evaluation package 
+        should contain the following files.  Please ensure that each 
+        file is present.  If any of these files are missing then the 
+        package is not complete and is not suitable for distribution 
+        to others.  The complete package may be obtained directly from 
+        Plannet Crafters, Inc.
+
+
+        File Name:      Purpose of File:
+        ------------    ---------------------------------------------------
+
+        README.DOC      Important last-minute information.
+
+        PACKING.LST     This text file
+
+        VENDOR.DOC      Information and restrictions for disk vendors,
+                        distributors, user groups, BBS Sysops, and more
+
+        FILE_ID.DIZ     Description file for use by BBS's
+
+        PLUGIN.EXE      Program file (main application)
+
+        PLUGIN.HLP      Help file
+        
+        GROUP.EXE       Program file (External Group Utility)
+                        (copied to Windows directory)
+
+        PLUGINQN.BAT    Used for the QuickDOS feature.
+        PLUGINQN.PIF    (copied to Windows directory)
+        PLUGINQM.BAT
+        PLUGINQM.PIF
+
+        BATON.CUR       Sample cursor files for use with
+        FATARR.CUR      Plug-In's Custom Cursor feature
+        HAND.CUR
+        MAN.CUR
+        SWATCH.CUR
+        WOMAN.CUR
+        NORMAL.CUR
+        HOURGLAS.CUR
+

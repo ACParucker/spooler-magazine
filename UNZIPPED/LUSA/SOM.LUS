@@ -1,0 +1,23 @@
+PROGRAMA Sons
+{ Exemplo de sons }
+
+VARIAVEL
+   INTEIRO   freq,conta;
+
+INICIO
+   freq=0;
+   conta=0;
+   REPETE
+     conta=conta+1;
+     REPETE
+       Som freq;
+       freq=freq+20;
+     ATE freq>2000;
+     REPETE
+       Som freq;
+       freq=freq-6;
+     ATE freq<0;
+   ATE conta=5;
+   DSom;
+FIM
+

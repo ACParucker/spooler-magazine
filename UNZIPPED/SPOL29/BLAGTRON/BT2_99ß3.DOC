@@ -1,0 +1,125 @@
+BLAGTRON 2.99á3
+
+1992,1993 Robotic Software
+
+Programado na ¡ntegra por Pedro Alexandre Tim¢teo,
+ em Borland Pascal 7.
+
+Requerimento principal: Super VGA 512K ou superior, para a resolu‡„o de
+(s¢ para o modo SVGA)   800x600 a 256 cores. Ah, ‚ capaz de precisar
+                        tamb‚m de um driver VESA (experimentem um VESA32.ZIP
+                        que anda por a¡).
+
+
+
+Bem, pessoal. O jogo ‚ bastante simples, ali s j  devem ter visto a vers„o
+2.02 que mandei h  uns meses, e a beta inicial (2.99á), h  menos tempo. 
+Essa vers„o, apesar de dar para 4 jogadores em simultƒneo, era bastante 
+fraca, mas esta ‚ muito mais jog vel e interessante. O objectivo do jogo 
+‚ encurralar o(s) advers rio(s), de modo que este(s) seja(m) obrigado(s) a 
+tocar num rasto deixado por qualquer jogador (incluindo ele pr¢prio), o 
+que provoca a sua morte. Quando todos morrerem exceptuando um, este ‚ o 
+vencedor, e ganha um ponto, continuando ent„o o jogo num ecr„ limpo com 
+todos os jogadores "ressuscitados".
+Para os curiosos, este jogo ‚ inspirado num que havia no filme "Tron",
+e tamb‚m num jogo de 1982, no Spectrum, chamado "Blind Alley".
+
+Para sair do jogo, CTRL-BREAK. Ah, no jogo de equipas, como ‚ ¢bvio, quando
+os 2 membros de uma equipa forem os £nicos sobreviventes, ‚ necess rio
+que um se "suicide", o que d  o ponto … equipa, de qualquer maneira.
+
+O jogo ‚ razo vel jogado com 2 jogadores, mas fica espectacular com
+3 ou com 4!
+
+As teclas s„o redefin¡veis, atrav‚s do programa de configura‡„o
+(BTCFG.EXE)
+
+
+Esta vers„o est  em "beta", isto ‚, se acharem algum erro ou defeito nela,
+ou se tiverem alguma sugest„o a fazer, que melhore o jogo, ou simplesmente
+para darem alguma opini„o (ou cr¡tica), agrade‡o imensamente que me digam 
+qualquer coisa, na main board da Skyship, antes que eu "lance" a vers„o 3.0.
+A qualquer um que detectar um erro ou fizer uma sugest„o que seja aceite,
+ser  concedida a  rar¡ssima e  cobi‡ada  honra de fazer  parte da lista
+de Agradecimentos (ver o fim desta documenta‡„o).
+
+
+METALLICA forever!!!
+
+
+
+NOVIDADES DA VERSŽO 2.99á3 EM RELA€ŽO ‘ VERSŽO 2.99á:
+
+-Novos modos gr ficos (EGA e VGA), j  que nem todos tˆm SVGA;
+
+-Possibilidade de redefini‡„o de teclas;
+
+-Novo programa de configura‡„o (BTCFG.EXE), para redefinir teclas e alterar
+ o modo gr fico. Aten‡„o, n„o ‚ preciso refazer toda a configura‡„o (teclas
+ dos 4 jogadores) cada vez que se executa o programa de configura‡„o: basta
+ alterar o necess rio (ex: modo gr fico, ou as teclas de um jogador que
+ n„o esteja contente com as suas). S¢ ‚ mesmo preciso introduzir toda a
+ configura‡„o se o ficheiro de configura‡„o (BLAGTRON.CFG) desaparecer;
+
+-Cores alteradas (o azul escuro via-se mal);
+
+-No ecr„ inicial, o "(1-4)" passou a "(2-4)", j  que o jogo n„o d 
+ (nem devia dar) para 1 jogador sozinho;
+
+-Num jogo de 3 ou 4 jogadores, a informa‡„o "RIP" aparece na cor do jogador
+ que morreu, e n„o sempre azul claro;
+
+-A velocidade foi ainda mais reduzida, o jogo continuava r pido demais;
+
+
+
+NOVIDADES EM RELA€ŽO ‘ VERSŽO ANTERIOR (2.02):
+
+
+-J  n„o desacerta o rel¢gio do computador (argh!);
+
+-Passou a funcionar em SVGA (800x600), em vez dos 640x480 anteriores;
+
+-O teste de velocidade passou de 5 para 3 segundos;
+
+-J  n„o fica excessivamente r pido em 486's (lembremo-nos que a vers„o 
+ anterior tinha sido programada num 386SX 16, e esta foi no meu actual
+ 486DX 50!);
+
+-Quando um jogador morre, num jogo de mais de um jogador, o jogo ‚ continuado
+ at‚ s¢ restar um vivo, em vez de terminar imediatamente e dar um ponto
+ "negativo" ao jogador que morreu;
+
+-Os pontos passaram de negativos (para o 1§ a morrer) para positivos (para o
+ sobrevivente);
+
+-Novo "Team Mode", para 2 equipas de 2 jogadores cada. A £nica diferen‡a ‚
+ no modo como ‚ atribuida a pontua‡„o.
+
+-J  n„o h  aquelas mortes frustantes de carregar na tecla da direc‡„o
+ oposta … do movimento;
+
+-Indica no fundo do ecr„ os jogadores mortos;
+
+-J  n„o inclui o source code em Pascal! HEHEHE!
+
+
+
+PRŸXIMAS ATRAC€™ES (numa futura vers„o)...
+
+
+-Sons SoundBlaster (tipo um barulho de vento quando um jogador "vira", e
+um som tipo acidente de via‡„o para quando um jogador perde);
+
+
+
+AGRADECIMENTOS (pelo apoio e pela ajuda no teste e detec‡„o de erros):
+
+
+-Jorge Tim¢teo
+-Vasco Godinho
+-Hugo Rucha
+-Lu¡s "Pato" Quaresma
+-Paulo Cavaca
+-Fernando Queir¢s
+-Jesse Craig

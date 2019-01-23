@@ -1,0 +1,7 @@
+" Men£ Principal - Exemplo "
+4,3
+" Chamar o Windows ","C",1,"WIN"
+" Formatar Disquetes 3« 720k ","7",23,"FORMAT A:/F:720/U"
+" Formatar Disquetes 3« 1.44 ","1",23,"FORMAT A:/U"
+" Acertar a Hora e Data ","A",1,"HORAS"
+

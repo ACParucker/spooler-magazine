@@ -1,0 +1,105 @@
+                      Transformadores
+
+   Além do que já aqui foi visto nas lições 
+anteriores, a corrente eléctrica tem mais 
+propriedades.
+   Uma delas é a electromagnética. Um condutor 
+ao ser percorrido por uma corrente eléctrica, cria 
+à sua volta um campo magnético. Mas a corrente 
+eléctrica não é obrigatóriamente o deslocamento 
+de electrões ao longo de um condutor num dado
+sentido. Há dois tipos diferentes de corrente 
+eléctrica. A corrente eléctrica contínua (c.c.) é o 
+tipo de corrente eléctrica que se pode obter das 
+pilhas e que consiste no movimento ordenado de 
+electrões ao longo de um material condutor e com 
+um único sentido (- para + sentido real, + para - 
+sentido convencional). Mas também existe a 
+corrente eléctrica alternada (c.a.), à qual algumas
+pessoas se referem como corrente alterna, que é o 
+tipo de corrente eléctrica disponível nas tomadas 
+da nossa casa (ATENÇÃO: Nas tomadas está 
+presente uma diferença de potencial de 220V que 
+pode ser fatal em algumas situações e que na 
+maioria dos casos provoca queimaduras graves), 
+que consiste num condutor permanentemente com 
+potêncial zero (condutor de cor azul, geralmente 
+ligado ao borne esquerdo da tomada, e que não 
+representa perigo quando tocado) e um condutor 
+no qual o potêncial é alternadamente positivo e 
+negativo 50 vezes por segundo (daí se dizer que a
+frequência da rede é de 50 Hz. Este condutor é 
+de cor castanha ou preta, e representa perigo 
+quando tocado sem precauções). 
+   Há vários tipos diferentes de c.a., entre os quais 
+se destacam (ver figura): 1 - sinusoidal - neste tipo 
+de c.a. o potencial do condutor aumenta 
+gradualmente até um valor máximo positivo (ou 
+negativo), decrescendo em seguida até zero, 
+aumentando depois o potencial de sinal contrário 
+até um valor máximo para decrescer depois até 
+zero (a isto chamamos um ciclo e é o que se 
+passa 50 vezes por segundo nas tomadas da nossa 
+casa). 2 - rectangular - consiste num potencial 
+positivo (ou negativo) de valor máximo que num 
+determinado instante passa instantaneamente a um 
+potencial de valor máximo de sinal contrário.
+   Ora, se um condutor for percorrido por uma c.a. 
+o campo magnético à volta desse condutor não 
+vai ser constante. Ele irá variar igualmente de 
+sentido conforme a frequência da c.a.(se for 
+100Hz ele varia de sentido 100 vezes por 
+segundo).
+   Mas descobriu-se um outro facto. Quando temos 
+um condutor eléctrico enrolado numa forma com 
+um núcleo de ar e fazemos passar um imãn 
+através desse núcleo (ver figura), aparece nos 
+terminais do condutor um potencial eléctrico. Se o 
+potencial eléctrico tiver sempre o mesmo sentido 
+(o equivalente a deixarmos o imãn no interior da 
+bobina), este potencial eléctrico aparece apenas 
+quando introduzimos ou retiramos o imãn. Mas se 
+o imãn estiver constantemente a ser introduzido e 
+retirado da bobina a uma frequência constante, 
+surge nos terminais da bobina uma c.a. com a 
+mesma frequência.
+   Claro que na prática seria impensável estar 
+constantemente a introduzir e retirar o imãn na 
+bobina para termos uma c.a. decente. Assim, 
+usando as propriedades electromagnéticas da c.a., 
+se uma bobina for percorrida por uma c.a., ela 
+criará à sua volta um fluxo magnético variável 
+conforme a frequência da c.a. que o produz. Esse 
+fluxo magnético pode ser conduzido ao interior de 
+uma outra bobina, quer pousando uma em cima da 
+outra, quer utilizando um material condutor 
+magnético, como a ferrite, para levar esse fluxo ao 
+interior da segunda bobina, surgindo assim nos 
+terminais da segunda bobina uma c.a. da mesma 
+frequência que a presente na primeira (ver figura).
+   Mas, se a primeira bobina for composta por 2000 
+espiras e a segunda por 500, nos terminais da 2ª 
+bobina a c.a. terá uma Ddp 4 vezes menor que a 
+Ddp nos terminais da 1ª bobina (2000 / 500 = 4). 
+Este é o princípio que permite a realização e 
+funcionamento dos transformadores. Alguns 
+poderão dizer que no "transformador" do walkman 
+ou da pista têm uma c.c. em vez de uma c.a. Isto 
+não é absolutamente verdade, porque esses ditos 
+"transformadores" são na realidade pequenas fontes 
+de alimentação, nas quais a c.a. é rectificada (é 
+transformada numa c.c. usando um processo que 
+veremos adiante).
+   Mas os transformadores não são as únicas 
+máquinas (um transformador é uma máquina 
+electroestática) a fazer uso destas propriedades da 
+corrente eléctrica. Os conhecidos electroimãns são 
+baseados nestas propriedades, bem como os 
+altifalantes (é usada uma bobina para transformar 
+os impulsos eléctricos que representam o som no 
+movimento do cone, fazendo com que esses 
+impulsos electricos sejam audíveis). Há também um 
+tipo de interruptores, os relés, que fazem uso 
+destas propriedades. Quando a sua bobina é 
+percorrida por uma c.c., o campo electrico vai ser 
+usado para ligar (ou desligar) um interruptor.

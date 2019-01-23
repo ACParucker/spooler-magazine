@@ -1,0 +1,87 @@
+    A Project/Event Planner 2.0, 2.1, 2.2 (RELEASE.DOC - February 21, 1994)
+    =======================================================================
+                         Release Notes (Version 2.2)
+    =======================================================================
+    1.  Fixed a problem with proper resource allocation when the resource's
+        calendar has schedules of types "Do Not Repeat", "Every Month", or
+        "Every Year".  In these cases, the default schedule was incorrectly
+        used after the first day of the special schedule.
+
+    2.  The online help was updated to reflect new registration options.
+
+    =======================================================================
+                         Release Notes (Version 2.1)
+    =======================================================================
+    1.  Fixed a problem when selecting fonts with the "Colors and Fonts"
+        option in the "Options" menu.  In the previous version, some
+        Windows system resources were not properly released.  This problem
+        was not noticeable until many font changes were made and/or until
+        the Windows system resources became low.  The memory could then
+        only be recovered by restarting Windows.
+
+    2.  When selecting fonts with the "Colors and Fonts" option in the
+        "Options" menu, the selected fonts took effect immediately.  This
+        has been changed so that if the "Cancel" button is selected in
+        the "Colors and Fonts" dialog box, the previous font selection
+        would still be used.
+
+    =======================================================================
+                         Release Notes (Version 2.0)
+    =======================================================================
+    1.  Windows 3.1 is required for this version.
+
+    2.  Added "Colors and Fonts" option to the Options menu to allow font
+        and color selection to customize the appearance of the plan.  You
+        can now change the planning grid font and background color.  In
+        addition you can now select different colors for the event bars.
+
+    3.  Improved the printing of the planning grids so that they more
+        closely resemble the screen image in terms of font and color
+        selection.
+
+    4.  Added an option to the File menu to invoke the standard Printer Setup
+        dialog box.  You can now change the printer or printer options from
+        within this program.
+
+    5.  When printing reports, the default font is "Courier New".  If
+        you experience problems with the font selection, the ".ini"
+        file now includes two new options:
+            RptFontFaceName=    Use this to specify the font name.
+            RptFontPtSize=      Use this to specify the point size (6-18).
+
+    6.  APLANR now automatically executes the "File - Open" command on
+        startup.  An option was also added so that the last opened plan
+        can be automatically opened on startup.
+
+    7.  Added unique icons to represent Resource and Calendar documents in
+        minimized state.
+
+    8.  Added new accelerator keys for the File menu options:
+            Ctrl+N = File - New
+            Ctrl+O = File - Open
+            Ctrl+S = File - Save
+            Ctrl+P = File - Print
+
+    9.  Added a Close option to the File menu to close the currently active
+        plan, resource, or calendar document.
+
+    10. Fixed a problem with closing Windows before closing APLANR.  If
+        an attempt is made to exit Windows while APLANR is active,
+        you will be prompted to save any modified APLANR data before
+        Windows exits.
+
+    11. Fixed a problem when entering a partial string that matches
+        multiple entries in the Delete/Duplicate/Modify event dialog
+        boxes.  APLANR will now remind you that a unique name match
+        must occur.
+
+    12. Fixed a problem with data directories located on a different drive
+        than where the program executable is located.
+
+    13. Fixed a problem when trying to add more than 32 schedules to
+        a calendar.
+        
+    =======
+    THE END
+    =======
+

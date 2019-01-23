@@ -1,0 +1,40 @@
+                          Resistências
+
+  Supondo que temos um tubo por onde passa 
+água, ao diminuirmos o diametro desse tubo, a 
+água terá mais dificuldade em passar. Pode dizer-
+se que o tubo oferece mais resistência á passagem 
+da  água.
+   Do mesmo modo, uma resistência não é mais do 
+que um componente electrónico, que ao ser 
+percorrido por uma corrente eléctrica vai oferecer 
+uma certa oposição à passagem dessa corrente 
+eléctrica, dependendo a força dessa oposição do 
+valor do componente.
+   A resistência eléctrica é medida em Ohm (ver 
+figura) e o seu valor pode ser calculado pela Lei de 
+Ohm, que diz que R = U / I, sendo U o valor da 
+Ddp nos terminais da resistência e I o valor da 
+intensidade de corrente que nela passa.
+   Como será obvio, se ligarmos uma resistência a 
+seguir a outra, chamada associação em série, (ver 
+figura), o valor total da resistência será a soma das 
+resistências ligadas. Mas se as ligarmos em 
+paralelo, então será o inverso da resistência total 
+igual à soma do inverso das resistências.
+   Há também vários tipos de resistência, de entre 
+os quais se salientam: LDR - resistências cujo valor 
+varia de acordo com a luz que nelas incide, PTC e 
+NTC - resistências cujo valor varia com a 
+temperatura, POTÊNCIOMETROS e 
+RESISTÊNCIAS VARIÁVEIS - resistências que 
+possuem um eixo ao qual está ligado um cursor e 
+cujo valor varia em função da posição do cursor no 
+corpo da resistência, e obviamente as resistências 
+propriamente ditas, que consistem num pequeno 
+componente (ou grande, dependendo da potência 
+que estão preparadas para aguentar e cujo valor é 
+dado por P = U x I) com riscas coloridas. São estas 
+riscas que nos indicam o valor da resistência e no 
+menu Consultar está disponível uma opção que nos 
+indica esses valores.

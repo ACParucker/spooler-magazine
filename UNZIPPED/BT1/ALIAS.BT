@@ -1,0 +1,7 @@
+bip = bt bip 200 2000
+data = bt data 7 por esf
+fade = bt fade 1 1 7 100 %1 %2
+scroll_esq = bt scroll 81 1 7 100 %1 esq
+scroll_dir = bt scroll 0 1 7 100 %1 dir
+horas = bt relogio 7 cent
+typeit = bt typeit 7 15 0 50 50 %1 %2

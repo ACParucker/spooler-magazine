@@ -1,0 +1,71 @@
+BLOCO vazio
+
+ALOCAR 50 bytes (s1)
+Bloco reservado
+
+Endere‡o do nodo: 5BED:0000	Estado: o	Tamanho: 50
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 0000:0000
+
+ALOCAR 43 bytes (s2)
+Bloco reservado
+
+Endere‡o do nodo: 5BED:0000	Estado: o	Tamanho: 50
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 5BF0:0009
+
+Endere‡o do nodo: 5BF0:0009	Estado: o	Tamanho: 43
+Bloco utilizador: 5BF0:0010	Pr¢ximo nodo: 0000:0000
+
+LIBERTAR s2
+Endere‡o do nodo: 5BED:0000	Estado: o	Tamanho: 50
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 5BF0:0009
+
+Endere‡o do nodo: 5BF0:0009	Estado: l	Tamanho: 43
+Bloco utilizador: 5BF0:0010	Pr¢ximo nodo: 0000:0000
+
+ALOCAR 7 bytes (s4)
+Bloco reservado
+
+Endere‡o do nodo: 5BED:0000	Estado: o	Tamanho: 50
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 5BF0:0009
+
+Endere‡o do nodo: 5BF0:0009	Estado: o	Tamanho: 7
+Bloco utilizador: 5BF0:0010	Pr¢ximo nodo: 5BF0:0017
+
+Endere‡o do nodo: 5BF0:0017	Estado: l	Tamanho: 29
+Bloco utilizador: 5BF0:001E	Pr¢ximo nodo: 0000:0000
+
+ALOCAR 71 bytes (s3)
+Bloco reservado
+
+Endere‡o do nodo: 5BED:0000	Estado: o	Tamanho: 50
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 5BF0:0009
+
+Endere‡o do nodo: 5BF0:0009	Estado: o	Tamanho: 7
+Bloco utilizador: 5BF0:0010	Pr¢ximo nodo: 5BF0:0017
+
+Endere‡o do nodo: 5BF0:0017	Estado: l	Tamanho: 29
+Bloco utilizador: 5BF0:001E	Pr¢ximo nodo: 5BF3:000B
+
+Endere‡o do nodo: 5BF3:000B	Estado: o	Tamanho: 71
+Bloco utilizador: 5BF3:0012	Pr¢ximo nodo: 0000:0000
+
+LIBERTAR s4
+Endere‡o do nodo: 5BED:0000	Estado: o	Tamanho: 50
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 5BF0:0009
+
+Endere‡o do nodo: 5BF0:0009	Estado: l	Tamanho: 43
+Bloco utilizador: 5BF0:0010	Pr¢ximo nodo: 5BF3:000B
+
+Endere‡o do nodo: 5BF3:000B	Estado: o	Tamanho: 71
+Bloco utilizador: 5BF3:0012	Pr¢ximo nodo: 0000:0000
+
+LIBERTAR s1
+Endere‡o do nodo: 5BED:0000	Estado: l	Tamanho: 100
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 5BF3:000B
+
+Endere‡o do nodo: 5BF3:000B	Estado: o	Tamanho: 71
+Bloco utilizador: 5BF3:0012	Pr¢ximo nodo: 0000:0000
+
+LIBERTAR s3
+Endere‡o do nodo: 5BED:0000	Estado: l	Tamanho: 178
+Bloco utilizador: 5BED:0007	Pr¢ximo nodo: 0000:0000

@@ -1,0 +1,59 @@
+Sub botaoFim_Click ()
+  End
+End Sub
+
+Sub botaoInsere_Click ()
+  guardaAmigo
+  totalamigos = totalamigos + 1
+  ReDim Preserve listaAmigos(totalamigos)
+  registoCorrente = totalamigos
+  mostraRegisto  'mostra registo vazio
+End Sub
+
+Sub botaoSave_Click ()
+  On Error GoTo foiCancel
+  cmdialog1.CancelError = True
+  cmdialog1.Action = 2
+  'o resultado vem em .filename
+  If cmdialog1.Filename <> "" Then
+    Open cmdialog1.Filename For Output As #1
+    For f = 1 To totalamigos
+      Write #1, listaAmigos(f).nome, listaAmigos(f).morada, listaAmigos(f).localidade, listaAmigos(f).cpostal, listaAmigos(f).telefone, listaAmigos(f).nascimento
+    Next f
+    Close #1
+  End If
+  Exit Sub
+foiCancel:
+  MsgBox "Erro=" & Error$(Err)
+'falta testar se há erro de output file
+  Exit Sub
+End Sub
+
+Sub Form_Load ()
+  ReDim listaAmigos(1)
+  totalamigos = 1
+  registoCorrente = 1
+  'não vale a pena fazer MOSTRAAMIGOS porque não há registos!
+End Sub
+
+Sub Image1_Click ()
+  If registoCorrente > 1 Then
+    guardaAmigo
+    registoCorrente = registoCorrente - 1
+    mostraRegisto
+  Else
+    Beep
+  End If
+End Sub
+
+Sub Image2_Click ()
+  If registoCorrente < totalamigos Then
+    guardaAmigo
+    registoCorrente = registoCorrente + 1
+    mostraRegisto
+  Else
+    Beep
+  End If
+
+End Sub
+

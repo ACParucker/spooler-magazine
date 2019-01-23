@@ -1,0 +1,26 @@
+-----------> x_MotorOff
+
+  Sabiam que quando acedem a alguma drive e a respectiva luz acende, 
+  metade do tempo que ela assim permanece n„o est  a fazer nada ?
+  Estou mesmo a ver que h  para a¡ gente que quando quer tirar a disquete
+  da drive, fica … espera que a luz se apague !!! O que realmente se passa
+  ‚ que ap¢s terminar uma opera‡„o de leitura/escrita na disquete, o motor
+  fica ainda ligado mais um pouco.
+
+  Quem desliga o motor ap¢s um certo tempo ‚ a interrup‡„o 08h (SYSTEM 
+  TIMER). Essa interrup‡„o inicializa um registo X com um certo valor quando
+  ligam a vossa m quina. Sempre que usam uma drive ‚ usado um contador (que
+  ‚ incrementado 18.2 vezes por segundo). Quando a contagem alcan‡ar o valor 
+  armazenado no mesmo registo X o LED (vulgo 'a luzinha') ‚ desligado. Para
+  alterar o valor de espera, bastar  modificar o conte£do do registo X. 
+  Inicialmente o DOS coloca o valor 37 nesse registo. Sendo assim, normalmente
+  o LED permanece ligado cerca de 2 segundos (37 / 18.2)...
+
+  Para vos mostrar que eu n„o sou aldrab„o (e deve ser esta a minha maior 
+  aldrabice), introduzam um novo valor para o delay e depois saiam do 
+  programa e v„o l  fazer qualquer coisa com a drive. O valor que estam
+  prestes a introduzir ser  multiplicado por 10. Logo se introduzirem 4,
+  o valor passado … fun‡„o ser  40 (em clock ticks) o que equivale a
+  (40 / 18.2) segundos (fa‡am vocˆs as contas t  ?). Tenham cuidado ‚ com
+  uma coisa : se fosse a vocˆs n„o usava o valor 0, porque provavelmente
+  o LED nunca mais se apaga (Why ? Who knows ?).

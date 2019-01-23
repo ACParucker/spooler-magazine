@@ -1,0 +1,17 @@
+PROGRAMA  Matematica
+
+VARIAVEL Inteiro i,ii;
+         Real    r,rr;
+
+INICIO
+  decimais=0;
+  limpa_ecr;
+  escreve " Potˆncias de 2 \n",
+          "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ\n" ;
+  i=0;
+  ENQUANTO i<20 FAZ
+     Escreve "  ",i,"ı = ",i^2,"   ",i,"%",i,"ı = ",i%i^2,"\n";
+     i=i+1;
+  FIMENQUANTO
+FIM
+

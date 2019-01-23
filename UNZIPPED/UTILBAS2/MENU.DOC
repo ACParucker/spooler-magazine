@@ -1,0 +1,135 @@
+
+
+  MNU - MENU do DOS - Vers„o 1.0 - (c) NRCA - 1994
+  (Reedi‡„o de 1988 - Turbo BASIC) - Quick BASIC 4.5
+
+    FUNCIONAMENTO
+    ÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+         Este programa para funcionar, baseia-se na cria‡„o de 3 arquivos de
+controlo. Um permite controlar a op‡„o escolhida. Outro controla o funciona-
+mento do execut vel dentro do arquivo BAT do DOS e o terceiro controla a  o-
+p‡„o a ser executada. Qualquer um deles ‚ criado pelo MNU.EXE.  Para  tal  o
+programa recorre a um arquivo ASCII criado por um editor TXT  puro,  o  qual
+possui as op‡”es a serem exibidas constituindo assim o men£. Dentro de  este
+constar  as op‡”es e o resultado destas que ser  por exemplos os programas a
+serem chamados. Alguns extras foram adicionados afim de tornar a sua  utili-
+za‡„o mais f cil.
+
+    CONSTITUI€ŽO
+    ÍÍÍÍÍÍÍÍÍÍÍÍ
+
+         Este programa ‚ constituido por MNU.EXE (.BAS para respectiva sour-
+ce), MNUFNT?.COM que s„o duas fontes gr ficas que modificam os caracteres de
+ecran EGA e VGA, dando um outro visual aos mon¢tonos caracteres do DOS,  por
+um arquivo MNU o qual possui um men£ de exemplo, por este documento e por um
+arquivo BAT o qual ‚ fornecido como exemplo, podendo ser duplicado para  ou-
+tros da mesma natureza.
+
+    EXTRUTURA DO MEN–
+    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+         Este ‚ constituido pela seguinte extrutura:
+
+ÚÄÄÄÄÄÄÄÄÄÄ> " Men£ Principal - Exemplo "
+³ ÚÄÄÄÄÄÄÄÄ> 4,3
+³ ³ ÚÄÄÄÄÄÄ> " Chamar o Windows ","C",1,"WIN"
+³ ³ ³ ÚÄÄÄÄ> " Formatar Disquetes 3« 720k ","7",23,"FORMAT A:/F:720/U"
+³ ³ ³ ³ ÚÄÄ> " Formatar Disquetes 3« 1.44 ","1",23,"FORMAT A:/U"
+³ ³ ³ ³ ³ Ú> " Acertar a Hora e Data ","A",1,"HORAS"
+³ ³ ³ ³ ³ ³
+³ ³ ³ ³ ³ ³
+³ ³ ³ ³ ³ ³
+³ ³ ³ ³ ³ ³
+³ ³ ³ ³ ³ À 4¦ e £ltima op‡„o do men£
+³ ³ ³ ³ ÀÄÄ 3¦ e pen£ltima op‡„o do men£
+³ ³ ³ ÀÄÄÄÄ 2¦ op‡„o do men£
+³ ³ ÀÄÄÄÄÄÄ 1¦ op‡„o do men£
+³ ÀÄÄÄÄÄÄÄÄ Total de op‡”es que possui o men£ e a op‡„o maior
+ÀÄÄÄÄÄÄÄÄÄÄ Titulo do men£
+
+    A primeira linha do arquivo poder  conter um t¡tulo do men£. Este ‚ opcio-
+nal. Se for iliminado, dever  de figurar uma linha em branco com duas " " e um
+espa‡o em branco.
+
+    A segunda linha possui dois n£meros os quais correspondem ao total de op-
+‡”es e … op‡„o maior do men£, esta £ltima importante para a constru‡„o da ja-
+nela do mesmo. Estes dois n£meros dever„o de estar separados por uma , (vir-
+gula).
+
+    Da terceira linha em diante (at‚ … terceira linha + total de op‡”es - 1)
+figurar  as op‡”es dentro de "", sendo separadas por uma virgula dos it‚ms
+seguintes que s„o: a tecla de acesso r pido que corresponder  a um dos carac-
+teres da op‡„o, o qual ser  real‡ado por outra cor durante a exibi‡„o do men£.
+Esta tecla ao ser pressionada ir  executar a op‡„o de imediato, sem haver ne-
+cessidade de recorrer …s teclas de movimento de cursor e … tecla ENTER para
+proceder … escolha; a posi‡„o onde este caractere fica, devendo de ser conta-
+do desde o primeiro caractere (sem contar com espa‡os em branco) e por fim
+do programa a ser executado.
+
+    RESUMO
+    ÍÍÍÍÍÍ
+
+    Na primeira linha definir o titulo caso seja usado
+
+             " Men£ Principal - Exemplo "
+
+    Caso contr rio
+
+             " " (Campo vazio)
+
+    Definir quantas op‡”es v„o existir no men£ (no m ximo 20)
+    e qual a maior
+
+             4,3 (s„o 4 op‡”es e a maior ‚ a 3¦)
+
+    Definir as op‡”es
+
+         1¦ op‡„o ‚ Chamar o Windows, a tecla de acesso r pido ‚ o ®C¯
+            (de Chamar) e est  na posi‡„o 1 (no inicio - 1§ caractere)
+            o nome do comando/programa ‚ WIN
+
+             " Chamar o Windows ","C",1,"WIN"
+
+         2¦ op‡„o ‚ Formatar disquetes de 3« a 720k. Tecla de acesso r pido
+            ‚ o ®7¯ de 720k e est  na posi‡„o 23 desde o F de Formatar
+            o nome do comando/programa ‚ FORMAT A:/F:720 /U
+            (no caso de ser drive A: e de ser MS-DOS 5.0 ou superior)
+
+             " Formatar Disquetes 3« 720k ","7",23,"FORMAT A:/F:720/U"
+
+         3¦ op‡„o ‚ Formatar disquetes de 3« a 1.4k. Tecla de acesso r pido
+            ‚ o ®1¯ de 1.4k e est  na posi‡„o 23 desde o F de Formatar
+            o nome do comando/programa ‚ FORMAT A: /U
+            (no caso de ser drive A: e de ser MS-DOS 5.0 ou superior)
+
+             " Formatar Disquetes 3« 1.44 ","1",23,"FORMAT A:/U"
+
+            Por coincidˆncia estas duas op‡”es s„o do mesmo tamanho e s„o
+            ambas maiores que as restantes (2§ parametro da 2¦ linha)
+
+         4¦ op‡„o ‚ Acertar da data e hora do sistema.Tecla de acesso r pido
+            ‚ o ®A¯ de Acertar e est  na posi‡„o 1 desde o inicio. O nome do
+            comando/programa ‚ HORAS e ‚ um BAT do DOS
+
+             " Acertar a Hora e Data ","A",1,"HORAS"
+
+    IMPORTANTE
+    ÍÍÍÍÍÍÍÍÍÍ
+
+         N„o h  limite na interliga‡„o dos BAT e men£s. Ter  de haver cuidado
+nos dados de cada BAT de exibi‡„o do men£ tal como o MENU.BAT, pois os arqui-
+vos de controlo definidos pelas vari veis SET MNU???=valor dever„o de ser di-
+ferentes de BAT para BAT afim de se evitarem conflitos.
+
+    DICA
+    ÍÍÍÍ
+
+         No caso de uma op‡„o aparecer descontrolada no men£, adicionar espa-
+‡os em branco no fim da mesma afim de aumentar o tamanho, tendo o cuidado de
+referir esta como a maior caso ela ultrapasse o tamanho da maior op‡„o do me-
+n£ (Ver arquivo TESTE.MNU - para efeito chamar TESTE.BAT e TESTE2.BAT)
+
+<FIM>
+
+

@@ -1,0 +1,81 @@
+                      Circuitos integrados
+
+   Um circuito integrado, não é mais do que uma 
+série dos componentes descritos anteriormente 
+todos juntos no mesmo involucro e já ligados entre 
+si, prontos a desempenhar uma determinada 
+função.
+   Há vários tipos de integrados diferentes, desde 
+osciladores, que são muito usados em 
+temporizadores, a amplificadores operacionais que 
+se usam cada vez mais nos amplificadores 
+domésticos, uma vez que permitem obter uma boa 
+qualidade de som sem terem necessidade de 
+muitos circuitos exteriores e regulações delicadas,
+passando pelos integrados lógicos (que são os que 
+se encontram em maior parte no nosso PC), que 
+desempenham as funções da lógica booleana 
+(NOR, AND, OR, NOR, XOR, etc.).
+   Dentro de um circuito integrado podem estar 
+milhões e milhões de outros componentes (um 486 
+tem cerca de 1.200.000 transístores no seu 
+interior) e no entanto, o espaço por ele 
+ocupado é muito pequeno. 
+   Na figura está representado o TDA 2002, 
+um amplificador de potência muito usado em 
+Boosters para auto-rádio, e que no seu interior tem 
+nada mais nada menos que: 16 transístores, 8 
+diodos, 4 diodos zener, 10 resistências, 2 
+condensadores, 5 geradores de corrente e apenas 
+5 pinos.
+
+   E assim acaba o Electintro, um programa que 
+pretende ser uma introdução ao mundo da 
+electrónica, para que mais pessoas tenham 
+percepção daquilo que a electrónica é: um mundo 
+fascinante. Claro que há mais componentes do que 
+os aqui referidos, mas os mais utilizados estão aqui 
+todos descritos (por incrivel que pareça, com 
+apenas transistores, resistências, diodos e alguns 
+condensadores pode-se fazer desde um simples 
+amplificador até ao mais complexo sistema de 
+alarme.
+   A matéria foi escrita de maneira que mesmo 
+quem nunca ouviu falar nisto a possa entender, 
+sem entrar em demasiados promenores técnicos 
+(o 11º ano de electrónica é quase inteiramente 
+dedicado ao estudos dos transistores, e mesmo 
+assim sem estudarmos casos específicos, como o 
+são as altas frequências, e os FETS).
+    Apenas me falta referir como são feitas as
+placas de circuito impresso (as placas onde os 
+componentes estão soldados). Estas placas são 
+constituidas por uma base (de madeira, resinas, 
+fibra de vidro, mica, etc.) e têm num dos lados (ou 
+nos dois se forem de dupla face) uma camada de 
+cobre muito fina, na qual vão ser desenhadas ou 
+para a qual vai ser transcrito o esquema das pistas, 
+sendo esse esquema desenhado com uma tinta ou 
+usando vernizes especiais (uma simples caneta de 
+acetato serve), sendo depois a placa mergulhada num 
+ácido (geralmente percloreto de ferro) que vai 
+corroer todo o cobre que não esteja protegido pela 
+tinta, ficando apenas o traçado do circuito 
+desejado. Depois da placa pronta falta apenas 
+furá-la para se poderem soldar os componentes.
+   Claro que nas fábricas se usam processos 
+diferentes, as próprias placas são protegidas com 
+um verniz anti-corrosão e o trabalho final tem muito 
+melhor aspecto, mas para quem não tem milhões 
+de contos para montar uma fábrica, o processo 
+descrito anteriormente serve para fazer pequenos 
+trabalhos em casa.
+
+  Obrigada pela paciência dispensada para ler
+tudo. Se este programa despertar curiosidade pela 
+electrónica em alguém, não hesitem em me 
+contactar pela morada indicada na janela Sobre, 
+que terei o maior prazer em providenciar qualquer
+esquema de circuito que procurem (a minha 
+colecção já vai em mais de 500), ou de responder
+a qualquer dúvida que possa surgir.

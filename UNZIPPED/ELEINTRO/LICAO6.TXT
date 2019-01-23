@@ -1,0 +1,40 @@
+                             Diodos
+
+   Um diodo consiste básicamente em dois 
+pedaços de silício (ou germânio) encostados um 
+ao outro, tendo um excesso de electrões e o outro
+falta. Entre estes dois pedaços vai-se formar uma 
+espécie de barreira, barreira essa que só permite 
+a passagem de corrente eléctrica num sentido, e 
+mesmo assim, só se a diferença de potencial entre 
+os dois pedaços for de 0,6 V, (nos diodos de 
+sílicio) ou 0,2 V, (nos diodos de germânio).
+   Quando se tenta que uma corrente passe 
+atravéz do diodo em sentido contrário, só se vai 
+conseguir aumentar o tamanho da barreira, 
+tornando ainda mais díficil a passagem de 
+corrente eléctrica.
+   Como já se pode imaginar, os diodos são 
+usados para rectificar uma c.a. ou para baixarem 
+o valor da Ddp. Isto está correcto, mas na práctica 
+os diodos mais usados são os de sílicio, não só 
+por serem mais baratos (não muito) mas também 
+porque na práctica, ao se rectificar uma c.a. com 
+uma ponte de diodos (ver figura), o que se passa 
+é que os diodos vão aumentar a Ddp (um 
+transformador de 220 V para 12 V vai, depois da 
+c.a. rectificada, fornecer cerca de 13,5 V). Os 
+diodos de germânio são mais usados para 
+rectificar altas frequências, como as de rádio, 
+porque devido à menor Ddp de que necessitam 
+para trabalhar vão ter uma resposta mais rápida.
+   Há também vários tipos diferentes de diodos, 
+sendo os mais comuns: 1-Diodo Normal, 2-Diodo
+Zener (permite a passagem de uma corrente 
+eléctrica am sentido inverso, a partir de certo 
+valor de Ddp, valor esse que lhe dá a referência, 
+por exemplo: Diodo Zener 3,5 V), 3-Led (diodo 
+especial que ao ser percorrido por uma corrente 
+eléctrica emite luz, e que é, quase de certeza, o 
+que está agora aceso no seu monitor indicando 
+que este está a funcionar).

@@ -1,0 +1,4876 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                 ³ USER LIB I - QUICK BASIC 4.5 USER LIBRARY ³Û
+                 ³                                           ³Û
+                 ³  (c) Copyright N‚lio R. C. Abreu - 1993   ³Û
+                 ³                                           ³Û
+                 ³        Vers„o 2.0 - Rev 01/06/94          ³Û
+                 ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÛ
+                   ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         INDICE
+         ÄÄÄÄÄÄ
+
+
+
+              PREF†CIO ...........................................  2
+              INTRODU€O .........................................  3
+              VERSO SPOOLER .....................................  3
+              CONSTITUI€O DA VERSO .............................  4
+              TIPOS DE PROCEDIMENTOS .............................  5
+              TIPOS DE FUN€™ES ...................................  5
+              CAPITULO I - PROCEDIMENTOS DA BIBLIOTECA ...........  6
+              CLW ................................................  9
+              BOX ................................................  9
+              PAGE.SET ........................................... 10
+              PRINTER ............................................ 10
+              CONDENSED .......................................... 11
+              EXPANDED ........................................... 11
+              FORMFEED ........................................... 12
+              PAGE.JUMP .......................................... 12
+              CURSOR ............................................. 12
+              SAVE.SCREEN ........................................ 13
+              RESTORE.SCREEN ..................................... 13
+              HMENU .............................................. 13
+              VMENU .............................................. 15
+              COPY ............................................... 17
+              BACKUP/BAK ......................................... 17
+              ADD ................................................ 18
+              REMOVE ............................................. 18
+              INSERE ............................................. 18
+              UPDATE.PATH ........................................ 19
+              TEXT.BOX ........................................... 19
+              MOVE ............................................... 20
+              DIVISION ........................................... 21
+              FILL ............................................... 21
+              CENTER ............................................. 21
+              ADIR ............................................... 22
+              CTRL.BREAK ......................................... 23
+              CTRL.C ............................................. 23
+              ALT.CTRL.DEL ....................................... 24
+              SHOW ............................................... 24
+              HPRESET ............................................ 25
+              HPEJECT ............................................ 25
+              HPNLQ .............................................. 26
+              HPDRAFT ............................................ 26
+              HPFONT ............................................. 26
+              HPSTYLE ............................................ 26
+              HPINTENSITY ........................................ 27
+              HPFIXED ............................................ 27
+              HPPROP ............................................. 28
+              HPPITCH ............................................ 28
+              HPMARGIN ........................................... 28
+
+                                                                              i
+
+
+
+
+              HPCODEPAGE ......................................... 28
+              HPPAPER ............................................ 28
+              HPORIENTATION ...................................... 28
+              HPSIZE ............................................. 29
+              GETCOLOR ........................................... 29
+              SAVESCR ............................................ 30
+              RESTORESCR ......................................... 30
+              CAPITULO II - FUN€™ES DA BIBLIOTECA ................ 31
+              BIN2DEC&() ......................................... 34
+              BIN2HEX$() ......................................... 34
+              BIN2OCT$() ......................................... 34
+              DEC2BIN$() ......................................... 34
+              DEC2HEX$() ......................................... 35
+              DEC2OCT$() ......................................... 35
+              HEX2BIN$() ......................................... 35
+              HEX2DEC&() ......................................... 36
+              HEX2OCT$() ......................................... 36
+              OCT2DEC&() ......................................... 37
+              OCT2HEX$() ......................................... 37
+              OCT2BIN$() ......................................... 37
+              INVERS#() .......................................... 37
+              SQUARE& ............................................ 37
+              CUBE& .............................................. 38
+              PI#() .............................................. 38
+              ADD.BIN$() ......................................... 38
+              ADD.HEX$() ......................................... 38
+              ADD.OCT$() ......................................... 39
+              SUB.BIN$() ......................................... 39
+              SUB.HEX$() ......................................... 39
+              SUB.OCT$() ......................................... 40
+              MUL.BIN$() ......................................... 40
+              MUL.HEX$() ......................................... 41
+              MUL.OCT$() ......................................... 41
+              DIV.BIN$() ......................................... 41
+              DIV.HEX$() ......................................... 42
+              DIV.OCT$() ......................................... 42
+              FACTORIAL&() ....................................... 42
+              PERCENT!() ......................................... 43
+              TEN#() ............................................. 43
+              VIRG$() ............................................ 43
+              ZERO() ............................................. 43
+              NEGATIVE() ......................................... 44
+              POSITIVE() ......................................... 44
+              ALLTRIM$() ......................................... 44
+              EMPTY$() ........................................... 44
+              IIF$() ............................................. 44
+              TEMPFILE$() ........................................ 45
+              TIME2SECONDS() ..................................... 45
+              SECONDS2TIME$() .................................... 45
+              EVALUATE$() ........................................ 46
+              OPEN.FILES() ....................................... 46
+              CURDIR$()/PATH$()................................... 46
+
+                                                                             ii
+
+
+
+
+              DOS.FAT() .......................................... 46
+              DISK.FREE&() ....................................... 47
+              DOS.VER$() ......................................... 47
+              DOS.VOL$() ......................................... 47
+              BASE.MEMORY() ...................................... 47
+              FLOPPY() ........................................... 48
+              RS232() ............................................ 48
+              GAME() ............................................. 48
+              LPT() .............................................. 48
+              FPU() .............................................. 49
+              STRING.MEMORY() .................................... 49
+              KEY.STATUS$() ...................................... 49
+              INTERNAL.MEMORY() .................................. 49
+              STACK() ............................................ 50
+              NUMBER.MEMORY() .................................... 50
+              HP850$() ........................................... 50
+              CP860$() ........................................... 50
+              PRN.NUMBER%() ...................................... 51
+              PRN.STATUS%() ...................................... 51
+              NET.STATUS%() ...................................... 51
+              NET.ERROR%() ....................................... 51
+              UTILIZA€O DAS BIBLIOTECAS ......................... 52
+              CONSTANTES DO ARQUIVO USERLIB.INC .................. 54
+              CONSTANTES BOLEANAS ................................ 55
+              CONSTANTES DE TECLADO .............................. 55
+              CONSTANTES DE AMBIENTE ............................. 56
+              CONSTANTES DE FICHEIROS TEMPOR†RIOS ................ 57
+              CONSTATES INFORM†TICAS ............................. 57
+              CONSTANTES DE VARI†VEIS NULAS ...................... 57
+              CONSTANTES DE SEGMENTOS DE MEMŸRIA ................. 57
+              CONSTANTES DO DOS .................................. 57
+              CONSTANTES DE PORTS I/O ............................ 58
+              CONSTANTES DE IMPRESSORA ........................... 58
+              CONSTANTES DE REDE ................................. 58
+              CONSTANTES DE FICHEIROS ............................ 58
+              APENDIX A (Cores do BASIC) ......................... 59
+              APENDIX B (Mensagens de erro do BASIC) ............. 61
+              APENDIX C (Limites no BASIC) ....................... 68
+              APENDIX D (Notas musicais do BASIC) ................ 70
+              APENDIX E (C¢digo do teclado) ...................... 72
+              APENDIX F (Formulas matem ticas Trignom‚tricas) .... 74
+              APENDIX G (Parƒmetros do DRAW e PLAY) .............. 76
+              APENDIX H (Informa‡”es do DOS em rela‡„o ao BASIC) . 78
+              BASES DE APOIO ..................................... 80
+              COPYRIGHT .......................................... 80
+
+
+
+
+
+
+
+
+                                                                            iii
+
+
+
+
+    PREF†CIO
+    ÄÄÄÄÄÄÄÄ
+
+         ‘ medida que vamos evoluindo no campo da programa‡„o, necessitamos  de
+    desenvolver programas mais potentes. Em muitos dos casos passamos para lin-
+    guagens mais avan‡adas. Mas em muitas ocasi”es queremos manter o uso de uma
+    determinada linguagem por ser f cil.  nesses momentos em que  necessitamos
+    de recorrer a blocos de programas que nos s„o muito  importantes,  para  os
+    nossos projectos. Por tal facto ‚ que criei esta biblioteca.
+
+         N„o  querendo fazer do BASIC aquilo que … primeira vista ‚ impossivel,
+    com o uso desta todo o programador de BASIC poder  criar programas mais  ou
+    menos bons.
+
+         H  quem diga que, quem  nasce programando em BASIC, morre  programando
+    em BASIC. N„o sei se ‚ verdade, se ‚ mintira, no entanto, programo em BASIC
+    j  a algum tempo (mais precisamente … 8 anos). Come‡ei a programar em BASIC
+    do Spectrum  durante 3  anos, passando  em seguida  para o  GW-BASIC do PC.
+    Desde  ent„o  mantive  a  programa‡„o  em  GW-BASIC durante 1 ano, passando
+    depois para  a programa‡„o  em Turbo  BASIC, mantendo  esta £ltima  durante
+    cerca de 6 meses. Desde ent„o tenho programado em Quick BASIC e em  Clipper
+    sendo  esta  £ltima  a  outra  linguagem  em  que programo. Digo com toda a
+    sinceridade que gosto imenso de programar em BASIC, pois ‚ uma linguagem de
+    f cil acesso e de f cil programa‡„o.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   P gina    2
+
+
+
+
+   INTRODU€O
+   ÄÄÄÄÄÄÄÄÄÄ
+
+         Corrigindo alguns ®bugs¯ encontrados na LIB, adicionando novos proce-
+    dimentos e fun‡”es diversas, criei a vers„o 2.0 desta LIB
+
+         Tal como o  anterior, este tamb‚m  se encontra dividido  em trˆs cap¡-
+    tulos, tendo sido feitas algumas correc‡”es e modifica‡”es.
+
+         O primeiro cap¡tulo conta com a descri‡„o dos procedimentos que fazem
+    parte da biblioteca, sendo o segundo cap¡tulo todo ele dedicado …s  fun‡”es
+    que fazem parte da biblioteca. O  terceiro e £ltimo cap¡tulo ‚ dedicado  …s
+    variaveis de sistema
+
+         Cada procedimento  ou fun‡„o  ‚ explicado  na integra,  sendo o  mesmo
+    mostrado com a sua sintaxe completa e acompanhado de exemplos.
+
+
+
+    VERSO SPOOLER
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+         Esta vers„o, tal como a anterior, ‚ publicada pela Spooler, sendo a
+    mesma publicada como correc‡„o da vers„o anteriormente publicada.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   P gina    3
+
+
+
+
+   CONSTITUI€O DA VERSO SPOOLER
+   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         ULIB20.ZIP (Arquivo compact vel em formato ZIP 2.04g)
+
+
+              USERLIB.QLB  - Lib para ambiente QB
+              USERLIB.LIB  - Lib para criar as vers”es EXE dos programas
+              01-06-94.REV - Altera‡”es na Rev
+              BAS?.*       - Arquivos Header/footer para source-code
+              STANDARD.INC - M¢dulo de constantes
+              ERRHANDL.INC - M¢dulo de verifica‡„o de erro
+              USERLIB.HIS  - Historial da LIB
+              FUTURO.SUM   - Implementa‡”es no futuro
+              USERLIB.DOC  - Manual em disco (este arquivo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   P gina    4
+
+
+
+
+   TIPOS DE PROCEDIMENTOS
+   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Os procedimentos dividem-se nos seguintes tipos:
+
+              I/O de ambiente - Interface de video
+              I/O de arquivo - Comunica‡„o de arquivos
+              I/O de hardware - Comunica‡„o com diversos perif‚rico
+              I/O de sistema - Comunica‡„o com o sistema operativo
+
+
+
+   TIPOS DE FUN€™ES
+   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         As fun‡”es dividem-se nos seguintes tipos
+
+              Matem ticas - Executam c lculos matem ticos
+              I/O de arquivo - Comunicam com arquivos
+              I/O de sistema - Comunicam com o sistema operativo
+              I/O de hardware - Comunicam com os perif‚ricos
+              Boleanas - Retornam um valor falso (0) ou verdadeiro (-1)
+              Vari veis - Alteram os valores das vari veis
+
+
+
+    NOTA: Todos os procedimentos com  output de ecr„ , beneficiam das  cores de
+          ambiente declaradas pelo comando  COLOR. Assim sendo o  resultado dos
+          procedimentos, estar„o  interligados com  a £ltima  cor definida pelo
+          comando COLOR.
+
+
+
+    NOTA: Todos  as  fun‡”es  com   output  de  ecr„ , beneficiam das cores de
+          ambiente declaradas pelo comando  COLOR. Assim sendo o resultado  das
+          fun‡”es,  estar„o   interligadas  com   a  £ltima   cor definida pelo
+          comando COLOR.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   P gina    5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   CAPITULO I - PROCEDIMENTOS DA BIBLIOTECA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina    6
+
+
+
+
+    Procedimentos constintuintes da bibloteca:
+
+    CLW                 BOX                 PAGE.SET            PRINTER
+    CONDENSED           EXPANDED            FORMFEED            PAGEJUMP
+    CURSOR **           SAVE.SCREEN **      RESTORE.SCREEN **   HMENU
+    VMENU               COPY **             BAK **              ADD
+    REMOVE              INSERE              UPDATE.PATH         TEXT.BOX
+    MOVE **             DIVISION            FILL                CENTER
+    ADIR **             CTRL.BREAK          CTRL.C              ALT.CTRL.DEL
+    SHOW                HPRESET *           HPEJECT *           HPNLQ *
+    HPDRAFT *           HPFONT *            HPSTYLE *           HPINTENSITY *
+    HPFIXED *           HPPROP *            HPPITCH *           HPMARGIN *
+    HPCODEPAGE *        HPPAPER *           HPORIENTATION *     HPSIZE *
+    SAVESCR *           RESTORESCR *        GETCOLOR *
+
+
+         Cada um dos procedimentos poder   ser usado como se fosse  uma palavra
+    reservada do BASIC, sendo evocada sozinha com os seus parƒmetros ou  usando
+    a palavra chave CALL. Refira-se ao  seu manual de BASIC (Quick BASIC)  como
+    usar cada um dos modos. Sendo rotinas, todos os parƒmetros s„o obrigat¢rios, isto ‚, os mesmos
+    ter„o de estar presentes no programa, mesmo que n„o sejam utilizados.
+
+    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+    NOTA: Os procedimentos INT86OLD, INT86XOLD, ABSOLUTE, INTERRUPT, INTERRUPTX
+          n„o ser„o referidos neste manual, visto serem procedimentos  internos
+          do BASIC. Os mesmos est„o incluidos nesta biblioteca afim de  reduzir
+          o  aumento  da  linha  de  comando  no LINKador aquando da cria‡„o do
+          m¢dulo execut vel
+    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+
+    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+    NOTA: Tendo sido desenvolvida em  Portugal, a mesma possui alguns  procedi-
+          mentos e fun‡”es criadas em Inglˆs afim de tornar o c¢digo o mais pe-
+          queno possivel.
+    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+
+
+     * Procedimentos adicionados em rela‡„o … vers„o anterior
+    ** Procedimentos aperfei‡oados e/ou corrigidos
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina    7
+
+
+
+
+         Cada procedimento ser  referenciado da forma abaixo descriminada:
+
+
+    Nome       :
+    Anterior   :
+    Extras     :
+    Tipo       :
+    Sintaxe    :
+    Parƒmetros :
+    Valores    :
+    Finalidade :
+    Exemplos   :
+
+         Cujo significado ‚ o seguinte:
+
+    Nome - Nome do procedimento tal como ‚ usado dentro do programa e tal como
+           est  presente dentro da biblioteca
+
+    Anterior - Nome que o procedimento possuia anteriormente … vers„o actual
+
+    Extras - Outros procedimentos e fun‡”es que evoca
+
+    Tipo - Classifica‡„o usada para o procedimento
+
+    Sintaxe - Parƒmetros que fazem parte do procedimento. As duas sintaxes s„o
+              apresentadas (a Livre e a do BASIC)
+
+    Parƒmetros - Significado dos parƒmetros que fazem parte do procedimento
+
+    Valores - Valores possiveis que os parƒmetros podem assumir
+
+    Finalidade - Com que fim pode ser o procedimento usado
+
+    Exemplos - Alguns exemplos possiveis da utiliza‡„o do procedimento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina    8
+
+
+
+
+    Nome       :   CLW
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de ambiente
+    Sintaxe    :   CLW l1,c1,l2,c2
+                   CALL CLW(l1,c1,l2,c2)
+    Parƒmetros :   l1,c1 - Coordenada inicial - linha,coluna
+                   l2,c2 - Coordenada final - linha,coluna
+    Valores    :   l1 e l2 - um valor inteiro entre 1 e 25 inclusive
+                   c1 e c2 - um valor inteiro entre 1 e 80 inclusive
+    Finalidade :   Permite limpar uma determinada   rea do ecr„  com  as  cores
+                   actuais  de  ambiente  estabelecidas  pelo  comando COLOR do
+                   BASIC.
+    Exemplos   :   COLOR 7,4:CLW 2,2,20,60 - Ir  limpar a  rea entre a linha  2
+                   e a linha 20 e entre a  coluna 2 e a coluna 60 usando  a cor
+                   branca em  fundo vermelho como cor de limpeza
+
+
+
+    Nome       :   BOX
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de ambiente
+    Sintaxe    :   BOX l1,c1,l2,c2,frame$
+                   CALL BOX(l1,c1,l2,c2,frame$)
+    Parƒmetros :   l1,c1 - Coordenada inicial - linha,coluna
+                   l2,c2 - Coordenada final - linha,coluna
+                   frame$ - Tipo de linha a usar
+    Valores    :   l1 e l2 - um valor inteiro entre 1 e 25 inclusive
+                   c1 e c2 - um valor inteiro entre 1 e 80 inclusive
+                   frame$ - um car cter simbolizando o tipo de linha - S para
+                   linha simples, D para linha dupla
+    Finalidade :   Permite  desenhar uma  box numa  determinada  rea  do  ecr„
+                   usando as coordenadas dadas, sendo a box desenhada usando  o
+                   tipo de linha  determinada pela vari vel  frame$. A cor  que
+                   estiver  activa  no  momento,  ser    a  cor  a  usar   pelo
+                   procedimento, por outras palavras, a box ser  desenhada  com
+                   as cores que estiverem activas pelo comando COLOR do  BASIC.
+    Exemplos   :   COLOR 7,4:BOX 2,2,20,60,"D"  - Ir  desenhar uma  box usando
+                   linha  dupla  (D)  entre  a  linha  2  coluna 2 e a linha 20
+                   coluna 60 sendo as linhas em branco sob fundo vermelho.
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina    9
+
+
+
+
+    Nome       :   PAGE.SET
+    Anterior   :   -
+    Extras     :   ZERO(), NEGATIVE()
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   PAGE.SET l
+                   CALL PAGE.SET(l)
+    Parƒmetros :   l - N£mero de linhas
+    Valores    :   l - um valor inteiro entre 1 e 255 inclusive
+    Finalidade :   Permite  configurar  na impressora o  n£mero de linhas  por
+                   p gina.  Este  procedimento  utiliza  o  acesso  por meio de
+                   ®port¯ de  comunica‡”es sendo  por tal  utilizado em conjuto
+                   com   o   procedimento   PRINTER   descrito   mais   adiante
+    Exemplos   :   PRINTER "LPT1:",ENABLE:   PAGE.SET 72  - Ir  redirecionar  o
+                   port  de  impress„o  para   o  port  LPT1:,  activando-o   e
+                   configurando a impressora para 72 linhas por p gina.
+
+    Nome       :   PRINTER
+    Anterior   :   -
+    Extras     :   EMPTY()
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   PRINTER port$,status
+                   CALL PRINTER (port$,status)
+    Parƒmetros :   port$ - String identificando o port da impressora
+                   status - Flag de controlo
+    Valores    :   port$ - Um valor alfanum‚rico correspondendo aos ports
+                   de sistema (LPTn:, COMn:)
+                   status - Um valor inteiro - 0 ou -1
+    Finalidade :   Activa o port de impressora identificado pela vari vel port$
+                   sendo  este  activado  de  acordo  com a vari vel status. Se
+                   status  for  0  o  port  ser   desactivado,  se  for  1 ser 
+                   activado.  Poder   usar  as  constantes  bolenas  existentes
+                   dentro           do           arquivo            USERLIB.INC
+                   (YES,SIM,ENABLE,PRESENTE,PRESENT,etc)
+    Exemplos   :   PRINTER "LPT1:",ENABLE - Ir   redirecionar toda a  saida de
+                   impress„o para o port "LPT1:" (ENABLE).
+
+    NOTA: O  redireccionamento  de  impressora  ser   feito  usando o modo  de,
+          arquivo do BASIC (OPEN). Para tal o procedimento utiliza uma vari vel
+          do tipo inteiro  de nome ®fprint%¯  a qual possui  a identifica‡„o do
+          arquivo para a utiliza‡„o do comando PRINT #
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   P gina   10
+
+
+
+
+    Nome       :   CONDENSED
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   CONDENSED status
+                   CALL CONDENSED(status)
+    Parƒmetros :   status - Flag de controlo
+    Valores    :   status - Um valor inteiro - 0 ou -1
+    Finalidade :   Activa o modo de  impress„o em condensado (c¢digo  ESC 15),
+                   devendo  para  tal  o   redirecionamento  de impress„o estar
+                   activado  com  o  uso  do  procedimento  PRINTER.  Se status
+                   possuir o valor de 0 o modo de impress„o em condensado  ser 
+                   desactivado.  Se  for  1  o  modo  condensado ser  activado.
+                   Poder  usar as constantes presentes no arquivo   USERLIB.INC
+                   (YES,SIM,ENABLE,PRESENTE,PRESENT,etc)
+    Exemplos   :   CONDENSED ENABLE - Ir  activar o modo condensado
+
+    NOTA: O  redireccionamento  de  impressora  ser   feito  usando o modo  de,
+          arquivo do BASIC (OPEN). Para tal o procedimento utiliza uma vari vel
+          do tipo inteiro  de nome ®fprint%¯  a qual possui  a identifica‡„o do
+          arquivo para a utiliza‡„o do comando PRINT #
+
+    IMPORTANTE: Este procedimento necessita do procedimento PRINTER
+
+    OBS.: Todos os procedimentos de  I/O de hardware est„o interligados  com o
+          procedimento principal PRINTER, por outras palavras, se usar qualquer um
+          dos procedimentos  de I/O  de hardware  dever  de  us -los ap¢s  ter
+          activado o redireccionamento de impress„o com o procedimento PRINTER.
+
+
+    Nome       :   EXPANDED
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   EXPANDED status
+                   CALL EXPANDED(status)
+    Parƒmetros :   status - Flag de controlo
+    Valores    :   status - Um valor inteiro - 0 ou -1
+    Finalidade :   Activa o modo  de  impress„o em expandido (c¢digo   ESC 14),
+                   devendo  para  tal  o  redireccionamento  de impress„o estar
+                   activado  com  o  uso  do  procedimento  PRINTER.  Se status
+                   possuir o valor de 0 o modo de impress„o em expandido   ser 
+                   desactivado.  Se  for  1  o  modo  expandido ser   activado.
+                   Poder  usar as constantes presentes no arquivo  USERLIB.INC
+                   (YES,SIM,ENABLE,PRESENTE,PRESENT,etc)
+    Exemplos   :   EXPANDED DISABLE - Ir  desactivar o modo expandido
+
+
+
+
+
+
+
+                                                                   P gina   11
+
+
+
+
+    Nome       :   FORMFEED
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   FORMFEED
+                   CALL FORMFEED()
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Produz um avan‡o de p gina (c¢digo ESC 12). Ao ser evocado,
+                   o impressora ir  avan‡ar at‚ ao inicio da p gina seguinte.
+    Exemplos   :   FORMFEED  - Ir  avan‡ar a  p gina at‚ ao inicio  da pr¢xima
+                   p gina.
+
+
+    Nome       :   PAGE.JUMP
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   PAGE.JUMP l
+                   CALL PAGE.JUMP(l)
+    Parƒmetros :   l - Linhas de controlo de impress„o
+    Valores    :   l - Um valor inteiro entre 0 e 255
+    Finalidade :   Produz um avan‡o  de p gina de acordo com o total  de linhas
+                   j  impressas (vari vel l).  Se pretender efectuar um  avan‡o
+                   de p gina apartir de um determinado ponto de impress„o, ap¢s
+                   ter  impresso  20  linhas,  ent„o  use  este   procedimento,
+                   indicando  ao  mesmo  o  total  de linhas impressas. Uma vez
+                   activo,  o  procedimento  ir   efectuar  um avan‡o de p gina
+                   apartir      da      linha        indicado      por       l.
+    Exemplos  :    PAGE.JUMP  25  -  Ir   avan‡ar  a p gina ap¢s terem sido
+                   impressas 25 linhas de texto.
+
+
+    Nome       :   CURSOR
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   CURSOR status,s.line,e.line
+                   CALL CURSOR(status,s.line,e.line)
+    Parƒmetros :   status - Flag de controlo
+                   s.line - Linha inicial do cursor (1 a 31)
+                   e.line - Linha final do cursor (1 a 31)
+    Valores    :   status - Valor inteiro -1 ou 0
+    Finalidade :   Activa ou n„o o cursor no ecr„ . Se status for 0 o cursor
+                   ser  desligado. Se for -1 o cursor ser  activado no ecr„ .
+    Exemplos   :   ENBALE = -1: CURSOR  ENBALE,1,2  -  Ir   activar  a
+                   presen‡a do cursor no ecr„  com o mesmo entre 1 e 2.
+
+
+
+
+
+
+                                                                   P gina   12
+
+
+
+
+    Nome       :   SAVE.SCREEN
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   SAVE.SCREEN filename$
+                   CALL SAVE.SCREEN(filename$)
+    Parƒmetros :   filename$ - Nome de arquivo
+    Valores    :   filename$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+    Finalidade :   Guarda  a   rea  de  ecr„   (o que estiver a ser exibido)
+                   num  arquivo  em  disco,  para  depois  ser  reposto  com ou
+                   procedimento RESTORE.SCREEN referido mais adiante. Com  este
+                   procedimento  poder    guardar  em   disco  o   cont‚udo  do
+                   ecr„ ,        para        depois        ser         reposto.
+    Exemplos   :   SAVE.SCREEN "C:\TEMP\ECRAN01.SCN" - Ir  guardar no  arquivo
+                   ECRAN01.SCN no  direct¢rio TEMP  do disco  C: o  cont‚udo do
+                   ecr„
+
+
+    Nome       :   RESTORE.SCREEN
+    Anterior   :   -
+    Extras     :   EMPTY()
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   RESTORE.SCREEN filename$
+                   CALL RESTORE.SCREEN(filename$)
+    Parƒmetros :   filename$ - Nome de arquivo
+    Valores    :   filename$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+    Finalidade :   Rep“e   em  ecr„   o   cont‚udo  guardado  anterior   com  o
+                   procedimento  SAVE.SCREEN.  O  arquivo  ser   depois apagado
+                   autom ticamente      pelo      respectivo      procedimento.
+    Exemplos   :   RESTORE.SCREEN  "ECRAN01.SCN"   -  Ir    rep“r    no
+                   ecr„     o    cont‚udo     guardado    pelo     procedimento
+                   SAVE.SCREEN "ECRAN01.SCN"
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³NOTA: Os procedimentos  SAVE.SCREEN e RESTORE.SCREEN  s¢ aceitam o  nome do³
+  ³      arquivo  sem  a  especifica‡„o  do  direct¢rio,  uma  vez  que  a sua³
+  ³      finalidade ‚  a de  criarem um  arquivo tempor rio  para armazenar  a³
+  ³      imagem, os mesmos recorrem autom ticamente …s variaveis ®temp.dir.1$¯³
+  ³      e  ®temp.dir.2$¯  localizadas  dentro  do  STANDARD.INC e USERLIB.INC³
+  ³      possuindo  estas  a  localiza‡„o   do  direct¢rio  especificado   nas³
+  ³      variaveis DOS TEMP ou TMP                                            ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    Nome       :   HMENU
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+
+
+
+
+                                                                    P gina   13
+
+
+
+
+    Sintaxe    :   HEMNU l, opcoes$(), colunas(), f1, b1, f2, b2, f3, b3,
+                   frame$, msg$(), lm, cm, f4, b4, items
+                   CALL HEMNU l, opcoes$(), colunas(), f1, b1, f2, b2, f3, b3,
+                   frame$, msg$(), lm, cm, f4, b4, items)
+    Parƒmetros :   l - Linha onde ser„o posicionadas as op‡”es
+                   opcoes$() - Array contendo as op‡”es
+                   colunas() - Array contendo as colunas onde ser„o exibidas as
+                   op‡”es
+                   f1 - Cor de car cter das op‡”es em geral
+                   b1 - Cor de fundo das op‡”es em geral
+                   f2 - Cor de car cter da op‡„o real‡ada
+                   b2 - Cor de fundo da op‡„o real‡ada
+                   f3 - Cor de car cter da linha usada para desenhar a janela
+                   do men£
+                   b3 - Cor de fundo da linha usada para desenhar a janela do
+                   men£
+                   frame$ - Tipo de linha a usar na janela do men£
+                   msg$() - Mensagem associada a cada op‡„o
+                   lm - Linha onde ser  impressa a mensagem
+                   cm - Coluna onde ser  impressa a mensagem
+                   f4 - Cor de car cter da mensagem
+                   b4 - Cor de fundo da mensagem
+                   items - Total de op‡”es do men£
+    Valores    :   l - Um inteiro entre 2 e 24 correspondendo …s posi‡”es do
+                   ecr„
+                   opcoes$() - Strings todas do mesmo tamanho
+                   correspondendo …s op‡”es do men£
+                   colunas() - Um inteiro entre 2 e 79 correspondendo …s
+                   posi‡”es do ecr„
+                   f1 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b1 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+                   f2 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b2 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+                   f3 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b3 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+                   frame$ - Se for "D" ser  desenhada uma janela de linha
+                   dupla. Se for "S" ser  desenhada uma janela de linha
+                   simples.
+                   msg$() - String de texto com a descri‡„o das op‡”es
+                   lm - Um inteiro entre 1 e 25
+                   cm - Um inteiro entre 1 e 80
+                   f3 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b3 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+
+
+                                                                    P gina   14
+
+
+
+
+                   items - Um inteiro correspondendo ao total de elementos dos
+                   arrays opcoes$() e colunas()
+    Finalidade :   Exibe um  men£ horizontal numa determinada posi‡„o do  ecr„
+                   rodeado com uma box. Visto que ‚ desenhada uma box  rodeando
+                   o men£, apenas s„o reconhecidas as coordenadas entre a linha
+                   2  e 24 e entre as colunas  2 e 79.   Somente  as  teclas de
+                   descloca‡„o de cursor (setas) horizontal ser„o reconhecidas.
+                   A tecla ENTER  e ESC ‚  igualmente reconhecida. Afim  de ser
+                   poss¡vel o reconhecimento da op‡„o escolhida, o procedimento
+                   utiliza uma vari vel  publica, ®key.option¯, a  qual retorna
+                   um valor num‚rico correspondendo   …  op‡„o escolhida.  Esta
+                   vari vel assume o  valor 0 no  pressionamento da tecla  ESC.
+    Exemplos   :   DIM opc$(1 TO 3),colu(1 TO 3),m$(1 TO 3)
+                   opc$(1) = " Op‡„o 1 "
+                   opc$(2) = " Op‡„o 2 "
+                   opc$(3) = " Op‡„o 3 "
+                   colu(1) = 2
+                   colu(2) = 12
+                   colu(3) = 22
+                   FOR j=1 TO 3:m$(j)="":NEXT
+                   HMENU 3,opc$(),colu(),3,1,4,3,14,1,"D",m$(),0,0,0,0
+                   Cria  um  men£  horizontal  na  linha  3  com  3  op‡”es sem
+                   mensagens, sendo as op‡”es exibidas em azul claro sob  fundo
+                   azul  escuro,  sendo  a  barra  do  men£  formado por letras
+                   vermelhas em fundo azul claro.  A janela do men£ ser   feita
+                   em linha dupla ("D") sendo as linhas de cor amarela em fundo
+                   azul.
+
+
+    Nome       :   VMENU
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   VEMNU c, opcoes$(), linhas(), f1, b1, f2, b2, f3, b3,
+                   frame$, msg$(), lm, cm, f4, b4, items
+                   CALL HEMNU c, opcoes$(), linhas(), f1, b1, f2, b2, f3, b3,
+                   frame$, msg$(), lm, cm, f4, b4, items)
+    Parƒmetros :   c - Coluna onde ser„o posicionadas as op‡”es
+                   opcoes$() - Array contendo as op‡”es
+                   linhas() - Array contendo as linhas onde ser„o exibidas as
+                   op‡”es
+                   f1 - Cor de car cter das op‡”es em geral
+                   b1 - Cor de fundo das op‡”es em geral f2 - Cor de car cter
+                   da op‡„o real‡ada b2 - Cor de fundo da op‡„o real‡ada
+                   f3 - Cor de car cter da linha usada para desenhar a janela
+                   do men£
+                   b3 - Cor de fundo da linha usada para desenhar a janela do
+                   men£
+                   frame$ - Tipo de linha a usar na janela do men£
+                   msg$() - Mensagem associada a cada op‡„o
+
+
+
+                                                                    P gina   15
+
+
+
+
+                   lm - Linha onde ser  impressa a mensagem
+                   cm - Coluna onde ser  impressa a mensagem
+                   f4 - Cor de car cter da mensagem
+                   b4 - Cor de fundo da mensagem
+                   items - Total de op‡”es do men£
+    Valores    :   c - Um inteiro entre 2 e 79 correspondendo …s posi‡”es do
+                   ecr„
+                   opcoes$() - Strings todas do mesmo tamanho
+                   correspondendo …s op‡”es do men£
+                   linhas() - Um inteiro entre 2 e 24 correspondendo …s
+                   posi‡”es do ecr„  - linhas
+                   f1 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b1 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+                   f2 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b2 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+                   f3 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b3 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+                   frame$ - Se for "D" ser  desenhada uma janela de linha
+                   dupla. Se for "S" ser  desenhada uma janela de linha
+                   simples.
+                   msg$() - String de texto com a descri‡„o das op‡”es
+                   lm - Um inteiro entre 1 e 25
+                   cm - Um inteiro entre 1 e 80
+                   f3 - Um inteiro entre 0 e 31 - ver tabela de cores no
+                   Apendix A
+                   b3 - Um inteiro entre 0 e 15 - ver tabela de cores no
+                   Apendix A
+                   items - Um inteiro correspondendo ao total de elementos dos
+                   arrays opcoes$() e linhas()
+    Finalidade :   Exibe um   men£ vertical numa determinada posi‡„o do   ecr„
+                   rodeado com uma box. Visto que ‚ desenhada uma box  rodeando
+                   o men£, apenas s„o reconhecidas as coordenadas entre a linha
+                   2  e 24 e entre as colunas  2 e 79.   Somente  as  teclas de
+                   descloca‡„o de  cursor (setas)  vertial ser„o  reconhecidas.
+                   A tecla ENTER  e ESC ‚  igualmente reconhecida. Afim  de ser
+                   poss¡vel o reconhecimento da op‡„o escolhida, o procedimento
+                   utiliza uma vari vel  publica, ®key.option¯, a  qual retorna
+                   um valor num‚rico correspondendo   …  op‡„o escolhida.  Esta
+                   vari vel assume o  valor 0 no  pressionamento da tecla  ESC.
+
+
+
+
+
+
+
+
+                                                                    P gina   16
+
+
+
+
+    Exemplos   :   DIM opc$(1 TO 3),linh(1 TO 3),m$(1 TO 3)
+                   opc$(1) = " Op‡„o 1 "
+                   opc$(2) = " Op‡„o 2 "
+                   opc$(3) = " Op‡„o 3 "
+                   linh(1) = 2
+                   linh(2) = 4
+                   linh(3) = 6
+                   FOR j=1 TO 3:m$(j)="":NEXT
+                   VMENU 3,opc$(),linh(),3,1,4,3,14,1,"D",m$(),0,0,0,0
+                   Cria   um    men£    vertical   na    coluna    3   com    3
+                   op‡”es sem mensagens, sendo as op‡”es exibidas em azul claro
+                   sob fundo azul  escuro,  sendo  a  barra  do  men£   formado
+                   por letras vermelhas em fundo azul claro.  A janela do  men£
+                   ser   feita  em  linha  dupla  ("D")  sendo as linhas de cor
+                   amarela em fundo azul.
+
+    Nome       :   COPY
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de arquivo
+    Sintaxe    :   COPY origem$,destino$
+                   CALL COPY(origem$,destino$)
+    Parƒmetros :   origem$ - Nome de arquivo de origem (a ser copiado)
+                   destino$ - Nome de arquivo de destino
+    Valores    :   origem$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+                   destino$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+    Finalidade :   Copia arquivos de um disco ou direct¢rio para outro  disco
+                   ou direct¢rio,  ou cria  uma segunda  c¢pia dos arquivo para
+                   outro nome. Ambos os  nomes (origem$ e destino$)  dever„o de
+                   ser    indicados    caso    contr rio    originar      erro.
+    Exemplos   :   COPY "C:\AUTOEXEC.BAT","C:\AUTOEXEC.OLD" - Ir  criar uma
+                   segunda c¢pia do arquivo mudando-lhe a extens„o do nome.
+
+
+    Nome       :   BAK
+    Anterior   :   BACKUP
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de arquivo
+    Sintaxe    :   BAK origem$,destino$
+                   CALL BAK(origem$,destino$)
+    Parƒmetros :   origem$ - Nome de arquivo de origem
+                   destino$ - Nome de arquivo de destino
+    Valores    :   origem$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+                   destino$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+    Finalidade :   Cria uma c¢pia de seguran‡a de um arquivo. Este comando
+                   funciona igual ao COPY.
+
+
+
+                                                                    P gina   17
+
+
+
+
+    Exemplo    :   BAK "C:\AUTOEXEC.BAT","C:\AUTOEXEC.OLD" - Ir  criar uma
+                   segunda c¢pia do arquivo mudando-lhe a extens„o do nome.
+
+
+    Nome       :   ADD
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de arquivo
+    Sintaxe    :   ADD arquivo$,valor$
+                   CALL ADD(arquivo$,valor$)
+    Parƒmetros :   arquivo$ - Nome de arquivo de origem
+                   valor$ - Dado a gravar dentro do arquivo
+    Valores    :   arquivo$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+                   valor$ - Qualquer dado alfanum‚rico a ser gravado dentro do
+                   arquivo.
+    Finalidade :   Adiciona um dado alfanum‚rico ao fim de um arquivo do
+                   tipo sequˆncial ASCII puro.
+    Exemplo    :   ADD "C:\AUTOEXEC.BAT","SET CLIPPER=F57" - Ir  adicionar
+                   a vari vel CLIPPER=F57 ao arquivo AUTOEXEC.BAT.
+
+
+    Nome       :   REMOVE
+    Anterior   :   -
+    Extras     :   TEMPFILE$(), ALLTRIM$()
+    Tipo       :   Procedimento de I/O de arquivo
+    Sintaxe    :   REMOVE arquivo$,valor$
+                   CALL REMOVE(arquivo$,valor$)
+    Parƒmetros :   arquivo$ - Nome de arquivo de origem
+                   valor$ - Dado a remover de dentro do arquivo
+    Valores    :   arquivo$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+                   valor$ - Qualquer dado alfanum‚rico a ser removido de dentro
+                   do arquivo.
+    Finalidade :   Remove um dado alfanum‚rico de um arquivo do tipo sequˆncial
+                   ASCII puro.
+    Exemplo    :   REMOVE "C:\AUTOEXEC.BAT","SET CLIPPER=F57" - Ir  remover
+                   a vari vel CLIPPER=F57 do arquivo AUTOEXEC.BAT.
+
+
+    Nome       :   INSERE
+    Anterior   :   -
+    Extras     :   TEMPFILE$()
+    Tipo       :   Procedimento de I/O de arquivo
+    Sintaxe    :   INSERE arquivo$,valor$,posicao
+                   CALL INSERE(arquivo$,valor$,posicao)
+    Parƒmetros :   arquivo$ - Nome de arquivo de origem
+                   valor$ - Dado a inserir dentro do arquivo
+                   posicao - Linha do arquivo
+
+
+
+
+                                                                    P gina   18
+
+
+
+
+    Valores    :   arquivo$ - O nome legal de um arquivo respeitando as normas
+                   e convens”es de nomea‡„o de arquivos do DOS
+                   valor$ - Qualquer dado alfanum‚rico a ser inserido dentro do
+                   arquivo.
+                   posicao - Um valor inteiro corrspondendo …s linhas do
+                   arquivo
+    Finalidade :   Insere um dado alfanum‚rico dentro de um arquivo do tipo
+                   sequˆncial ASCII puro numa dada posi‡„o do arquivo
+    Exemplo    :   INSERE "C:\AUTOEXEC.BAT","SET CLIPPER=F57",3 - Ir  inserir a
+                   vari vel CLIPPER=F57 no arquivo AUTOEXEC.BAT na 3¦ linha do
+                   arquivo
+
+
+    Nome       :   UPDATE.PATH
+    Anterior   :   -
+    Extras     :   TEMPFILE$()
+    Tipo       :   Procedimento de I/O de sistema e arquivo
+    Sintaxe    :   UPDATE.PATH autoexec.arquivo$,direct¢rio$
+                   CALL UPDATE.PATH(autoexec.arquivo$,direct¢rio$)
+    Parƒmetros :   autoexec.arquivo$ - Localiza‡„o e nome do AUTOEXEC.BAT
+                   do DOS
+                   direct¢rio$ - Nome do direct¢rio
+    Valores    :   autoexec.arquivo$ - O nome legal do arquivo de
+                   sistema do DOS AUTOEXEC.BAT respeitando as normas e
+                   convens”es de nomea‡„o de arquivos do DOS
+                   direct¢rio$ - O nome legal de um direct¢rio respeitando as
+                   normas e convens”es do DOS
+    Finalidade :   Altera   a  vari vel  do   DOS PATH adicionando-lhe mais  um
+                   direct¢rio … sua  rvore  de pesquisa. O AUTOEXEC.BAT  tamb‚m
+                   ser  actualizado autom ticamente.
+    Exemplo    :   UPDATE.PATH "C:\AUTOEXEC.BAT","C:\QPRO" - Adiciona ao PATH
+                   do DOS dentro do AUTOEXEC.BAT localizado no disco C: o
+                   direct¢rio de pesquisa C:\QPRO
+
+
+    Nome       :   TEXT.BOX
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   TEXT.BOX l,c,txt$(),f1,b1,f2,b2,items,centro
+                   CALL TEXT.BOX(l,c,txt$(),f1,b1,f2,b2,items,centro)
+    Parƒmetros :   l - Linha no ecr„
+                   c - Coluna no ecr„
+                   txt$() - Array contendo o texto a ser exibido
+                   f1 - Cor das linhas usadas para desenhar a box
+                   b1 - Cor de fundo das linhas usadas para desenhar a box
+                   f2 - Cor das letras do texto
+                   b2 - Cor de fundo das letras do texto
+                   items - Total de elementos a serem exibidos
+                   centro - Flag de controlo
+
+
+
+                                                                    P gina   19
+
+
+
+
+    Valores    :   l - Um valor inteiro entre 1 e 25
+                   c - Um valor inteiro entre 1 e 80
+                   txt$() - Qualquer valor alfanum‚rico
+                   f1 - Um valor inteiro entre 0 e 31 - Ver tabela no APENDIX A
+                   b1 - Um valor inteiro entre 0 e 15 - Ver tabela no APENDIX A
+                   f2 - Um valor inteiro entre 0 e 31 - Ver tabela no APENDIX A
+                   b2 - Um valor inteiro entre 0 e 15 - Ver tabela no APENDIX A
+                   items - Um valor inteiro entre
+                   centro - -1 ou 0
+    Finalidade :   Exibe  uma box  com texto  numa determinada   rea do   ecr„
+                   sendo o texto exibido rodeado  de uma box em linha  dupla. A
+                   quantidade de  texto a  exibir, ter   a ver  com o  valor do
+                   parƒmetro items, e  o mesmo ser   impresso ao centro  caso a
+                   flag ®centro¯  esteja activa  em -1.  Neste caso  o valor do
+                   parƒmetro ®c¯  n„o ter   qualquer efeito.  Se a  flag for  0
+                   ent„o o texto ser  exibido na coluna ®c¯
+    Exemplo    :   DIM txt$(1 TO 3)
+                   txt$(1) = " ATEN€O "
+                   txt$(2) = " TODOS OS FICHEIROS SERO APAGADOS "
+                   txt$(3) = " CONFIRME POR FAVOR "
+                   TEXT.BOX 12,0,txt$(),14,4,14,4,3,-1
+                   Ir  exibir  o texto  em cima  numa box  de linha  dupla, com
+                   linhas amarelas em fundo vermelho e texto em letras amarelas
+                   em fundo vermelho, sendo  o mesmo impresso apartir  da linha
+                   12, ao  centro (ver  £ltimo parƒmetro  - sendo  -1 o segundo
+                   parƒmetro n„o importa)
+
+
+    Nome       :   MOVE
+    Anterior   :   -
+    Extras     :   COPY
+    Tipo       :   Procedimento de I/O de arquivo
+    Sintaxe    :   MOVE source$,target$
+                   CALL MOVE(source$,target$)
+    Parƒmetros :   source$ - String contendo o nome de um arquivo
+                   target$ - String contendo o nome de um arquivo
+    Valores    :   source$ - Respeitando as normas e convens”es do DOS
+                   target$ - Respeitando as normas e convens”es do DOS
+    Finalidade :   Move um arquivo de  uma zona do disco para outra. O nome  de
+                   destino dever  de ser especificado, assim como o  direct¢rio
+                   e unidade de disco.
+    Exemplo    :   MOVE "C:\DOC\CARTA.DOC","A:\BACKUP\CARTA.DOC"
+                   Ir  mover o documento CARTA.DOC do direct¢rio DOC do disco C
+                   para o direct¢rio BACKUP da disquete na drive A
+
+
+
+
+
+
+
+
+
+                                                                    P gina   20
+
+
+
+
+    Nome       :   DIVISION
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   DIVISION l1,c1,l2,c2,frame$
+                   CALL DIVISION(l1,c1,l2,c2,frame$)
+    Parƒmetros :   l1,c1 - Coordenadas superiores do ecr„
+                   l2,c2 - Coordenadas inferiores do ecr„
+                   frame$ - Tipo de linha a ser desenhada
+    Valores    :   l1,l2 - Um inteiro entre 1 e 25 correspondente … linha do
+                   ecr„
+                   c1,c2 - Um inteiro entre 1 e 80 correspondente … coluna do
+                   ecr„
+                   frame$ - Uma string que determina o tipo de linha - S para
+                   simples, D para dupla
+    Finalidade :   Coloca uma divis„o numa determinada zona do ecr„ . Se l1 for
+                   igual a l2 a divis„o ser  colocada na horizontal. Se c1  for
+                   igual a c2 a divis„o ser  colocada na vertical. Em ambos  os
+                   casos, os caracteres de canto ser„o colocados
+    Exemplo    :   DIVISION 12,1,12,80,"D" - Coloca a divis„o em linha dupla,
+                   na linha 12, entre as coluna 1 e 80
+
+
+    Nome       :   FILL
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   FILL l1,c1,l2,c2,frame$
+                   CALL FILL(l1,c1,l2,c2,frame$)
+    Parƒmetros :   l1,c1 - Coordenadas superiores do ecr„
+                   l2,c2 - Coordenadas inferiores do ecr„
+                   frame$ - Tipo de car cter a ser usado
+    Valores    :   l1,l2 - Um inteiro entre 1 e 25 correspondente … linha do
+                   ecr„
+                   c1,c2 - Um inteiro entre 1 e 80 correspondente … coluna do
+                   ecr„
+                   frame$ - Uma string que determina o tipo de caractere a ser
+                   usado
+    Finalidade :   Preenche uma determinada  rea do ecr„  com um caractere.
+    Exemplo    :   FILL 12,1,20,60,CHR$(219) - Preenche a  rea do ecr„
+                   compreendida entre as linhas 12 e 20 e entre as colunas 1 e
+                   60 com o caractere de c¢digo ASCII 219.
+
+
+    Nome       :   CENTER
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   CENTER l,texto$
+                   CALL CENTER(l,texto$)
+    Parƒmetros :   l - Coordenada do ecr„
+                   texto$ - String de texto
+
+                                                                     P gina  21
+
+
+
+
+    Valores    :   l - Um inteiro entre 1 e 25 correspondente … linha do
+                   ecr„
+                   texto$ - Uma string de texto com tamanho n„o superior a 80
+                   caracteres
+    Finalidade :   Coloca uma string de texto numa determinada linha do ecr„ ,
+                   sendo a mesma colocada ao centro
+    Exemplo    :   CENTER 25," Pressione uma tecla para continuar ... "
+                   Coloca a mensagem ®Pressione uma tecla para continuar...¯ no
+                   centro da linha 25.
+
+
+    Nome       :   ADIR
+    Anterior   :   -
+    Extras     :   TEMPFILE$()
+    Tipo       :   Procedimento de I/O de sistema
+    Sintaxe    :   ADIR(path$,vf,fn$(),fe$(),fs(),fd$(),ft$(),ftp$()
+                   CALL ADIR(path$,vf,fn$(),fe$(),fs(),fd$(),ft$(),ftp$())
+    Parƒmetros :   path$ - Nome do direct¢rio ou disco
+                   vf - Valor obtido pela fun‡„o de sistema DOS.FAT()
+                   fn$() - Array a receber o nomes dos arquivos
+                   fe$() - Array a receber as extens”es dos arquivos
+                   fs() - Array a receber os tamanhos dos arquivos
+                   fd$() - Array a receber as datas dos arquivos
+                   ft$() - Array a receber as horas dos arquivos
+                   ftp$() - Array contendo o tipo de arquivo
+    Valores    :   path$ - Nome do direct¢rio ou disco respeitando as normas e
+                   convens”es do DOS
+                   vf - Um valor inteiro, correspondendo ao total de
+                   arquivos e direct¢rios existentes na path$
+                   fn$() - Ir  conter o nome dos arquivos - 1 a 8 caracteres
+                   respeitando as normas e convens”es do DOS
+                   fe$() - Ir  conter a extens„o dos arquivos - 0 a 3
+                   caracters respeitando as normas e convens”es do DOS
+                   fs() - Ir  conter um valor inteiro correspondendo aos
+                   bytes de tamanho do arquivo
+                   fd$() - Ir  conter uma string com as datas dos
+                   arquivos, respeitando as convens”es de COUNTRY do DOS
+                   ft$() - Ir  conter uma string com as horas dos
+                   arquivos, respeitando as convens”es de COUNTRY do DOS
+                   ftp$() - Ir  conter uma string de idˆntifica‡„o dos
+                   arquivos - D para direct¢rio e F para arquivo.
+    Finalidade :   Preenche  os arrays  indicados com  os dados  dos  arquivos
+                   do  direct¢rio  ou  disco  especificado  na  vari vel path$.
+                   Os  carecteres  *  e  ?  podem  ser  usados. O preenchimento
+                   dos  arrays  ter   de  ser  feito  ap¢s  ter  sido  obtido o
+                   valor  de  vf,   o  qual  ‚   obtido  usando  a   fun‡„o  de
+                   sistema DOS.FAT() que ser  descrita mais adiante.
+
+
+
+
+
+
+                                                                     P gina  22
+
+
+
+
+    Exemplo    :   total = DOS.FAT("C:\DOC\*.DOC")
+                   DIM fn$(1 TO total),fe$(1 TO total),fs(1 TO total),fd$(1 TO
+                   total),ft$(1 TO total),ftp$(1 TO total)
+                   ADIR "C:\DOC\*.DOC",total,fn$(),fe$(),fs(),fd$(),ft$(),
+                   ftp$()
+                   Ir  colocar dentro dos arrays criados o cont‚udo do
+                   direct¢rio C:\DOC, relativo somente aos arquivos de
+                   extens„o DOC
+
+
+    Nome       :   CTRL.BREAK
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   CTRL.BREAK status
+                   CALL CTRL.BREAK(status)
+    Parƒmetros :   status - Flag de controlo
+    Valores    :   status - -1 ou 0 (verdadeiro ou falso)
+    Finalidade :   Ir   (-1) desactivar  a simula‡„o  de teclas  CTRL-BREAK ou
+                   activar  (0)  a  simula‡„o  CTRL-BREAK.  Se  status  for -1,
+                   pressionando   as   teclas   CTRL-BREAK   n„o   afectar    o
+                   funcionamento do programa. Se  for 0 a tecla  CTRL-BREAK ir 
+                   funcionar. Note que este procedimento s¢ funciona em rotinas
+                   com leitura de teclado. A mesma n„o funciona em INPUT, visto
+                   n„o haver leitura de teclado,  nem em INPUT$(n). A mesma  s¢
+                   funciona em INKEY$
+    Exemplo    :   CTRL.BREAK ENABLE
+                   DO
+                      tecla$=INKEY$
+                      IF tecla$=CHR$(27) THEN EXIT DO
+                   LOOP
+                   CTRL.BREAK DISABLE
+                   Ir  desligar a tecla CTRL-BREAK durante a leitura do teclado
+                   s¢ saindo do LOOP quando a tecla ESC for pressionada, vindo
+                   a tecla CTRL-BREAK a ser ligada
+
+
+    Nome       :   CTRL.C
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   CTRL.C status
+                   CALL CTRL.C(status)
+    Parƒmetros :   status - Flag de controlo
+    Valores    :   status - -1 ou 0 (verdadeiro ou falso)
+    Finalidade :   Ir   (-1)  desactivar  a  simula‡„o  de  teclas  CTRL-C   ou
+                   activar  (0)  a   simula‡„o  CTRL-C.  Se   status  for   -1,
+                   pressionando as teclas  CTRL.C n„o afectar   o funcionamento
+                   do  programa. Se for 0  a tecla CTRL-C ir  funcionar.   Note
+                   que   este   procedimento    s¢ funciona   em   rotinas  com
+                   leitura  de  teclado. A mesma  n„o funciona em  INPUT, visto
+                   n„o haver leitura de teclado, nem em INPUT$(n). A mesma   s¢
+                   funciona em INKEY$
+                                                                     P gina  23
+
+
+
+
+    Exemplo    :   CTRL.C ENABLE
+                   DO
+                      tecla$=INKEY$
+                      IF tecla$=CHR$(27) THEN EXIT DO
+                   LOOP
+                   CTRL.C DISABLE
+                   Ir  desligar a tecla CTRL-C durante a leitura do teclado s¢
+                   saindo do LOOP quando a tecla ESC for pressionada, vindo a
+                   tecla CTRL-C a ser ligada
+
+
+    Nome       :   ALT.CTRL.DEL
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de hardware
+    Sintaxe    :   ALT.CTRL.DEL status
+                   CALL ALT.CTRL.DEL(status)
+    Parƒmetros :   status - Flag de controlo
+    Valores    :   status - -1 ou 0 (verdadeiro ou falso)
+    Finalidade :   Ir    (-1)    desactivar   a    simula‡„o   de    teclas
+                   ALT-CTRL-DEL ou activar (0)  a simula‡„o  ALT-CTRL-DEL.   Se
+                   status  for  -1,  pressionando  as  teclas  ALT-CTRL-DEL n„o
+                   afectar   o funcionamento  do  programa. Se  for 0  a  tecla
+                   ALT-CTRL-DEL  ir   funcionar,  originando  o  reboot  do PC.
+                   Note  que  este  procedimento  s¢  funciona  em rotinas  com
+                   leitura de teclado.  A mesma n„o  funciona em   INPUT, visto
+                   n„o haver leitura de teclado, nem em INPUT$(n). A mesma   s¢
+                   funciona em INKEY$
+    Exemplo    :   ALT.CTRL.DEL ENABLE
+                   DO
+                     tecla$=INKEY$
+                     IF tecla$=CHR$(27) THEN EXIT DO
+                   LOOP
+                   ALT.CTRL.DEL DISABLE
+                   Ir  desligar a tecla ALT-CTRL-DEL durante a leitura do
+                   teclado s¢ saindo do LOOP quando a tecla ESC for pressionada
+                   vindo a tecla ALT-CTRL-DEL a ser ligada
+
+
+    Nome       :   SHOW
+    Anterior   :   -
+    Extras     :   CLW, BOX
+    Tipo       :   Procedimento de I/O de arquivo
+    Sintaxe    :   SHOW filename$,f1,b1,bd,f2,b2,f3,b3,frame$
+                   CALL SHOW(filename$,f1,b1,bd,f2,b2,f3,b3,frame$)
+    Parƒmetros :   filename$ - Nome do arquivo
+                   f1,b1,bd - Cores de arranque - Cor dos caracteres (f1), cor
+                   do fundo (b1) e borda (bd)
+                   f2,b2 - Cores do texto a ser exibido - Cor dos caracteres
+                   (f2) e cor do fundo (b2)
+                   f3,b3 - Cores da janela a rodear o texto - Cor dos caracters
+                   (f3), cor do fundo (b3)
+                   frame$ - Tipo de linha a ser usada na janela
+                                                                     P gina 24
+
+
+
+
+    Valores    :   filename$ - Nome do arquivo do DOS tipo ASCII com no m ximo
+                   45 Kbytes de tamanho
+                   f1,f2,f3 - Um inteiro entre 0 e 31 - Ver tabela de
+                   cores no Apendix A
+                   b1,b2,b3,bd - Um inteiro entre 0 e 15 - Ver tabela de cores
+                   no Apendix A
+                   frame$ - Uma string identificando o tipo de linha - D para
+                   linha dupla, S para linha simples
+    Finalidade :   Ir  exibir um documento  dentro de uma janela  com as cores
+                   especificadas  pelos   parƒmetros  f3,b3,frame$.   O   texto
+                   poder   ser  deslocado  usando  as  teclas  Pg  Up, Pg Down,
+                   Home e End.  Para abandonar o  documento, pressione a  tecla
+                   ESC.
+    Exemplo    :   SHOW "README.TXT",7,1,1,15,1,14,4,"D"
+                   Ir  exibir o documento README.TXT do disco corrente, sendo o
+                   ecr„  inicializado em letras brancas, fundo e bordas  azuis.
+                   O texto ser  exibido em letras brancas brilhantes, em  fundo
+                   azul, sendo o  mesmo rodeado com  uma janela de  linha dupla
+                   com as linhas em amarelo em fundo vermelho.
+
+    Nome       :   HPRESET
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPRESET
+                   CALL HPRESET
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Ir  inicializar a impressora HP (Linguagem PCL 3) limpando o
+                   buffer, e estabelecendo a fonte e pitch de default.
+    Exemplo    :   HPRESET: PRINT #fprint,"TESTE":HPEJECT
+                   Ir  inicializar a HP e imprimir a palavra TESTE na folha e-
+                   jectando em seguida a folha (Ver HPEJECT).
+
+    Nome       :   HPEJECT
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPEJECT
+                   CALL HPEJECT
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Ir  ejectar a folha da impressora usando o c¢digo PCL 3 da
+                   HP DeskJet.
+    Exemplo    :   HPRESET: PRINT #fprint,"TESTE":HPEJECT
+                   Ir  inicializar a HP e imprimir a palavra TESTE na folha e-
+                   jectando em seguida a folha (Ver HPRESET).
+
+
+
+
+
+
+                                                                     P gina  25
+
+
+
+
+    Nome       :   HPNLQ
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPNLQ
+                   CALL HPNLQ
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Ir  activar o modo de impress„o em NLQ usando a linguagem
+                   HP DeskJet PCL 3
+    Exemplo    :   HPNLQ: PRINT #fprint,"TESTE":HPDRAFT
+                   Ir  activar o modo NLQ e imprimir a palavra TESTE na folha
+                   e- activando em seguida o modo DRAFT.
+
+    Nome       :   HPDRAFT
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPDRAFT
+                   CALL HPDRAFT
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Ir  activar o modo de impress„o em DRAFT usando a lingua-
+                   gem HP DeskJet PCL 3
+    Exemplo    :   HPDRAFT: PRINT #fprint,"TESTE"
+                   Ir  activar o modo DRAFT e imprimir a palavra TESTE na
+                   folha .
+
+    Nome       :   HPFONT
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPFONT fonte$
+                   CALL HPFONT(fonte$)
+    Parƒmetros :   fonte$ - Caractere, identificando a fonte da HP
+    Valores    :   fonte$ - COURIER, CG TIMES, LETTER GOTHIC, UNIVERS
+    Finalidade :   Permite seleccionar a fonte de car cter da HP para usar
+                   na impress„o
+    Exemplo    :   HPFONT "COURIER": PRINT #fprint%,"TEST"
+                   Ir  imprimir a palavra TEST em ®COURIER¯
+
+    Nome       :   HPSTYLE
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPSTYLE estilo$
+                   CALL HPSTYLE(estilo$)
+    Parƒmetros :   estilo$ - Caractere, identificando o estilo da fonte
+    Valores    :   estilo$ - ITALIC, NORMAL
+    Finalidade :   Permite seleccionar o estilo de impress„o a usar na
+                   impress„o
+    Exemplo    :   HPSTYLE "ITALIC": PRINT #fprint%,"TEST"
+                   Ir  imprimir a palavra TEST em ®it lico¯
+                                                                     P gina  26
+
+
+
+
+    Nome       :   HPINTENSITY
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPINTENSITY intensidade$
+                   CALL HPINTENSITY(intensidade$)
+    Parƒmetros :   intensidade$ - car cter, identificando a intensidade de
+                                  impress„o
+    Valores    :   intensidade$ - NORMAL, BOLD, EXTRA-BOLD
+    Finalidade :   Permite seleccionar a intensidade do car cter  na
+                   impress„o
+    Exemplo    :   HPINTENSITY "NORMAL":PRINT #fprint%,"TESTE"
+                   Ir  imprimir a palavra TESTE em ®normal¯
+
+    Nome       :   HPFIXED
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPFIXED
+                   CALL HPFIXED
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Permite seleccionar a impress„o em espa‡amento fixo
+    Exemplo    :   HPFIXED :PRINT #fprint%,"TESTE"
+                   Ir  imprimir a palavra TESTE em espa‡amento fixo
+
+    Nome       :   HPPROP
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPPROP
+                   CALL HPPROP
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Permite seleccionar a impress„o em espa‡amento proporcional
+    Exemplo    :   HPPROP :PRINT #fprint%,"TESTE"
+                   Ir  imprimir a palavra TESTE em espa‡amento proporcional
+
+    Nome       :   HPPITCH
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPPITCH
+                   CALL HPPITCH
+    Parƒmetros :   -
+    Valores    :   -
+    Finalidade :   Permite seleccionar o pitch de car cter a usar na impress„o
+    Exemplo    :   HPPITCH 12:PRINT #fprint%,"TESTE"
+                   Ir  imprimir a palavra TESTE em 12 pitch (12cpi)
+
+
+
+
+                                                                     P gina  27
+
+
+
+
+    Nome       :   HPMARGIN
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPMARGIN margem$,posicao
+                   CALL HPMARGIN(margem$,posicao)
+    Parƒmetros :   margem$ - Indicador de Margem
+                   posicao - Posicao
+    Valores    :   margem$ - "LEFT", "RIGHT", "TOP" - Respectivamente esquer-
+                             da, direita, topo
+                   posicao - Um valor inteiro entre 0 e 255
+    Finalidade :   Permite estabelecer as margens de impress„o
+    Exemplo    :   HPMARGIN "LEFT",1:PRINT #fprint,"TESTE"
+                   Ir  imprimir a palavra TESTE a 1 coluna da esquerda
+
+    Nome       :   HPCODEPAGE
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPCODEPAGE codepage$
+                   CALL HPCODEPAGE(codepage$)
+    Parƒmetros :   codepage$ - Indicador do c¢digo de p gina - idˆntifica‡„o
+                               do pa¡s
+    Valores    :   codepage$ - "PC-8", "HP ROMAN8", "PC-8 D/N", "PC-850",
+                               "ECMA-94", "ISO 21", "ISO 69", "ISO 15",
+                               "ISO 17", "ISO 11", "ISO 10", "ISO 60",
+                               "ISO 61", "ISO 16", "ISO 4", "ISO 6",
+                               "JIS ASCII", "HP OFFICE", "ISO IRV"
+    Finalidade :   Permite seleccionar o codepage da impressora
+    Exemplo    :   HPCODEPAGE "PC-850":PRINT #fprint%,"NO"
+                   Ir  imprimir a palavra NO usando o codepage 850
+
+    Nome       :   HPPAPER
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPPAPER p$
+                   CALL HPPAPER(p$)
+    Parƒmetros :   p$ - Indicador do tipo de papel
+    Valores    :   p$ - "STANDARD", "USA LETTER", "USA OFFICE", "USA EXECUTIVE"
+                        "A4", "ENVELOPE 10", "ENVELOPE DL"
+    Finalidade :   Permite seleccionar o tipo de papel a usar
+    Exemplo    :   HPPAPER "A4":PRINT #fprint%,"NO"
+                   Ir  imprimir a palavra NO usando o papel A4
+
+    Nome       :   HPORIENTATION
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+
+
+
+
+                                                                     P gina  28
+
+
+
+
+    Sintaxe    :   HPORIENTATION o$
+                   CALL HPORIENTATION(o$)
+    Parƒmetros :   o$ - Orienta‡„o da impress„o
+    Valores    :   o$ - "LAND", "PORTRAIT"
+    Finalidade :   Permite seleccionar a orienta‡„o da impress„o
+    Exemplo    :   HPORIENTATION "L":PRINT #1fprint%,"TESTE"
+                   Ir  imprimir a palavra NO usando o modo ®land-scape¯
+
+    Nome       :   HPPAPER
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPPAPER p$
+                   CALL HPPAPER(p$)
+    Parƒmetros :   p$ - Indicador do tipo de papel
+    Valores    :   p$ - "STANDARD", "USA LETTER", "USA OFFICE", "USA EXECUTIVE"
+                        "A4", "ENVELOPE 10", "ENVELOPE DL"
+    Finalidade :   Permite seleccionar o tipo de papel a usar
+    Exemplo    :   HPPAPER "A4":PRINT #fprint%,"NO"
+                   Ir  imprimir a palavra NO usando o papel A4
+
+    Nome       :   HPSIZE
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de impressora
+    Sintaxe    :   HPSIZE l
+                   CALL HPSIZE(l)
+    Parƒmetros :   l - N§ de linhas por p gina
+    Valores    :   l - N£mero inteiro entre 1 e 255
+    Finalidade :   Permite configurar a impressora no total de linhas por
+                   p gina
+    Exemplo    :   HPSIZE 66:
+                   Ir  configurar a impressora para 66 linha p/ p gina
+
+    Nome       :   GETCOLOR
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   GETCOLOR l,c
+                   CALL GETCOLOR(l,c)
+    Parƒmetros :   l - Linha do ecr„ , c - coluna do ecr„
+    Valores    :   l - Um inteiro entre 1 e 25, c - um inteiro entre 1 e 80
+    Finalidade :   Ir  retornar as cores activas numa determinada regi„o do
+                   ecr„ . Os c¢digo ser„o armazenados nas seguintes vari veis
+                   foreground% - Cor de primeiro plano - Caracteres
+                   background% - Cor de segundo plano - Fundo
+    Exemplo    :   GETCOLOR 2,2
+                   Ir  obter a cor do car cter na linha 2 coluna 2
+
+
+
+
+
+                                                                     P gina  29
+
+
+
+
+    Nome       :   SAVESCR
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   SAVESCR l1,c1,l2,c2,variavel.array$
+                   CALL SAVESCR(l1,c1,l2,c2,variavel.array$)
+    Parƒmetros :   l1,c1 - Coordenadas superiores, l2,c2 - Coordenadas
+                   inferiores, variavel.array$ - Array alfanum‚rico a conter a
+                   por‡„o do ecr„
+    Valores    :   l1,l2 - Um inteiro entre 1 e 25, c1,c2 - Um inteiro entre 1
+                   e 80,  variavel.array$ - Array dimensionado com espa‡o
+                   sufeciente para conter a  rea do ecr„  a guardar
+    Finalidade :   Ir  armazenar uma pequena por‡„o do ecr„  numa variavel
+    Exemplo    :   SAVESCR 2,2,15,40,imagem$()
+                   Ir  armazenar dentro da variavel imagem$ to o que se
+                   encontra entre as linhas 2 e 15 e coluna 2 e 40
+
+    Nome       :   RESTORESCR
+    Anterior   :   -
+    Extras     :   -
+    Tipo       :   Procedimento de I/O de ambiente
+    Sintaxe    :   RESTORESCR l1,c1,l2,c2,variavel.array$
+                   CALL RESTORESCR(l1,c1,l2,c2,variavel.array$)
+    Parƒmetros :   l1,c1 - Coordenadas superiores, l2,c2 - Coordenadas
+                   inferiores, variavel.array$ - Array alfanum‚rico a conter a
+                   por‡„o do ecr„
+    Valores    :   l1,l2 - Um inteiro entre 1 e 25, c1,c2 - Um inteiro entre 1
+                   e 80,  variavel.array$ - Array dimensionado com espa‡o
+                   sufeciente para conter a  rea do ecr„  a guardar
+    Finalidade :   Ir  repor uma pequena por‡„o do ecr„  de uma variavel, que
+                   tenha sido guardada pelo procedimento SAVESCR
+    Exemplo    :   RESTORESCR 2,2,15,40,imagem$()
+                   Ir  repor da variavel imagem$ o que se fora guardado entre
+                   linhas 2 e 15 e colunas 2 e 40
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                     P gina  30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      CAPITULO II - FUN€™ES DA BIBLIOTECA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   31
+
+
+
+
+    Fun‡”es constintuintes da bibloteca:
+
+    BIN2DEC&()          BIN2HEX$()          BIN2OCT$()          DEC2BIN$()
+    DEC2HEX$()          DEC2OCT$()          HEX2BIN$()          HEX2DEC&()
+    HEX2OCT$()          OCT2DEC&()          OCT2BIN$()          OCT2HEX$()
+    INVERS#()           SQUARE&()           CUBE&()             PI#()
+    ADD.BIN$()          ADD.HEX$()          ADD.OCT$()          SUB.HEX$()
+    SUB.OCT$()          SUB.BIN$()          MUL.HEX$()          MUL.OCT$()
+    MUL.BIN$()          DIV.HEX$()          DIV.OCT$()          DIV.BIN$()
+    FACTORIAL&()        PERCENT!()          TEN#()              VIRG$()
+    ZERO()              NEGATIVE()          POSITIVE()          ALLTRIM$()
+    EMPTY$()            IIF$()              TEMPFILE$() **      TIME2SECONDS()
+    SECONDS2TIME$()     EVALUATE$()         OPEN.FILES()        CURDIR$() ****
+    DOS.FAT()           DISK.FREE&()        DOS.VER$()          DOS.VOL$()
+    BASE.MEMORY()       FLOPPY()            RS232()             GAME()
+    LPT()               FPU()               SPEED() ***         VERSION$() ***
+    KEY.STATUS$()       INTERNAL.MEMORY()   STRING.MEMORY()     STACK()
+    NUMBER.MEMORY()     GET.KEY$() *        HP850$() *          CP860$() *
+    PRN.NUMBER%() *     PRN.STATUS%() *     NET.STATUS%() *     NET.ERROR%() *
+
+
+         Cada uma das fun‡”es pode ser associada a um comando, ou ligada a  uma
+    vari vel.  A  mesma  pode  ser  usada  com  ou  sem  parƒmetros tal como os
+    procedimentos,  tendo  em  conta  a  sua  sintaxe.  Caso  a  fun‡„o  possua
+    parƒmetros os mesmos dever„o de ser  indicados … fun‡„o mesmo que n„o  seja
+    necess rio,  por  outras  palavras,  os  parƒmetros,  quando  presentes s„o
+    obrigat¢rios.
+
+
+    **** Renomeada
+     *** Removidas
+      ** Modificadas/Aperfei‡oadas/Corrigidas
+       * Novas
+
+         Cada fun‡„o ser  referenciada da forma abaixo descriminada:
+
+
+    Nome       :
+    Anterior   :
+    Extras     :
+    Tipo       :
+    Sintaxe    :
+    Entrada    :
+    Sa¡da      :
+    Valores    :
+    Finalidade :
+    Exemplos   :
+
+         Cujo significado ‚ o seguinte:
+
+    Nome - Nome da fun‡„o tal como ‚ usado dentro do programa e tal como
+           est  presente dentro da biblioteca
+
+                                                                    P gina   32
+
+
+
+
+    Anterior - Nome anterior da fun‡„o na vers„o anterior
+
+    Extras - Que outras fun‡”es evoca
+
+    Tipo - Classifica‡„o usada para a fun‡„o
+
+    Sintaxe - Formato da fun‡„o. N„o ser  feita referˆncia quanto … sintaxe
+              completa, usando comandos ou vari veis.
+
+    Entradas - Significado dos parƒmetros que fazem parte da fun‡„o
+
+    Sa¡das - Valores retornados pela fun‡„o
+
+    Valores - Valores possiveis que os parƒmetros podem assumir
+
+    Finalidade - Com que fim pode ser a fun‡„o usada
+
+    Exemplos - Alguns exemplos possiveis da utiliza‡„o da fun‡„o
+
+
+         Todas as fun‡”es podem ser usadas das seguintes formas:
+
+
+         vari vel = fun‡„o([parƒmetros])
+
+
+         comando fun‡„o([parƒmetros])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   33
+
+
+
+
+    Nome       : BIN2DEC&
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : BIN2DEC&(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor&
+    Valores    : valor$ - String num‚rica contendo um n£mero bin rio de 0 e 1
+                 com um comprimento m ximo de 40 d¡gitos
+                 valor& - N£mero inteiro longo
+    Finalidade : Converte um n£mero bin rio em seu correspondente d‚cimal
+    Exemplos   : v = BIN2DEC&("1101101")
+                 Ir  retornar 109 como o d‚cimal correspondente ao bin rio
+                 1101101.
+
+
+    Nome       : BIN2HEX$
+    Anterior   : -
+    Extras     : BIN2DEC&(), DEC2HEX$()
+    Tipo       : Matem tica
+    Sintaxe    : BIN2HEX$(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor$
+    Valores    : valor$ - String num‚rica contendo um n£mero bin rio de 0 e 1
+                 com um comprimento m ximo de 40 d¡gitos
+                 valor$ - String num‚rica contendo um n£mero hexad‚cimal
+                 com um comprimento m ximo de 20 d¡gitos
+    Finalidade : Converte um n£mero bin rio em seu correspondente hexad‚cimal
+    Exemplos   : v$ = BIN2HEX$("1101101")
+                 Ir  retornar 6D como o hexad‚cimal correspondente ao bin rio
+                 1101101.
+
+
+    Nome       : BIN2OCT$
+    Anterior   : -
+    Extras     : BIN2DEC&(), DEC2OCT$()
+    Tipo       : Matem tica
+    Sintaxe    : BIN2OCT$(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor$
+    Valores    : valor$ - String num‚rica contendo um n£mero bin rio de 0 e 1
+                 com um comprimento m ximo de 40 d¡gitos
+                 valor$ - String num‚rica contendo um n£mero hexad‚cimal
+                 com um comprimento m ximo de 20 d¡gitos
+    Finalidade : Converte um n£mero bin rio em seu correspondente octal
+    Exemplos   : v$ = BIN2HEX$("1000")
+                 Ir  retornar 10 como octal correspondente ao bin rio 1000.
+
+
+    Nome       : DEC2BIN$
+    Anterior   : -
+    Extras     : -
+
+                                                                    P gina   34
+
+
+
+
+    Tipo       : Matem tica
+    Sintaxe    : DEC2BIN$(valor#)
+    Entrada    : valor#
+    Sa¡da      : valor$
+    Valores    : valor# - N£mero inteiro d‚cimal
+                 valor$ - String num‚rica contendo um n£mero bin rio com 1 e 0
+                 com comprimento m ximo de 40 d¡gitos e terminado com {B}
+    Finalidade : Converte um n£mero d‚cimal inteiro em seu
+                 correspondente bin rio
+    Exemplos   : v$ = DEC2BIN$(4)
+                 Ir  retornar "00000000000000000000000000000000000000100{B}"
+                 como bin rio correspondente ao d‚cimal 4.
+
+
+    Nome       : DEC2HEX
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : DEC2HEX$(valor#)
+    Entrada    : valor#
+    Sa¡da      : valor$
+    Valores    : valor# - N£mero inteiro
+                 valor$ - String alfanum‚rica com um m ximo de 20 d¡gitos
+    Finalidade : Converte um n£mero d‚cimal em seu correspondente
+                 hexad‚cimal, sendo o mesmo terminado com {H}
+    Exemplos   : v$ = DEC2HEX$(10)
+                 Ir  retornar A{H} como o hexad‚cimal correspondente ao
+                 d‚cimal 10.
+
+
+    Nome       : DEC2OCT$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : DEC2OCT$(valor#)
+    Entrada    : valor#
+    Sa¡da      : valor$
+    Valores    : valor# - N£mero inteiro
+                 valor$ - String num‚rica contendo um n£mero octal
+                 com 20 d¡gitos
+    Finalidade : Converte um n£mero d‚cimal em seu correspondente octal
+    Exemplos   : v$ = DEC2OCT$(8)
+                 Ir  retornar 10{O} como o octal correspondente ao d‚cimal 8
+
+    Nome       : HEX2BIN$
+    Anterior   : -
+    Extras     : HEX2DEC&(), DEC2BIN$()
+    Tipo       : Matem tica
+    Sintaxe    : HEX2BIN$(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor$
+
+
+                                                                    P gina   35
+
+
+
+
+    Valores    : valor$ - String num‚rica contendo um n£mero hexad‚cimal com
+                 um comprimento m ximo de 20 d¡gitos
+                 valor$ - String num‚rica contendo um n£mero bin rio com um
+                 comprimento m ximo de 40 d¡gitos
+    Finalidade : Converte um n£mero hexad‚cimal em seu correspondente bin rio
+    Exemplos   : v$ = HEX2BIN2$("FD")
+
+
+    Nome       : HEX2DEC&
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : HEX2DEC&(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor#
+    Valores    : valor$ - String contendo um n£mero hexad‚cimal com 20 d¡gitos
+                 no m ximo de comprimento
+                 valor# - N£mero inteiro
+    Finalidade : Converte um n£mero hexad‚cimal em seu correspondente d‚cimal
+    Exemplos   : v# = HEX2DEC("2D")
+
+
+    Nome       : HEX2OCT$
+    Anterior   : -
+    Extras     : HEX2DEC&(), DEC2OCT$()
+    Tipo       : Matem tica
+    Sintaxe    : HEX2OCT$(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor$
+    Valores    : valor$ - String contendo um n£mero hexad‚cimal com 20 d¡gitos
+                 no m ximo de comprimento
+                 valor$ - String contendo um n£mero octal com 20 d¡gitos
+    Finalidade : Converte um n£mero hexad‚cimal em seu correspondente octal
+    Exemplos   : v$ = HEX2OCT$("2D")
+
+
+    Nome       : OCT2DEC&
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : OCT2DEC&(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor&
+    Valores    : valor$ - String contendo um n£mero octal com 20 d¡gitos no
+                 m ximo de comprimento
+                 valor& - Um n£mero inteiro
+    Finalidade : Converte um n£mero octal em seu correspondete d‚cimal
+    Exemplos   : v& = OCT2DEC&("174")
+
+
+
+
+
+                                                                    P gina   36
+
+
+
+
+    Nome       : OCT2HEX$
+    Anterior   : -
+    Extras     : OCT2DEC&(), DEC2HEX$()
+    Tipo       : Matem tica
+    Sintaxe    : OCT2HEX$(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor$
+    Valores    : valor$ - String contendo um n£mero octal com 20 d¡gitos no
+                 m ximo de comprimento
+                 valor$ - String contendo um n£mero hexad‚cimal com o m ximo de
+                 40 d¡gitos
+    Finalidade : Converte um n£mero octal em seu correspondente hexad‚cimal
+    Exemplos   : v$ = OCT2HEX$("174")
+
+
+    Nome       : OCT2BIN$
+    Anterior   : -
+    Extras     : OCT2DEC&(), DEC2BIN$()
+    Tipo       : Matem tica
+    Sintaxe    : OCT2BIN$(valor$)
+    Entrada    : valor$
+    Sa¡da      : valor$
+    Valores    : valor$ - String contendo um n£mero octal com 20 d¡gitos no
+                 m ximo de comprimento
+                 valor$ - String contendo um n£mero bin rio com o m ximo de
+                 40 d¡gitos
+    Finalidade : Converte um n£mero octal em seu correspondente bin rio
+    Exemplos   : v$ = OCT2BIN$("174")
+
+    Nome       : INVERS#
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : INVERS#(valor)
+    Entrada    : valor
+    Sa¡da      : valor#
+    Valores    : valor - Um n£mero inteiro
+                 valor# - Um n£mero fracion rio
+    Finalidade : C clula o inverso de um n£mero inteiro (1/x)
+    Exemplos   : v = INVERS#(2) (exibe 0.5)
+
+
+    Nome       : SQUARE&
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : SQUARE&(valor)
+    Entrada    : valor
+    Sa¡da      : valor&
+    Valores    : valor - Um n£mero inteiro
+                 valor& - Um n£mero inteiro longo
+    Finalidade : C clula o quadrado de um n£mero inteiro
+    Exemplos   : v& = SQUARE&(2) (exibe 4)
+                                                                    P gina   37
+
+
+
+
+    Nome       : CUBE&
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : CUBE&(valor)
+    Entrada    : valor
+    Sa¡da      : valor&
+    Valores    : valor - Um n£mero inteiro
+                 valor& - Um n£mero inteiro longo
+    Finalidade : C clula o cubo de um n£mero inteiro
+    Exemplos   : v& = CUBE&(2) (exibe 8)
+
+
+    Nome       : PI#
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : PI#()
+    Entrada    :
+    Sa¡da      : valor#
+    Valores    : valor# - Retorna um valor fracion rio
+    Finalidade : Retorna o valor constante de ã (3,14)
+    Exemplos   : vpi# = PI#() (vpi# fica com o valor 3,14...)
+
+
+    Nome       : ADD.BIN$
+    Anterior   : -
+    Extras     : BIN2DEC&(), DEC2BIN$()
+    Tipo       : Matem tica
+    Sintaxe    : ADD.BIN$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v2$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v$ - String contendo um valor bin rio com o m ximo de 40
+                 d¡gitos
+    Finalidade : Soma dois valores bin rios
+    Exemplos   : soma$ = ADD.BIN$("1101","1110")
+
+    Nome       : ADD.HEX$
+    Anterior   : -
+    Extras     : HEX2DEC&(), DEC2HEX$()
+    Tipo       : Matem tica
+    Sintaxe    : ADD.HEX$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+
+
+
+                                                                    P gina   38
+
+
+
+
+    Valores    : v1$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v2$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v$ - String contendo um valor hexad‚cimal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Soma dois valores hexad‚cimais
+    Exemplos   : soma$ = ADD.HEX$("AD2F","FFD2")
+
+
+    Nome       : ADD.OCT$
+    Anterior   : -
+    Extras     : OCT2DEC&(), DEC2OCT$()
+    Tipo       : Matem tica
+    Sintaxe    : ADD.OCT$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v2$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v$ - String contendo um valor octal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Soma dois valores octais
+    Exemplos   : soma$ = ADD.OCT$("1743","1236")
+
+
+    Nome       : SUB.BIN$
+    Anterior   : -
+    Extras     : BIN2DEC&(), DEC2BIN$()
+    Tipo       : Matem tica
+    Sintaxe    : SUB.BIN$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v2$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v$ - String contendo um valor bin rio com o m ximo de 40
+                 d¡gitos
+    Finalidade : Subtrai dois valores bin rios
+    Exemplos   : soma$ = SUB.BIN$("1101","1110")
+
+
+    Nome       : SUB.HEX$
+    Anterior   : -
+    Extras     : HEX2DEC&(), DEC2HEX$()
+    Tipo       : Matem tica
+    Sintaxe    : SUB.HEX$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+                                                                    P gina   39
+
+
+
+
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v2$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v$ - String contendo um valor hexad‚cimal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Subtrai dois valores hexad‚cimais
+    Exemplos   : soma$ = SUB.HEX$("AD2F","FFD2")
+
+
+    Nome       : SUB.OCT$
+    Anterior   : -
+    Extras     : OCT2DEC&(), DEC2OCT$()
+    Tipo       : Matem tica
+    Sintaxe    : SUB.OCT$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v2$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v$ - String contendo um valor octal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Subtrai dois valores octais
+    Exemplos   : soma$ = SUB.OCT$("1743","1236")
+
+
+    Nome       : MUL.BIN$
+    Anterior   : -
+    Extras     : BIN2DEC&(), DEC2BIN$()
+    Tipo       : Matem tica
+    Sintaxe    : MUL.BIN$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v2$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v$ - String contendo um valor bin rio com o m ximo de 40
+                 d¡gitos
+    Finalidade : Multiplica dois valores bin rios
+    Exemplos   : soma$ = MUL.BIN$("1101","1110")
+
+
+
+
+
+
+
+
+                                                                    P gina   40
+
+
+
+
+    Nome       : MUL.HEX$
+    Anterior   : -
+    Extras     : HEX2DEC&(), DEC2HEX$()
+    Anterior   : -
+    Extras     : HEX2DEC&(), DEC2HEX$()
+    Tipo       : Matem tica
+    Sintaxe    : MUL.HEX$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v2$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v$ - String contendo um valor hexad‚cimal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Multiplica dois valores hexad‚cimais
+    Exemplos   : soma$ = MUL.HEX$("AD2F","FFD2")
+
+
+    Nome       : MUL.OCT$
+    Anterior   : -
+    Extras     : OCT2DEC&(), DEC2OCT$()
+    Tipo       : Matem tica
+    Sintaxe    : MUL.OCT$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v2$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v$ - String contendo um valor octal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Multiplica dois valores octais
+    Exemplos   : soma$ = MUL.OCT$("1743","1236")
+
+
+    Nome       : DIV.BIN$
+    Anterior   : -
+    Extras     : BIN2DEC&(), DEC2BIN$()
+    Tipo       : Matem tica
+    Sintaxe    : DIV.BIN$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v2$ - String contendo um valor bin rio com um m ximo de
+                 40 d¡gitos de 0 e 1
+                 v$ - String contendo um valor bin rio com o m ximo de 40
+                 d¡gitos
+
+                                                                    P gina   41
+
+
+
+
+    Finalidade : Divide dois valores bin rios
+    Exemplos   : soma$ = DIV.BIN$("1101","1110")
+
+
+    Nome       : DIV.HEX$
+    Anterior   : -
+    Extras     : HEX2DEC&(), DEC2HEX$()
+    Tipo       : Matem tica
+    Sintaxe    : DIV.HEX$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v2$ - String contendo um valor hexad‚cimal com um m ximo de
+                 20 d¡gitos
+                 v$ - String contendo um valor hexad‚cimal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Divide dois valores hexad‚cimais
+    Exemplos   : soma$ = DIV.HEX$("AD2F","FFD2")
+
+
+    Nome       : DIV.OCT$
+    Anterior   : -
+    Extras     : OCT2DEC&(), DEC2OCT$()
+    Tipo       : Matem tica
+    Sintaxe    : DIV.OCT$(v1$,v2$)
+    Entrada    : v1$
+                 v2$
+    Sa¡da      : v$
+    Valores    : v1$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v2$ - String contendo um valor octal com um m ximo de 20
+                 d¡gitos
+                 v$ - String contendo um valor octal com o m ximo de 20
+                 d¡gitos
+    Finalidade : Divide dois valores octais
+    Exemplos   : soma$ = DIV.OCT$("1743","1236")
+
+
+    Nome       : FACTORIAL&
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : FACTORIAL&(v)
+    Entrada    : v
+    Sa¡da      : v&
+    Valores    : v - N£mero inteiro
+                 v& - N£mero inteiro longo
+    Finalidade : C lcula o factorial de um n£mero
+    Exemplos   : v& = FACTORIAL&(4) - Retorna (4 x 3 x 2 x 1) 24
+
+
+                                                                    P gina   42
+
+
+
+
+    Nome       : PERCENT!
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : PERCENT!(v)
+    Entrada    : v
+    Sa¡da      : v!
+    Valores    : v - N£mero inteiro
+                 v! - N£mero fracion rio
+    Finalidade : C lcula a percentagem de um dado valor (x/100)
+    Exemplos   : v! = PERCENT!(12) - Retorna 0.12
+
+
+    Nome       : TEN#
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : TEN#(e)
+    Entrada    : e
+    Sa¡da      : e#
+    Valores    : e - N£mero inteiro
+                 e# - N£mero inteiro longo
+    Finalidade : C lcula 10 elevado ao expoente (10ü)
+    Exemplos   : v# = TEN#(2) - Retorna 100
+
+    Nome       : VIRG$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Matem tica
+    Sintaxe    : VIRG$(v,c)
+    Entrada    : v
+                 c
+    Sa¡da      : v$
+    Valores    : v - N£mero inteiro
+                 c - N£mero inteiro
+                 v$ - String num‚rica
+    Finalidade : Retorna uma string de um n£mero convertido em casas das
+                 dezenas, unidades, centenas, etc
+    Exemplos   : v$ = VIRG$(134500,3) - Retorna "134,500"
+
+    Nome       : ZERO
+    Anterior   : -
+    Extras     : -
+    Tipo       : Boleana
+    Sintaxe    : ZERO(v)
+    Entrada    : v
+    Sa¡da      : f
+    Valores    : v - N£mero inteiro
+                 f - -1 ou 0
+    Finalidade : Retorna 0 se o o valor de v n„o for 0 caso contr rio retorna
+                 -1
+    Exemplos   : v = 0
+                 IF ZERO(v) THEN BEEP - Soa o altifalante se v for 0
+                                                                    P gina   43
+
+
+
+
+    Nome       : NEGATIVE
+    Anterior   : -
+    Extras     : -
+    Tipo       : Boleana
+    Sintaxe    : NEGATIVE(v)
+    Entrada    : v
+    Sa¡da      : f
+    Valores    : v - N£mero inteiro
+                 f - -1 ou 0
+    Finalidade : Retorna 0 se o o valor de v n„o for negativo caso contr rio
+                 retorna -1
+    Exemplos   : v = -1
+                 IF NEGATIVE(v) THEN BEEP - Soa o altifalante se v for negativo
+
+
+    Nome       : POSITIVE
+    Anterior   : -
+    Extras     : -
+    Tipo       : Boleana
+    Sintaxe    : POSITIVE(v)
+    Entrada    : v
+    Sa¡da      : f
+    Valores    : v - N£mero inteiro
+                 f - -1 ou 0
+    Finalidade : Retorna 0 se o o valor de v n„o for positivo caso contr rio
+                 retorna -1
+    Exemplos   : v = -1
+                 IF POSITIVE(v) THEN BEEP - Soa o altifalante se v for positivo
+
+    Nome       : ALLTRIM$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Vari vel
+    Sintaxe    : ALLTRIM$(a$)
+    Entrada    : a$
+    Sa¡da      : b$
+    Valores    : a$ - String
+                 b$ - String
+    Finalidade : Retorna uma string sem espa‡os … direita e esquerda.
+    Exemplos   : a$ = " TESTE "
+                 PRINT ALLTRIM$(a$) - Retorna "TESTE"
+
+    Nome       : IIF$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Boleana, vari vel
+    Sintaxe    : IIF$(condicao,a$,b$)
+    Entrada    : condicao
+                 a$
+                 b$
+    Sa¡da      : a$ ou b$
+
+
+                                                                    P gina   44
+
+
+
+
+    Valores    : condicao - Uma condi‡„o l¢gica usando AND, NOT, OR, etx.
+                 a$ - string
+                 b$ - String
+    Finalidade : Retorna  uma  das  duas  strings  a$  ou b$ conforme o valor
+                 l¢gico da condi‡„o.  Se a condi‡„o  for verdadeira (-1),  IIF$
+                 retorna a string a$, caso contr rio retorna b$
+    Exemplos :   a$ = "A>B": b$ = "A<B": a=2: b=3
+                 PRINT $IIF(a > b,a$,b$)
+
+
+    Nome       : TEMPFILE$
+    Anterior   : -
+    Extras     :
+    Tipo       : arquivo
+    Sintaxe    : TEMPFILE$()
+    Entrada    : -
+    Sa¡da      : filename$
+    Valores    : -
+    Finalidade : Retorna um  nome de  arquivo usando  para o  gerador de n£me-
+                 ros aleat¢rios sem extens„o. A mesma ‚ usada para cria‡„o de
+                 ficheiros tempor rios.
+    Exemplos :   f$ = TEMPFILE$
+                 OPEN f$ FOR OUTPUT AS #1
+
+
+    Nome       : TIME2SECONDS
+    Anterior   : -
+    Extras     : -
+    Tipo       : Tempo
+    Sintaxe    : TIME2SECONDS(t$)
+    Entrada    : t$
+    Sa¡da      : v
+    Valores    : t$ - String contendo o tempo em horas ("hh:mm:ss")
+                 v - Inteiro
+    Finalidade : Retorna o tempo em segundos, convertendo as horas e minutos em
+                 segundos.
+    Exemplos   : v = TIME2SECONDS(TIME$)
+
+    Nome       : SECONDS2TIME$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Tempo
+    Sintaxe    : SECONDS2TIME$(t)
+    Entrada    : t
+    Sa¡da      : v$
+    Valores    : t - Tempo em segundos
+                 v$ - String no formato hh:mm:ss
+    Finalidade : Retorna o tempo em string convertendo os segundos em horas,
+                 minutos e segundos
+    Exemplos : v$ = SECONDS2TIME$(34568)
+
+
+
+                                                                    P gina   45
+
+
+
+
+    Nome       : EVALUATE$
+    Anterior   : -
+    Extras     : TIME2SECONDS(), SECONDS2TIME$()
+    Tipo       : Tempo
+    Sintaxe    : EVALUATE$(inicio$,fim$)
+    Entrada    : inicio$
+                 fim$
+    Sa¡da      : tempo$
+    Valores    : inicio$ - String no formato hh:mm:ss
+                 fim$ - String no formato hh:mm:ss
+                 tempo$ - String no formato hh:mm:ss
+    Finalidade : Retorna a diferen‡a entre dois tempos em string, horas,
+                 minutos e segundos
+    Exemplos   : gasto$ = EVALUATE("23:17:45","23:45:34") - Retorna 00:28:15
+
+
+    Nome       : OPEN.FILES
+    Anterior   : -
+    Extras     : -
+    Tipo       : Arquivo
+    Sintaxe    : OPEN.FILES()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - Um inteiro entre 0 e 255
+    Finalidade : Retorna o total de arquivos em aberto
+    Exemplos   : IF OPEN.FILES() = 5 THEN CLOSE #1,CLOSE #2 - Fecha os 2
+                 primeiro arquivos se estiverem abertos 5 arquivos
+
+
+    Nome       : CURDIR$
+    Anterior   : PATH$
+    Extras     : TEMPFILE$()
+    Tipo       : Sistema
+    Sintaxe    : PATH$(d$)
+    Entrada    : d$
+    Sa¡da      : p$
+    Valores    : d$ - Letra de idˆntifica‡„o de drive (d:)
+                 p$ - String com o m ximo de 60 caracteres
+    Finalidade : Retorna o direct¢rio corrente num drive
+    Exemplos   : IF PATH$("A:") = "A:\DOC" THEN CHDIR "A:\"
+
+
+    Nome       : DOS.FAT
+    Anterior   : -
+    Extras     : TEMPFILE$()
+    Tipo       : Sistema
+    Sintaxe    : DOS.FAT(path$)
+    Entrada    : path$
+    Sa¡da      : f
+
+
+
+
+                                                                    P gina   46
+
+
+
+
+    Valores    : path$ - Especifica‡„o de arquivo
+                 f - Inteiro
+    Finalidade : Retorna o total de ficheiros e direct¢rios especificados pela
+                 vari vel path$
+    Exemplos   : tf = DOS.FAT("A:\DOC\*.DOC")
+
+
+    Nome       : DISK.FREE&
+    Anterior   : -
+    Extras     : TEMPFILE$()
+    Tipo       : Sistema
+    Sintaxe    : DISK.FREE&(d$)
+    Entrada    : d$
+    Sa¡da      : b&
+    Valores    : d$ - Letra de idˆntifica‡„o de drive (d:)
+                 b& - Inteiro longo
+    Finalidade : Retorna o espa‡o livre no disco especificado pela var vel d$
+    Exemplos   : IF DISK.FREE&("A:") = 0 THEN BEEP
+
+
+    Nome       : DOS.VER$
+    Anterior   : -
+    Extras     : TEMPFILE$()
+    Tipo       : Sistema
+    Sintaxe    : DOS.VER$()
+    Entrada    :
+    Sa¡da      : v$
+    Valores    : v$ - String
+    Finalidade : Retorna a vers„o do DOS onde o programa que possui a fun‡„o
+                 est  a ser usado
+    Exemplos   : PRINT "Rodando em cima de "; DOS.VER$()
+
+
+    Nome       : DOS.VOL$
+    Anterior   : -
+    Extras     : TEMPFILE$(), ALLTRIM$()
+    Tipo       : Sistema
+    Sintaxe    : DOS.VOL$(d$)
+    Entrada    : d$
+    Sa¡da      : v$
+    Valores    : v$ - String
+                 d$ - String especificando a letra de drive (d:)
+    Finalidade : Retorna o r¢tulo do disco especificado pela vari vel d$
+    Exemplos   : PRINT "O disco em A: possui o r¢tulo ";DOS.VOL$("A:")
+
+
+    Nome       : BASE.MEMORY
+    Anterior   : -
+    Extras     : -
+    Tipo       : Hardware
+    Sintaxe    : BASE.MEMORY()
+
+
+                                                                    P gina   47
+
+
+
+
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - N£mero inteiro
+    Finalidade : Retorna o total de mem¢ria base encontrada no PC
+    Exemplos   : PRINT "O seu PC possui ";BASE.MEMORY();" bytes de RAM"
+
+    Nome       : FLOPPY
+    Anterior   : -
+    Extras     : -
+    Tipo       : Hardware
+    Sintaxe    : FLOPPY()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - N£mero inteiro
+    Finalidade : Retorna o total de floppy encontradas no PC
+    Exemplos   : PRINT "O seu PC possui ";FLOPPY();" drives de disquete"
+
+
+    Nome       : RS232
+    Anterior   : -
+    Extras     : -
+    Tipo       : Hardware
+    Sintaxe    : RS232()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - N£mero inteiro
+    Finalidade : Retorna o total de ports RS 232 encontradas no PC
+    Exemplos   : PRINT "O seu PC possui ";RS232();" ports Serial"
+
+
+    Nome       : GAME
+    Anterior   : -
+    Extras     : -
+    Tipo       : Hardware,boleana
+    Sintaxe    : GAME()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - -1 ou 0
+    Finalidade : Retorna -1 se o PC possui interface de Joystick, 0 se n„o
+    Exemplos   : IF GAME() THEN PRINT "Calibre o seu JoyStick"
+
+    Nome       : LPT
+    Anterior   : -
+    Extras     : -
+    Tipo       : Hardware
+    Sintaxe    : LPT()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - N£mero inteiro
+    Finalidade : Retorna o total de ports LPT de impressora
+    Exemplos   : IF LPT()<1 THEN PRINT "N„o posso imprimir"
+
+
+                                                                    P gina   48
+
+
+
+
+    Nome       : FPU
+    Anterior   : -
+    Extras     : -
+    Tipo       : Hardware,boleana
+    Sintaxe    : FPU()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - -1 ou 0
+    Finalidade : Retorna -1 se o PC possui Co-processador matem tico, 0 se n„o
+    Exemplos   : IF NOT FPU() THEN PRINT "Os c lculos ser„o mais demorados"
+
+
+    Nome       : KEY.STATUS$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Hardware
+    Sintaxe    : KEY.STATUS$()
+    Entrada    :
+    Sa¡da      : v$
+    Valores    : v$ - String contendo um n£mero bin rio de 3 d¡gitos
+    Finalidade : Retorna o estado das teclas de paragem (ALT-CTRL-DEL,  CTRL-C,
+                 CTRL-BREAK) em formato  bin rio, onde cada  d¡gito corresponde
+                 …s teclas CTRL-BREAK, CTRL-C, e ALT-CTRL-DEL respectivamente
+    Exemplos   : IF KEY.STATUS$() = "010" THEN CTRL.C DISABLE
+
+
+    Nome       : INTERNAL.MEMORY
+    Anterior   : -
+    Extras     : -
+    Tipo       : Sistema
+    Sintaxe    : INTERNAL.MEMORY()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - Um inteiro
+    Finalidade : Retorna o tamanho da mem¢ria interna do BASIC
+    Exemplos   : IF INTERNAL.MEMORY()< 100000 THEN BEEP
+
+
+    Nome       : STRING.MEMORY
+    Anterior   : -
+    Extras     : -
+    Tipo       : Sistema
+    Sintaxe    : STRING.MEMORY()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - Um inteiro
+    Finalidade : Retorna o tamanho da mem¢ria interna do BASIC de texto
+    Exemplos   : IF STRING.MEMORY()< 20000 THEN BEEP
+
+
+
+
+
+                                                                    P gina   49
+
+
+
+
+    Nome       : STACK
+    Anterior   : -
+    Extras     : -
+    Tipo       : Sistema
+    Sintaxe    : STACK()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - Um inteiro
+    Finalidade : Retorna o tamanho da mem¢ria interna do BASIC de procedimentos
+                 e rotinas - O Stack
+    Exemplos   : IF STACK()< 1024 THEN PRINT "Sem STACK":END
+
+
+    Nome       : NUMBER.MEMORY
+    Anterior   : -
+    Extras     : -
+    Tipo       : Sistema
+    Sintaxe    : NUMBER.MEMORY()
+    Entrada    :
+    Sa¡da      : v
+    Valores    : v - Um inteiro
+    Finalidade : Retorna o tamanho da mem¢ria interna do BASIC de vari veis
+                 num‚ricas
+    Exemplos   : IF NUMBER.MEMORY()<50000 THEN PRINT "Sem Espa‡o":END
+
+
+    Nome       : HP850$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Impressora
+    Sintaxe    : HP850$(linha$)
+    Entrada    : linha$
+    Sa¡da      : linha2$
+    Valores    : linha$ - String de texto
+    Finalidade : Retorna a string linha$, convertida nos caracteres Portugueses
+                 usando para o efeito a tabela 850
+    Exemplos   : LPRINT HP850$("Impress„o de linhas de texto")
+
+
+    Nome       : CP860$
+    Anterior   : -
+    Extras     : -
+    Tipo       : Impressora
+    Sintaxe    : CP860$(linha$)
+    Entrada    : linha$
+    Sa¡da      : linha2$
+    Valores    : linha$ - String de texto
+    Finalidade : Retorna a string linha$, convertida nos caracteres Portugueses
+                 usando para o efeito a tabela 860
+    Exemplos   : LPRINT CP860$("Impress„o de linhas de texto")
+
+
+
+                                                                    P gina   50
+
+
+
+
+    Nome       : PRN.NUMBER%
+    Anterior   : -
+    Extras     : -
+    Tipo       : Impressora
+    Sintaxe    : PRN.NUMBER%()
+    Entrada    : -
+    Sa¡da      : codigo%
+    Valores    : -
+    Finalidade : Retorna o n£mero de controlo do port de impress„o.
+    Exemplos   : p% = PRN.NUMBER%: PRINT #p%, "TESTE DE IMPRESSO"
+
+    Nome       : PRN.STATUS%
+    Anterior   : -
+    Extras     : -
+    Tipo       : Impressora
+    Sintaxe    : PRN.STATUS%()
+    Entrada    : -
+    Sa¡da      : codigo%
+    Valores    : -
+    Finalidade : Retorna o estado do interface de impress„o.
+    Exemplos   : s% = PRN.STATUS%: IF s%<>0 THEN p% = PRN.NUMBER%
+                 PRINT #p%,"TEST"
+
+    Nome       : NET.STATUS%
+    Anterior   : -
+    Extras     : -
+    Tipo       : Rede
+    Sintaxe    : NET.STATUS%()
+    Entrada    : -
+    Sa¡da      : codigo%
+    Valores    : -
+    Finalidade : Retorna o estado do interface de rede.
+    Exemplos   : s% = NET.STATUS%: IF s%=0 THEN PRINT "REDE INACTIVA!"
+
+    Nome       : NET.ERROR%
+    Anterior   : -
+    Extras     : -
+    Tipo       : Rede
+    Sintaxe    : NET.ERROR%()
+    Entrada    : -
+    Sa¡da      : codigo%
+    Valores    : -
+    Finalidade : Retorna o c¢digo do erro do interface de rede
+    Exemplos   : ON ERROR GOTO corrige....erro% = NET.ERROR%....
+                 IF erro% <> 0 THEN ERROR erro%
+
+
+
+
+
+
+
+
+                                                                    P gina   51
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          UTILIZA€O DAS BIBLIOTECAS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   52
+
+
+
+
+         UTILIZA€O DAS BIBLIOTECAS
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+
+         Para usar  a LIB  dever  de  evocar o  QB usando  o parƒmetro   /L  do
+    editor do Quick BASIC (QB.EXE) sendo para tal especificada como /L arquivo,
+    onde arquivo ‚ o  nome da biblioteca de  ambiente, com a termina‡„o  QLB. O
+    carregamento do  Quick BASIC  d -se da  mesma forma como se  n„o utilizasse
+    biblioteca.  Uma  vez  dentro  do  editor,  dever   incluir  o  arquivo que
+    acompanha a biblioteca,  o USERLIB.INC o  qual possui a  inicializa‡„o  dos
+    procedimentos e  fun‡”es. Para  a sua  inclus„o dever   de usar a directiva
+    $INCLUDE: (refira-se  ao seu  manual como  a utilizar).  Apartir daqui ‚ s¢
+    usar os procedimentos e fun‡”es tais como se fossem instru‡”es privadas  do
+    Quick BASIC.
+
+
+         Na  cria‡„o   desta  biblioteca,   foi  incluida   a  biblioteca    de
+    interface  Assembler,  QB.QLB,   a   qual   possui  os   procedimentos   de
+    ASSEMBLER,  afim  de  garantir  uma   maior   flexibilidade  na   rea    de
+    programa‡„o, uma   vez que em  modo de ambiente,  o Quick BASIC  s¢ suporta
+    uma biblioteca no seu  parƒmetro /L arquivo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   53
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      CONSTANTES DO ARQUIVO USERLIB.INC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   54
+
+
+
+
+         CONSTANTES DO ARQUIVO USERLIB.INC
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+
+         Afim de  garƒntir uma  melhor programa‡„o,  o arquivo   USERLIB.INC, o
+    qual possui a  inicializa‡„o dos procedimentos  e fun‡”es, possui  tamb‚m a
+    declara‡„o  de  algumas  constantes  as  quais  poder  usar dentro dos seus
+    programas.  Estas  dividem-se  em  diversos  escal”es  conforme  a   rea de
+    programa‡„o.
+
+
+         CONSTANTES BOLEANAS
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas  controlam  o  estado  de  uma  condi‡„o,  funcionamento  de  um
+    procedimento ou fun‡„o. As mesmas assumir„o dois valores num‚ricos os quais
+    s¢ poder„o ser -1 ou 0. Se o valor da condi‡„o for 0, diz-se que a condi‡„o
+    ‚ falsa. Se o  valor da condi‡„o for  diferente de 0, geralmente  -1, ent„o
+    diz-se  que  a  condi‡„o  ‚  verdadeira.  Dentro  do  arquivo   USERLIB.INC
+    encontram-se  j   definidas  diversas  constantes,  que  possuem os valores
+    falso e verdadeiro. S„o elas:
+
+              Verdadeiras:
+
+                   TRUE, VERDADE, SIM, YES, PRESENTE, PRESENT, ENABLE
+
+              Falsas:
+
+                   FALSE, FALSO, NAO, NO, AUSENTE, ABSENT, DISABLE
+
+
+         CONSTANTES DE TECLADO
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Afim de tornar a leitura do teclado mais f cil com o uso da  instru‡„o
+    INKEY$, foram  definidas algumas  constantes, as  quais possuem  os c¢digos
+    ASCII  das  teclas.  Com  estas  constantes,  e usando, o seguinte bloco de
+    leitura de teclado
+
+              DO
+                tecla$ = UCASE$(INKEY$)
+                IF tecla$ = constante de teclado THEN accao
+              LOOP
+
+
+    poder  ter um melhor processamento sobre o teclado, pois pr ticamente quase
+    nenhuma tecla escapar  ao controlo. S„o elas:
+
+
+              Teclado b sico:
+
+                   ESC.key$, ENTER.ket$, TAB.key$, BACKSPACE.key$
+                                                                    P gina   55
+
+
+
+
+              Teclado de fun‡”es:
+
+                   F1.key$, F2.key$, F3.key$, F4.key$, F5.key$, F6.key$,
+                   F7.key$, F8.key$, F9.key$, F10.key$
+
+              Teclado de movimento de cursor
+
+                   LEFT.key$, UP.key$, DOWN.key$, RIGHT.key$
+
+              Teclado de movimento de p gina
+
+                   PAGE.UP.key$, PAGE.DOWN.key$, HOME.key$, END.key$
+
+              Teclado extra
+
+                   INS.key$, DEL.key$, nul.key$
+
+              Teclado expandido
+
+                   ALT.A.key$, ALT.B.key$, ALT.C.key$, ALT.D.key$, ALT.E.key$,
+                   ALT.F.key$, ALT.G.key$, ALT.H.key$, ALT.I.key$, ALT.J.key$,
+                   ALT.K.key$, ALT.L.key$, ALT.M.key$, ALT.N.key$, ALT.O.key$,
+                   ALT.P.key$, ALT.Q.key$, ALT.R.key$, ALT.S.key$, ALT.T.key$,
+                   ALT.U.key$, ALT.V.key$, ALT.W.key$, ALT.X.key$, ALT.Y.key$,
+                   ALT.Z.key$, ALT.1.key$, ALT.2.key$, ALT.3.key$, ALT.4.key$,
+                   ALT.5.key$, ALT.6.key$, ALT.7.key$, ALT.8.key$, ALT.9.key$,
+                   ALT.0.key$, ALT.F1.key$, ALT.F2.key$, ALT.F3.key$,
+                   ALT.F4.key$, ALT.F5.key$, ALT.F6.key$, ALT.F7.key$,
+                   ALT.F8.key$, ALT.F9.key$, ALT.F10.key$
+
+
+         CONSTANTES DE AMBIENTE
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas  controlam  o  display  de  informa‡„o.  Muitas  vezes durante a
+    programa‡„o, n„o nos  lembramos dos c¢digos  das cores. Assim  sendo, foram
+    criadas estas constantes, as quais possuem  os nomes das cores e os respec-
+    tivos c¢digos de cores do BASIC. S„o elas:
+
+              Cores b sicas
+
+                   BLACK, BLUE, GREEN, CYAN, RED, MANGENTA, BROWN, WHITE, GREY
+
+              Cores brilhantes
+
+                   LIGHT.BLUE, LIGHT.GREEN, LIGHT.CYAN, LIGHT.RED,
+                   LIGHT.MANGENTA, YELLOW, LIGHT.WHITE
+
+              Atributo
+
+                   FLASH
+
+
+                                                                    P gina   56
+
+
+
+
+         CONSTANTES INFORM†TICAS
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas possuem os valores referentes ao  Kilo Byte e Mega Byte. Se  por
+    acaso  necessitar   de  efectuar   cl lulos  matem ticos   de  inform tica,
+    poder  recorrer as estas constantes.
+
+              Kbyte%, Mbyte&, Gbyte&
+
+
+         CONSTANTES DE FICHEIROS TEMPOR†RIOS
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas  controlam  os  ficheiros  tempor rios.  Na necessidade de criar
+    ficheiros  tempor rios,  poder   reccorer  as  estas  afim  de  facilitar a
+    programa‡„o.
+
+              nul.file$
+
+
+         CONSTANTES DE VARI†VEIS NULAS
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Se pretender anular  o valor de  alguma vari vel, bastar   recorrer …s
+    respectivas constantes afim de evitar erros do tipo ®Type Mismatch¯
+
+              nul.string$, nul.integer%, nul.long&, nul.single!, nul.double#
+
+
+         CONSTANTES DE SEGMENTOS DE MEMŸRIA
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+         Estas  s„o  usadas,  na  grava‡„o  de  imagens de mem¢ria gr fica para
+    disco. Durante o display de imagem  gr fica ou de texto, poder  usar  estas
+    para mudar o apontador de mem¢ria para o segmento que idˆntifica o  display
+    de imagem
+
+              MDA.SEG, CGA.SEG, VGA.SEG, EGA.SEG
+
+
+         CONSTANTES DO DOS
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas possuem os valores  das capacidades das disquetes  reconheciveis
+    do DOS. Muito ut‚is para as rotinas de backup, afim de calcular os  espa‡os
+    e disquetes necess rias para tais procedimentos
+
+              disk160K&, disk180K&, disk320K&, disk360K&, disk720K&,
+              disk1200K&, disk1440K&
+
+
+
+                                                                    P gina   57
+
+
+
+
+         CONSTANTES DE PORTS DE I/O
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+         Estas possuem  a identifica‡„o  dos ports  de I/O  os quais  podem ser
+    usados para redireccionar informa‡„o
+
+              lpt1$, lpt2$, lpt3$, com1$, com2$, com3$, com4$
+
+
+         CONSTANTES DE IMPRESSORA
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas  controlam  o  redireccionamento  de  informa‡„o de immpressora.
+    Estas s„o usadas por alguns procedimentos de impress„o. Uma delas  controla
+    o estado da impressora,  se est  ligada ou  n„o. Outra controla a  linha de
+    impress„o
+
+              printer.status, printer.line
+
+
+         CONSTANTES DE REDE
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas   controlam   o   funcionamento  em  rede,  nomeadamente  a  sua
+    presen‡a, e erro
+
+              NetWork.status, NetWork.error
+
+
+         CONSTANTES DE FICHEIROS
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Estas controlam as extens”es a usar nos arquivos de dados, tempor rios
+    e outros
+
+              dat$, scr$, grf$, var$, mem$, sys$, cfg$, txt$, cor$, hlp$, tmp$,
+              bak$, ini$, bin$, reg$, dbf$, idx$, tbl$, drv$, cpi$, bkp$, bol$,
+              prn$, psw$, old$, dev$, doc$, his$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   58
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   A
+
+                                CORES DO BASIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   59
+
+
+
+
+    Cores do BASIC e seus c¢digos (em modo texto):
+
+    ÚÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄ¿
+    ³ C“r l¢gica ³   Cor de  ³ Cor de ³ Cor de ³
+    ³            ³ car cter  ³ Fundo  ³ Borda  ³
+    ÃÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    ³Preto       ³     0     ³    0   ³    0   ³Ä¿
+    ³Azul        ³     1     ³    1   ³    1   ³ ³
+    ³Verde       ³     2     ³    2   ³    2   ³ ³
+    ³Cyan        ³     3     ³    3   ³    3   ³ ³
+    ³Encarnado   ³     4     ³    4   ³    4   ³ ÃÄ Normal
+    ³Mangenta    ³     5     ³    5   ³    5   ³ ³
+    ³Castanho    ³     6     ³    6   ³    6   ³ ³
+    ³Branco      ³     7     ³    7   ³    7   ³ ³
+    ³Cinza       ³     8     ³    8   ³    8   ³ÄÙ
+    ³Azul        ³     9     ³    9   ³    9   ³Ä¿
+    ³Verde       ³    10     ³   10   ³   10   ³ ³
+    ³Cyan        ³    11     ³   11   ³   11   ³ ³
+    ³Encarnado   ³    12     ³   12   ³   12   ³ ÃÄ Brilhante
+    ³Mangenta    ³    13     ³   13   ³   13   ³ ³
+    ³Amarelo     ³    14     ³   14   ³   14   ³ ³
+    ³Branco      ³    15     ³   15   ³   15   ³ÄÙ
+    ³Preto       ³    16     ³        ³        ³Ä¿
+    ³Azul        ³    17     ³        ³        ³ ³
+    ³Verde       ³    18     ³        ³        ³ ³
+    ³Cyan        ³    19     ³        ³        ³ ³
+    ³Encarnado   ³    20     ³        ³        ³ ÃÄ Cintilhante
+    ³Mangenta    ³    21     ³        ³        ³ ³  (Normal)
+    ³Castanho    ³    22     ³        ³        ³ ³
+    ³Branco      ³    23     ³        ³        ³ ³
+    ³Cinza       ³    24     ³        ³        ³ÄÙ
+    ³Azul        ³    25     ³        ³        ³Ä¿
+    ³Verde       ³    26     ³        ³        ³ ³
+    ³Cyan        ³    27     ³        ³        ³ ³
+    ³Encarnado   ³    28     ³        ³        ³ ÃÄ Brilhante
+    ³Mangenta    ³    29     ³        ³        ³ ³  (Cintilhante)
+    ³Amarelo     ³    30     ³        ³        ³ ³
+    ³Branco      ³    31     ³        ³        ³ÄÙ
+    ÀÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÙ
+
+
+    Sintaxe do comando COLOR (em modo de texto):
+
+
+             COLOR carectere, fundo, borda
+
+    Sintaxe do comando COLOR (modo gr fico):
+
+             COLOR carectere, fundo
+
+         Dentro  do arquivo USERLIB.INC existem definidas as constantes das co-
+    res assim como as constantes de atributo.
+
+                                                                    P gina   60
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   B
+
+                          MENSAGENS DE ERRO DO BASIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   61
+
+
+
+
+    Mensagens de erro do BASIC:
+
+    Definidas internamente
+
+
+    C¢digo         Mensagem                 Ocorrˆncia
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+     1             NEXT  WITHOUT FOR        Ocorre quando ‚ encontrado um NEXT
+                                            sem o respectivo FOR
+
+     2             SYNTAX ERROR             Ocorre quando na fun‡„o ou  comando
+                                            do BASIC existem parƒmetros que n„o
+                                            fazem parte da sua sintaxe
+
+     3             RETURN WITHOUT GOSUB     Ocorre quando existe a   referˆncia
+                                            de uma linha de uma rotina  atrav‚s
+                                            de  um  GOSUB  e  n„o  existe o seu
+                                            RETURN
+
+     4             OUT OF DATA              Ocorre quando os dados   existentes
+                                            em bancos de dados DATA ‚  inferior
+                                            aos lidos pelo comando READ
+
+     5             ILEGAL FUNCTION CALL     Ocorre quando um comando ou  fun‡„o
+                                            do BASIC recebe  um valor fora  dos
+                                            limites impostos pelo BASIC
+
+     6             OVERFLOW                 Ocorre           quando         num
+                                            c lculo     matem tico,         s„o
+                                            ultrapassados        os     limites
+                                            num‚ricos  impostos   pelo BASIC
+
+     7             OUT OF MEMORY            Ocorre  quando  uma das    mem¢rias
+                                            internas    do    BASIC     (texto,
+                                            num‚rica,   ou    o   Stack)    s„o
+                                            sobrecarregados com informa‡„o
+
+     8             LABEL NOT DEFINED        Ocorre  quando  h  referˆncia a  um
+                                            r¢tulo  num  comando  GOTO, RESUME,
+                                            GOSUB
+
+     9             SUBSCRIPT OUT OF RANGE   Ocorre  quando h  referˆncia a  uma
+                                            vari vel   dimensionada,   e   cujo
+                                            ¡ndice  de  identifica‡„o,  n„o  se
+                                            encontra  dentro  dos  limites   do
+                                            array
+
+    10             DUPLICATE DEFINITION     Ocorre quando ‚ usada uma  vari vel
+                                            e  o  nome  da  mesma j  est  sendo
+                                            usado como constante ou como fun‡„o
+                                            ou como procedimento
+
+
+                                                                    P gina   62
+
+
+
+
+    11             DIVISION BY ZERO         Ocorre  quando  durante um  c lculo
+                                            matem tico,   ‚    efectuada    uma
+                                            divis„o   usando   vari veis   e  a
+                                            vari vel do divisor possui um valor
+                                            nulo
+
+    12             ILEGAL IN DIRECT MODE    Ocorre  quando  usa  um comando  ou
+                                            fun‡„o, o qual dever  de ser  usado
+                                            dentro de um programa
+
+    13             TYPE MISMATCH            Ocorre quando ‚ feita a  compara‡„o
+                                            entre  dois   tipos  de   vari veis
+                                            diferentes
+
+    14             OUT OF STRING SPACE      Ocorre quando a mem¢ria de texto j 
+                                            se encontra sobrecarregda
+
+    15             STRING TOO LONG          Ocorre quando uma string possui  um
+                                            tamanho superior ao limite  imposto
+                                            pelo BASIC
+
+    16             STRING FORMULA TOO COMPLEX
+                                            Ocorre quando a jun‡„o de strings ‚
+                                            demasiado   complexa    para    ser
+                                            resolvida pelo BASIC
+
+    17             CANNOT CONTINUE          Ocorre quando h  a interrump‡„o  da
+                                            execu‡„o   do   programa   com    o
+                                            pressionar  das  teclas CTRL-BREAK,
+                                            ‚   efectuadas   altera‡”es   e  em
+                                            seguida      o      programa      ‚
+                                            reeinicializado   com    a    ordem
+                                            CONTINUE do men£
+
+    18             FUNCTION NOT DEFINED     Ocorre quando ‚ feita a  referˆncia
+                                            a  uma  fun‡„o  n„o  definida  pelo
+                                            comando DEF FN
+
+    19             NO RESUME                Ocorre quando existe a presen‡a  de
+                                            uma  instru‡„o  do  tipo  ON  ERROR
+                                            GOTO   linha   e   n„o   existe   o
+                                            respectivo RESUME
+
+    20             RESUME WITHOUT ERROR     Ocorre  quando  existe  um  comando
+                                            RESUME  sem  o  respectivo ON ERROR
+                                            GOTO
+
+    24             DEVICE TIMEOUT           Ocorre quando a comunica‡„o com  um
+                                            perif‚rico interligado  por um  dos
+                                            ports  de  comunica‡„o  n„o  ‚  bem
+                                            sucedida
+
+
+                                                                    P gina   63
+
+
+
+
+    25             DEVICE FAULT             Ocorre  quando  a  comunica‡„o  com
+                                            perif‚rico interligado  por um  dos
+                                            ports de comunica‡„o falha
+
+    26             FOR  WITHOUT NEXT        Ocorre quando ‚ encontrado  um  FOR
+                                            sem o respectivo NEXT
+
+    27             OUT OF PAPER             Ocorre  quando  n„o ‚ encontrado  o
+                                            papel na impressora
+
+    29             WHILE WITHOUT WEND       Ocorre quando ‚ encontrado um ciclo
+                                            WHILE   sem    a    prensen‡a    do
+                                            respectivo WEND
+
+    30             WEND WITHOUT WHILE       Ocorre quando ‚ encontrado um ciclo
+                                            WHILE sem a presen‡a do  respectivo
+                                            WHILE
+
+    33             DUPLICATE LABEL          Ocorre  quando  ‚ encontrado   dois
+                                            r¢tulos iguais no programa
+
+    35             SUB-PROGRAM NOT DEFINED  Ocorre   quando  ‚   encontrado   a
+                                            referˆncia a um procedimento,  onde
+                                            o mesmo n„o existe no programa
+
+    37             ARGUMENT COUNT MISMATCH  Ocorre  quando    uma   fun‡„o   ou
+                                            procedimento possui um  determinado
+                                            n£mero  de  parƒmetros  e  quando o
+                                            mesmo  ‚  evocado,   o  n£mero   de
+                                            parƒmetros  usados  ‚  inferior  ao
+                                            presente na inicializa‡„o
+
+    38             ARRAY NOT DEFINED        Ocorre quando h  referˆncias a  uma
+                                            vari vel do tipo array n„o  estando
+                                            a  mesma  definida  com  o  comando
+                                            DIM/REDIM
+
+    39             CASE ELSE EXPECTED       Ocorre quando numa estrutura SELECT
+                                            CASE/END  CASE  existe  a   palavra
+                                            ELSE  sem  a  presen‡a  da  palavra
+                                            CASE
+
+    40             VARIABLE EXPECTED        Ocorre quando existe a presen‡a  de
+                                            uma   fun‡„o   matem tica   sem   a
+                                            presen‡a da vari vel
+
+    50             FIELD  OVERFLOW          Ocorre   quando  na   defini‡„o  de
+                                            campos  de  arquivos,  o  total  de
+                                            bytes  dos  campos  ‚  superior  ao
+                                            definido no comprimento do  arquivo
+                                            (cl usula LEN=bytes)
+
+
+                                                                    P gina   64
+
+
+
+
+    51             INTERNAL ERROR           Ocorre  quando  por  algum   motivo
+                                            desconhecido, existe  uma falha  de
+                                            hardware    (banco    de    mem¢ria
+                                            queimado, etc)
+
+    52             BAD FILE NUMBER          Ocorre quando ‚ feita referˆncia  a
+                                            um  arquivo  de  dados  usando   um
+                                            n£mero  fora  dos  limites do BASIC
+                                            ou quando o  arquivo cujo n£mero  ‚
+                                            usado ainda n„o est  aberto
+
+    53             FILE NOT FOUND           Ocorre quando no acto de leitura de
+                                            um arquivo o mesmo n„o existe
+
+    54             BAD FILE MODE            Ocorre quando ‚ usada uma instru‡„o
+                                            num  tipo  de  arquivo  que  n„o  a
+                                            suporta
+
+    55             FILE ALREADY OPEN        Ocorre quando ‚ feita tentativa  de
+                                            abrir  um  arquivo   que  j    fora
+                                            aberto
+
+    56             FIELD STATEMENT ACTIVE   Ocorre quando ‚ feita referˆncia  a
+                                            uma instru‡„o FIELD a qual j   fora
+                                            inicializada
+
+    57             DEVICE  I/O ERROR        Ocorre  quando ‚ feita  a tentativa
+                                            de comunica‡„o  num perif‚rico  que
+                                            responde incorrectamente
+
+    58             FILE ALREADY EXISTS      Ocorre  quando ‚ feita a  tentativa
+                                            de criar  um arquivo  ou direct¢rio
+                                            e  o  mesmo  j   existe  na   forma
+                                            oposta   (se   pretende   criar  um
+                                            arquivo,  j   existe  um direct¢rio
+                                            com o mesmo nome, e vice-versa)
+
+    59             BAD RECORD LENGHT        Ocorre quando o tamanho do arquivo,
+                                            definido pela  cl usula LEN  possui
+                                            um valor ilegal n„o
+
+    61             DISK FULL                Ocorre  quando n„o existe espa‡o no
+                                            disco actual. Possui 0 (zero) bytes
+                                            livres
+
+    62             INPUT PAST END           Ocorre  quando  na  leitura  de  um
+                                            arquivo  ASCII  n„o  ‚ encontrado o
+                                            ^Z,  marca  de  fim  de arquivo, ou
+                                            quando ‚ feita  a tentativa de  ler
+                                            para alem do fim do arquivo
+
+
+
+                                                                    P gina   65
+
+
+
+    63             BAD RECORD  NUMBER       Ocorre   quando   na   escrita   de
+                                            arquivos, o  n£mero de  registo n„o
+                                            respeita os  valores impostos  pelo
+                                            BASIC
+
+    64             BAD FILE NAME            Ocorre  quando  existem  caracteres
+                                            ilegais  no  nome  do  arquivo, n„o
+                                            respeitando as normas e  convens”es
+                                            de nomea‡„o de arquivos do DOS
+
+    66             DIRECT STATEMENT IN FILE Ocorre quando h  a presen‡a  dentro
+                                            de um  programa de  um comando  que
+                                            deve   de   ser   usado   fora   da
+                                            programa‡„o
+
+    67             TOO MANY  FILES          Ocorre  quando a directoria  actual
+                                            est    completamente   lotada    de
+                                            ficheiros (Refira-se ao Apendix H)
+
+    68             DEVICE UNAVAILABLE       Ocorre quando ‚ feita referˆncia  a
+                                            um  perif‚rico  que  n„o  existe no
+                                            equipamento
+
+    69             COMUNICATIONS BUFFER OVERFLOW
+                                            Ocorre quando  o tamanho  do buffer
+                                            de  comunica‡”es,   ultrapassa   os
+                                            limites impostos pelo BASIC
+
+    70             PERMISION  DENIED        Ocorre  quando ‚ feita a  tentativa
+                                            de  escrita  num  disco   protegido
+                                            contra escrita
+
+    71             DISK NOT READY           Ocorre  quando  ‚ feito o acesso  a
+                                            uma drive  de disquetes  e a  mesma
+                                            n„o possui disquete
+
+    72             DISK  MEDIA ERROR        Ocorre  quando ‚ feita  a tentativa
+                                            de escrita num  disco que n„o  est 
+                                            formatado
+
+    73             ADVANCED FEATURE         Ocorre quando  ‚ usado  um  comando
+                                            que ainda n„o foi criado no BASIC
+
+    74             RENAME ACROSS DISK       Ocorre quando ‚ mudado o nome de um
+                                            arquivo  e  o  nome  novo  usado j 
+                                            existe num outro arquivo
+
+    75             PATH/FILE ACCESS ERROR   Ocorre  quando  ‚ feito o acesso  a
+                                            um  arquivo  (Criar/Alterar/Apagar)
+                                            ou                       direct¢rio
+                                            (Criar/Remover/Aceder)  e   que   o
+                                            mesmo   est    protegido   com    o
+
+
+                                                                    P gina   66
+
+
+
+                                            atributo  de  leitura  apenas (+r -
+                                            ATTRIB do DOS), ou quando ‚ tentado
+                                            a cria‡„o de  um direct¢rio que  j 
+                                            existe,  ou   quando  ‚   feita   a
+                                            tentativa de remo‡„o do mesmo e n„o
+                                            existe.
+
+    76             PATH NOT  FOUND          Ocorre  quando ‚ feita  a tentativa
+                                            de acesso a  um direct¢rio que  n„o
+                                            existe
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Os seguintes erros s„o neutros no BASIC, e os mesmos poder„o ser definidos
+    pelo utilizador:
+
+         15, 21 a 23, 28, 31, 32, 34, 36, 41 a 49, 60, 65, 77 a 255
+
+
+    No m ximo existem 255 c¢digos de erro. Dos c¢digos acima, s„o considerados
+    erros reservados para vers”es futuras do BASIC os seguintes:
+
+         15, 21 a 23, 28, 31, 32, 34, 36, 41 a 49, 60, 65
+
+    Apenas os erros definidos pelo utilizador s„o os seguintes:
+
+         77 a 255
+
+         No arquivo ERRHANDL.INC  encontrar  uma   rotina de controlo  de erro.
+
+
+         Dentro da mesma rotina, na ocorrˆncia de um erro, a mensagem ‚ exibida
+    acompanhada de  um determinado  n£mero de  beeps, os  quais correspondem  …
+    severidade do erro. Quanto mais beeps houver, maior a severidade do erro. O
+    erro  poder   ser  corrigido,  atrav‚s  das  teclas  A,  R,  C,    as quais
+    correspondem  respectivamente  a  Abortar,  Repetir, Continuar. Cada   men-
+    sagem ‚ acompanhada do respectivo c¢digo de erro. Se n„o pretender  usar  a
+    rotina  de  erro  dentro  do  seu  programa dever  de  incluir  a  seguinte
+    sequˆncia de c¢digo no fim do bloco principal, isto caso utilize o ficheiro
+    USERLIB.INC:
+
+
+              error.handler:
+              RESUME NEXT
+
+         A rotina de erros ‚ incluida no fim do bloco principal da mesma  forma
+    que o ficheiro USERLIB.INC.
+
+
+
+
+
+
+
+                                                                    P gina   67
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   C
+
+                        LIMITES DAS VARI†VEIS DO BASIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   68
+
+
+
+
+         Ao  contr rio  de  outras  linguagens  potentes, as vari veis no BASIC
+    possuem limites inferiores. Uma das  vantagens das vari veis no BASIC,  ‚ a
+    de haver diversos tipos de vari veis. De uma certa forma permite uma melhor
+    programa‡„o.
+
+         As seguintes vari veis fazem parte do BASIC:
+
+   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   ³Vari vel        ³Sufixo³ Consumo    ³   Minimo          ³   M ximo        ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³Alfanum‚ricos   ³   $  ³ 4 + LEN($) ³   0               ³  32 767         ³
+   ³Inteiros        ³   %  ³ 2          ³   -32 768         ³  32 767         ³
+   ³                ³      ³            ³             -45   ³            38   ³
+   ³Percis„o simples³   !  ³ 4          ³   ñ 1.4 x 10      ³  ñ 3.4 x 10     ³
+   ³                ³      ³            ³             -324  ³            308  ³
+   ³Percis„o dupla  ³   #  ³ 8          ³   ñ 4.9 x 10      ³  ñ 1.7 x 10     ³
+   ³Inteiros longos ³   &  ³ 4          ³   - 2 147 483 648 ³  2 147 483 647  ³
+   ³                ³      ³            ³                   ³                 ³
+   ³Arrays (consumo)³      ³            ³                   ³                 ³
+   ³     Static     ³      ³            ³   1               ³  65 535         ³
+   ³     Dynamic    ³      ³            ³   Toda a mem¢ria  ³                 ³
+   ³Arrays (elem.)  ³      ³            ³                   ³                 ³
+   ³     Dimens”es  ³      ³            ³   8               ³                 ³
+   ³     Elementos  ³      ³            ³   -32 768         ³  32 767         ³
+   ³                ³      ³            ³                   ³                 ³
+   ³Procedimentos   ³      ³            ³                   ³                 ³
+   ³     Tamanho    ³      ³            ³   0               ³  65 535         ³
+   ³     Argumentos ³      ³            ³   0               ³  60             ³
+   ³M¢dulos incorp. ³      ³            ³                   ³                 ³
+   ³    Interligados³      ³            ³   0               ³  5              ³
+   ³    Compilado   ³      ³            ³   0               ³  65 535         ³
+   ³Arquivos        ³      ³            ³                   ³                 ³
+   ³     N£mero de  ³      ³            ³   1               ³  255            ³
+   ³     Registos   ³      ³            ³   1               ³  2 147 483 647  ³
+   ³     Tamanho    ³      ³            ³   1               ³  32 767         ³
+   ³     Consumo    ³      ³            ³   9               ³  Espa‡o em disco³
+   ³Direct¢rios     ³      ³            ³   1               ³  127            ³
+   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   69
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   D
+
+                            NOTAS MUSICAIS DO BASIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   70
+
+
+
+
+    Notas musicais e suas frequˆncias sonoras
+
+   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   ³Nota Musical    ³        Letra Idˆntificativa     ³    Frequˆncia Sonora ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³DO              ³        C                        ³              130.810 ³
+   ³RE              ³        D                        ³              146.830 ³
+   ³MI              ³        E                        ³              164.810 ³
+   ³FA              ³        F                        ³              174.610 ³
+   ³SOL             ³        G                        ³              196.000 ³
+   ³LA              ³        A                        ³              220.000 ³
+   ³SI              ³        B                        ³              246.940 ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³DO              ³        C                        ³              261.630 ³
+   ³RE              ³        D                        ³              293.660 ³
+   ³MI              ³        E                        ³              329.630 ³
+   ³FA              ³        F                        ³              349.230 ³
+   ³SOL             ³        G                        ³              392.000 ³
+   ³LA              ³        A                        ³              440.000 ³
+   ³SI              ³        B                        ³              493.880 ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³DO              ³        C                        ³              523.250 ³
+   ³RE              ³        D                        ³              587.330 ³
+   ³MI              ³        E                        ³              659.260 ³
+   ³FA              ³        F                        ³              698.460 ³
+   ³SOL             ³        G                        ³              783.990 ³
+   ³LA              ³        A                        ³              880.000 ³
+   ³SI              ³        B                        ³              987.770 ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³DO              ³        C                        ³            1 046.500 ³
+   ³RE              ³        D                        ³            1 174.700 ³
+   ³MI              ³        E                        ³            1 318.500 ³
+   ³FA              ³        F                        ³            1 396.900 ³
+   ³SOL             ³        G                        ³            1 568.000 ³
+   ³LA              ³        A                        ³            1 760.000 ³
+   ³SI              ³        B                        ³            1 975.500 ³
+   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   71
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   E
+
+                               CŸDIGO DO TECLADO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   72
+
+
+
+
+         C¢digo do teclado
+
+
+   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   ³Tecla          C¢digo               ³             Tecla          C¢digo  ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³ESC            1                    ³             C              46      ³
+   ³1              2                    ³             V              47      ³
+   ³2              3                    ³             B              48      ³
+   ³3              4                    ³             N              49      ³
+   ³4              5                    ³             M              50      ³
+   ³5              6                    ³             ,              51      ³
+   ³6              7                    ³             /              52      ³
+   ³7              8                    ³             RIGHT SHIFT    53      ³
+   ³8              9                    ³             PRT.SCR        54      ³
+   ³9              10                   ³             ALT            55      ³
+   ³0              11                   ³             SPACE          56      ³
+   ³-              12                   ³             CAPS LOCK      57      ³
+   ³=              13                   ³             F1             58      ³
+   ³BACKSPACE      14                   ³             F2             59      ³
+   ³TAB            15                   ³             F3             60      ³
+   ³Q              16                   ³             F4             61      ³
+   ³W              17                   ³             F5             62      ³
+   ³E              18                   ³             F6             63      ³
+   ³R              19                   ³             F7             64      ³
+   ³T              20                   ³             F8             65      ³
+   ³Y              21                   ³             F9             66      ³
+   ³U              22                   ³             F10            67      ³
+   ³I              23                   ³             NUM LOCK       68      ³
+   ³O              24                   ³             SCROLL LOCK    69      ³
+   ³P              25                   ³             HOME           70      ³
+   ³[              26                   ³             UP             71      ³
+   ³]              27                   ³             PGUP           72      ³
+   ³ENTER          28                   ³             -              73      ³
+   ³CTRL           29                   ³             LEFT           74      ³
+   ³A              30                   ³             5              75      ³
+   ³S              31                   ³             RIGHT          76      ³
+   ³D              32                   ³             +              77      ³
+   ³F              33                   ³             END            78      ³
+   ³G              34                   ³             DOWN           79      ³
+   ³H              35                   ³             PGDN           80      ³
+   ³J              36                   ³             INS            81      ³
+   ³K              37                   ³             DEL            82      ³
+   ³L              38                   ³                                    ³
+   ³;              39                   ³             Expandido      80 (H)  ³
+   ³'              40                   ³             Normal          0      ³
+   ³`              41                   ³                                    ³
+   ³LEFT SHIFT     42                   ³                                    ³
+   ³/              43                   ³                                    ³
+   ³Z              44                   ³                                    ³
+   ³X              45                   ³                                    ³
+   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+                                                                    P gina   73
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   F
+
+                      FORMULAS MATEM†TICAS TRIGNOMTRICAS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   74
+
+
+
+
+         Formulas trignom‚tricas:
+
+
+
+         Definir estas formulas usando o comando DEF FN
+
+    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+    ³  Secante                       SEC(x) = 1 / COS(x)                      ³
+    ³  Co-Secante                    CSC(x) = 1 / SIN(x)                      ³
+    ³  Inverso do Seno               ARCSIN(x) = ATN(x/SQR((-x) * (x + 1))    ³
+    ³  Inverso do CoSeno             ARCCOS(x) = ATN(x/SQR((-x) * (x + 1)) *  ³
+    ³                                ã/2                                      ³
+    ³  Inverso da Secante            ARCSEC(x) = ATN(x/SQR(x * (x + 1) +      ³
+    ³                                SGN(SGN(x) - 1) * ã/2                    ³
+    ³  Inverso da CoTagente          ARCCOT(x) = ATN(x) + ã/2                 ³
+    ³  Seno Hiperb¢lico              SINH(x) = (EXP(x) - EXP(-x))/2           ³
+    ³  CoSeno Hiperb¢lico            COSH(x) = (EXP(x) + EXP(-x))/2           ³
+    ³  Tangente Hiperb¢lica          TANH(x) = (EXP(x) - (EXP(-x))/(EXP(x) +  ³
+    ³                                EXP(-x))                                 ³
+    ³  Secante Hiperb¢lica           SECH(x) = 2/(EXP(x) + EXP(-x))           ³
+    ³  CoSecante Hiperb¢lica         CSCH(x) = 2/(EXP(x) - EXP(-x))           ³
+    ³  CoTagente Hiperb¢lica         COTH(x) = EXP(x)/(EXP(x) - EXP(-x)) * 2  ³
+    ³                                + 1                                      ³
+    ³  Inv. Seno Hiperb¢lico         ARCSINH(x) = LOG(x/SQR(x * x + 1))       ³
+    ³  Inv. CoSeno Hiperb¢lico       ARCCOSH(x) = LOG(x + SQR(x * x + 1))     ³
+    ³  Inv. Tangente Hiperb¢lica     ARCTANH(x) = LOG((1 + x)/(1 - x))/2      ³
+    ³  Inv. CoSecante Hiperb¢lica    ARCCSCH(x) = LOG(SNG(x) * SQR(x * x + 1) ³
+    ³                                + 1/x)                                   ³
+    ³  Inv. Secante Hiperb¢lica      ARCSECH(x) = LOG(SQR(-x * x + 1) + 1)/x) ³
+    ³  Inv. CoTagente Hiperb¢lica    ARCCOTH(x) = LOG((x + 1)/(x - 1))/2      ³
+    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+    ã = 4 * ATN(1) = 3.141593
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   75
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   G
+
+                           PARMETROS DO DRAW E PLAY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   76
+
+
+
+
+         Parƒmetros do comando DRAW:
+
+
+
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³U n .......................................... Desenha para cima n pontos ³
+  ³D n .......................................... Desenha para baixo n pontos³
+  ³L n .......................................... Desenha para a esquerda n  ³
+  ³                                               pontos                     ³
+  ³R n .......................................... Desenha para a direita n   ³
+  ³                                               pontos                     ³
+  ³E n .......................................... Desenha para direita e para³
+  ³                                               cima n pontos              ³
+  ³F n .......................................... Desenha para direita e para³
+  ³                                               baixo n pontos             ³
+  ³G n .......................................... Desenha para esquerda e pa-³
+  ³                                               ra baixo n pontos          ³
+  ³H n .......................................... Desenha para esquerda e pa-³
+  ³                                               ra cima n pontos           ³
+  ³C n .......................................... Utiliza a cor n            ³
+  ³A n .......................................... Efectua uma rota‡„o de n*90³
+  ³TA n ......................................... Efecuta uma rota‡„o de nø  ³
+  ³S n .......................................... Altera a escala do desenha ³
+  ³                                               em n *                     ³
+  ³P p,b ........................................ Pinta com fundo p e linha b³
+  ³MB x,y ....................................... Move para a posi‡„o x,y    ³
+  ³M x,y ........................................ Desenha at‚ a posi‡„o x,y  ³
+  ³MN x,y ....................................... Move at‚ a posi‡„o x,y e   ³
+  ³                                               regressa depois … posi‡„o  ³
+  ³                                               original                   ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+    Parƒmetros do comando PLAY
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³O n ......................................... Selecciona a oitava 0 a 6   ³
+  ³MF .......................................... Toca a musica em modo de    ³
+  ³                                              fundo                       ³
+  ³MB .......................................... Toca a musica em modo de ba-³
+  ³                                              se                          ³
+  ³L n ......................................... Especifica o comprimento da ³
+  ³                                              nota 1 a 64                 ³
+  ³P n ......................................... Efectua uma pausa 1 a 64    ³
+  ³ML .......................................... Musica do tipo Legato       ³
+  ³MS .......................................... Musica do tipo STACCATO     ³
+  ³MN .......................................... Musica Normal               ³
+  ³T n ......................................... Especifica o tempo da musica³
+  ³                                              32 a 255                    ³
+  ³N n ......................................... Toca a nota 1 a 64          ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+                                                                    P gina   77
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               A P E N D I X   H
+
+                    INFORMA€™ES DO DOS EM RELA€O AO BASIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   78
+
+
+
+
+         Capacidades das disquetes
+
+
+  ÚÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³Kbytes ³  Sectores  ³    Pistas ³  Cabe‡as ³ Espa‡o Total ³ Ficheiros     ³
+  ³(DOS)  ³            ³           ³          ³              ³ (na raiz)     ³
+  ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+  ³  160  ³     8      ³      40   ³     1    ³      160 256 ³      63       ³
+  ³  180  ³     9      ³      40   ³     1    ³      179 712 ³      63       ³
+  ³  320  ³     8      ³      40   ³     2    ³      322 560 ³     111       ³
+  ³  360  ³     9      ³      40   ³     2    ³      362 496 ³     111       ³
+  ³  720  ³     9      ³      80   ³     2    ³      730 112 ³     111       ³
+  ³1 200  ³    15      ³      80   ³     2    ³    1 213 952 ³     223       ³
+  ³1 440  ³    15      ³      80   ³     2    ³    1 457 664 ³     223       ³
+  ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+    Estrutura do direct¢rio do DOS (DIR >ARQUIVO.EXT)
+
+
+    ARQUIVO  EXT 00000000 18/09/93 17:05
+    ³        ³   ³        ³        ³
+    ³        ³   ³        ³        ÀÄ Hora de cria‡„o (32 a 36)
+    ³        ³   ³        ÀÄÄÄÄÄÄÄÄÄÄ Data de cria‡„o (23 a 30)
+    ³        ³   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Tamanho (14 a 21)
+    ³        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Extens„o (10 a 12)
+    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Nome (1 a 8)
+
+
+    DIRECTO  RIO <DIR>    18/09/93 17:05
+    ³        ³   ³        ³        ³
+    ³        ³   ³        ³        ÀÄ Hora de cria‡„o (32 a 36)
+    ³        ³   ³        ÀÄÄÄÄÄÄÄÄÄÄ Data de cria‡„o (23 a 30)
+    ³        ³   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Simbolo (14 a 18)
+    ³        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Extens„o (10 a 12)
+    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Nome (1 a 8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   79
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   F E C H O
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    P gina   80
+
+
+
+
+         BASE DE APOIO
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Toda a informa‡„o contida neste manual e nos arquivos foi obtida  ap¢s
+    exaustivos  teste  efectuados  em  GW-BASIC  (MicroSoft  (R)) e Quick BASIC
+    (MicroSoft (R)). Outros  dados foram obtidos  de livros e  manuais diversos
+    ligados … programa‡„o em BASIC.
+
+
+
+         COPYRIGHT
+         ÄÄÄÄÄÄÄÄÄ
+
+         Todos os  produtos aqui  descritos, s„o  da autoria  de N‚lio  Remigio
+    Correia de Abreu, tendos os mesmos sido desenvolvidos em Quick BASIC 4.5 da
+    MicroSoft. Todos os direitos reservados ao produtor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        (Este manual foi desenvolvido em Multi-Edit Vers„o Demo 2.01f)
+
+                                                                   P gina FINAL
+
+
+
+

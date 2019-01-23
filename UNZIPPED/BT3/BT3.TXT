@@ -1,0 +1,313 @@
+
+
+ 1.3  Os comandos dispon¡veis em BT3v1.0 s„o os seguintes:
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Append ÄÄÄÄ faz scroll horizontal caracter-a-caracter com frases
+ Browse2 ÄÄÄ lista o cont‚udo de um ficheiro de texto automaticamente
+ DosShell ÄÄ usada em batch files, permite fazer shell para o Dos
+ Fact ÄÄÄÄÄÄ calcula o factorial de um n£mero
+ FillWin ÄÄÄ preenche uma janela com um determinado caracter
+ MenuMouse Ä cria um menu com selec‡„o de itens controlado por mouse
+ SysBox ÄÄÄÄ caixa com informa‡”es do sistema: disco, mem¢ria e vers„o Dos
+ TypeIt3 ÄÄÄ escreve uma frase nas coordenadas x y
+ TypeTxt ÄÄÄ insere ou apaga peda‡os de texto no monitor
+ YesNoBox ÄÄ cria uma caixa de di logo para confirmar a execu‡„o de uma ac‡„o
+ VScroll2 ÄÄ Scroll vertical de cima para baixo e vice-versa com frases
+ Ver ÄÄÄÄÄÄÄ Indica‡„o da vers„o de Batch Tools
+
+
+
+ 2.1 Sintaxe e exemplos de todos os comandos
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ APPEND
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: Append [coluna] [linha] [cor] [tempo] [texto] [append]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras  use
+	  como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto a apresentar no ‚cran ultrapassar a coluna 80 a parte
+	  em excesso ser  truncada.
+
+	  [append]
+	  Modo de aparecimento do texto seleccionando uma das seguintes
+	  op‡”es apresentadas: ESQ_DTRO, ESQ_FORA, DIR_DTRO, DIR_FORA.
+
+ Exemplo: APPEND 40 1 4 100 Isto_‚_um_teste ESQ_DTRO
+	  - Faz scroll caracter-a-caracter com o texto acima,  da  esquerda
+	    para a direita, desde a coluna 40, na linha 1, com cor vermelha
+	    e atraso na escrita de 100 milisegundos por caracter.
+
+ BROWSE2
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: Browse2 [tempo] [fich.ext]
+	  Browse2 [x1] [y1] [x2] [y2] [cor_texto] [cor_fundo] [tempo]
+		  [fich.ext]
+
+	  [x1] e [x2]
+	  Define as coordenadas horizontais esquerda e direita da janela.
+	  x2 > x1 e x1 e x2 tˆm valores entre 1 e 80, no modo 80x25.
+
+	  [y1] e [y2]
+	  Define as coordenadas verticais superior e inferior da janela.
+	  y2 > y1 e y1 e y2 tˆm valores entre 1 e 25, no modo 80x25.
+
+	  [tempo]
+	  Tempo de leitura para cada linha do texto a apresentar.
+
+	  [cor_texto] e [cor_fundo]
+	  Define as cores do texto e de fundo. Valor num‚rico entre 0 e 16.
+
+	  [fich.ext]
+	  Ficheiro de texto a abrir para leitura. Indica‡„o da drive e path ‚
+	  opcional. Pode ser [drive:][\path\][fich.txt] em vez de [fich.txt].
+
+ Exemplo: BROWSE2 1 1 80 25 15 9 1000 readme.doc
+	  - Abre uma janela de dimens”es 80x25 com fundo azul e caracteres de
+	    cor branca. O ficheiro readme.doc ‚ apresentado com  uma  rapidez
+	    de um segundo por cada linha de texto.
+
+ DOSSHELL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: BT3Shell.Exe
+
+ Descri‡„o: Esta ‚ uma fun‡„o externa ao BT3, localizada noutro ficheiro
+	    execut vel. Ao executar o ficheiro BT3Shell.Exe ‚ criada uma
+	    nova sess„o DOS, … qual se poder  regressar  posteriormente,
+	    quando teclar EXIT na prompt do DOS.
+	    A fun‡„o BT3Shell tem como objectivo o seu uso  exclusivo em
+	    batch files.
+
+ Exemplo: Consulte a rotina batch de nome bt3shell.mnu.
+
+ FACT
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: Fact [cor] [tempo] [num]
+	  Fact [cor] [tempo] [?]
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+	  Torna mais legiveis todas as parcelas do c lculo.
+
+	  [num] e [?]
+	  N£mero inteiro, tal que [num] ò 1. Se em vez de [num] usar
+	  como parƒmetro ?, BT3 pergunta pelo valor de [num].
+
+ Exemplo: FACT 9 0 1754
+	  - Calcula o factorial de 1754 e apresenta-o com cor azul.
+
+ FILLWIN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: FillWin [x1] [y1] [x2] [y2] [cor] [tempo] [chr] [random]
+
+	  [x1] e [x2]
+	  Define as coordenadas horizontais esquerda e direita da janela.
+	  x2 > x1 e x1 e x2 tˆm valores entre 1 e 80, no modo 80x25.
+
+	  [y1] e [y2]
+	  Define as coordenadas verticais superior e inferior da janela.
+	  y2 > y1 e y1 e y2 tˆm valores entre 1 e 25, no modo 80x25.
+
+	  [cor]
+	  Cor dos caracteres a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [chr]
+	  Valor ASCII do caracter a ser escrito no interior da janela.
+	  Use a fun‡„o AsciiTbl em BT2 para saber o n£mero decimal que
+	  lhe ‚ correspondente na tabela.
+
+	  [random]
+	  Escrevendo neste espa‡o RANDOM, a janela acima  definida ser 
+	  preenchida aleatoriamente, at‚ que seja pressionada uma tecla
+	  qualquer. Este parƒmetro ‚ opcional.
+
+ Exemplo: FILLWIN 1 1 80 25 4 0 178
+	  - Enche um janela de 80 colunas por 25 linhas com o caracter ascii
+	    178 (²) com cor vermelha.
+
+ MENUMOUSE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: MenuMouse [coluna] [linha] [cor_item] [cor_sel] [fich.ext]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25. Estas
+	  coordenadas s„o do primeiro item; os outros ser„o alinhados.
+
+	  [cor_item] e [cor_sel]
+	  Determina a cor dos itens normais e a cor do item seleccionado.
+	  Os limites para o valor num‚rico de cor s„o 0 e 255.
+
+	  [fich.ext]
+	  Ficheiro de texto a abrir para leitura. No interior est„o os itens
+	  do menu a apresentar (at‚ 8), um em cada linha, com o m ximo de 40
+	  caracteres cada. Varie a valor da coluna e/ou n£mero de caracteres
+	  de um item para que o texto de cada item caiba todo em cada linha.
+	  O primeiro caracter de um item tem de ser um n£mero inteiro. Assim
+	  sendo, esse caracter ter  o valor 1 no primeiro item, 2 no segundo
+	  e assim sucessivamente, at‚ 8 para o oitavo item. Depois de teclar
+	  Enter - na escolha do item - o valor ErrorLevel ser  o do primeiro
+	  caracter do item seleccionado.
+
+ Exemplo: Consulte as batch files bt3menu.bat e bt3shell.bat
+
+ SYSBOX
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: SysBox [coluna] [linha] [cor1] [cor2] [cor3] [moldura]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor1]
+	  Determina a cor da moldura da caixa e do but„o de sa¡da.
+	  Os limites para o valor num‚rico de cor s„o 0 e 255.
+
+	  [cor2] e [cor3]
+	  Determinam a cor dos t¡tulos e a cor do texto normal.
+	  Os limites para o valor num‚rico de cor s„o 0 e 255.
+
+	  [moldura]
+	  Selecciona moldura: NORMAL, DUPLA, DPHOR, DPVER.
+
+ Exemplo: Consulte a rotina batch de nome bt3shell.mnu.
+
+ TYPEIT3
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: Typeit3 [coluna] [linha] [cor] [tempo] [texto]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras  use
+	  como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto a apresentar no ‚cran ultrapassar a coluna 80 a parte
+	  em excesso ser  truncada.
+
+ Exemplo: TYPEIT3 1 1 7 10 Isto_‚_um_teste
+	  - Escreve a frase acima, na coluna 1 e linha 1 com cor cinzenta e
+	    atraso na escrita de cada caracter de 10 milisegundos.
+
+ TYPETXT
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: TypeTxt [coluna] [linha] [cor] [texto] [typetxt]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras  use
+	  como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto a apresentar no ‚cran ultrapassar a coluna 80 a parte
+	  em excesso ser  truncada.
+
+	  [typetxt]
+	  Escolha uma das seguintes op‡”es apresentadas: INSERIR para  inserir
+	  o texto nas coordenadas indicadas, e DELETAR para apagar o texto que
+	  foi escrito atrav‚s do comando anterior.
+
+ Exemplo: DIR c:\dos
+	  TYPETXT 1 10 7 Isto_‚_um_teste INSERIR
+	  TYPETXT 1 10 7 Isto_‚_um_teste DELETAR
+	  - Insere a frase Isto_‚_um_teste na coluna 1 e linha 10, de cor
+	    cinzente. Logo a seguir, o texto inserido ‚ apagado.
+
+ VSCROLL2
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: VScroll2 [coluna] [linha] [cor] [tempo] [texto] [scroll]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor]
+	  Cor do texto a apresentar, que varia entre 0 e 255.
+
+	  [tempo]
+	  Atraso na escrita medido em milisegundos.
+
+	  [texto]
+	  Texto a escrever no ‚cran. Caso se escrevam v rias palavras  use
+	  como separador o caracter inv¡sivel (Alt+255).
+	  Se o texto a apresentar no ‚cran ultrapassar a coluna 80 a parte
+	  em excesso ser  truncada.
+
+	  [scroll]
+	  Modo de aparecimento do texto seleccionando uma das seguintes
+	  op‡”es apresentadas: BAIXO, 25, 43, 50.
+
+ Exemplo: VSCROLL2 40 10 4 100 Isto_‚_um_teste BAIXO
+	  - Faz scroll vertical com toda a frase acima, pela coluna 40, 
+	    desde a linha 1 at‚ … linha 25, com cor vermelha  e  demora
+	    100 milisegundos por cada linha.
+
+ YESNOBOX
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe: YesNoBox [coluna] [linha] [cor1] [cor2] [cor3] [moldura] [l¡ngua]
+
+	  [coluna] e [linha]
+	  Define as coordenadas x e y no monitor, de valores entre 1 a 80
+	  para o primeiro caso, e 1 a 25 no segundo, no modo 80x25.
+
+	  [cor1]
+	  Determina a cor da moldura da caixa e dos but”es.
+	  Os limites para o valor num‚rico de cor s„o 0 e 255.
+
+	  [cor2] e [cor3]
+	  Determinam a cor do item normal e a cor do item seleccionado.
+	  Os limites para o valor num‚rico de cor s„o 0 e 255.
+
+	  [moldura]
+	  Selecciona moldura: NORMAL, DUPLA, DPHOR, DPVER.
+
+	  [l¡ngua]
+	  Escolha da l¡ngua nativa, entre as seguintes:  portuguˆs, inglˆs,
+	  francˆs e alem„o. As entradas respectivas s„o POR, ENG, FRA, ALE.
+	  Ao escolher Sim ou N„o, o valor de sa¡da em ErrorLevel ‚ 1 ou 0.
+
+ Exemplo: Consulte as batch files de nome bt3menu.bat e bt3shell.bat.
+
+ VER
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Sintaxe:  VER
+
+ Exemplo:  VER
+	   - O ‚cran ter  este aspecto:
+
+	     Batch Tools 3 v1.0 (c) 1994
+	     por Luis Manuel Santos Guerra
+	     para a revista SPOOLER
+	     em 94-11-04
+

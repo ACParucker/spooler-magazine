@@ -1,0 +1,50 @@
+.AUTODEPEND
+
+# Variaveis de simplificacao
+OBJECTLIST=about.obj child.obj wingalo.obj logic.obj
+OBJECTFILES=+about+child+wingalo+logic
+
+# Para em cada computador se poder compilar o programa devem-se alterar estas
+# duas variaveis caso a caso
+#
+# Directoria onde estao as bibliotecas (.LIB) do compilador
+LIBPATH=D:\BORLANDC\LIB
+# Directoria onde estao os ficheiros include (.H) do compilador
+INCLUDEPATH=D:\BORLANDC\INCLUDE
+
+# Variaveis especificas para cada compilador:
+#
+# Borland C Compiler
+OPTIONS=-c -R -2 -f- -W -vi- -wpro -weas -wpre -I$(INCLUDEPATH) -L$(LIBPATH) -DSTRICT -DNODEBUG
+WINCC=bcc $(OPTIONS)
+WINRC=RC -I$(INCLUDEPATH) -30
+WINLIB=import mathws cws
+WINLINK=tlink /x/c/P-/Twe/L$(LIBPATH) c0ws
+#
+# Microsoft C compiler
+#OPTIONS=-c -G2sw -0w -W3 -Zp -Tp
+#WINCC=cl $(OPTIONS)
+#WINRC=rc -r
+#WINLIB=slibcew oldnames libw commdlg ddeml
+#WINLINK=link /nod
+
+
+# Regras explicitas
+wingalo.exe: $(OBJECTLIST) wingalo.def wingalo.rc
+  $(WINLINK)  $(OBJECTFILES),wingalo.exe,\
+                wingalo.map,$(WINLIB),wingalo.def
+  $(WINRC) wingalo.rc wingalo.exe
+  @ECHO Programa pronto!!!
+
+about.obj: about.c 
+  $(WINCC) about.c
+
+child.obj: child.c 
+  $(WINCC) child.c
+
+wingalo.obj: wingalo.c 
+  $(WINCC) wingalo.c
+
+logic.obj: logic.c 
+  $(WINCC) logic.c
+

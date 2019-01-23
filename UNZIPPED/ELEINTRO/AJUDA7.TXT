@@ -1,0 +1,3 @@
+               Simbolos eléctricos
+
+   Esta opção permite-nos visualizar os vários simbolos electricos que representam cada um dos componentes, para podermos "descodificar" um esquema eléctrico.

@@ -1,0 +1,36 @@
+                   Intensidade de Corrente
+
+   Como foi referido na primeira lição, corrente 
+eléctrica é o movimento de electrões ao longo de 
+um condutor, e um electrão é uma partícula que 
+tem uma carga eléctrica negativa. Assim sendo, um
+grupo de electrões tem uma determinada carga 
+eléctrica (um electrão tem uma carga eléctrica de 
+aproximadamente 1,602E-19 C (Coulomb que é a 
+unidade SI de carga electrica)).
+   Ora, se num determinado intervalo de tempo T, 
+um condutor for atravessado por uma carga Q 
+(ver figura), define-se Intensidade média da 
+corrente eléctrica por:
+                            Im = Q/T
+   Se o intervalo de tempo considerado for muito 
+pequeno, estamos perante um valor instantâneo, a 
+que se chama Intensidade de corrente eléctrica e
+que tem por unidade SI o ampére (A), uma das 
+sete unidades de base.
+
+                              Resumo
+
+Carga eléctrica de um electrão - 1,602E-19 C
+A - Unidade SI de Intensidade de corrente.
+Intensidade de corrente eléctrica - define-se pela 
+expressão I = Q/T, em que Q é a carga eléctrica 
+que atravessa o condutor no intervalo de tempo T.
+
+Nota: A Intensidade de corrente eléctrica 
+calcula-se assumindo que a carga eléctrica se 
+desloca no sentido convencional (contrário ao real, 
+isto é de + para -), caso contrário teriamos que 
+entrar com o sinal - no valor da carga eléctrica (os 
+electrões têm carga negativa), e assim teriamos 
+Intensidades sempre negativas.

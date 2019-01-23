@@ -1,0 +1,24 @@
+-----------> x_KeyLights
+
+  ê um bom nome, nÑo Ç ? Ainda me lembrei de outros do gÇnero de ItsPartyTime,
+  ou JingleBells, ou ainda LightMyFire, mas acho que este Ç mais adequado 
+  (sendo tambÇm mais f†cil de ler, n'est ce pas ?). Ainda bem que concordam
+  comigo ! 
+
+  J† devem ter reparado que o vosso teclado tem 3 leds ! NÑo ?... Procurem l†
+  bem sim ? Encontraram ? Ok, podemos prosseguir. Como eu estava a dizer / 
+  escrever,  o vosso teclado tem 3 luzes (LEDs) que servem para vos informar
+  do estado das teclas CapsLock, NumLock ou ScrollLock. Mas nÑo s¢ ! TambÇm
+  os podem usar como luzes psicadÇlicas !!! ( Joke #1 )
+
+  Sem muito bl†bl†, esta funáÑo serve para activar/desactivar as teclas j†
+  referidas (e nÑo as luzes - para isso comprem um martelo). EstÑo definidas
+  tràs constantes (KEY_CAPSLOCK, KEY_NUMLOCK, KEY_SCROLLLOCK) e vocàs s¢ tàm
+  que passar uma combinaáÑo destes valores para a funáÑo. Por exemplo, se
+  fizerem x_KeyLights(KEY_CAPSLOCK + KEY_SCROLLLOCK) o CapsLock e o ScrollLock
+  sÑo activados, ao contr†rio do NumLock que Ç desactivado. Por consequància
+  as luzes sÑo tambÇm correctamente ligadas/desligadas.
+
+  J† devem ter visto, mas no caso de serem mesmo zarolhos, olhem l† para os
+  tais LEDs... Quando estiverem praticamente tontos carreguem l† no raio duma
+  tecla que eu j† estou farto disto !

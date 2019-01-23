@@ -1,0 +1,38 @@
+
+all : instala.exe
+
+instala.exe :                   video.obj       \
+                                util.obj        \
+                                main.obj        \
+                                files.obj       \
+                                string.obj      \
+                                mouse.obj       \
+                                loader.obj      \
+                                txtmode.obj     \
+                                mode13x.obj     \
+                                show.obj        \
+                                input.obj       \
+                                unzip.obj       \
+                                gif.obj         \
+                                menu.obj
+
+                tlink /s        video   \
+                                txtmode \
+                                mode13x \
+                                show    \
+                                util    \
+                                main    \
+                                files   \
+                                string  \
+                                mouse   \
+                                loader  \
+                                gif     \
+                                input   \
+                                unzip   \
+                                menu,   \
+                                instala.exe;
+
+.asm.obj:
+    tasm /m $*;
+
+

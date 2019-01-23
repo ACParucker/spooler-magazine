@@ -1,0 +1,12 @@
+NAME               WinInfo
+DESCRIPTION        'Windows Information'
+EXETYPE            WINDOWS
+STUB               'WSTUB.EXE'
+CODE               DISCARDABLE PRELOAD
+DATA               PRELOAD
+HEAPSIZE           4096
+STACKSIZE          8192
+EXPORTS
+;DEF_BEGIN
+;DEF_END
+

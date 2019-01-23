@@ -1,0 +1,224 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                        Smart Address  v1.20                        ³
+³                 SEE BELOW FOR PRODUCT INFORMATION                  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³           This is a VENDINFO Product Information Record            ³
+³                                                                    ³
+³ This record is a means of conveying information about a software   ³
+³ product from the author to distributors and users.  It contains a  ³
+³ normal, "human-readable" section (you're reading it now), followed ³
+³ by a compressed data record.  The data record contains a great     ³
+³ deal of information in a form useable by automated tools.  This    ³
+³ allows BBSes, disk vendors, etc. to test automatically for         ³
+³ permission to distribute, and to automatically extract product     ³
+³ information for use in BBS files databases, vendor catalogs, etc.  ³
+³                                                                    ³
+³ The VENDINFO file standard is published and is freely useable.     ³
+³                                                                    ³
+³ The VENDINFO toolset includes a free end-user viewer, processing   ³
+³ tools for use by distributors (BBSes, shareware disk vendors,      ³
+³ etc.), and the editor used by author/publishers to produce these   ³
+³ records.  These tools are either free or very-low cost shareware.  ³
+³ The toolset can be obtained from many sources, including the       ³
+³ originators of VENDINFO:                                           ³
+³                                                                    ³
+³ Rams' Island Software   Voice: 303-841-2848  CompuServe: 76244,324 ³
+³ 7644 E. Lakecliff Way     BBS: 303-841-6269     FidoNet: 1:104/333 ³
+³ Parker, CO 80134-5904 USA                          RIME: RAMSISLE  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+VENDINFO standard v1.00, produced by VendEdit v1.00, 26-Jan-1994
+
+===== Product Information ==============================
+   Product:             Smart Address 
+   Version:             1.20
+   Version Date:        26-Jan-1994
+   Product Type:        Software
+   Basic Distribution Policy (see License, below, for details):
+      Shareware, freely distributable by all channels
+
+   Product Description: SMART ADDRESS management for Windows! A 
+                        sophisticated Windows address management 
+                        system. Direct Links to any WordProcessor, 
+                        Mail-Merge Data file Creation for MS-Word, 
+                        Modem Support, Envelope and Label Printing 
+                        (both with graphics), Mail-Shot capabilities,
+                        User Configurable, User defined notes, MDI, 
+                        sophisticated searching, Import/Export, Full 
+                        Windows Help. Shareware (c) 1993 Phil Corley.
+                        Published by Oakley Data Services.
+
+   Category:            Multi-function
+   Keywords:            SMART ADDRESS DIAL LABEL ENVELOPE MAILSHOT 
+                        WORD WP OAKLEY
+   Required Packages:   SMTADR12
+   This Package:        SMTADR12
+
+   Required Configuration
+      Processor Family: Intel 80x86 (minimum 80286 (AT))
+        Clock Speed: 16 MHz
+      Minimum OS:       Windows 3.1
+      Standard RAM:     640K
+      Extended Memory:  2048K
+      Hard Drive Space: 500K
+      Required:
+         Hard drive
+         Keyboard
+      Won't Work With:
+         Floppy only
+
+   Orders:
+      Address:          Oakley Data Services
+                        3, Oakley Close,
+                        Sandbach,
+                        Cheshire,
+                        CW11 9RQ
+                        England
+      Phone:            +44 (0)270 759739
+      FAX:              +44 (0)270 765272
+      CompuServe:       100024,1763
+      Internet:         100024.1763@compuserve.com
+
+   Support:
+      Address:          Oakley Data Services
+                        3, Oakley Close,
+                        Sandbach,
+                        Cheshire,
+                        CW11 9RQ
+                        England
+      Phone:            +44 (0)270 759739
+      FAX:              +44 (0)270 765272
+      BBS Name:         Shareware Support BBS UK
+      BBS Phone:        +44 (0)442 890807
+      CompuServe:       100024,1763
+      Internet:         100024.1763@compuserve.com
+
+
+===== Information for Users ("READ-ME") ================
+
+This package contains Smart Address, verion 1.20, by Oakley Data
+Services.  This document contains only a brief description of the
+package and its features, along with instructions for its installation.
+Quite detailed documentation is included in the package, but it is in
+archived form, and is more easily read after installation.
+
+Smart Address is a sophisticated Address Management program for Windows.
+
+Smart Address is a shareware program. You may use Smart Address for up
+to 30 days, without charge, to see if it suits your needs. If you like
+the Smart Address program, and wish to continue its use after the
+evaluation period, you are required to pay for the program.  Any fee you
+may have paid to others (disk vendors, dealers, etc.) to obtain the
+evaluation versions was a fee for their copying and distribution
+services, rather than a payment for continued use of the program.
+
+
+===== Packing List =====================================
+
+As released by the author or publisher, this package contained the
+following files in addition to this VENDINFO.DIZ:
+
+        Filename      Size     Date       Time     CRC32
+      EXAMPLE.AD_      661  26-Jan-1994  01:20a   3971AD8B
+      INSTALL.BIN    39874  26-Jan-1994  01:20a   CE59E1CE
+      EXAMPLE.BM_      663  26-Jan-1994  01:20a   A158C6C3
+      FILE_ID.DIZ      449  26-Jan-1994  01:20a   4A7483BA
+      ADRINST.DL_      915  26-Jan-1994  01:20a   22025129
+        CTL3D.DL_     9271  26-Jan-1994  01:20a   C86EF3DD
+     SMARTMAC.DO_     9639  26-Jan-1994  01:20a   9EF29844
+      INSTALL.EXE     8960  26-Jan-1994  01:20a   1C886CB4
+     SMARTADR.EX_   119064  26-Jan-1994  01:20a   92669629
+     SMARTADR.HL_    45586  26-Jan-1994  01:20a   8B3975BD
+      INSTALL.INF      568  26-Jan-1994  01:20a   DBFD22C2
+     SMARTADR.IN_     2818  26-Jan-1994  01:20a   F7241296
+       SMTADR.RLE     5080  26-Jan-1994  01:20a   17E85704
+       README.TXT     2321  26-Jan-1994  01:20a   59C1CCFC
+
+
+===== Installation =====================================
+
+To install Smart Address, locate the INSTALL.EXE file and run it from
+within Windows. The rest of the process is automatic.
+
+
+===== Warranty =========================================
+
+LIMITED WARRANTY
+
+THIS SOFTWARE IS PROVIDED FOR EVALUATION ONLY, ON AN "AS
+IS" BASIS.  OAKLEY DATA SERVICES DISCLAIMS ALL WARRANTIES RELATING
+TO THIS SOFTWARE, WHETHER EXPRESSED  OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR
+A PARTICULAR PURPOSE. NEITHER OAKLEY DATA SERVICES NOR ANYONE ELSE
+WHO HAS BEEN INVOLVED IN THE CREATION, PRODUCTION, OR DELIVERY OF
+THIS SOFTWARE SHALL BE LIABLE FOR ANY INDIRECT, CONSEQUENTIAL, OR
+INCIDENTAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE SUCH
+SOFTWARE, EVEN IF OAKLEY DATA SERVICES HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES OR CLAIMS.  THE PERSON USING THE SOFTWARE
+BEARS ALL RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE.
+
+
+===== License for Use and Distribution =================
+
+TRIAL USE LICENSE
+
+Smart Address is NOT in the public domain.  It is copyrighted by Oakley
+Data Services.  This software and accompanying documentation are
+protected by United Kingdom copyright law and also by international
+treaty provisions.
+
+Oakley Data Services grants you a limited license to use this software
+for evaluation purposes for a period not to exceed thirty days.  If you
+continue using this software after the thirty-day evaluation period,
+you MUST make a registration payment to Oakley Data Services.
+
+You may not use, copy, rent, lease, sell, modify, decompile,
+disassemble, otherwise reverse engineer, or transfer the licensed
+program except as provided in this agreement.  Any such unauthorized
+use shall result in immediate and automatic termination of this license.
+All rights not expressly granted here are reserved by Oakley Data
+Services.
+
+
+LIMITED DISTRIBUTION LICENSE
+
+Smart Address may be distributed by anyone without further permission,
+providing it remains unaltered, no charge beyond a reasonable fee for
+copying and delivering the software is charged, and it is clear that the
+software is not "free", but that a registration fee must be paid for
+continued use beyond the terms of the evaluation licence. For other
+cases or to distribute in modified form, you must consult the attached
+data record, which is hereby incorporated by reference.  Any
+distribution satisfying all the distribution requirements expressed in
+that data record is hereby authorized.
+
+Permission to distribute the Smart Address package is not transferable,
+assignable, saleable, or franchisable.  Each vendor wishing to
+distribute the package must independently satisfy the terms of this
+limited distribution license.
+
+U.S. Government Information:  Use, duplication, or disclosure by the
+U.S. Government of the computer software and documentation in this
+package shall be subject to the restricted rights applicable to
+commercial computer software as set forth in subdivision (b)(3)(ii) of
+the Rights in Technical Data and Computer Software clause at
+252.227-7013 (DFARS 52.227-7013).  The Contractor/manufacturer is Oakley
+Data Services
+
+Oakley Data Services may revoke any permissions granted here, by
+notifying you in writing.  All rights not expressly granted here are
+reserved to Oakley Data Services.
+
+
+===== Compressed Data Record Follows ===================
+
+PK
+   Äf: ¶Ã“  H&  	   VENDDATA.xG		-	=.	>		%					&	'_			ŸO/	O	ÿ_	_	?¿ÿ//O $
+%
+'
+:*‹&G'§÷·ÑºÙ½œìXYqÄ×¼ç!Æ	.È÷€­ŒÊ}‡x¸Ð"!}˜ Fp`>˜ûªŸkå÷›Íõ-‹ÿOG“;Ä8Ù/ÊOM®µ*ÇV›þÞ±¾VåµÊ[SÏÖû•í§okóg®[Kþ·u™ýœzuÝ’^ân*Ý:«gÚ±•ã-ÓßŒ²Ã}û*±ÛÛoMy¿wVÎëØÞ)Ð«£ßËî¹ÄbyœÐo ~-‘.ØÉ‡XB*î'JÇ3ý×VmKåhPù‰³®Ÿµ3å­?u[ËÊÓZs‹"+ïœiÿ¬57;Ú¯®Fâ£–2³"s	~p÷ñº¬iÕÈë¯VùWbåÕg¿¼WŽêþWeåyÛUC¿Þ¹¶y·–ôCaÊy’eå½ãÜwžK-H@j¢ßË™ý˜o¯"½“–X%i<w­oë›†
++€û1~¿×Ëè^«µj.ëÕSAùý²òÅÃD)à®Ô'. žŠ/;G-êBïžµÄÏËÚíóØKø™ùT~æîúNm~r#¾¶º[óÕÿ•\Õ±Yú·oU©»Ó¨¶²òÓ¶JãG9>e=åºµÄõÚ÷jlHMÂÄÍ~ôÅRœ»ÕR”äõLÛÉVVÞ|©GÍ»k[ÅéŠH—0yÑ•²¬ÜOŠXÉû.eé(«©7ÎõE1x¢nÅþãüüâŸÙ8vü_÷—8ý™Éiû±4`?-ñgQQ^HLã^oM:à¼´D$”ñ'”	ºN:·ÆŸ[ãœþ[àôßG3¡ÏT©ÂtÉ!"&„ÚÂÎÃÎã[M…¦:H©êf²JÀ;7Ÿ'œÏi>Ï6‡™ŸcÎ°ðòàÌËkü’Ò»4ØÐï0‘JîI ‚pG˜–úpE/§ßù~^·£BØn'+³ûÛýœÎ3+ÆOÏÊè‰þ³ú!tºÖ‰OgßžŽ…¾xE«î¾-o&LÍøpO;[ótnã-)êyÆ§Ç??#0Hºµ”Ý÷Ã‡TTôCžÄ&0Ìç›,
+‡£ÁÈiÂ-p4Æ“ÉdT4
+‹GMoà[[½šLFuÒ›R<_ñ¸N¥¹RÒš,}ÅHküoã1&=:|	W…öˆqçqqÏÛEŠ:JÁ‹w»óâ/ÌÍ<[â¨Ÿ—wýè!0N.*ý‚üIÁd S7@±&ëe9*c^üo¡Òs²¯˜ýŒîwÇ<7ç*+ç'EÅ»ãOãÞ§_Žàã|ü?ðYžÇZÏZëÑÐÀ²¬¡GåýŒÏ"oš9ý£É  ˜’&ÃqI»#P¿õš/ò9ÍÚOÝÿŒãRŒC,.þƒ_<ùÃ?˜ÌŽ~ñÀ‘³ÉÄ1ÑAS56[™sã÷ëo¥‚\ˆ„tåÌøÆeN³¦?oãòE“âá€j¦_­JíÜUÈfœÔÎþÃáØ„bÜéèWß.UCL&¿p4ú£A¾7…,Ûy“˜Œ0Ä—!©}PK
+ 
+   Äf: ¶Ã“  H&  	                 VENDDATA.PK     *   =    
